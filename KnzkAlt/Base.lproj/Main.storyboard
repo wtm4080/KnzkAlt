@@ -9,6 +9,56 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="jAc-P1-3Ul">
+            <objects>
+                <navigationController id="JEg-Xs-An6" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Lo9-FN-Yd4">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="sz4-Cw-Dyj" kind="relationship" relationship="rootViewController" id="vgS-my-M1z"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WFE-RG-2SO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-559" y="-925"/>
+        </scene>
+        <!--InitialVC-->
+        <scene sceneID="P1w-X2-BfD">
+            <objects>
+                <viewController id="sz4-Cw-Dyj" customClass="InitialVC" customModule="KnzkAlt" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Sim-px-Mtb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="OZe-gN-YM9"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="NQv-gH-deK"/>
+                    <connections>
+                        <segue destination="0XF-Jw-em8" kind="show" identifier="Login" id="Lsp-Zl-Ec2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RL0-8Q-8Xc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="302" y="-925"/>
+        </scene>
+        <!--LoginVC-->
+        <scene sceneID="hF6-CR-yFi">
+            <objects>
+                <viewController id="0XF-Jw-em8" customClass="LoginVC" customModule="KnzkAlt" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="N4t-pX-rZH">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="M3B-ip-Fb3"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nzD-ct-uNm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1220" y="-934"/>
+        </scene>
         <!--Home-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
@@ -159,6 +209,7 @@
                         <segue destination="XDf-kS-aRL" kind="relationship" relationship="viewControllers" id="eFc-Pp-Nio"/>
                         <segue destination="d7a-BZ-D2q" kind="relationship" relationship="viewControllers" id="1KQ-fr-bgX"/>
                         <segue destination="2SP-Sm-QeP" kind="relationship" relationship="viewControllers" id="dSp-DT-0QO"/>
+                        <segue destination="JEg-Xs-An6" kind="presentation" identifier="Initial" id="h2z-Jj-C59"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>

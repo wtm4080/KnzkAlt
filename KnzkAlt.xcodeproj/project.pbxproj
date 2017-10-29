@@ -20,6 +20,10 @@
 		1AB7978D1FA63CC4006D3265 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB7978B1FA63CC4006D3265 /* ProfileVC.swift */; };
 		1AB7978F1FA63CEB006D3265 /* MenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB7978E1FA63CEB006D3265 /* MenuVC.swift */; };
 		1AB797901FA63CEB006D3265 /* MenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB7978E1FA63CEB006D3265 /* MenuVC.swift */; };
+		1AB797921FA64112006D3265 /* InitialVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB797911FA64112006D3265 /* InitialVC.swift */; };
+		1AB797931FA64112006D3265 /* InitialVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB797911FA64112006D3265 /* InitialVC.swift */; };
+		1AB797951FA641DE006D3265 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB797941FA641DE006D3265 /* LoginVC.swift */; };
+		1AB797961FA641DE006D3265 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB797941FA641DE006D3265 /* LoginVC.swift */; };
 		3F557620A6190728E09C6B1B /* Pods_KnzkAltTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1441A9221CCB3CD160F614DA /* Pods_KnzkAltTests.framework */; };
 		9AD8BDA67D0C7E0146BDA5F9 /* Pods_KnzkAlt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92B3B098B3DC0D2CC7E8217B /* Pods_KnzkAlt.framework */; };
 /* End PBXBuildFile section */
@@ -50,6 +54,8 @@
 		1AB797881FA63C7A006D3265 /* TootVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TootVC.swift; sourceTree = "<group>"; };
 		1AB7978B1FA63CC4006D3265 /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 		1AB7978E1FA63CEB006D3265 /* MenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuVC.swift; sourceTree = "<group>"; };
+		1AB797911FA64112006D3265 /* InitialVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialVC.swift; sourceTree = "<group>"; };
+		1AB797941FA641DE006D3265 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		8345777460A049931A822898 /* Pods-KnzkAlt.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KnzkAlt.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KnzkAlt/Pods-KnzkAlt.debug.xcconfig"; sourceTree = "<group>"; };
 		92B3B098B3DC0D2CC7E8217B /* Pods_KnzkAlt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KnzkAlt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6D9B3DB25218238497DA448 /* Pods-KnzkAltTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KnzkAltTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KnzkAltTests/Pods-KnzkAltTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -103,6 +109,8 @@
 				1AB797741FA62DFF006D3265 /* Info.plist */,
 				1AB797661FA62DFF006D3265 /* AppDelegate.swift */,
 				1AB797681FA62DFF006D3265 /* HomeVC.swift */,
+				1AB797911FA64112006D3265 /* InitialVC.swift */,
+				1AB797941FA641DE006D3265 /* LoginVC.swift */,
 				1AB7978E1FA63CEB006D3265 /* MenuVC.swift */,
 				1AB7976A1FA62DFF006D3265 /* NotificationVC.swift */,
 				1AB7978B1FA63CC4006D3265 /* ProfileVC.swift */,
@@ -356,8 +364,10 @@
 			files = (
 				1AB7978C1FA63CC4006D3265 /* ProfileVC.swift in Sources */,
 				1AB7976B1FA62DFF006D3265 /* NotificationVC.swift in Sources */,
+				1AB797951FA641DE006D3265 /* LoginVC.swift in Sources */,
 				1AB797671FA62DFF006D3265 /* AppDelegate.swift in Sources */,
 				1AB797891FA63C7A006D3265 /* TootVC.swift in Sources */,
+				1AB797921FA64112006D3265 /* InitialVC.swift in Sources */,
 				1AB797691FA62DFF006D3265 /* HomeVC.swift in Sources */,
 				1AB7978F1FA63CEB006D3265 /* MenuVC.swift in Sources */,
 			);
@@ -367,7 +377,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1AB797931FA64112006D3265 /* InitialVC.swift in Sources */,
 				1AB7978D1FA63CC4006D3265 /* ProfileVC.swift in Sources */,
+				1AB797961FA641DE006D3265 /* LoginVC.swift in Sources */,
 				1AB797901FA63CEB006D3265 /* MenuVC.swift in Sources */,
 				1AB7978A1FA63C7A006D3265 /* TootVC.swift in Sources */,
 				1AB7977E1FA62DFF006D3265 /* KnzkAltTests.swift in Sources */,
