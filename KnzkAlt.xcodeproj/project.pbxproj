@@ -8,12 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		1AB797671FA62DFF006D3265 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB797661FA62DFF006D3265 /* AppDelegate.swift */; };
-		1AB797691FA62DFF006D3265 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB797681FA62DFF006D3265 /* FirstViewController.swift */; };
-		1AB7976B1FA62DFF006D3265 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB7976A1FA62DFF006D3265 /* SecondViewController.swift */; };
+		1AB797691FA62DFF006D3265 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB797681FA62DFF006D3265 /* HomeVC.swift */; };
+		1AB7976B1FA62DFF006D3265 /* NotificationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB7976A1FA62DFF006D3265 /* NotificationVC.swift */; };
 		1AB7976E1FA62DFF006D3265 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AB7976C1FA62DFF006D3265 /* Main.storyboard */; };
 		1AB797701FA62DFF006D3265 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1AB7976F1FA62DFF006D3265 /* Assets.xcassets */; };
 		1AB797731FA62DFF006D3265 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AB797711FA62DFF006D3265 /* LaunchScreen.storyboard */; };
 		1AB7977E1FA62DFF006D3265 /* KnzkAltTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB7977D1FA62DFF006D3265 /* KnzkAltTests.swift */; };
+		1AB797891FA63C7A006D3265 /* TootVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB797881FA63C7A006D3265 /* TootVC.swift */; };
+		1AB7978A1FA63C7A006D3265 /* TootVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB797881FA63C7A006D3265 /* TootVC.swift */; };
+		1AB7978C1FA63CC4006D3265 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB7978B1FA63CC4006D3265 /* ProfileVC.swift */; };
+		1AB7978D1FA63CC4006D3265 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB7978B1FA63CC4006D3265 /* ProfileVC.swift */; };
+		1AB7978F1FA63CEB006D3265 /* MenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB7978E1FA63CEB006D3265 /* MenuVC.swift */; };
+		1AB797901FA63CEB006D3265 /* MenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB7978E1FA63CEB006D3265 /* MenuVC.swift */; };
 		3F557620A6190728E09C6B1B /* Pods_KnzkAltTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1441A9221CCB3CD160F614DA /* Pods_KnzkAltTests.framework */; };
 		9AD8BDA67D0C7E0146BDA5F9 /* Pods_KnzkAlt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92B3B098B3DC0D2CC7E8217B /* Pods_KnzkAlt.framework */; };
 /* End PBXBuildFile section */
@@ -32,8 +38,8 @@
 		1441A9221CCB3CD160F614DA /* Pods_KnzkAltTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KnzkAltTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AB797631FA62DFF006D3265 /* KnzkAlt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KnzkAlt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AB797661FA62DFF006D3265 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		1AB797681FA62DFF006D3265 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		1AB7976A1FA62DFF006D3265 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		1AB797681FA62DFF006D3265 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
+		1AB7976A1FA62DFF006D3265 /* NotificationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationVC.swift; sourceTree = "<group>"; };
 		1AB7976D1FA62DFF006D3265 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1AB7976F1FA62DFF006D3265 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1AB797721FA62DFF006D3265 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -41,6 +47,9 @@
 		1AB797791FA62DFF006D3265 /* KnzkAltTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KnzkAltTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AB7977D1FA62DFF006D3265 /* KnzkAltTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KnzkAltTests.swift; sourceTree = "<group>"; };
 		1AB7977F1FA62DFF006D3265 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1AB797881FA63C7A006D3265 /* TootVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TootVC.swift; sourceTree = "<group>"; };
+		1AB7978B1FA63CC4006D3265 /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
+		1AB7978E1FA63CEB006D3265 /* MenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuVC.swift; sourceTree = "<group>"; };
 		8345777460A049931A822898 /* Pods-KnzkAlt.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KnzkAlt.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KnzkAlt/Pods-KnzkAlt.debug.xcconfig"; sourceTree = "<group>"; };
 		92B3B098B3DC0D2CC7E8217B /* Pods_KnzkAlt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KnzkAlt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6D9B3DB25218238497DA448 /* Pods-KnzkAltTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KnzkAltTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KnzkAltTests/Pods-KnzkAltTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -91,13 +100,16 @@
 		1AB797651FA62DFF006D3265 /* KnzkAlt */ = {
 			isa = PBXGroup;
 			children = (
+				1AB797741FA62DFF006D3265 /* Info.plist */,
 				1AB797661FA62DFF006D3265 /* AppDelegate.swift */,
-				1AB797681FA62DFF006D3265 /* FirstViewController.swift */,
-				1AB7976A1FA62DFF006D3265 /* SecondViewController.swift */,
-				1AB7976C1FA62DFF006D3265 /* Main.storyboard */,
+				1AB797681FA62DFF006D3265 /* HomeVC.swift */,
+				1AB7978E1FA63CEB006D3265 /* MenuVC.swift */,
+				1AB7976A1FA62DFF006D3265 /* NotificationVC.swift */,
+				1AB7978B1FA63CC4006D3265 /* ProfileVC.swift */,
+				1AB797881FA63C7A006D3265 /* TootVC.swift */,
 				1AB7976F1FA62DFF006D3265 /* Assets.xcassets */,
 				1AB797711FA62DFF006D3265 /* LaunchScreen.storyboard */,
-				1AB797741FA62DFF006D3265 /* Info.plist */,
+				1AB7976C1FA62DFF006D3265 /* Main.storyboard */,
 			);
 			path = KnzkAlt;
 			sourceTree = "<group>";
@@ -342,9 +354,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1AB7976B1FA62DFF006D3265 /* SecondViewController.swift in Sources */,
+				1AB7978C1FA63CC4006D3265 /* ProfileVC.swift in Sources */,
+				1AB7976B1FA62DFF006D3265 /* NotificationVC.swift in Sources */,
 				1AB797671FA62DFF006D3265 /* AppDelegate.swift in Sources */,
-				1AB797691FA62DFF006D3265 /* FirstViewController.swift in Sources */,
+				1AB797891FA63C7A006D3265 /* TootVC.swift in Sources */,
+				1AB797691FA62DFF006D3265 /* HomeVC.swift in Sources */,
+				1AB7978F1FA63CEB006D3265 /* MenuVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -352,6 +367,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1AB7978D1FA63CC4006D3265 /* ProfileVC.swift in Sources */,
+				1AB797901FA63CEB006D3265 /* MenuVC.swift in Sources */,
+				1AB7978A1FA63C7A006D3265 /* TootVC.swift in Sources */,
 				1AB7977E1FA62DFF006D3265 /* KnzkAltTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

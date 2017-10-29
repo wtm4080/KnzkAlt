@@ -1,5 +1,5 @@
 //
-//  FirstViewController.swift
+//  SecondViewController.swift
 //  KnzkAlt
 //
 //  Created by mopopo on 2017/10/30.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FirstViewController: UIViewController {
+class NotificationVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
