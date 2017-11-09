@@ -233,7 +233,7 @@ enum VerifyCredError: Error {
 }
 
 struct LoginVerifyCred {
-    func verify(authResult: LoginAuthResult) -> Promise<Result<VerifyCredResult, VerifyCredError>> {
+    static func verify(authResult: LoginAuthResult) -> Promise<Result<VerifyCredResult, VerifyCredError>> {
         guard let url = URL(string: "https://\(Login.host)/api/v1/accounts/verify_credentials") else {
             return Promise<Result<VerifyCredResult, VerifyCredError>>(resolved: .failure(.InvalidVerifyURL))
         }

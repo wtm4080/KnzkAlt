@@ -9,4 +9,7 @@
 import UIKit
 
 class InitialVC: UIViewController {
+    @IBAction func loginAction(_ sender: Any) {
+        self.performSegue(withIdentifier: "Login", sender: self)
+    }
 }
