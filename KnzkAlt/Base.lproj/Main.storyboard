@@ -34,9 +34,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8zU-mc-Gc3">
-                                <rect key="frame" x="164" y="318" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8zU-mc-Gc3">
+                                <rect key="frame" x="136" y="303" width="103" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="Dmd-5r-teU"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="103" id="pwq-7p-lBZ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
                                 <state key="normal" title="Login"/>
                                 <connections>
                                     <action selector="loginAction:" destination="sz4-Cw-Dyj" eventType="touchUpInside" id="b0u-uE-VL0"/>
@@ -44,6 +48,10 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="8zU-mc-Gc3" firstAttribute="centerX" secondItem="Sim-px-Mtb" secondAttribute="centerX" id="OD3-BE-UFv"/>
+                            <constraint firstItem="8zU-mc-Gc3" firstAttribute="centerY" secondItem="Sim-px-Mtb" secondAttribute="centerY" id="gdf-dh-oL8"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="OZe-gN-YM9"/>
                     </view>
                     <navigationItem key="navigationItem" title="KnzkAlt" id="NQv-gH-deK">
@@ -55,7 +63,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RL0-8Q-8Xc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="302" y="-925"/>
+            <point key="canvasLocation" x="301.60000000000002" y="-925.18740629685169"/>
         </scene>
         <!--Knzk.me-->
         <scene sceneID="hF6-CR-yFi">

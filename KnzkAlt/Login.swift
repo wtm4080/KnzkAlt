@@ -22,15 +22,15 @@ struct LoginResult {
     let clientId: String
     let clientSecret: String
 
-    init?(data: [String: String]) {
+    init?(data: [String: Any]) {
         domain = Login.host
 
-        guard let cid = data["client_id"] else {
+        guard let cid = data["client_id"] as? String else {
             return nil
         }
         clientId = cid
 
-        guard let scr = data["client_secret"] else {
+        guard let scr = data["client_secret"] as? String else {
             return nil
         }
         clientSecret = scr
@@ -79,17 +79,17 @@ struct Login {
                         return
                     }
 
-                    guard let json = try? JSONSerialization.jsonObject(with: data) as? [String: String] else {
+                    guard let json = try? JSONSerialization.jsonObject(with: data) as? [String: Any] else {
                         resolve(.failure(.InvalidLoginResponse))
                         return
                     }
 
-                    guard let data = json else {
+                    guard let jsonDict = json else {
                         resolve(.failure(.InvalidLoginResponse))
                         return
                     }
 
-                    guard let result = LoginResult(data: data) else {
+                    guard let result = LoginResult(data: jsonDict) else {
                         resolve(.failure(.InvalidLoginResponse))
                         return
                     }
@@ -107,8 +107,8 @@ struct Login {
 struct LoginAuthResult {
     let token: String
 
-    init?(data: [String: String]) {
-        guard let tk = data["access_token"] else {
+    init?(data: [String: Any]) {
+        guard let tk = data["access_token"] as? String else {
             return nil
         }
         token = tk
@@ -180,17 +180,17 @@ struct LoginAuth {
                             return
                         }
 
-                        guard let json = try? JSONSerialization.jsonObject(with: data) as? [String: String] else {
+                        guard let json = try? JSONSerialization.jsonObject(with: data) as? [String: Any] else {
                             resolve(.failure(.InvalidLoginResponse))
                             return
                         }
 
-                        guard let data = json else {
+                        guard let jsonDict = json else {
                             resolve(.failure(.InvalidLoginResponse))
                             return
                         }
 
-                        guard let result = LoginAuthResult(data: data) else {
+                        guard let result = LoginAuthResult(data: jsonDict) else {
                             resolve(.failure(.InvalidLoginResponse))
                             return
                         }
@@ -213,13 +213,13 @@ struct VerifyCredResult {
     let userName: String
     let userId: String
 
-    init?(data: [String: String]) {
-        guard let acct = data["acct"] else {
+    init?(data: [String: Any]) {
+        guard let acct = data["acct"] as? String else {
             return nil
         }
         userName = acct
 
-        guard let id = data["id"] else {
+        guard let id = data["id"] as? String else {
             return nil
         }
         userId = id
@@ -256,17 +256,17 @@ struct LoginVerifyCred {
                         return
                     }
 
-                    guard let json = try? JSONSerialization.jsonObject(with: data) as? [String: String] else {
+                    guard let json = try? JSONSerialization.jsonObject(with: data) as? [String: Any] else {
                         resolve(.failure(.InvalidLoginResponse))
                         return
                     }
 
-                    guard let data = json else {
+                    guard let jsonDict = json else {
                         resolve(.failure(.InvalidLoginResponse))
                         return
                     }
 
-                    guard let result = VerifyCredResult(data: data) else {
+                    guard let result = VerifyCredResult(data: jsonDict) else {
                         resolve(.failure(.InvalidLoginResponse))
                         return
                     }
