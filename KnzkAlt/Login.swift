@@ -208,3 +208,75 @@ struct LoginAuth {
         }
     }
 }
+
+struct VerifyCredResult {
+    let userName: String
+    let userId: String
+
+    init?(data: [String: String]) {
+        guard let acct = data["acct"] else {
+            return nil
+        }
+        userName = acct
+
+        guard let id = data["id"] else {
+            return nil
+        }
+        userId = id
+    }
+}
+
+enum VerifyCredError: Error {
+    case InvalidVerifyURL
+    case NetworkError(error: Error)
+    case InvalidLoginResponse
+}
+
+struct LoginVerifyCred {
+    func verify(authResult: LoginAuthResult) -> Promise<Result<VerifyCredResult, VerifyCredError>> {
+        guard let url = URL(string: "https://\(Login.host)/api/v1/accounts/verify_credentials") else {
+            return Promise<Result<VerifyCredResult, VerifyCredError>>(resolved: .failure(.InvalidVerifyURL))
+        }
+
+        var request = URLRequest(url: url)
+        request.addValue("Bearer \(authResult.token)", forHTTPHeaderField: "Authorization")
+
+        return Promise<Result<VerifyCredResult, VerifyCredError>>(in: .background) {
+            resolve, _, _ in
+
+            URLSession.shared.dataTask(with: request) {
+                data, response, error in
+
+                if let error = error {
+                    resolve(.failure(.NetworkError(error: error)))
+                }
+                else if let data = data, let response = response as? HTTPURLResponse {
+                    guard response.statusCode == 200 else {
+                        resolve(.failure(.InvalidLoginResponse))
+                        return
+                    }
+
+                    guard let json = try? JSONSerialization.jsonObject(with: data) as? [String: String] else {
+                        resolve(.failure(.InvalidLoginResponse))
+                        return
+                    }
+
+                    guard let data = json else {
+                        resolve(.failure(.InvalidLoginResponse))
+                        return
+                    }
+
+                    guard let result = VerifyCredResult(data: data) else {
+                        resolve(.failure(.InvalidLoginResponse))
+                        return
+                    }
+
+                    resolve(.success(result))
+                }
+                else {
+                    resolve(.failure(.InvalidLoginResponse))
+                }
+            }.resume()
+        }
+    }
+}
