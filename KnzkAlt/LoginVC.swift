@@ -13,7 +13,9 @@ class LoginVC: UIViewController, WKNavigationDelegate {
     private var _webView: WKWebView?
 
     private var _loginResult: LoginResult?
-
+    
+    @IBOutlet weak var _progressView: UIProgressView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -28,9 +30,9 @@ class LoginVC: UIViewController, WKNavigationDelegate {
 
         webView.navigationDelegate = self
         webView.translatesAutoresizingMaskIntoConstraints = false
-        self.view.addSubview(webView)
+        view.addSubview(webView)
 
-        let safeArea = self.view.safeAreaLayoutGuide
+        let safeArea = view.safeAreaLayoutGuide
 
         NSLayoutConstraint.activate([
             webView.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor),
@@ -38,6 +40,55 @@ class LoginVC: UIViewController, WKNavigationDelegate {
             webView.topAnchor.constraint(equalTo: safeArea.topAnchor),
             webView.bottomAnchor.constraint(equalTo: safeArea.bottomAnchor)
         ])
+
+        webView.addObserver(self, forKeyPath: "loading", options: .new, context: nil)
+        webView.addObserver(self, forKeyPath: "estimatedProgress", options: .new, context: nil)
+
+        view.bringSubview(toFront: _progressView)
+        _progressView.isHidden = true
+        _progressView.progress = 0.0
+    }
+
+    deinit {
+        _webView?.removeObserver(self, forKeyPath: "estimatedProgress")
+        _webView?.removeObserver(self, forKeyPath: "loading")
+    }
+
+    override func observeValue(
+            forKeyPath keyPath: String?,
+            of object: Any?,
+            change: [NSKeyValueChangeKey : Any]?,
+            context: UnsafeMutableRawPointer?) {
+
+        if keyPath == "estimatedProgress" {
+            _progressView.setProgress(Float(self._webView?.estimatedProgress ?? 0.0), animated: true)
+        }
+        else if keyPath == "loading" {
+            UIApplication.shared.isNetworkActivityIndicatorVisible = _webView?.isLoading ?? false
+
+            if _webView?.isLoading ?? false {
+                _progressView.setProgress(0.1, animated: true)
+
+                _progressView.isHidden = false
+                _progressView.alpha = 0.0
+
+                UIView.animate(
+                        withDuration: 0.5,
+                        animations: { [weak self] in self?._progressView.alpha = 1.0 },
+                        completion: { finish in  })
+            }
+            else {
+                self._progressView.setProgress(0.0, animated: false)
+
+                UIView.animate(
+                        withDuration: 0.5,
+                        animations: { [weak self] in self?._progressView.alpha = 0.0 },
+                        completion: { finish in  })
+            }
+        }
+        else {
+            super.observeValue(forKeyPath: keyPath, of: object, change: change, context: context)
+        }
     }
 
     override func viewDidAppear(_ animated: Bool) {

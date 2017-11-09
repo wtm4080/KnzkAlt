@@ -26,7 +26,7 @@
             </objects>
             <point key="canvasLocation" x="-559" y="-925"/>
         </scene>
-        <!--InitialVC-->
+        <!--KnzkAlt-->
         <scene sceneID="P1w-X2-BfD">
             <objects>
                 <viewController id="sz4-Cw-Dyj" customClass="InitialVC" customModule="KnzkAlt" customModuleProvider="target" sceneMemberID="viewController">
@@ -46,7 +46,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="OZe-gN-YM9"/>
                     </view>
-                    <navigationItem key="navigationItem" id="NQv-gH-deK"/>
+                    <navigationItem key="navigationItem" title="KnzkAlt" id="NQv-gH-deK">
+                        <barButtonItem key="backBarButtonItem" title="Top" id="x83-RW-BvA"/>
+                    </navigationItem>
                     <connections>
                         <segue destination="0XF-Jw-em8" kind="show" identifier="Login" id="Lsp-Zl-Ec2"/>
                     </connections>
@@ -55,20 +57,36 @@
             </objects>
             <point key="canvasLocation" x="302" y="-925"/>
         </scene>
-        <!--LoginVC-->
+        <!--Knzk.me-->
         <scene sceneID="hF6-CR-yFi">
             <objects>
-                <viewController id="0XF-Jw-em8" customClass="LoginVC" customModule="KnzkAlt" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Knzk.me" id="0XF-Jw-em8" customClass="LoginVC" customModule="KnzkAlt" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="N4t-pX-rZH">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="JZh-hx-I1h">
+                                <rect key="frame" x="0.0" y="64" width="375" height="3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="2" id="KqH-xf-nOC"/>
+                                </constraints>
+                            </progressView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="JZh-hx-I1h" firstAttribute="leading" secondItem="N4t-pX-rZH" secondAttribute="leading" id="V14-3f-F62"/>
+                            <constraint firstAttribute="trailing" secondItem="JZh-hx-I1h" secondAttribute="trailing" id="rA7-OP-ZeC"/>
+                            <constraint firstItem="JZh-hx-I1h" firstAttribute="top" secondItem="M3B-ip-Fb3" secondAttribute="top" id="yn2-at-Z3u"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="M3B-ip-Fb3"/>
                     </view>
+                    <connections>
+                        <outlet property="_progressView" destination="JZh-hx-I1h" id="9ny-gf-8Rg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nzD-ct-uNm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1220" y="-934"/>
+            <point key="canvasLocation" x="1220" y="-934.18290854572717"/>
         </scene>
         <!--Home-->
         <scene sceneID="hNz-n2-bh7">
