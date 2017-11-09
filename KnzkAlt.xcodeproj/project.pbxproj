@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A5696C11FB4962400BC82DC /* MastodonKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A5696C21FB4962400BC82DC /* MastodonKit.framework */; };
+		1A5696C31FB497B800BC82DC /* MastodonKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A5696BD1FB4937100BC82DC /* MastodonKit.framework */; };
+		1A5696C41FB497B800BC82DC /* MastodonKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1A5696BD1FB4937100BC82DC /* MastodonKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1AAB136A1FB370C100844F51 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAB13691FB370C100844F51 /* Login.swift */; };
 		1AAB136B1FB370C100844F51 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAB13691FB370C100844F51 /* Login.swift */; };
 		1AAB136D1FB41DA300844F51 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AAB136C1FB41DA300844F51 /* MainVC.swift */; };
@@ -46,8 +49,24 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		1A5696C51FB497B800BC82DC /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				1A5696C41FB497B800BC82DC /* MastodonKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		1441A9221CCB3CD160F614DA /* Pods_KnzkAltTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KnzkAltTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1A5696BD1FB4937100BC82DC /* MastodonKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MastodonKit.framework; path = Carthage/Build/iOS/MastodonKit.framework; sourceTree = "<group>"; };
+		1A5696C21FB4962400BC82DC /* MastodonKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MastodonKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AAB13691FB370C100844F51 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		1AAB136C1FB41DA300844F51 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
 		1AB797631FA62DFF006D3265 /* KnzkAlt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KnzkAlt.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -80,6 +99,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A5696C31FB497B800BC82DC /* MastodonKit.framework in Frameworks */,
 				9AD8BDA67D0C7E0146BDA5F9 /* Pods_KnzkAlt.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -88,6 +108,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A5696C11FB4962400BC82DC /* MastodonKit.framework in Frameworks */,
 				3F557620A6190728E09C6B1B /* Pods_KnzkAltTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -150,6 +171,8 @@
 		2AAE723F0C521CE2B966660E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1A5696C21FB4962400BC82DC /* MastodonKit.framework */,
+				1A5696BD1FB4937100BC82DC /* MastodonKit.framework */,
 				92B3B098B3DC0D2CC7E8217B /* Pods_KnzkAlt.framework */,
 				1441A9221CCB3CD160F614DA /* Pods_KnzkAltTests.framework */,
 			);
@@ -180,6 +203,8 @@
 				1AB797611FA62DFF006D3265 /* Resources */,
 				A9C137E8C1F1666CAFF62A65 /* [CP] Embed Pods Frameworks */,
 				EFFB3DBBAD0F928A55F51BCE /* [CP] Copy Pods Resources */,
+				1A5696BF1FB493AB00BC82DC /* ShellScript */,
+				1A5696C51FB497B800BC82DC /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -200,6 +225,7 @@
 				1AB797771FA62DFF006D3265 /* Resources */,
 				03C444560CCACB6B2D9A1853 /* [CP] Embed Pods Frameworks */,
 				924AC09F4EE68C3B59AD7C4B /* [CP] Copy Pods Resources */,
+				1A5696C01FB4948100BC82DC /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -287,6 +313,36 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KnzkAltTests/Pods-KnzkAltTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		1A5696BF1FB493AB00BC82DC /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/MastodonKit.framework",
+			);
+			outputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/MastodonKit.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+		1A5696C01FB4948100BC82DC /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/MastodonKit.framework",
+			);
+			outputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/MastodonKit.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
 		28184C1383645325228B5D9A /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -329,14 +385,12 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-KnzkAlt/Pods-KnzkAlt-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/HydraAsync/Hydra.framework",
 				"${BUILT_PRODUCTS_DIR}/KeychainAccess/KeychainAccess.framework",
-				"${BUILT_PRODUCTS_DIR}/MastodonKit/MastodonKit.framework",
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Hydra.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainAccess.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MastodonKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -560,6 +614,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = UHH463TU7S;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = KnzkAlt/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.atcurio.KnzkAlt;
@@ -576,6 +634,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = UHH463TU7S;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = KnzkAlt/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.atcurio.KnzkAlt;

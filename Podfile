@@ -8,7 +8,6 @@ target 'KnzkAlt' do
   platform :ios, '11.1'
 
   # Pods for KnzkAlt
-  pod 'MastodonKit', '~> 1.0'
   pod 'HydraAsync'
   pod 'Result', '~> 3.0.0'
   pod 'KeychainAccess'  

@@ -7,12 +7,22 @@
 //
 
 import UIKit
+import MastodonKit
 
 class HomeVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+
+        let client = Client(
+                baseURL: "https://knzk.me",
+                accessToken: Keychain.shared.accessToken)
+        let request = Timelines.home()
+        client.run(request) {
+            statuses in
+
+            NSLog("Statuses: \(String(describing: statuses))")
+        }
     }
 
     override func didReceiveMemoryWarning() {
