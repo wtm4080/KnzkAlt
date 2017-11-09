@@ -141,8 +141,8 @@ struct LoginAuth {
                 return Promise<Result<LoginAuthResult, LoginAuthError>>(resolved: .failure(.InvalidParamURL))
             }
 
-            let range = match.range(atIndex: 0)
-            let code = absURL.substring(with: range)
+            let range = match.range(at: 0)
+            let code = (absURL as NSString).substring(with: range)
 
             guard let tokenURL = URL(string: "https://\(Login.host)/oauth/token") else {
                 return Promise<Result<LoginAuthResult, LoginAuthError>>(resolved: .failure(.InvalidTokenURL))
