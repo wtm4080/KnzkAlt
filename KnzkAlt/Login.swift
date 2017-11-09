@@ -103,3 +103,108 @@ struct Login {
         }
     }
 }
+
+struct LoginAuthResult {
+    let token: String
+
+    init?(data: [String: String]) {
+        guard let tk = data["access_token"] else {
+            return nil
+        }
+        token = tk
+    }
+}
+
+enum LoginAuthError: Error {
+    case InvalidParamURL
+    case InvalidTokenURL
+    case InvalidTokenRequestJSON
+    case NetworkError(error: Error)
+    case InvalidLoginResponse
+}
+
+struct LoginAuth {
+    static func auth(url: URL, loginResult: LoginResult) -> Promise<Result<LoginAuthResult, LoginAuthError>> {
+        let absURL = url.absoluteString
+
+        if absURL.contains("/oauth/authorize/") {
+            let regExpPattern = "[^/]+$"
+            let regExp = try? NSRegularExpression(pattern: regExpPattern)
+            guard let regExpMatches = regExp?.matches(
+                    in: absURL,
+                    options: [],
+                    range: NSRange(location: 0, length: absURL.count)) else {
+                return Promise<Result<LoginAuthResult, LoginAuthError>>(resolved: .failure(.InvalidParamURL))
+            }
+
+            guard let match = regExpMatches.first, match.numberOfRanges == 1 else {
+                return Promise<Result<LoginAuthResult, LoginAuthError>>(resolved: .failure(.InvalidParamURL))
+            }
+
+            let range = match.range(atIndex: 0)
+            let code = absURL.substring(with: range)
+
+            guard let tokenURL = URL(string: "https://\(Login.host)/oauth/token") else {
+                return Promise<Result<LoginAuthResult, LoginAuthError>>(resolved: .failure(.InvalidTokenURL))
+            }
+
+            var tokenRequest = URLRequest(url: tokenURL)
+            tokenRequest.httpMethod = "POST"
+            tokenRequest.addValue("application/json", forHTTPHeaderField: "Content-Type")
+
+            let tokenRequestBody = [
+                "scope": "read write follow",
+                "client_id": loginResult.clientId,
+                "client_secret": loginResult.clientSecret,
+                "grant_type": "authorization_code",
+                "redirect_uri": "urn:ietf:wg:oauth:2.0:oob",
+                "code": code
+            ]
+            guard let tokenRequestData = try? JSONSerialization.data(withJSONObject: tokenRequestBody) else {
+                return Promise<Result<LoginAuthResult, LoginAuthError>>(resolved: .failure(.InvalidTokenRequestJSON))
+            }
+            tokenRequest.httpBody = tokenRequestData
+
+            return Promise<Result<LoginAuthResult, LoginAuthError>>(in: .background) {
+                resolve, _, _ in
+
+                URLSession.shared.dataTask(with: tokenRequest) {
+                    data, response, error in
+
+                    if let error = error {
+                        resolve(.failure(.NetworkError(error: error)))
+                    }
+                    else if let data = data, let response = response as? HTTPURLResponse {
+                        guard response.statusCode == 200 else {
+                            resolve(.failure(.InvalidLoginResponse))
+                            return
+                        }
+
+                        guard let json = try? JSONSerialization.jsonObject(with: data) as? [String: String] else {
+                            resolve(.failure(.InvalidLoginResponse))
+                            return
+                        }
+
+                        guard let data = json else {
+                            resolve(.failure(.InvalidLoginResponse))
+                            return
+                        }
+
+                        guard let result = LoginAuthResult(data: data) else {
+                            resolve(.failure(.InvalidLoginResponse))
+                            return
+                        }
+
+                        resolve(.success(result))
+                    }
+                    else {
+                        resolve(.failure(.InvalidLoginResponse))
+                    }
+                }.resume()
+            }
+        }
+        else {
+            return Promise<Result<LoginAuthResult, LoginAuthError>>(resolved: .failure(.InvalidParamURL))
+        }
+    }
+}
