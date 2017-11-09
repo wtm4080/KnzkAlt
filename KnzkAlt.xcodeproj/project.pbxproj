@@ -30,6 +30,10 @@
 		1AB797961FA641DE006D3265 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB797941FA641DE006D3265 /* LoginVC.swift */; };
 		3F557620A6190728E09C6B1B /* Pods_KnzkAltTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1441A9221CCB3CD160F614DA /* Pods_KnzkAltTests.framework */; };
 		9AD8BDA67D0C7E0146BDA5F9 /* Pods_KnzkAlt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92B3B098B3DC0D2CC7E8217B /* Pods_KnzkAlt.framework */; };
+		C051037F9E1245BEEEAB1899 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510C0073874BEF0B4E8C82 /* Notification.swift */; };
+		C05103F14ADA0FC3831832C1 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510C0073874BEF0B4E8C82 /* Notification.swift */; };
+		C0510507594D146212174682 /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = C051012FF1FBD602C5FBD0F4 /* Keychain.swift */; };
+		C051052BB3E9E30B8C8FED8D /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = C051012FF1FBD602C5FBD0F4 /* Keychain.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +69,8 @@
 		8345777460A049931A822898 /* Pods-KnzkAlt.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KnzkAlt.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KnzkAlt/Pods-KnzkAlt.debug.xcconfig"; sourceTree = "<group>"; };
 		92B3B098B3DC0D2CC7E8217B /* Pods_KnzkAlt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KnzkAlt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6D9B3DB25218238497DA448 /* Pods-KnzkAltTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KnzkAltTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KnzkAltTests/Pods-KnzkAltTests.debug.xcconfig"; sourceTree = "<group>"; };
+		C051012FF1FBD602C5FBD0F4 /* Keychain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Keychain.swift; sourceTree = "<group>"; };
+		C0510C0073874BEF0B4E8C82 /* Notification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
 		EECF72E7564B24B31527EAD4 /* Pods-KnzkAlt.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KnzkAlt.release.xcconfig"; path = "Pods/Target Support Files/Pods-KnzkAlt/Pods-KnzkAlt.release.xcconfig"; sourceTree = "<group>"; };
 		F990127F00E99EEB06FA4F22 /* Pods-KnzkAltTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KnzkAltTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-KnzkAltTests/Pods-KnzkAltTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -126,6 +132,8 @@
 				1AB7976F1FA62DFF006D3265 /* Assets.xcassets */,
 				1AB797711FA62DFF006D3265 /* LaunchScreen.storyboard */,
 				1AB7976C1FA62DFF006D3265 /* Main.storyboard */,
+				C051012FF1FBD602C5FBD0F4 /* Keychain.swift */,
+				C0510C0073874BEF0B4E8C82 /* Notification.swift */,
 			);
 			path = KnzkAlt;
 			sourceTree = "<group>";
@@ -320,12 +328,14 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-KnzkAlt/Pods-KnzkAlt-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/HydraAsync/Hydra.framework",
+				"${BUILT_PRODUCTS_DIR}/KeychainAccess/KeychainAccess.framework",
 				"${BUILT_PRODUCTS_DIR}/MastodonKit/MastodonKit.framework",
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Hydra.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainAccess.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MastodonKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
 			);
@@ -384,6 +394,8 @@
 				1AAB136A1FB370C100844F51 /* Login.swift in Sources */,
 				1AB797691FA62DFF006D3265 /* HomeVC.swift in Sources */,
 				1AB7978F1FA63CEB006D3265 /* MenuVC.swift in Sources */,
+				C0510507594D146212174682 /* Keychain.swift in Sources */,
+				C05103F14ADA0FC3831832C1 /* Notification.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -399,6 +411,8 @@
 				1AAB136E1FB41DA300844F51 /* MainVC.swift in Sources */,
 				1AB7978A1FA63C7A006D3265 /* TootVC.swift in Sources */,
 				1AB7977E1FA62DFF006D3265 /* KnzkAltTests.swift in Sources */,
+				C051052BB3E9E30B8C8FED8D /* Keychain.swift in Sources */,
+				C051037F9E1245BEEEAB1899 /* Notification.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

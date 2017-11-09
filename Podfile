@@ -10,7 +10,8 @@ target 'KnzkAlt' do
   # Pods for KnzkAlt
   pod 'MastodonKit', '~> 1.0'
   pod 'HydraAsync'
-  pod 'Result', '~> 3.0.0'  
+  pod 'Result', '~> 3.0.0'
+  pod 'KeychainAccess'  
 
   target 'KnzkAltTests' do
     inherit! :search_paths

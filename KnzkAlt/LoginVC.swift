@@ -122,22 +122,22 @@ class LoginVC: UIViewController, WKNavigationDelegate {
         }
 
         LoginAuth.auth(url: webViewURL, loginResult: loginResult).then(in: .background) {
-            result in
+            [weak self] result in
 
             switch result {
                 case .success(let token):
-                    LoginVerifyCred.verify(authResult: token).then(in: .main) {
-                        verifyResult in
-
-                        switch verifyResult {
-                            case .success(let account):
-                                NSLog("User ID: \(account.userId), User name: \(account.userName)")
-                            default:
-                                return
-                        }
-                    }
+                    var kc = Keychain.shared
+                    kc.accessToken = token.token
                 default:
                     return
+            }
+
+            DispatchQueue.main.async {
+                [weak self] in
+
+                self?.navigationController?.dismiss(animated: true)
+
+                Notifications.AccessTokenRefreshed.post()
             }
         }
     }

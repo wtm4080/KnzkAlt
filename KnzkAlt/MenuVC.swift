@@ -9,4 +9,10 @@
 import UIKit
 
 class MenuVC: UIViewController {
+    @IBAction func logoutAction(_ sender: Any) {
+        var kc = Keychain.shared
+        kc.accessToken = nil
+
+        Notifications.LogoutPerformed.post()
+    }
 }
