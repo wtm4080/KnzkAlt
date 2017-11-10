@@ -14,11 +14,8 @@ class HomeVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let client = Client(
-                baseURL: "https://knzk.me",
-                accessToken: Keychain.shared.accessToken)
         let request = Timelines.home()
-        client.run(request) {
+        ClientManager.shared.standard.run(request) {
             statuses in
 
             NSLog("Statuses: \(String(describing: statuses))")
