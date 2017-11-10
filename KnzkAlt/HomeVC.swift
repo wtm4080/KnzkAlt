@@ -18,6 +18,21 @@ class HomeVC: UITableViewController, UITableViewDataSourcePrefetching {
         super.viewDidLoad()
 
         self.tableView.prefetchDataSource = self
+
+        let loadingStatuses = ClientManager.shared.homeTL()
+        loadingStatuses.then(in: .main) {
+            [unowned self] result in
+
+            switch result {
+                case .success(let statuses, _):
+                    self._statuses = statuses
+
+                    self.tableView.reloadData()
+                default:
+                    NSLog("Loading home error: \(result)")
+            }
+        }
+        _loadingStatuses = loadingStatuses
     }
 
     override func tableView(_ _: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
