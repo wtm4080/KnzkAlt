@@ -8,5 +8,5 @@
 
 import UIKit
 
-class ProfileVC: UIViewController {
+class ProfileVC: UITableViewController {
 }

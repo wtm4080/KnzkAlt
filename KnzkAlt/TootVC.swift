@@ -8,5 +8,5 @@
 
 import UIKit
 
-class TootVC: UIViewController {
+class TootVC: UITableViewController {
 }

@@ -8,25 +8,37 @@
 
 import UIKit
 import MastodonKit
+import Hydra
 
-class HomeVC: UIViewController {
+class HomeVC: UITableViewController, UITableViewDataSourcePrefetching {
+    private var _loadingStatuses: Promise<Result<[Status]>>?
+    private var _statuses: [Status] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let request = Timelines.home()
-        ClientManager.shared.standard.run(request) {
-            statuses in
-
-            NSLog("Statuses: \(String(describing: statuses))")
-        }
+        self.tableView.prefetchDataSource = self
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    override func tableView(_ _: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let status = _statuses[indexPath.row]
+
+        return HomeVC._statusToCell(s: status)
     }
 
+    override func tableView(_ _: UITableView, numberOfRowsInSection _: Int) -> Int {
+        return _statuses.count
+    }
 
+    func tableView(_ _: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
+    }
+
+    func tableView(_ _: UITableView, cancelPrefetchingForRowsAt indexPaths: [IndexPath]) {
+    }
+
+    private static func _statusToCell(s: Status) -> StatusCell {
+        let cellOwner = StatusCellOwner()
+
+        return cellOwner.cell
+    }
 }
-

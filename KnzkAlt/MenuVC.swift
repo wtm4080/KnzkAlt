@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MenuVC: UIViewController {
+class MenuVC: UITableViewController {
     @IBAction func logoutAction(_ sender: Any) {
         var kc = Keychain.shared
         kc.accessToken = nil
