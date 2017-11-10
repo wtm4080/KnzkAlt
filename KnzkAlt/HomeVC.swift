@@ -52,8 +52,17 @@ class HomeVC: UITableViewController, UITableViewDataSourcePrefetching {
     }
 
     private static func _statusToCell(s: Status) -> StatusCell {
-        let cellOwner = StatusCellOwner()
+        let co = StatusCellOwner()
+        co.displayNameLabel.text = s.account.displayName
+        co.userIdLabel.text = s.account.acct
 
-        return cellOwner.cell
+        let f = DateFormatter()
+        f.dateStyle = .none
+        f.timeStyle = .medium
+        co.tootDateLabel.text = f.string(from: s.createdAt)
+
+        co.contentLabel.text = s.content
+
+        return co.cell
     }
 }
