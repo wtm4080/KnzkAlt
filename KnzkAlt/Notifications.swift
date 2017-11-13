@@ -6,8 +6,11 @@
 import Foundation
 
 enum Notifications: String {
-    case AccessTokenRefreshed = "access_token_refreshed"
-    case LogoutPerformed = "logout_performed"
+    case accessTokenRefreshed = "access_token_refreshed"
+    case logoutPerformed = "logout_performed"
+
+    case requestHomeTL = "request_home_tl"
+    case loadedHomeTL = "loaded_home_tl"
 
     private var _nc: NotificationCenter {
         return NotificationCenter.default
@@ -18,7 +21,17 @@ enum Notifications: String {
     }
 
     func post(userInfo: [AnyHashable: Any]? = nil) {
-        _nc.post(name: _name, object: nil, userInfo: userInfo)
+        if Thread.isMainThread {
+            _nc.post(name: _name, object: nil, userInfo: userInfo)
+        }
+        else {
+            let nc = _nc
+            let name = _name
+
+            DispatchQueue.main.async {
+                nc.post(name: name, object: nil, userInfo: userInfo)
+            }
+        }
     }
 
     func register(observer: Any, selector: Selector) {

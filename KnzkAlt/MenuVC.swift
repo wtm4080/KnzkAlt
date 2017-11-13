@@ -13,6 +13,6 @@ class MenuVC: UITableViewController {
         var kc = Keychain.shared
         kc.accessToken = nil
 
-        Notifications.LogoutPerformed.post()
+        Notifications.logoutPerformed.post()
     }
 }

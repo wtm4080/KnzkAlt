@@ -12,11 +12,11 @@ class MainVC: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        Notifications.AccessTokenRefreshed.register(
+        Notifications.accessTokenRefreshed.register(
                 observer: self,
                 selector: #selector(type(of: self)._observeAccessTokenRefreshed(n:))
         )
-        Notifications.LogoutPerformed.register(
+        Notifications.logoutPerformed.register(
                 observer: self,
                 selector: #selector(type(of: self)._observeLogoutPerformed(n:))
         )

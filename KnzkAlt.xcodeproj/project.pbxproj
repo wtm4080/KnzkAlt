@@ -35,13 +35,15 @@
 		3F557620A6190728E09C6B1B /* Pods_KnzkAltTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1441A9221CCB3CD160F614DA /* Pods_KnzkAltTests.framework */; };
 		9AD8BDA67D0C7E0146BDA5F9 /* Pods_KnzkAlt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92B3B098B3DC0D2CC7E8217B /* Pods_KnzkAlt.framework */; };
 		C051022F8045B385E93F3F9D /* ClientManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510F58D66C1F0BE57E6307 /* ClientManager.swift */; };
-		C051037F9E1245BEEEAB1899 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510C0073874BEF0B4E8C82 /* Notification.swift */; };
-		C05103F14ADA0FC3831832C1 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510C0073874BEF0B4E8C82 /* Notification.swift */; };
+		C051037F9E1245BEEEAB1899 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510C0073874BEF0B4E8C82 /* Notifications.swift */; };
+		C05103A5521F23F340AAC4C1 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510E78CEF630B7FD0E98F8 /* DataSource.swift */; };
+		C05103F14ADA0FC3831832C1 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510C0073874BEF0B4E8C82 /* Notifications.swift */; };
 		C0510507594D146212174682 /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = C051012FF1FBD602C5FBD0F4 /* Keychain.swift */; };
 		C051052BB3E9E30B8C8FED8D /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = C051012FF1FBD602C5FBD0F4 /* Keychain.swift */; };
 		C0510620DCF6FB2EC8544273 /* StatusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05108C20D63ADD8371E8E21 /* StatusCell.swift */; };
 		C0510AAEC3A80969B484B4C1 /* StatusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05108C20D63ADD8371E8E21 /* StatusCell.swift */; };
 		C0510B245A8B36872AC592E6 /* ClientManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510F58D66C1F0BE57E6307 /* ClientManager.swift */; };
+		C0510D8D9F4AD754587C208F /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510E78CEF630B7FD0E98F8 /* DataSource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,7 +83,8 @@
 		A6D9B3DB25218238497DA448 /* Pods-KnzkAltTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KnzkAltTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KnzkAltTests/Pods-KnzkAltTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C051012FF1FBD602C5FBD0F4 /* Keychain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Keychain.swift; sourceTree = "<group>"; };
 		C05108C20D63ADD8371E8E21 /* StatusCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusCell.swift; sourceTree = "<group>"; };
-		C0510C0073874BEF0B4E8C82 /* Notification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
+		C0510C0073874BEF0B4E8C82 /* Notifications.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
+		C0510E78CEF630B7FD0E98F8 /* DataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
 		C0510F58D66C1F0BE57E6307 /* ClientManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClientManager.swift; sourceTree = "<group>"; };
 		EECF72E7564B24B31527EAD4 /* Pods-KnzkAlt.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KnzkAlt.release.xcconfig"; path = "Pods/Target Support Files/Pods-KnzkAlt/Pods-KnzkAlt.release.xcconfig"; sourceTree = "<group>"; };
 		F990127F00E99EEB06FA4F22 /* Pods-KnzkAltTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KnzkAltTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-KnzkAltTests/Pods-KnzkAltTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -135,6 +138,7 @@
 				1AB797741FA62DFF006D3265 /* Info.plist */,
 				1AB797661FA62DFF006D3265 /* AppDelegate.swift */,
 				C0510F58D66C1F0BE57E6307 /* ClientManager.swift */,
+				C0510E78CEF630B7FD0E98F8 /* DataSource.swift */,
 				1AB797681FA62DFF006D3265 /* HomeVC.swift */,
 				1AB797911FA64112006D3265 /* InitialVC.swift */,
 				C051012FF1FBD602C5FBD0F4 /* Keychain.swift */,
@@ -142,7 +146,7 @@
 				1AB797941FA641DE006D3265 /* LoginVC.swift */,
 				1AAB136C1FB41DA300844F51 /* MainVC.swift */,
 				1AB7978E1FA63CEB006D3265 /* MenuVC.swift */,
-				C0510C0073874BEF0B4E8C82 /* Notification.swift */,
+				C0510C0073874BEF0B4E8C82 /* Notifications.swift */,
 				1AB7976A1FA62DFF006D3265 /* NotificationVC.swift */,
 				1AB7978B1FA63CC4006D3265 /* ProfileVC.swift */,
 				C05108C20D63ADD8371E8E21 /* StatusCell.swift */,
@@ -445,9 +449,10 @@
 				1AB797691FA62DFF006D3265 /* HomeVC.swift in Sources */,
 				1AB7978F1FA63CEB006D3265 /* MenuVC.swift in Sources */,
 				C0510507594D146212174682 /* Keychain.swift in Sources */,
-				C05103F14ADA0FC3831832C1 /* Notification.swift in Sources */,
+				C05103F14ADA0FC3831832C1 /* Notifications.swift in Sources */,
 				C0510B245A8B36872AC592E6 /* ClientManager.swift in Sources */,
 				C0510AAEC3A80969B484B4C1 /* StatusCell.swift in Sources */,
+				C0510D8D9F4AD754587C208F /* DataSource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -464,9 +469,10 @@
 				1AB7978A1FA63C7A006D3265 /* TootVC.swift in Sources */,
 				1AB7977E1FA62DFF006D3265 /* KnzkAltTests.swift in Sources */,
 				C051052BB3E9E30B8C8FED8D /* Keychain.swift in Sources */,
-				C051037F9E1245BEEEAB1899 /* Notification.swift in Sources */,
+				C051037F9E1245BEEEAB1899 /* Notifications.swift in Sources */,
 				C051022F8045B385E93F3F9D /* ClientManager.swift in Sources */,
 				C0510620DCF6FB2EC8544273 /* StatusCell.swift in Sources */,
+				C05103A5521F23F340AAC4C1 /* DataSource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
