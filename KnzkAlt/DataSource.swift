@@ -7,7 +7,7 @@ import Foundation
 import MastodonKit
 import Hydra
 
-class DataSource: NSObject, UITableViewDataSource, UITableViewDataSourcePrefetching {
+class DataSource: NSObject, UITableViewDataSource{
     static let shared = DataSource()
 
     func tableView(_ _: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -16,12 +16,6 @@ class DataSource: NSObject, UITableViewDataSource, UITableViewDataSourcePrefetch
 
     func tableView(_ _: UITableView, numberOfRowsInSection _: Int) -> Int {
         return _statuses.count
-    }
-
-    func tableView(_ _: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
-    }
-
-    func tableView(_ _: UITableView, cancelPrefetchingForRowsAt indexPaths: [IndexPath]) {
     }
 
     private override init() {

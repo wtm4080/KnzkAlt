@@ -13,7 +13,6 @@ class HomeVC: UITableViewController {
         super.viewDidLoad()
 
         tableView.dataSource = DataSource.shared
-        tableView.prefetchDataSource = DataSource.shared
 
         Notifications.loadedHomeTL.register(
                 observer: self,
