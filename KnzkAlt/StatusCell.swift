@@ -20,6 +20,7 @@ class StatusCell: UITableViewCell {
 
 class StatusCellOwner: NSObject {
     private var _cell: StatusCell!
+    private var _status: Status!
     
     @IBOutlet weak private var iconImageView: UIImageView!
     @IBOutlet weak private var displayNameLabel: UILabel!
@@ -29,7 +30,7 @@ class StatusCellOwner: NSObject {
 
     private let _tootDateFormatter: DateFormatter
     
-    override init() {
+    private override init() {
         _tootDateFormatter = DateFormatter()
         _tootDateFormatter.dateStyle = .none
         _tootDateFormatter.timeStyle = .medium
@@ -43,6 +44,8 @@ class StatusCellOwner: NSObject {
 
     convenience init(status: Status) {
         self.init()
+        
+        _status = status
 
         displayName = status.account.displayName
         userId = status.account.acct
@@ -52,6 +55,10 @@ class StatusCellOwner: NSObject {
 
     var cell: StatusCell {
         return _cell
+    }
+
+    var status: Status {
+        return _status
     }
 
     var iconImage: UIImage? {

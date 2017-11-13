@@ -11,6 +11,8 @@ import UIKit
 class HomeVC: UITableViewController {
     private let _refreshControl = UIRefreshControl()
 
+    private var _reservedRefreshingBottom = false
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -35,28 +37,37 @@ class HomeVC: UITableViewController {
 
     @objc private func _observeLoadedHomeTL(n: Notification) {
         tableView.reloadData()
+
+        _refreshControl.endRefreshing()
+
+        tableView.flashScrollIndicators()
+
+        _reservedRefreshingBottom = false
     }
 
     @objc private func _refresh(sender: UIRefreshControl) {
-        _refreshControl.endRefreshing()
+        Notifications.requestHomeTLTop.post()
     }
 
     private func _refreshBottom() {
-        NSLog("Should refresh!")
+        Notifications.requestHomeTLBottom.post()
     }
 
     override func scrollViewDidScroll(_ sv: UIScrollView) {
-//        NSLog("Bounds: \(sv.bounds)")
-//        NSLog("Content offset: \(sv.contentOffset), size: \(sv.contentSize), inset: \(sv.contentInset)")
+        if !_reservedRefreshingBottom {
+            let tabBarHeight = CGFloat(50)
+            let fixedBoundsHeight = sv.bounds.size.height - tabBarHeight
+            let contentSize = sv.contentSize.height - fixedBoundsHeight
+            let bottomDistance = abs(contentSize - sv.contentOffset.y)
 
-        let tabBarHeight = CGFloat(50)
-        let fixedBoundsHeight = sv.bounds.size.height - tabBarHeight
-        let contentSize = sv.contentSize.height - fixedBoundsHeight
-        let bottomDistance = abs(contentSize - sv.contentOffset.y)
-        //NSLog("Bottom distance: \(bottomDistance)")
+            let bottomRefreshThreshold = CGFloat(50)
 
-        let bottomRefreshThreshold = CGFloat(50)
-        if (bottomDistance < bottomRefreshThreshold) {
+            _reservedRefreshingBottom = bottomDistance < bottomRefreshThreshold
+        }
+    }
+
+    override func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        if _reservedRefreshingBottom {
             _refreshBottom()
         }
     }

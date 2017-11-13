@@ -22,8 +22,8 @@ class ClientManager {
         return _standard
     }
 
-    func homeTL() -> Promise<Result<[Status]>> {
-        let request = Timelines.home()
+    func homeTL(requestRange: RequestRange) -> Promise<Result<[Status]>> {
+        let request = Timelines.home(range: requestRange)
 
         return Promise<Result<[Status]>>(in: .background) {
             [unowned self] resolve, _, _ in

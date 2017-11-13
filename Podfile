@@ -10,7 +10,9 @@ target 'KnzkAlt' do
   # Pods for KnzkAlt
   pod 'HydraAsync'
   pod 'Result', '~> 3.0.0'
-  pod 'KeychainAccess'  
+  pod 'KeychainAccess'
+  pod 'Deque', '~> 3.1'
+
 
   target 'KnzkAltTests' do
     inherit! :search_paths
