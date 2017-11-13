@@ -5,19 +5,21 @@
 
 import Foundation
 
-enum Notifications: String {
-    case accessTokenRefreshed = "access_token_refreshed"
-    case logoutPerformed = "logout_performed"
+enum Notifications {
+    case accessTokenRefreshed
+    case logoutPerformed
 
-    case requestHomeTL = "request_home_tl"
-    case loadedHomeTL = "loaded_home_tl"
+    case requestHomeTL
+    case requestHomeTLTop
+    case requestHomeTLBottom
+    case loadedHomeTL
 
     private var _nc: NotificationCenter {
         return NotificationCenter.default
     }
 
     private var _name: Notification.Name {
-        return Notification.Name(self.rawValue)
+        return Notification.Name(String(describing: self))
     }
 
     func post(userInfo: [AnyHashable: Any]? = nil) {
