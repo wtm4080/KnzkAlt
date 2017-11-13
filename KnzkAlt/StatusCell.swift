@@ -4,6 +4,7 @@
 //
 
 import UIKit
+import MastodonKit
 
 class StatusCell: UITableViewCell {
     static let reuseIdentifier = "Status"
@@ -20,13 +21,19 @@ class StatusCell: UITableViewCell {
 class StatusCellOwner: NSObject {
     private var _cell: StatusCell!
     
-    @IBOutlet weak var iconImageView: UIImageView!
-    @IBOutlet weak var displayNameLabel: UILabel!
-    @IBOutlet weak var userIdLabel: UILabel!
-    @IBOutlet weak var tootDateLabel: UILabel!
-    @IBOutlet weak var contentLabel: UILabel!
+    @IBOutlet weak private var iconImageView: UIImageView!
+    @IBOutlet weak private var displayNameLabel: UILabel!
+    @IBOutlet weak private var userIdLabel: UILabel!
+    @IBOutlet weak private var tootDateLabel: UILabel!
+    @IBOutlet weak private var contentLabel: UILabel!
+
+    private let _tootDateFormatter: DateFormatter
     
     override init() {
+        _tootDateFormatter = DateFormatter()
+        _tootDateFormatter.dateStyle = .none
+        _tootDateFormatter.timeStyle = .medium
+
         super.init()
 
         let bundle = Bundle(for: type(of: self))
@@ -34,7 +41,71 @@ class StatusCellOwner: NSObject {
         _cell = nib.instantiate(withOwner: self).first as! StatusCell
     }
 
+    convenience init(status: Status) {
+        self.init()
+
+        displayName = status.account.displayName
+        userId = status.account.acct
+        tootDate = status.createdAt
+        content = status.content
+    }
+
     var cell: StatusCell {
         return _cell
+    }
+
+    var iconImage: UIImage? {
+        get {
+            return iconImageView.image
+        }
+        set {
+            iconImageView.image = newValue
+        }
+    }
+
+    var displayName: String? {
+        get {
+            return displayNameLabel.text
+        }
+        set {
+            displayNameLabel.text = newValue
+        }
+    }
+
+    var userId: String? {
+        get {
+            return userIdLabel.text
+        }
+        set {
+            if newValue?.hasPrefix("@") ?? false {
+                userIdLabel.text = newValue
+            }
+            else {
+                userIdLabel.text = "@" + (newValue ?? "")
+            }
+        }
+    }
+
+    var tootDate: Date? {
+        get {
+            return _tootDateFormatter.date(from: tootDateLabel.text ?? "")
+        }
+        set {
+            if let date = newValue {
+                tootDateLabel.text = _tootDateFormatter.string(from: date)
+            }
+            else {
+                tootDateLabel.text = nil
+            }
+        }
+    }
+
+    var content: String? {
+        get {
+            return contentLabel.text
+        }
+        set {
+            contentLabel.text = newValue
+        }
     }
 }

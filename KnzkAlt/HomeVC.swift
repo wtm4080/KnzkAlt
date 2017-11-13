@@ -39,21 +39,6 @@ class HomeVC: UITableViewController, UITableViewDataSourcePrefetching {
     func tableView(_ _: UITableView, cancelPrefetchingForRowsAt indexPaths: [IndexPath]) {
     }
 
-    private static func _statusToCell(s: Status) -> StatusCellOwner {
-        let co = StatusCellOwner()
-        co.displayNameLabel.text = s.account.displayName
-        co.userIdLabel.text = s.account.acct
-
-        let f = DateFormatter()
-        f.dateStyle = .none
-        f.timeStyle = .medium
-        co.tootDateLabel.text = f.string(from: s.createdAt)
-
-        co.contentLabel.text = s.content
-
-        return co
-    }
-
     private func _loadStatuses() {
         if _loadingStatuses == nil {
             _loadingStatuses = ClientManager.shared.homeTL().then(in: .main) {
@@ -61,10 +46,10 @@ class HomeVC: UITableViewController, UITableViewDataSourcePrefetching {
 
                 switch result {
                 case .success(let ss, _):
-                    self._statuses = ss.map(HomeVC._statusToCell)
+                    self._statuses = ss.map(StatusCellOwner.init)
 
                     for (i, s) in self._statuses.enumerated() {
-                        if s.iconImageView.image == nil {
+                        if s.iconImage == nil {
                             self._loadIcon(url: URL(string: ss[i].account.avatar)!, at: i)
                         }
                     }
@@ -90,7 +75,7 @@ class HomeVC: UITableViewController, UITableViewDataSourcePrefetching {
 
                 if at < self._statuses.count {
                     let cell = self._statuses[at]
-                    cell.iconImageView.image = image
+                    cell.iconImage = image
 
                     DispatchQueue.main.async {
                         [unowned self] in
