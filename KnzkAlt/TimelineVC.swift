@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HomeVC: UITableViewController {
+class TimelineVC: UITableViewController {
     private let _refreshControl = UIRefreshControl()
 
     private var _reservedRefreshingBottom = false
