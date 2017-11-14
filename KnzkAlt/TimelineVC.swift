@@ -13,6 +13,8 @@ class TimelineVC: UITableViewController {
 
     private var _reservedRefreshingBottom = false
 
+    private let _timelineSwitchOwner = TimelineSwitchOwner()
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -23,6 +25,8 @@ class TimelineVC: UITableViewController {
                 action: #selector(type(of: self)._refresh(sender:)),
                 for: .valueChanged)
         tableView.refreshControl = _refreshControl
+
+        navigationItem.titleView = _timelineSwitchOwner.view
 
         Notifications.loadedHomeTL.register(
                 observer: self,

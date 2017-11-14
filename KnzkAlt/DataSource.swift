@@ -12,7 +12,7 @@ class DataSource: NSObject, UITableViewDataSource{
     static let shared = DataSource()
 
     func tableView(_ _: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return _statuses[indexPath.row].cell
+        return _statuses[indexPath.row].view
     }
 
     func tableView(_ _: UITableView, numberOfRowsInSection _: Int) -> Int {

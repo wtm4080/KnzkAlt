@@ -18,8 +18,7 @@ class StatusCell: UITableViewCell {
     }
 }
 
-class StatusCellOwner: NSObject {
-    private var _cell: StatusCell!
+class StatusCellOwner: NibViewOwner<StatusCell> {
     private var _status: Status!
     
     @IBOutlet weak private var iconImageView: UIImageView!
@@ -36,10 +35,6 @@ class StatusCellOwner: NSObject {
         _tootDateFormatter.timeStyle = .medium
 
         super.init()
-
-        let bundle = Bundle(for: type(of: self))
-        let nib = UINib(nibName: String(describing: StatusCell.self), bundle: bundle)
-        _cell = nib.instantiate(withOwner: self).first as! StatusCell
     }
 
     convenience init(status: Status) {
@@ -51,10 +46,6 @@ class StatusCellOwner: NSObject {
         userId = status.account.acct
         tootDate = status.createdAt
         content = status.content
-    }
-
-    var cell: StatusCell {
-        return _cell
     }
 
     var status: Status {
