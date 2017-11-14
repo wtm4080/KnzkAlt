@@ -8,7 +8,7 @@ import MastodonKit
 import Hydra
 import Deque
 
-class DataSource: NSObject, UITableViewDataSource{
+class DataSource: NSObject, UITableViewDataSource {
     static let shared = DataSource()
 
     func tableView(_ _: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -22,43 +22,19 @@ class DataSource: NSObject, UITableViewDataSource{
     private override init() {
         super.init()
 
-        Notifications.requestHomeTL.register(
+        Notifications.requestTL.register(
                 observer: self,
-                selector: #selector(type(of: self)._observeRequestHomeTL(n:)))
-        Notifications.requestHomeTLTop.register(
-                observer: self,
-                selector: #selector(type(of: self)._observeRequestHomeTLTop(n:)))
-        Notifications.requestHomeTLBottom.register(
-                observer: self,
-                selector: #selector(type(of: self)._observeRequestHomeTLBottom(n:)))
+                selector: #selector(type(of: self)._observeRequestTL(n:)))
     }
 
     deinit {
         Notifications.unregisterAll(observer: self)
     }
 
-    @objc private func _observeRequestHomeTL(n: Any) {
-        _loadStatuses(requestRange: .default)
-    }
-
     private let _loadingLimit = 20
 
-    @objc private func _observeRequestHomeTLTop(n: Any) {
-        if let id = _statuses.first?.status.id {
-            _loadStatuses(requestRange: .since(id: id, limit: _loadingLimit))
-        }
-        else {
-            _loadStatuses(requestRange: .default)
-        }
-    }
-
-    @objc private func _observeRequestHomeTLBottom(n: Any) {
-        if let id = _statuses.last?.status.id {
-            _loadStatuses(requestRange: .max(id: id, limit: _loadingLimit))
-        }
-        else {
-            _loadStatuses(requestRange: .default)
-        }
+    @objc private func _observeRequestTL(n: Any) {
+        _loadStatuses(tlParams: Notifications.tlParams(from: n)!)
     }
 
     private var _loadingStatuses: Promise<Result<[Status]>>?
@@ -67,7 +43,30 @@ class DataSource: NSObject, UITableViewDataSource{
     private var _loadingsIcons: [URL: Promise<Result<Data>>] = [:]
     private var _icons: [URL: UIImage] = [:]
 
-    private func _loadStatuses(requestRange: RequestRange) {
+    private func _tlParamsToRequestRange(_ tlParams: TLParams) -> RequestRange {
+        switch tlParams.pos {
+        case .top:
+            if let id = _statuses.first?.status.id {
+                return .since(id: id, limit: _loadingLimit)
+            }
+            else {
+                return .default
+            }
+        case .bottom:
+            if let id = _statuses.last?.status.id {
+                return .max(id: id, limit: _loadingLimit)
+            }
+            else {
+                return .default
+            }
+        case .unspecified:
+            return .default
+        }
+    }
+
+    private func _loadStatuses(tlParams: TLParams) {
+        let requestRange = _tlParamsToRequestRange(tlParams)
+
         if _loadingStatuses == nil {
             _loadingStatuses = ClientManager.shared.homeTL(requestRange: requestRange).then(in: .main) {
                 [unowned self] result in
@@ -111,7 +110,7 @@ class DataSource: NSObject, UITableViewDataSource{
                 }
 
                 self._loadingStatuses = nil
-                Notifications.loadedHomeTL.post()
+                Notifications.loadedTL.post(tlParams: tlParams)
             }
         }
     }
@@ -128,8 +127,6 @@ class DataSource: NSObject, UITableViewDataSource{
                 if at < self._statuses.count {
                     let cell = self._statuses[at]
                     cell.iconImage = image
-
-                    Notifications.loadedHomeTL.post()
                 }
             default:
                 NSLog("Loading image error: \(result)")

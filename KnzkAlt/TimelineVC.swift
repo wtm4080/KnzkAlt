@@ -28,18 +28,23 @@ class TimelineVC: UITableViewController {
 
         navigationItem.titleView = _timelineSwitchOwner.view
 
-        Notifications.loadedHomeTL.register(
+        Notifications.loadedTL.register(
                 observer: self,
-                selector: #selector(type(of: self)._observeLoadedHomeTL(n:)))
+                selector: #selector(type(of: self)._observeLoadedTL(n:))
+        )
 
-        Notifications.requestHomeTL.post()
+        Notifications.requestTL.post(
+                tlParams: TLParams(kind: .home, pos: .unspecified)
+        )
     }
 
     deinit {
         Notifications.unregisterAll(observer: self)
     }
 
-    @objc private func _observeLoadedHomeTL(n: Notification) {
+    @objc private func _observeLoadedTL(n: Notification) {
+        //let tlParams = Notifications.tlParams(from: n)!
+
         tableView.reloadData()
 
         _refreshControl.endRefreshing()
@@ -50,11 +55,15 @@ class TimelineVC: UITableViewController {
     }
 
     @objc private func _refresh(sender: UIRefreshControl) {
-        Notifications.requestHomeTLTop.post()
+        Notifications.requestTL.post(
+                tlParams: TLParams(kind: .home, pos: .top)
+        )
     }
 
     private func _refreshBottom() {
-        Notifications.requestHomeTLBottom.post()
+        Notifications.requestTL.post(
+                tlParams: TLParams(kind: .home, pos: .bottom)
+        )
     }
 
     override func scrollViewDidScroll(_ sv: UIScrollView) {

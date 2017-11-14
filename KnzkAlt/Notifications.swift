@@ -5,14 +5,29 @@
 
 import Foundation
 
+enum TLKind {
+    case home
+    case local
+    case federation
+}
+
+enum LoadPosition {
+    case top
+    case bottom
+    case unspecified
+}
+
+struct TLParams {
+    let kind: TLKind
+    let pos: LoadPosition
+}
+
 enum Notifications {
     case accessTokenRefreshed
     case logoutPerformed
 
-    case requestHomeTL
-    case requestHomeTLTop
-    case requestHomeTLBottom
-    case loadedHomeTL
+    case requestTL
+    case loadedTL
 
     private var _nc: NotificationCenter {
         return NotificationCenter.default
@@ -22,7 +37,25 @@ enum Notifications {
         return Notification.Name(String(describing: self))
     }
 
-    func post(userInfo: [AnyHashable: Any]? = nil) {
+    func post() {
+        switch self {
+            case .accessTokenRefreshed, .logoutPerformed:
+                _post()
+            default:
+                fatalError("Invalid posting case without params.")
+        }
+    }
+
+    func post(tlParams: TLParams) {
+        switch self {
+            case .requestTL, .loadedTL:
+                _post(userInfo: [String(describing: TLParams.self): tlParams])
+            default:
+                fatalError("Invalid posting case with TLParams: \(String(describing: self))")
+        }
+    }
+
+    private func _post(userInfo: [AnyHashable: Any]? = nil) {
         if Thread.isMainThread {
             _nc.post(name: _name, object: nil, userInfo: userInfo)
         }
@@ -46,5 +79,17 @@ enum Notifications {
 
     static func unregisterAll(observer: Any) {
         NotificationCenter.default.removeObserver(observer)
+    }
+
+    static func tlParams(from n: Any) -> TLParams? {
+        guard let userInfo = (n as! Notification).userInfo else {
+            return nil
+        }
+
+        guard let params = userInfo[String(describing: TLParams.self)] else {
+            return nil
+        }
+
+        return params as? TLParams
     }
 }
