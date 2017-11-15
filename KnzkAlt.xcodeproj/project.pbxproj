@@ -36,20 +36,24 @@
 		1AB797961FA641DE006D3265 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB797941FA641DE006D3265 /* LoginVC.swift */; };
 		3F557620A6190728E09C6B1B /* Pods_KnzkAltTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1441A9221CCB3CD160F614DA /* Pods_KnzkAltTests.framework */; };
 		9AD8BDA67D0C7E0146BDA5F9 /* Pods_KnzkAlt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92B3B098B3DC0D2CC7E8217B /* Pods_KnzkAlt.framework */; };
+		C05100EC91B6E1765FC8196F /* IconStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510054A28107527411C10A /* IconStorage.swift */; };
 		C0510169E259F193A6BC6D8A /* NibViewOwner.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05101716E8E1EF871FA7B83 /* NibViewOwner.swift */; };
 		C0510170D7DB9C24A414C466 /* TimelineSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510BF7B092B3F32B183235 /* TimelineSwitch.swift */; };
 		C051022F8045B385E93F3F9D /* ClientManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510F58D66C1F0BE57E6307 /* ClientManager.swift */; };
+		C0510322552B7BC134908B3C /* DataSourceTimeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510E996A2CEB337ECA28AB /* DataSourceTimeline.swift */; };
 		C051037F9E1245BEEEAB1899 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510C0073874BEF0B4E8C82 /* Notifications.swift */; };
 		C05103A5521F23F340AAC4C1 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510E78CEF630B7FD0E98F8 /* DataSource.swift */; };
 		C05103F14ADA0FC3831832C1 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510C0073874BEF0B4E8C82 /* Notifications.swift */; };
 		C0510507594D146212174682 /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = C051012FF1FBD602C5FBD0F4 /* Keychain.swift */; };
 		C051052BB3E9E30B8C8FED8D /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = C051012FF1FBD602C5FBD0F4 /* Keychain.swift */; };
 		C0510620DCF6FB2EC8544273 /* StatusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05108C20D63ADD8371E8E21 /* StatusCell.swift */; };
+		C05106C22C6FBC9327CCF73A /* DataSourceTimeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510E996A2CEB337ECA28AB /* DataSourceTimeline.swift */; };
 		C0510AAEC3A80969B484B4C1 /* StatusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05108C20D63ADD8371E8E21 /* StatusCell.swift */; };
 		C0510B245A8B36872AC592E6 /* ClientManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510F58D66C1F0BE57E6307 /* ClientManager.swift */; };
 		C0510CE8752219D4CD0E8BF1 /* TimelineSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510BF7B092B3F32B183235 /* TimelineSwitch.swift */; };
 		C0510D8CA3EBD322E138E114 /* NibViewOwner.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05101716E8E1EF871FA7B83 /* NibViewOwner.swift */; };
 		C0510D8D9F4AD754587C208F /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510E78CEF630B7FD0E98F8 /* DataSource.swift */; };
+		C0510E2786ED2B2F5EE9ACB0 /* IconStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510054A28107527411C10A /* IconStorage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,12 +92,14 @@
 		8345777460A049931A822898 /* Pods-KnzkAlt.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KnzkAlt.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KnzkAlt/Pods-KnzkAlt.debug.xcconfig"; sourceTree = "<group>"; };
 		92B3B098B3DC0D2CC7E8217B /* Pods_KnzkAlt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KnzkAlt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6D9B3DB25218238497DA448 /* Pods-KnzkAltTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KnzkAltTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KnzkAltTests/Pods-KnzkAltTests.debug.xcconfig"; sourceTree = "<group>"; };
+		C0510054A28107527411C10A /* IconStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IconStorage.swift; sourceTree = "<group>"; };
 		C051012FF1FBD602C5FBD0F4 /* Keychain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Keychain.swift; sourceTree = "<group>"; };
 		C05101716E8E1EF871FA7B83 /* NibViewOwner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NibViewOwner.swift; sourceTree = "<group>"; };
 		C05108C20D63ADD8371E8E21 /* StatusCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusCell.swift; sourceTree = "<group>"; };
 		C0510BF7B092B3F32B183235 /* TimelineSwitch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineSwitch.swift; sourceTree = "<group>"; };
 		C0510C0073874BEF0B4E8C82 /* Notifications.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
 		C0510E78CEF630B7FD0E98F8 /* DataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
+		C0510E996A2CEB337ECA28AB /* DataSourceTimeline.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataSourceTimeline.swift; sourceTree = "<group>"; };
 		C0510F58D66C1F0BE57E6307 /* ClientManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClientManager.swift; sourceTree = "<group>"; };
 		EECF72E7564B24B31527EAD4 /* Pods-KnzkAlt.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KnzkAlt.release.xcconfig"; path = "Pods/Target Support Files/Pods-KnzkAlt/Pods-KnzkAlt.release.xcconfig"; sourceTree = "<group>"; };
 		F990127F00E99EEB06FA4F22 /* Pods-KnzkAltTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KnzkAltTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-KnzkAltTests/Pods-KnzkAltTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -148,6 +154,8 @@
 				1AB797661FA62DFF006D3265 /* AppDelegate.swift */,
 				C0510F58D66C1F0BE57E6307 /* ClientManager.swift */,
 				C0510E78CEF630B7FD0E98F8 /* DataSource.swift */,
+				C0510E996A2CEB337ECA28AB /* DataSourceTimeline.swift */,
+				C0510054A28107527411C10A /* IconStorage.swift */,
 				1AB797911FA64112006D3265 /* InitialVC.swift */,
 				C051012FF1FBD602C5FBD0F4 /* Keychain.swift */,
 				1AAB13691FB370C100844F51 /* Login.swift */,
@@ -471,6 +479,8 @@
 				C0510D8D9F4AD754587C208F /* DataSource.swift in Sources */,
 				C0510169E259F193A6BC6D8A /* NibViewOwner.swift in Sources */,
 				C0510CE8752219D4CD0E8BF1 /* TimelineSwitch.swift in Sources */,
+				C05106C22C6FBC9327CCF73A /* DataSourceTimeline.swift in Sources */,
+				C0510E2786ED2B2F5EE9ACB0 /* IconStorage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -493,6 +503,8 @@
 				C05103A5521F23F340AAC4C1 /* DataSource.swift in Sources */,
 				C0510D8CA3EBD322E138E114 /* NibViewOwner.swift in Sources */,
 				C0510170D7DB9C24A414C466 /* TimelineSwitch.swift in Sources */,
+				C0510322552B7BC134908B3C /* DataSourceTimeline.swift in Sources */,
+				C05100EC91B6E1765FC8196F /* IconStorage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

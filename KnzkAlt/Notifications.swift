@@ -81,8 +81,8 @@ enum Notifications {
         NotificationCenter.default.removeObserver(observer)
     }
 
-    static func tlParams(from n: Any) -> TLParams? {
-        guard let userInfo = (n as! Notification).userInfo else {
+    static func tlParams(from n: Notification) -> TLParams? {
+        guard let userInfo = n.userInfo else {
             return nil
         }
 
