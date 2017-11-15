@@ -15,6 +15,8 @@ class TimelineVC: UITableViewController {
 
     private let _timelineSwitchOwner = TimelineSwitchOwner()
 
+    private var _tlTopIndexPaths: [TLKind: IndexPath] = [:]
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -56,11 +58,14 @@ class TimelineVC: UITableViewController {
 
     @objc private func _observeSwitchedTL(n: Notification) {
         tableView.reloadData()
-
-        tableView.flashScrollIndicators()
         
         if tableView.numberOfRows(inSection: 0) == 0 {
             _postRequestTL(pos: .unspecified)
+        }
+        else if let topIndexPath = _tlTopIndexPaths[_timelineSwitchOwner.currentTLKind] {
+            tableView.scrollToRow(at: topIndexPath, at: .top, animated: false)
+
+            tableView.flashScrollIndicators()
         }
     }
 
@@ -91,9 +96,15 @@ class TimelineVC: UITableViewController {
         }
     }
 
+    override func scrollViewWillBeginDecelerating(_ scrollView: UIScrollView) {
+        _tlTopIndexPaths[_timelineSwitchOwner.currentTLKind] = tableView.indexPathsForVisibleRows?.first
+    }
+
     override func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         if _reservedRefreshingBottom {
             _refreshBottom()
         }
+
+        _tlTopIndexPaths[_timelineSwitchOwner.currentTLKind] = tableView.indexPathsForVisibleRows?.first
     }
 }
