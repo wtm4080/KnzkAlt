@@ -32,10 +32,12 @@ class TimelineVC: UITableViewController {
                 observer: self,
                 selector: #selector(type(of: self)._observeLoadedTL(n:))
         )
-
-        Notifications.requestTL.post(
-                tlParams: TLParams(kind: .home, pos: .unspecified)
+        Notifications.switchedTL.register(
+                observer: self,
+                selector: #selector(type(of: self)._observeSwitchedTL(n:))
         )
+
+        _postRequestTL(pos: .unspecified)
     }
 
     deinit {
@@ -43,8 +45,6 @@ class TimelineVC: UITableViewController {
     }
 
     @objc private func _observeLoadedTL(n: Notification) {
-        //let tlParams = Notifications.tlParams(from: n)!
-
         tableView.reloadData()
 
         _refreshControl.endRefreshing()
@@ -54,15 +54,27 @@ class TimelineVC: UITableViewController {
         _reservedRefreshingBottom = false
     }
 
+    @objc private func _observeSwitchedTL(n: Notification) {
+        tableView.reloadData()
+
+        tableView.flashScrollIndicators()
+        
+        if tableView.numberOfRows(inSection: 0) == 0 {
+            _postRequestTL(pos: .unspecified)
+        }
+    }
+
     @objc private func _refresh(sender: UIRefreshControl) {
-        Notifications.requestTL.post(
-                tlParams: TLParams(kind: .home, pos: .top)
-        )
+        _postRequestTL(pos: .top)
     }
 
     private func _refreshBottom() {
+        _postRequestTL(pos: .bottom)
+    }
+
+    private func _postRequestTL(pos: LoadPosition) {
         Notifications.requestTL.post(
-                tlParams: TLParams(kind: .home, pos: .bottom)
+                tlParams: TLParams(kind: _timelineSwitchOwner.currentTLKind, pos: pos)
         )
     }
 

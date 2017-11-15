@@ -19,19 +19,22 @@ class DataSourceTimeline {
     }
 
     func loadStatuses(tlParams: TLParams) {
-        let requestRange = _tlParamsToRequestRange(tlParams)
-
         if _loadingStatuses == nil {
-            _loadingStatuses = ClientManager.shared.homeTL(requestRange: requestRange).then(in: .main) {
+            _loadingStatuses = ClientManager.shared.requestTL(
+                    tlParams: tlParams,
+                    firstId: _statuses.first?.status.id,
+                    lastId: _statuses.last?.status.id,
+                    limit: _loadingLimit
+            ).then(in: .main) {
                 [unowned self] result in
 
                 switch result {
                 case .success(let ss, _):
-                    switch requestRange {
-                    case .default, .limit(_):
+                    switch tlParams.pos {
+                    case .unspecified:
                         self._statuses = Deque(ss.map(StatusCellOwner.init))
 
-                    case .since(_, _):
+                    case .top:
                         let topStatuses = ss.map(StatusCellOwner.init)
                         if
                                 let newLast = topStatuses.last,
@@ -42,7 +45,7 @@ class DataSourceTimeline {
 
                         self._statuses.insert(contentsOf: topStatuses, at: 0)
 
-                    case .max(_, _):
+                    case .bottom:
                         let bottomStatuses = ss.map(StatusCellOwner.init)
                         if
                                 let newFirst = bottomStatuses.first,
@@ -68,27 +71,6 @@ class DataSourceTimeline {
                 self._loadingStatuses = nil
                 Notifications.loadedTL.post(tlParams: tlParams)
             }
-        }
-    }
-
-    private func _tlParamsToRequestRange(_ tlParams: TLParams) -> RequestRange {
-        switch tlParams.pos {
-        case .top:
-            if let id = _statuses.first?.status.id {
-                return .since(id: id, limit: _loadingLimit)
-            }
-            else {
-                return .default
-            }
-        case .bottom:
-            if let id = _statuses.last?.status.id {
-                return .max(id: id, limit: _loadingLimit)
-            }
-            else {
-                return .default
-            }
-        case .unspecified:
-            return .default
         }
     }
 }

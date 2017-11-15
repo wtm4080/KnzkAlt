@@ -14,15 +14,33 @@ class TimelineSwitch: UIView {
 }
 
 class TimelineSwitchOwner: NibViewOwner<TimelineSwitch> {
+    private var _currentTLKind = TLKind.home
+
+    var currentTLKind: TLKind {
+        return _currentTLKind
+    }
+
     @IBAction func homeAction(_ sender: Any) {
-        NSLog("Home timeline!")
+        _currentTLKind = .home
+
+        Notifications.switchTL.post(
+                tlParams: TLParams(kind: .home, pos: .unspecified)
+        )
     }
     
     @IBAction func localAction(_ sender: Any) {
-        NSLog("Local timeline!")
+        _currentTLKind = .local
+
+        Notifications.switchTL.post(
+                tlParams: TLParams(kind: .local, pos: .unspecified)
+        )
     }
     
     @IBAction func federationAction(_ sender: Any) {
-        NSLog("Federation timeline!")
+        _currentTLKind = .federation
+
+        Notifications.switchTL.post(
+                tlParams: TLParams(kind: .federation, pos: .unspecified)
+        )
     }
 }

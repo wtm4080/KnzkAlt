@@ -22,8 +22,27 @@ class ClientManager {
         return _standard
     }
 
-    func homeTL(requestRange: RequestRange) -> Promise<Result<[Status]>> {
-        let request = Timelines.home(range: requestRange)
+    func requestTL(
+            tlParams: TLParams,
+            firstId: Int?,
+            lastId: Int?,
+            limit: Int) -> Promise<Result<[Status]>> {
+
+        let requestRange = _tlParamsToRequestRange(
+                tlParams,
+                firstId: firstId,
+                lastId: lastId,
+                limit: limit)
+
+        let request: Request<[Status]>
+        switch tlParams.kind {
+            case .home:
+                request = Timelines.home(range: requestRange)
+            case .local:
+                request = Timelines.public(local: true, range: requestRange)
+            case .federation:
+                request = Timelines.public(local: false, range: requestRange)
+        }
 
         return Promise<Result<[Status]>>(in: .background) {
             [unowned self] resolve, _, _ in
@@ -33,6 +52,32 @@ class ClientManager {
 
                 resolve(statuses)
             }
+        }
+    }
+
+    private func _tlParamsToRequestRange(
+            _ tlParams: TLParams,
+            firstId: Int?,
+            lastId: Int?,
+            limit: Int) -> RequestRange {
+
+        switch tlParams.pos {
+        case .top:
+            if let id = firstId {
+                return .since(id: id, limit: limit)
+            }
+            else {
+                return .default
+            }
+        case .bottom:
+            if let id = lastId {
+                return .max(id: id, limit: limit)
+            }
+            else {
+                return .default
+            }
+        case .unspecified:
+            return .default
         }
     }
 }

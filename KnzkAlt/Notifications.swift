@@ -29,6 +29,9 @@ enum Notifications {
     case requestTL
     case loadedTL
 
+    case switchTL
+    case switchedTL
+
     private var _nc: NotificationCenter {
         return NotificationCenter.default
     }
@@ -48,7 +51,7 @@ enum Notifications {
 
     func post(tlParams: TLParams) {
         switch self {
-            case .requestTL, .loadedTL:
+            case .requestTL, .loadedTL, .switchTL, .switchedTL:
                 _post(userInfo: [String(describing: TLParams.self): tlParams])
             default:
                 fatalError("Invalid posting case with TLParams: \(String(describing: self))")
