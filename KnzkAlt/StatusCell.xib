@@ -69,6 +69,9 @@
                             <constraint firstAttribute="width" constant="32" id="sqq-uz-g3q"/>
                         </constraints>
                         <state key="normal" title="Rep"/>
+                        <connections>
+                            <action selector="replyAction:" destination="-1" eventType="touchUpInside" id="Kb7-jS-PDG"/>
+                        </connections>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uB6-0h-aSa">
                         <rect key="frame" x="116" y="93" width="32" height="32"/>
@@ -76,6 +79,9 @@
                             <constraint firstAttribute="width" constant="32" id="ue3-so-DUL"/>
                         </constraints>
                         <state key="normal" title="BT"/>
+                        <connections>
+                            <action selector="btAction:" destination="-1" eventType="touchUpInside" id="eUg-lf-b6e"/>
+                        </connections>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hxy-24-RLM">
                         <rect key="frame" x="156" y="93" width="32" height="32"/>
@@ -83,6 +89,9 @@
                             <constraint firstAttribute="width" constant="32" id="5Lk-mE-Vis"/>
                         </constraints>
                         <state key="normal" title="Fav"/>
+                        <connections>
+                            <action selector="favAction:" destination="-1" eventType="touchUpInside" id="At9-2j-no4"/>
+                        </connections>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Content" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qij-Si-OYS">
                         <rect key="frame" x="76" y="40" width="283" height="45"/>

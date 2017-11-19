@@ -7,6 +7,13 @@ import Foundation
 import MastodonKit
 import Hydra
 
+enum StatusAction {
+    case reblog
+    case unreblog
+    case favourite
+    case unfavourite
+}
+
 class ClientManager {
     static let shared = ClientManager()
     private init() {}
@@ -48,9 +55,29 @@ class ClientManager {
             [unowned self] resolve, _, _ in
 
             self._standard.run(request) {
-                statuses in
+                resolve($0)
+            }
+        }
+    }
 
-                resolve(statuses)
+    func performStatusAction(statusId: Int, action: StatusAction) -> Promise<Result<Status>> {
+        let request: Request<Status>
+        switch action {
+            case .reblog:
+                request = Statuses.reblog(id: statusId)
+            case .unreblog:
+                request = Statuses.unreblog(id: statusId)
+            case .favourite:
+                request = Statuses.favourite(id: statusId)
+            case .unfavourite:
+                request = Statuses.unfavourite(id: statusId)
+        }
+
+        return Promise<Result<Status>>(in: .background) {
+            [unowned self] resolve, _, _ in
+
+            self._standard.run(request) {
+                resolve($0)
             }
         }
     }

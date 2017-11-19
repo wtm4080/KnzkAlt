@@ -154,4 +154,54 @@ class StatusCellOwner: NibViewOwner<StatusCell> {
             btByImageView.image = newValue
         }
     }
+
+    @IBAction func replyAction(_ sender: Any) {
+        NSLog("Reply is not implemented yet!")
+    }
+
+    @IBAction func btAction(_ sender: Any) {
+        _performStatusAction(
+                button: btButton,
+                doAction: .reblog,
+                undoAction: .unreblog,
+                isSelected: {$0.reblogged})
+    }
+
+    @IBAction func favAction(_ sender: Any) {
+        _performStatusAction(
+                button: favButton,
+                doAction: .favourite,
+                undoAction: .unfavourite,
+                isSelected: {$0.favourited})
+    }
+
+    private func _performStatusAction(
+            button: UIButton,
+            doAction: StatusAction,
+            undoAction: StatusAction,
+            isSelected: @escaping (Status) -> Bool?
+    ) {
+        let isSelectedPrevious = button.isSelected
+        button.isSelected = !isSelectedPrevious
+
+        let action: StatusAction
+        if isSelectedPrevious {
+            action = undoAction
+        }
+        else {
+            action = doAction
+        }
+
+        ClientManager.shared.performStatusAction(
+                statusId: _status.id,
+                action: action
+        ).then(in: .main) {
+            switch $0 {
+            case .success(let s, _):
+                button.isSelected = isSelected(s) ?? isSelectedPrevious
+            default:
+                button.isSelected = isSelectedPrevious
+            }
+        }
+    }
 }
