@@ -14,7 +14,19 @@ class IconStorage {
     private var _loadingsIcons: [URL: Promise<Result<Data>>] = [:]
     private var _icons: [URL: UIImage] = [:]
 
-    func loadIcon(url: URL, for statusCell: StatusCellOwner) {
+    func loadIcon(url: URL, for s: StatusCellOwner) {
+        _loadIcon(url: url) {
+            s.iconImage = $0
+        }
+    }
+
+    func loadBtByIcon(url: URL, for s: StatusCellOwner) {
+        _loadIcon(url: url) {
+            s.btByIconImage = $0
+        }
+    }
+
+    private func _loadIcon(url: URL, for statusCellSetter: @escaping (UIImage?) -> ()) {
         let updateIcon = {
             [unowned self] (result: Result<Data>) in
 
@@ -22,7 +34,7 @@ class IconStorage {
             case .success(let data, _):
                 let image = UIImage(data: data)
                 self._icons[url] = image
-                statusCell.iconImage = image
+                statusCellSetter(image)
             default:
                 NSLog("Loading image error: \(result)")
             }

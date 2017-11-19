@@ -56,14 +56,6 @@ class DataSourceTimeline {
 
                         self._statuses.append(contentsOf: bottomStatuses)
                     }
-
-                    for s in self._statuses {
-                        if s.iconImage == nil {
-                            IconStorage.shared.loadIcon(
-                                    url: URL(string: s.status.account.avatar)!,
-                                    for: s)
-                        }
-                    }
                 default:
                     NSLog("Loading home error: \(result)")
                 }

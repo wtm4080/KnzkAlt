@@ -26,7 +26,9 @@ class StatusCellOwner: NibViewOwner<StatusCell> {
     @IBOutlet weak private var userIdLabel: UILabel!
     @IBOutlet weak private var tootDateLabel: UILabel!
     @IBOutlet weak private var contentLabel: UILabel!
-
+    @IBOutlet weak private var btByLabel: UILabel!
+    @IBOutlet weak private var btByImageView: UIImageView!
+    
     private let _tootDateFormatter: DateFormatter
     
     private override init() {
@@ -42,10 +44,32 @@ class StatusCellOwner: NibViewOwner<StatusCell> {
         
         _status = status
 
-        displayName = status.account.displayName
-        userId = status.account.acct
-        tootDate = status.createdAt
-        content = status.content
+        if let reblogStatus = status.reblog {
+            displayName = reblogStatus.account.displayName
+            userId = reblogStatus.account.acct
+            tootDate = reblogStatus.createdAt
+            content = reblogStatus.content
+
+            btByLabel.isHidden = false
+            btByImageView.isHidden = false
+
+            IconStorage.shared.loadIcon(
+                    url: URL(string: reblogStatus.account.avatar)!,
+                    for: self)
+            IconStorage.shared.loadBtByIcon(
+                    url: URL(string: status.account.avatar)!,
+                    for: self)
+        }
+        else {
+            displayName = status.account.displayName
+            userId = status.account.acct
+            tootDate = status.createdAt
+            content = status.content
+
+            IconStorage.shared.loadIcon(
+                    url: URL(string: status.account.avatar)!,
+                    for: self)
+        }
     }
 
     var status: Status {
@@ -104,6 +128,15 @@ class StatusCellOwner: NibViewOwner<StatusCell> {
         }
         set {
             contentLabel.text = newValue
+        }
+    }
+    
+    var btByIconImage: UIImage? {
+        get {
+            return btByImageView.image
+        }
+        set {
+            btByImageView.image = newValue
         }
     }
 }
