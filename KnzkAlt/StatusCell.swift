@@ -28,6 +28,8 @@ class StatusCellOwner: NibViewOwner<StatusCell> {
     @IBOutlet weak private var contentLabel: UILabel!
     @IBOutlet weak private var btByLabel: UILabel!
     @IBOutlet weak private var btByImageView: UIImageView!
+    @IBOutlet weak private var btButton: UIButton!
+    @IBOutlet weak private var favButton: UIButton!
     
     private let _tootDateFormatter: DateFormatter
     
@@ -44,11 +46,27 @@ class StatusCellOwner: NibViewOwner<StatusCell> {
         
         _status = status
 
+        let setProps = {
+            [unowned self] (s: Status) in
+
+            self.displayName = s.account.displayName
+            self.userId = s.account.acct
+            self.tootDate = s.createdAt
+            self.content = s.content
+
+            switch s.visibility {
+                case .public, .unlisted:
+                    self.btButton.isEnabled = true
+                    self.btButton.isSelected = s.reblogged ?? false
+                case .private, .direct:
+                    self.btButton.isEnabled = false
+            }
+
+            self.favButton.isSelected = s.favourited ?? false
+        }
+
         if let reblogStatus = status.reblog {
-            displayName = reblogStatus.account.displayName
-            userId = reblogStatus.account.acct
-            tootDate = reblogStatus.createdAt
-            content = reblogStatus.content
+            setProps(reblogStatus)
 
             btByLabel.isHidden = false
             btByImageView.isHidden = false
@@ -61,10 +79,7 @@ class StatusCellOwner: NibViewOwner<StatusCell> {
                     for: self)
         }
         else {
-            displayName = status.account.displayName
-            userId = status.account.acct
-            tootDate = status.createdAt
-            content = status.content
+            setProps(status)
 
             IconStorage.shared.loadIcon(
                     url: URL(string: status.account.avatar)!,

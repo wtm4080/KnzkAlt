@@ -12,10 +12,12 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="StatusCellOwner" customModule="KnzkAlt" customModuleProvider="target">
             <connections>
+                <outlet property="btButton" destination="uB6-0h-aSa" id="exh-Up-seW"/>
                 <outlet property="btByImageView" destination="W04-4h-Uib" id="JXm-oP-oog"/>
                 <outlet property="btByLabel" destination="fWT-X5-nkZ" id="uEL-ta-JbT"/>
                 <outlet property="contentLabel" destination="qij-Si-OYS" id="lN2-ai-eNe"/>
                 <outlet property="displayNameLabel" destination="tpe-AT-NBQ" id="tKF-rn-3DJ"/>
+                <outlet property="favButton" destination="Hxy-24-RLM" id="C69-q6-xp3"/>
                 <outlet property="iconImageView" destination="OmA-YZ-jIW" id="9Rs-u1-5cg"/>
                 <outlet property="tootDateLabel" destination="jlF-nd-LG9" id="uzy-W1-XLx"/>
                 <outlet property="userIdLabel" destination="4DP-Pd-zx7" id="kln-M3-n1V"/>
