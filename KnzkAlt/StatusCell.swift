@@ -25,7 +25,7 @@ class StatusCellOwner: NibViewOwner<StatusCell> {
     @IBOutlet weak private var displayNameLabel: UILabel!
     @IBOutlet weak private var userIdLabel: UILabel!
     @IBOutlet weak private var tootDateLabel: UILabel!
-    @IBOutlet weak private var contentLabel: UILabel!
+    @IBOutlet weak private var contentView: UIView!
     @IBOutlet weak private var btByLabel: UILabel!
     @IBOutlet weak private var btByImageView: UIImageView!
     @IBOutlet weak private var btButton: UIButton!
@@ -137,12 +137,18 @@ class StatusCellOwner: NibViewOwner<StatusCell> {
         }
     }
 
-    var content: String? {
+    var content: String {
         get {
-            return contentLabel.text
+            return bbCodeView.text
         }
         set {
-            contentLabel.text = newValue
+            bbCodeView.text = newValue
+        }
+    }
+    
+    var bbCodeView: BBCodeView {
+        get {
+            return (contentView as! StatusContentContainerView).bbCodeView
         }
     }
     

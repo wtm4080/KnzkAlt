@@ -4,36 +4,91 @@
 //
 
 import UIKit
+import Fuzi
 
 class BBCodeView: UITextView {
-    private let _textStorage: NSTextStorage
+    private let _textStorage = NSTextStorage()
 
-    required init(frame: CGRect, content: String, isEditable: Bool = false) {
-        _textStorage = BBCodeView._createTextStorage(contentHTML: content)
+    required init(frame: CGRect) {
+//        let textContainer = NSTextContainer(size: frame.size)
+//        textContainer.widthTracksTextView = true
+//        textContainer.heightTracksTextView = true
+//
+//        super.init(frame: frame, textContainer: textContainer)
+        super.init(frame: frame, textContainer: nil)
 
-        let textContainer = NSTextContainer(size: frame.size)
-        textContainer.widthTracksTextView = true
-        textContainer.heightTracksTextView = true
+//        let layoutManager = BBCodeLayoutManager()
+//        layoutManager.addTextContainer(textContainer)
+//
+//        _textStorage.addLayoutManager(layoutManager)
 
-        let layoutManager = BBCodeLayoutManager()
-        layoutManager.addTextContainer(textContainer)
-        _textStorage.addLayoutManager(layoutManager)
-
-        super.init(frame: frame, textContainer: textContainer)
-
-        self.isEditable = isEditable
+        isEditable = false
     }
 
     required init?(coder aDecoder: NSCoder) {
-        fatalError("BBCodeView does not support init(coder:).")
+        fatalError("BBCodeView does not support init?(coder:).")
     }
 
-    override func draw(_ rect: CGRect) {
-        super.draw(rect)
+    override var intrinsicContentSize: CGSize {
+        return bounds.size
     }
 
-    private static func _createTextStorage(contentHTML: String) -> NSTextStorage {
-        return NSTextStorage(string: contentHTML)
+//    override var text: String! {
+//        get {
+//            return _textStorage.string
+//        }
+//        set {
+//            _setTextStorage(contentHTML: newValue)
+//
+//            setNeedsLayout()
+//        }
+//    }
+
+//    override func layoutSubviews() {
+//        super.layoutSubviews()
+//    }
+
+//    override func draw(_ rect: CGRect) {
+//        super.draw(rect)
+//    }
+
+    private func _setTextStorage(contentHTML: String) {
+        let notParsed = { NSAttributedString(string: contentHTML) }
+
+        let set: (NSAttributedString) -> Void = {
+            [unowned self] in
+
+            self._textStorage.setAttributedString($0)
+        }
+
+        guard let document = try? XMLDocument(string: contentHTML) else {
+            set(notParsed())
+
+            return
+        }
+
+        guard let root = document.root else {
+            set(notParsed())
+
+            return
+        }
+
+        let s = NSMutableAttributedString()
+
+        BBCodeView._traverseHTML(current: root, storage: s)
+
+        set(s)
+    }
+
+    private static func _traverseHTML(current: XMLElement, storage: NSMutableAttributedString) {
+        switch current.tag.map({ $0.lowercased() }) ?? "" {
+//            case "p":
+//                current.children.forEach {
+//                    _traverseHTML(current: $0, storage: storage)
+//                }
+            default:
+                storage.append(NSAttributedString(string: current.stringValue))
+        }
     }
 }
 

@@ -12,7 +12,7 @@ target 'KnzkAlt' do
   pod 'Result', '~> 3.0.0'
   pod 'KeychainAccess'
   pod 'Deque', '~> 3.1'
-  pod 'Fuzi', '~> 1.0.0'
+  pod 'Fuzi', '~> 2.0.0'
 
 
   target 'KnzkAltTests' do

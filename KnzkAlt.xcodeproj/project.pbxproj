@@ -49,12 +49,14 @@
 		C0510620DCF6FB2EC8544273 /* StatusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05108C20D63ADD8371E8E21 /* StatusCell.swift */; };
 		C05106C22C6FBC9327CCF73A /* DataSourceTimeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510E996A2CEB337ECA28AB /* DataSourceTimeline.swift */; };
 		C05107EF09B1BF0C3D7D424B /* BBCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510E861D583AA341DF3DF6 /* BBCodeView.swift */; };
+		C05108E85C5B23571843038D /* StatusContentContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510BA3BD81793EAFE37660 /* StatusContentContainerView.swift */; };
 		C0510A76DB37079062A00410 /* BBCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510E861D583AA341DF3DF6 /* BBCodeView.swift */; };
 		C0510AAEC3A80969B484B4C1 /* StatusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05108C20D63ADD8371E8E21 /* StatusCell.swift */; };
 		C0510B245A8B36872AC592E6 /* ClientManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510F58D66C1F0BE57E6307 /* ClientManager.swift */; };
 		C0510CE8752219D4CD0E8BF1 /* TimelineSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510BF7B092B3F32B183235 /* TimelineSwitch.swift */; };
 		C0510D8CA3EBD322E138E114 /* NibViewOwner.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05101716E8E1EF871FA7B83 /* NibViewOwner.swift */; };
 		C0510D8D9F4AD754587C208F /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510E78CEF630B7FD0E98F8 /* DataSource.swift */; };
+		C0510DB6EDDD7DE98C884A9B /* StatusContentContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510BA3BD81793EAFE37660 /* StatusContentContainerView.swift */; };
 		C0510E2786ED2B2F5EE9ACB0 /* IconStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510054A28107527411C10A /* IconStorage.swift */; };
 /* End PBXBuildFile section */
 
@@ -98,6 +100,7 @@
 		C051012FF1FBD602C5FBD0F4 /* Keychain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Keychain.swift; sourceTree = "<group>"; };
 		C05101716E8E1EF871FA7B83 /* NibViewOwner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NibViewOwner.swift; sourceTree = "<group>"; };
 		C05108C20D63ADD8371E8E21 /* StatusCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusCell.swift; sourceTree = "<group>"; };
+		C0510BA3BD81793EAFE37660 /* StatusContentContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusContentContainerView.swift; sourceTree = "<group>"; };
 		C0510BF7B092B3F32B183235 /* TimelineSwitch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineSwitch.swift; sourceTree = "<group>"; };
 		C0510C0073874BEF0B4E8C82 /* Notifications.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
 		C0510E78CEF630B7FD0E98F8 /* DataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
@@ -155,6 +158,7 @@
 			children = (
 				1AB797741FA62DFF006D3265 /* Info.plist */,
 				1AB797661FA62DFF006D3265 /* AppDelegate.swift */,
+				C0510E861D583AA341DF3DF6 /* BBCodeView.swift */,
 				C0510F58D66C1F0BE57E6307 /* ClientManager.swift */,
 				C0510E78CEF630B7FD0E98F8 /* DataSource.swift */,
 				C0510E996A2CEB337ECA28AB /* DataSourceTimeline.swift */,
@@ -170,6 +174,7 @@
 				1AB7976A1FA62DFF006D3265 /* NotificationVC.swift */,
 				1AB7978B1FA63CC4006D3265 /* ProfileVC.swift */,
 				C05108C20D63ADD8371E8E21 /* StatusCell.swift */,
+				C0510BA3BD81793EAFE37660 /* StatusContentContainerView.swift */,
 				C0510BF7B092B3F32B183235 /* TimelineSwitch.swift */,
 				1AB797681FA62DFF006D3265 /* TimelineVC.swift */,
 				1AB797881FA63C7A006D3265 /* TootVC.swift */,
@@ -178,7 +183,6 @@
 				1A2D22631FBAE48A00F4A236 /* TimelineSwitch.xib */,
 				1AB797711FA62DFF006D3265 /* LaunchScreen.storyboard */,
 				1AB7976C1FA62DFF006D3265 /* Main.storyboard */,
-				C0510E861D583AA341DF3DF6 /* BBCodeView.swift */,
 			);
 			path = KnzkAlt;
 			sourceTree = "<group>";
@@ -488,6 +492,7 @@
 				C05106C22C6FBC9327CCF73A /* DataSourceTimeline.swift in Sources */,
 				C0510E2786ED2B2F5EE9ACB0 /* IconStorage.swift in Sources */,
 				C05107EF09B1BF0C3D7D424B /* BBCodeView.swift in Sources */,
+				C05108E85C5B23571843038D /* StatusContentContainerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -513,6 +518,7 @@
 				C0510322552B7BC134908B3C /* DataSourceTimeline.swift in Sources */,
 				C05100EC91B6E1765FC8196F /* IconStorage.swift in Sources */,
 				C0510A76DB37079062A00410 /* BBCodeView.swift in Sources */,
+				C0510DB6EDDD7DE98C884A9B /* StatusContentContainerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
