@@ -23,6 +23,7 @@ class BBCodeView: UITextView {
 //        _textStorage.addLayoutManager(layoutManager)
 
         isEditable = false
+        textContainerInset = UIEdgeInsets.zero
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -30,7 +31,7 @@ class BBCodeView: UITextView {
     }
 
     override var intrinsicContentSize: CGSize {
-        return bounds.size
+        return contentSize
     }
 
 //    override var text: String! {

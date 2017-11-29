@@ -12,7 +12,7 @@ class StatusContentContainerView: UIStackView {
         super.awakeFromNib()
         
         axis = .vertical
-        alignment = .leading
+        alignment = .fill
         distribution = .fill
         spacing = 8
         
