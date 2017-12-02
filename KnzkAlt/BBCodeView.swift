@@ -141,18 +141,41 @@ class BBCodeView: UITextView {
         }
 
         if let element = current.toElement() {
-            switch elementToTag(element) {
+            let tag = elementToTag(element);
 
-            case "p", "a":
-                return handleElement(element)
+            let handleAsDefault = {
+                () -> NSMutableAttributedString in
 
-            case "br":
-                return NSMutableAttributedString(string: "\n")
+                switch tag {
 
-            default:
-                NSLog("[Warning] Unrecognized HTML tag: \(current.rawXML)")
+                case "p", "a", "span":
+                    return handleElement(element)
 
-                return notParsed()
+                case "br":
+                    return NSMutableAttributedString(string: "\n")
+
+                default:
+                    NSLog("[Warning] Unrecognized HTML tag: \(current.rawXML)")
+
+                    return notParsed()
+                }
+            }
+
+            if tag == "span", let classAttr = element.attributes["class"] {
+                switch classAttr {
+                    case "invisible":
+                        return NSMutableAttributedString()
+                    case "ellipsis":
+                        let handled = handleAsDefault()
+                        handled.append(NSAttributedString(string: "..."))
+
+                        return handled
+                    default:
+                        return handleAsDefault()
+                }
+            }
+            else {
+                return handleAsDefault()
             }
         }
         else {
@@ -166,6 +189,11 @@ class BBCodeView: UITextView {
     ) -> [NSAttributedStringKey: Any] {
 
         var handledHTMLAttrs = Set<String>()
+        let markAsHandledAttr = {
+            (attr: String) -> Void in
+
+            handledHTMLAttrs.insert(attr)
+        }
 
         let logUnhandledHTMLAttrs = {
             let unhandled = htmlAttrs.filter { !handledHTMLAttrs.contains($0.key) }
@@ -199,12 +227,18 @@ class BBCodeView: UITextView {
                     return [:]
                 }
 
-                handledHTMLAttrs.insert(hrefAttr)
+                markAsHandledAttr(hrefAttr)
 
                 return [NSAttributedStringKey.link: url]
             }
 
             result = hrefAttrs()
+
+        case "span":
+            // ignoring
+            markAsHandledAttr("ellipsis")
+
+            result = [:]
 
         default:
             NSLog("[Warning] Unrecognized tag for converting html attrs to attrs dict:\ntag: \(tag), htmlAttrs: \(String(describing: htmlAttrs))")
