@@ -236,11 +236,17 @@ class BBCodeView: UITextView {
                 return [NSAttributedStringKey.link: url]
             }
 
+            // ignoring
+            markAsHandledAttr("rel")
+            markAsHandledAttr("target")
+
             result = hrefAttrs()
 
         case "span":
             // ignoring
-            markAsHandledAttr("ellipsis")
+            if let classAttr = htmlAttrs["class"], classAttr == "ellipsis" || classAttr == "" {
+                markAsHandledAttr("class")
+            }
 
             result = [:]
 
