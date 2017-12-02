@@ -77,7 +77,7 @@ class BBCodeView: UITextView {
     private static let _maxHTMLTraversalDepth = 50
 
     private static func _traverseHTML(
-            current: XMLElement,
+            current: XMLNode,
             currentTraversalDepth: Int = 0
     ) -> NSMutableAttributedString {
 
@@ -88,10 +88,16 @@ class BBCodeView: UITextView {
         }
 
         let collectChildContents = {
-            (children: [XMLElement], defaultValue: String) -> NSMutableAttributedString in
+            (defaultValue: String) -> NSMutableAttributedString in
+
+            let defaultResult = { NSMutableAttributedString(string: defaultValue) }
+
+            guard let children = current.toElement()?.childNodes(ofTypes: [.Element, .Text]) else {
+                return defaultResult()
+            }
 
             guard !children.isEmpty else {
-                return NSMutableAttributedString(string: defaultValue)
+                return defaultResult()
             }
 
             let s = NSMutableAttributedString()
@@ -114,13 +120,15 @@ class BBCodeView: UITextView {
             // ...
         }
 
-        switch current.tag.map({ $0.lowercased() }) ?? "" {
+        switch current.toElement()?.tag.map({ $0.lowercased() }) ?? "" {
             case "p":
-                let s = collectChildContents(current.children, current.stringValue)
+                let s = collectChildContents(current.stringValue)
 
                 applyAttr(s)
 
                 return s
+            case "br":
+                return NSMutableAttributedString(string: "\n")
             default:
                 return notParsed()
         }
