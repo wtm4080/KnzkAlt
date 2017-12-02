@@ -71,31 +71,58 @@ class BBCodeView: UITextView {
             return
         }
 
-        let s = NSMutableAttributedString()
-
-        BBCodeView._traverseHTML(current: root, storage: s)
-
-        set(s)
+        set(BBCodeView._traverseHTML(current: root))
     }
 
     private static let _maxHTMLTraversalDepth = 50
 
     private static func _traverseHTML(
             current: XMLElement,
-            storage: NSMutableAttributedString,
             currentTraversalDepth: Int = 0
-    ) {
+    ) -> NSMutableAttributedString {
+
+        let notParsed = { NSMutableAttributedString(string: current.stringValue) }
+
         guard currentTraversalDepth <= _maxHTMLTraversalDepth else {
-            return
+            return notParsed()
+        }
+
+        let collectChildContents = {
+            (children: [XMLElement], defaultValue: String) -> NSMutableAttributedString in
+
+            guard !children.isEmpty else {
+                return NSMutableAttributedString(string: defaultValue)
+            }
+
+            let s = NSMutableAttributedString()
+
+            children.forEach {
+                s.append(
+                        _traverseHTML(
+                                current: $0,
+                                currentTraversalDepth: currentTraversalDepth + 1
+                        )
+                )
+            }
+
+            return s
+        }
+
+        let applyAttr = {
+            (s: NSMutableAttributedString) in
+
+            // ...
         }
 
         switch current.tag.map({ $0.lowercased() }) ?? "" {
-//            case "p":
-//                current.children.forEach {
-//                    _traverseHTML(current: $0, storage: storage)
-//                }
+            case "p":
+                let s = collectChildContents(current.children, current.stringValue)
+
+                applyAttr(s)
+
+                return s
             default:
-                storage.append(NSAttributedString(string: current.stringValue))
+                return notParsed()
         }
     }
 }

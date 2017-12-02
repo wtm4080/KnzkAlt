@@ -119,7 +119,7 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Z5-47-UiP" userLabel="Content View" customClass="StatusContentContainerView" customModule="KnzkAlt" customModuleProvider="target">
                         <rect key="frame" x="76" y="40" width="283" height="45"/>
                         <constraints>
-                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="voF-V4-ACO"/>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" id="voF-V4-ACO"/>
                             <constraint firstAttribute="height" relation="lessThanOrEqual" constant="500" id="wdp-gJ-3PX"/>
                         </constraints>
                     </view>
