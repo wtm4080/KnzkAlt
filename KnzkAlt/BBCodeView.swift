@@ -88,9 +88,9 @@ class BBCodeView: UITextView {
         }
 
         let collectChildContents = {
-            (defaultValue: String) -> NSMutableAttributedString in
+            () -> NSMutableAttributedString in
 
-            let defaultResult = { NSMutableAttributedString(string: defaultValue) }
+            let defaultResult = { NSMutableAttributedString(string: current.stringValue) }
 
             guard let children = current.toElement()?.childNodes(ofTypes: [.Element, .Text]) else {
                 return defaultResult()
@@ -114,23 +114,61 @@ class BBCodeView: UITextView {
             return s
         }
 
-        let applyAttr = {
-            (s: NSMutableAttributedString) in
+        let applyAttrs = {
+            (s: NSMutableAttributedString, attrs: [NSAttributedStringKey: Any]) in
 
-            // ...
+            guard s.length > 0 && !attrs.isEmpty else {
+                return
+            }
+
+            s.addAttributes(attrs, range: NSRange(location: 0, length: s.length))
         }
 
-        switch current.toElement()?.tag.map({ $0.lowercased() }) ?? "" {
-            case "p":
-                let s = collectChildContents(current.stringValue)
+        if let element = current.toElement() {
+            let tag = element.tag.map({ $0.lowercased() })
 
-                applyAttr(s)
+            switch tag ?? "" {
+
+            case "p":
+                let s = collectChildContents()
+
+                applyAttrs(s, [:])
 
                 return s
+
             case "br":
                 return NSMutableAttributedString(string: "\n")
+
+            case "a":
+                let s = collectChildContents()
+
+                guard let href = element.attributes["href"] else {
+                    NSLog("[Warning] Cannot find href in <a>: \(current.rawXML)")
+
+                    return s
+                }
+
+                guard let url = URL(string: href) else {
+                    NSLog("[Warning] Cannot convert href to URL: \(current.rawXML)")
+
+                    return s
+                }
+
+                applyAttrs(s, [
+                    NSAttributedStringKey.link: url,
+                    NSAttributedStringKey.foregroundColor: UIColor.blue
+                ])
+
+                return s
+
             default:
+                NSLog("[Warning] Unrecognized HTML tag: \(current.rawXML)")
+
                 return notParsed()
+            }
+        }
+        else {
+            return notParsed()
         }
     }
 }
@@ -138,5 +176,7 @@ class BBCodeView: UITextView {
 class BBCodeLayoutManager: NSLayoutManager {
     override func drawGlyphs(forGlyphRange glyphsToShow: NSRange, at origin: CGPoint) {
         super.drawGlyphs(forGlyphRange: glyphsToShow, at: origin)
+
+        //NSLog("Attrs: \(textStorage?.attributes(at: glyphsToShow.location, effectiveRange: nil))")
     }
 }
