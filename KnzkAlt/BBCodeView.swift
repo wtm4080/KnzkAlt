@@ -124,42 +124,30 @@ class BBCodeView: UITextView {
             s.addAttributes(attrs, range: NSRange(location: 0, length: s.length))
         }
 
+        let elementToTag = {
+            (element: XMLElement) -> String in
+
+            return element.tag.map({ $0.lowercased() }) ?? ""
+        }
+
+        let handleElement = {
+            (element: XMLElement) -> NSMutableAttributedString in
+
+            let s = collectChildContents()
+
+            applyAttrs(s, _htmlAttrsToAttrsDict(tag: elementToTag(element), htmlAttrs: element.attributes))
+
+            return s
+        }
+
         if let element = current.toElement() {
-            let tag = element.tag.map({ $0.lowercased() })
+            switch elementToTag(element) {
 
-            switch tag ?? "" {
-
-            case "p":
-                let s = collectChildContents()
-
-                applyAttrs(s, [:])
-
-                return s
+            case "p", "a":
+                return handleElement(element)
 
             case "br":
                 return NSMutableAttributedString(string: "\n")
-
-            case "a":
-                let s = collectChildContents()
-
-                guard let href = element.attributes["href"] else {
-                    NSLog("[Warning] Cannot find href in <a>: \(current.rawXML)")
-
-                    return s
-                }
-
-                guard let url = URL(string: href) else {
-                    NSLog("[Warning] Cannot convert href to URL: \(current.rawXML)")
-
-                    return s
-                }
-
-                applyAttrs(s, [
-                    NSAttributedStringKey.link: url,
-                    NSAttributedStringKey.foregroundColor: UIColor.blue
-                ])
-
-                return s
 
             default:
                 NSLog("[Warning] Unrecognized HTML tag: \(current.rawXML)")
@@ -170,6 +158,63 @@ class BBCodeView: UITextView {
         else {
             return notParsed()
         }
+    }
+
+    private static func _htmlAttrsToAttrsDict(
+            tag: String,
+            htmlAttrs: [String: String]
+    ) -> [NSAttributedStringKey: Any] {
+
+        var handledHTMLAttrs = Set<String>()
+
+        let logUnhandledHTMLAttrs = {
+            let unhandled = htmlAttrs.filter { !handledHTMLAttrs.contains($0.key) }
+
+            unhandled.forEach {
+                NSLog("[Warning] Unhandled HTML attr for <\(tag)> tag: \(String(describing: $0))")
+            }
+        }
+
+        let result: [NSAttributedStringKey: Any]
+        switch tag {
+
+        case "p":
+            result = [:]
+
+        case "a":
+            let hrefAttrs = {
+                () -> [NSAttributedStringKey: Any] in
+
+                let hrefAttr = "href"
+
+                guard let href = htmlAttrs[hrefAttr] else {
+                    NSLog("[Warning] Cannot find href in <a>: \(String(describing: htmlAttrs))")
+
+                    return [:]
+                }
+
+                guard let url = URL(string: href) else {
+                    NSLog("[Warning] Cannot convert href to URL in <a>: \(String(describing: htmlAttrs))")
+
+                    return [:]
+                }
+
+                handledHTMLAttrs.insert(hrefAttr)
+
+                return [NSAttributedStringKey.link: url]
+            }
+
+            result = hrefAttrs()
+
+        default:
+            NSLog("[Warning] Unrecognized tag for converting html attrs to attrs dict:\ntag: \(tag), htmlAttrs: \(String(describing: htmlAttrs))")
+
+            return [:]
+        }
+
+        logUnhandledHTMLAttrs()
+
+        return result
     }
 }
 
