@@ -42,17 +42,13 @@ class BBCodeView: UITextView {
 
             _setTextStorage(contentHTML: newValue)
 
-            //setNeedsLayout()
+            invalidateIntrinsicContentSize()
         }
     }
 
-//    override func layoutSubviews() {
-//        super.layoutSubviews()
-//    }
-
-//    override func draw(_ rect: CGRect) {
-//        super.draw(rect)
-//    }
+    override func draw(_ rect: CGRect) {
+        super.draw(rect)
+    }
 
     private func _setTextStorage(contentHTML: String) {
         let notParsed = { NSAttributedString(string: contentHTML) }
@@ -82,7 +78,17 @@ class BBCodeView: UITextView {
         set(s)
     }
 
-    private static func _traverseHTML(current: XMLElement, storage: NSMutableAttributedString) {
+    private static let _maxHTMLTraversalDepth = 50
+
+    private static func _traverseHTML(
+            current: XMLElement,
+            storage: NSMutableAttributedString,
+            currentTraversalDepth: Int = 0
+    ) {
+        guard currentTraversalDepth <= _maxHTMLTraversalDepth else {
+            return
+        }
+
         switch current.tag.map({ $0.lowercased() }) ?? "" {
 //            case "p":
 //                current.children.forEach {
