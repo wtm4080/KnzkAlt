@@ -10,17 +10,16 @@ class BBCodeView: UITextView {
     private let _textStorage = NSTextStorage()
 
     required init(frame: CGRect) {
-//        let textContainer = NSTextContainer(size: frame.size)
-//        textContainer.widthTracksTextView = true
-//        textContainer.heightTracksTextView = true
-//
-//        super.init(frame: frame, textContainer: textContainer)
-        super.init(frame: frame, textContainer: nil)
+        let textContainer = NSTextContainer(size: frame.size)
+        textContainer.widthTracksTextView = true
+        textContainer.heightTracksTextView = true
 
-//        let layoutManager = BBCodeLayoutManager()
-//        layoutManager.addTextContainer(textContainer)
-//
-//        _textStorage.addLayoutManager(layoutManager)
+        super.init(frame: frame, textContainer: textContainer)
+
+        let layoutManager = BBCodeLayoutManager()
+        layoutManager.addTextContainer(textContainer)
+
+        _textStorage.addLayoutManager(layoutManager)
 
         isEditable = false
         textContainerInset = UIEdgeInsets.zero
@@ -34,16 +33,18 @@ class BBCodeView: UITextView {
         return contentSize
     }
 
-//    override var text: String! {
-//        get {
-//            return _textStorage.string
-//        }
-//        set {
-//            _setTextStorage(contentHTML: newValue)
-//
-//            setNeedsLayout()
-//        }
-//    }
+    override var text: String! {
+        get {
+            return _textStorage.string
+        }
+        set {
+            super.text = newValue
+
+            _setTextStorage(contentHTML: newValue)
+
+            //setNeedsLayout()
+        }
+    }
 
 //    override func layoutSubviews() {
 //        super.layoutSubviews()
