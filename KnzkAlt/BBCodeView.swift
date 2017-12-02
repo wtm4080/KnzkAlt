@@ -50,6 +50,8 @@ class BBCodeView: UITextView {
         super.draw(rect)
     }
 
+    private static let _contentRootTag = "__content_root__"
+
     private func _setTextStorage(contentHTML: String) {
         let notParsed = { NSAttributedString(string: contentHTML) }
 
@@ -59,7 +61,9 @@ class BBCodeView: UITextView {
             self._textStorage.setAttributedString($0)
         }
 
-        guard let document = try? XMLDocument(string: contentHTML) else {
+        let enclosedContent = "<\(BBCodeView._contentRootTag)>\(contentHTML)</\(BBCodeView._contentRootTag)>"
+
+        guard let document = try? XMLDocument(string: enclosedContent) else {
             set(notParsed())
 
             return
@@ -148,7 +152,7 @@ class BBCodeView: UITextView {
 
                 switch tag {
 
-                case "p", "a", "span":
+                case _contentRootTag, "p", "a", "span":
                     return handleElement(element)
 
                 case "br":
@@ -206,7 +210,7 @@ class BBCodeView: UITextView {
         let result: [NSAttributedStringKey: Any]
         switch tag {
 
-        case "p":
+        case _contentRootTag, "p":
             result = [:]
 
         case "a":
