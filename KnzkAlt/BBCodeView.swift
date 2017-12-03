@@ -321,6 +321,14 @@ enum BBCodeCustomAttrs {
 
             handledAttrsLogger.markAsHandled(attr: styles.isItalicKey)
         }
+        else if let fontWeight = styles.fontWeight {
+            attrs[NSAttributedStringKey.font] = UIFont.systemFont(
+                    ofSize: BBCodeView.defaultFontSize,
+                    weight: fontWeight
+            )
+
+            handledAttrsLogger.markAsHandled(attr: styles.fontWeightKey)
+        }
         else {
             // no-op
         }

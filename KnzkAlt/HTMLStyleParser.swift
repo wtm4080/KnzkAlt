@@ -66,4 +66,36 @@ struct HTMLStyleParser {
             return false
         }
     }()
+
+    // https://developer.mozilla.org/ja/docs/Web/CSS/font-weight
+    // https://developer.apple.com/documentation/uikit/uifontdescriptor.traitkey/1616668-weight
+    let fontWeightKey = "font-weight"
+    lazy var fontWeight: UIFont.Weight? = {
+        guard let value = keyValues[fontWeightKey]?.first else {
+            return nil
+        }
+
+        switch value.lowercased() {
+
+        case "normal":
+            return UIFont.Weight.regular
+        case "bold":
+            return UIFont.Weight.bold
+        case "lighter":
+            return UIFont.Weight.light
+        case "bolder":
+            return UIFont.Weight.medium
+
+        default:
+            if let n = Int(value) {
+                // [100, 900] to [-1.0, 1.0]
+                let normalized = CGFloat(n - 500) / CGFloat(400)
+
+                return UIFont.Weight(normalized)
+            }
+            else {
+                return nil
+            }
+        }
+    }()
 }
