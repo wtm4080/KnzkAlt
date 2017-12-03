@@ -328,6 +328,9 @@ enum BBCodeCustomAttrs {
         else {
             // no-op
         }
+        handledAttrsLogger.markAsHandled(attr: "font-family")
+        handledAttrsLogger.markAsHandled(attr: "-webkit-font-feature-settings")
+        handledAttrsLogger.markAsHandled(attr: "-moz-font-feature-settings")
 
         handledAttrsLogger.logUnhandledAttrs(
                 allAttrs: styles.keyValues,
