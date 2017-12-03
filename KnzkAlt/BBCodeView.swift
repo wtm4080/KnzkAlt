@@ -192,20 +192,7 @@ class BBCodeView: UITextView {
             htmlAttrs: [String: String]
     ) -> [NSAttributedStringKey: Any] {
 
-        var handledHTMLAttrs = Set<String>()
-        let markAsHandledAttr = {
-            (attr: String) -> Void in
-
-            handledHTMLAttrs.insert(attr)
-        }
-
-        let logUnhandledHTMLAttrs = {
-            let unhandled = htmlAttrs.filter { !handledHTMLAttrs.contains($0.key) }
-
-            unhandled.forEach {
-                NSLog("[Warning] Unhandled HTML attr for <\(tag)> tag: \(String(describing: $0))")
-            }
-        }
+        var handledAttrsLogger = HandledAttrsLogger()
 
         let result: [NSAttributedStringKey: Any]
         switch tag {
@@ -231,24 +218,31 @@ class BBCodeView: UITextView {
                     return [:]
                 }
 
-                markAsHandledAttr(hrefAttr)
+                handledAttrsLogger.markAsHandled(attr: hrefAttr)
 
                 return [NSAttributedStringKey.link: url]
             }
 
             // ignoring
-            markAsHandledAttr("rel")
-            markAsHandledAttr("target")
+            handledAttrsLogger.markAsHandled(attr: "rel")
+            handledAttrsLogger.markAsHandled(attr: "target")
 
             result = hrefAttrs()
 
         case "span":
             // ignoring
             if let classAttr = htmlAttrs["class"], classAttr == "ellipsis" || classAttr == "" {
-                markAsHandledAttr("class")
+                handledAttrsLogger.markAsHandled(attr: "class")
             }
 
-            result = [:]
+            let styleAttr = "style"
+            let styleAttrs = BBCodeCustomAttrs.htmlStyleToAttrsDict(
+                    htmlStyle: htmlAttrs[styleAttr] ?? "",
+                    tagName: tag
+            )
+            handledAttrsLogger.markAsHandled(attr: styleAttr)
+
+            result = styleAttrs
 
         default:
             NSLog("[Warning] Unrecognized tag for converting html attrs to attrs dict:\ntag: \(tag), htmlAttrs: \(String(describing: htmlAttrs))")
@@ -256,9 +250,25 @@ class BBCodeView: UITextView {
             return [:]
         }
 
-        logUnhandledHTMLAttrs()
+        handledAttrsLogger.logUnhandledAttrs(allAttrs: htmlAttrs, tagName: tag)
 
         return result
+    }
+}
+
+struct HandledAttrsLogger {
+    private var _handledAttrs = Set<String>()
+
+    mutating func markAsHandled(attr: String) {
+        _handledAttrs.insert(attr)
+    }
+
+    func logUnhandledAttrs(allAttrs: [String: Any], tagName: String) {
+        let unhandled = allAttrs.filter { !_handledAttrs.contains($0.key) }
+
+        unhandled.forEach {
+            NSLog("[Warning] Unhandled HTML attr for <\(tagName)> tag: \(String(describing: $0))")
+        }
     }
 }
 
@@ -267,5 +277,35 @@ class BBCodeLayoutManager: NSLayoutManager {
         super.drawGlyphs(forGlyphRange: glyphsToShow, at: origin)
 
         //NSLog("Attrs: \(textStorage?.attributes(at: glyphsToShow.location, effectiveRange: nil))")
+    }
+}
+
+enum BBCodeCustomAttrs {
+    static func htmlStyleToAttrsDict(
+            htmlStyle: String,
+            tagName: String
+    ) -> [NSAttributedStringKey: Any] {
+
+        guard !htmlStyle.isEmpty else {
+            return [:]
+        }
+
+        var styles = HTMLStyleParser(rawValue: htmlStyle)
+
+        var attrs: [NSAttributedStringKey: Any] = [:]
+
+        var handledAttrsLogger = HandledAttrsLogger()
+
+        if let c = styles.foregroundColor {
+            attrs[NSAttributedStringKey.foregroundColor] = c
+        }
+        handledAttrsLogger.markAsHandled(attr: "color")
+
+        handledAttrsLogger.logUnhandledAttrs(
+                allAttrs: styles.keyValues,
+                tagName: tagName + ".style"
+        )
+
+        return attrs
     }
 }
