@@ -80,12 +80,25 @@ class BBCodeView: UITextView {
 
     private static let _maxHTMLTraversalDepth = 50
 
+    static let defaultFontSize = CGFloat(15)
+    static let defaultFont = UIFont.systemFont(ofSize: defaultFontSize)
+
     private static func _traverseHTML(
             current: XMLNode,
             currentTraversalDepth: Int = 0
     ) -> NSMutableAttributedString {
 
-        let notParsed = { NSMutableAttributedString(string: current.stringValue) }
+        let notParsed = {
+            () -> NSMutableAttributedString in
+
+            let s = NSMutableAttributedString(string: current.stringValue)
+            s.addAttribute(
+                    NSAttributedStringKey.font,
+                    value: BBCodeView.defaultFont,
+                    range: NSRange(location: 0, length: s.length))
+
+            return s
+        }
 
         guard currentTraversalDepth <= _maxHTMLTraversalDepth else {
             return notParsed()
@@ -137,9 +150,18 @@ class BBCodeView: UITextView {
         let handleElement = {
             (element: XMLElement) -> NSMutableAttributedString in
 
+            var attrs = _htmlAttrsToAttrsDict(
+                    tag: elementToTag(element),
+                    htmlAttrs: element.attributes
+            )
+
+            if attrs[NSAttributedStringKey.font] == nil {
+                attrs[NSAttributedStringKey.font] = BBCodeView.defaultFont
+            }
+
             let s = collectChildContents()
 
-            applyAttrs(s, _htmlAttrsToAttrsDict(tag: elementToTag(element), htmlAttrs: element.attributes))
+            applyAttrs(s, attrs)
 
             return s
         }

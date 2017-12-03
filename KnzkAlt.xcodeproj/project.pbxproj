@@ -166,6 +166,7 @@
 				1AB797661FA62DFF006D3265 /* AppDelegate.swift */,
 				C0510E861D583AA341DF3DF6 /* BBCodeView.swift */,
 				C0510F58D66C1F0BE57E6307 /* ClientManager.swift */,
+				C0510977F490EDA465069459 /* CSSColorParser.swift */,
 				C0510E78CEF630B7FD0E98F8 /* DataSource.swift */,
 				C0510E996A2CEB337ECA28AB /* DataSourceTimeline.swift */,
 				C051064B7C25EC8814050796 /* HTMLStyleParser.swift */,
@@ -190,7 +191,6 @@
 				1A2D22631FBAE48A00F4A236 /* TimelineSwitch.xib */,
 				1AB797711FA62DFF006D3265 /* LaunchScreen.storyboard */,
 				1AB7976C1FA62DFF006D3265 /* Main.storyboard */,
-				C0510977F490EDA465069459 /* CSSColorParser.swift */,
 			);
 			path = KnzkAlt;
 			sourceTree = "<group>";
