@@ -46,4 +46,24 @@ struct HTMLStyleParser {
             return CSSColorParser.fromKeyword(key: value)
         }
     }()
+
+    // https://developer.mozilla.org/ja/docs/Web/CSS/font-style
+    let isItalicKey = "font-style"
+    lazy var isItalic: Bool = {
+        guard let value = keyValues[isItalicKey]?.first else {
+            return false
+        }
+
+        switch value.lowercased() {
+
+        case "normal":
+            return false
+
+        case "italic", "oblique":
+            return true
+
+        default:
+            return false
+        }
+    }()
 }

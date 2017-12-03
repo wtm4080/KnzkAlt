@@ -88,17 +88,7 @@ class BBCodeView: UITextView {
             currentTraversalDepth: Int = 0
     ) -> NSMutableAttributedString {
 
-        let notParsed = {
-            () -> NSMutableAttributedString in
-
-            let s = NSMutableAttributedString(string: current.stringValue)
-            s.addAttribute(
-                    NSAttributedStringKey.font,
-                    value: BBCodeView.defaultFont,
-                    range: NSRange(location: 0, length: s.length))
-
-            return s
-        }
+        let notParsed = { NSMutableAttributedString(string: current.stringValue) }
 
         guard currentTraversalDepth <= _maxHTMLTraversalDepth else {
             return notParsed()
@@ -155,11 +145,18 @@ class BBCodeView: UITextView {
                     htmlAttrs: element.attributes
             )
 
-            if attrs[NSAttributedStringKey.font] == nil {
+            let s = collectChildContents()
+
+            let attrsOnCollected = s.attributes(
+                    at: 0,
+                    longestEffectiveRange: nil,
+                    in: NSRange(location: 0, length: s.length)
+            )
+            let isPresentFontAttr = attrsOnCollected[NSAttributedStringKey.font] != nil
+
+            if attrs[NSAttributedStringKey.font] == nil && !isPresentFontAttr {
                 attrs[NSAttributedStringKey.font] = BBCodeView.defaultFont
             }
-
-            let s = collectChildContents()
 
             applyAttrs(s, attrs)
 
@@ -322,6 +319,15 @@ enum BBCodeCustomAttrs {
             attrs[NSAttributedStringKey.foregroundColor] = c
         }
         handledAttrsLogger.markAsHandled(attr: styles.foregroundColorKey)
+
+        if styles.isItalic {
+            attrs[NSAttributedStringKey.font] = UIFont.italicSystemFont(ofSize: BBCodeView.defaultFontSize)
+
+            handledAttrsLogger.markAsHandled(attr: styles.isItalicKey)
+        }
+        else {
+            // no-op
+        }
 
         handledAttrsLogger.logUnhandledAttrs(
                 allAttrs: styles.keyValues,
