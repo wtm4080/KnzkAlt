@@ -44,6 +44,7 @@
 		C051037F9E1245BEEEAB1899 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510C0073874BEF0B4E8C82 /* Notifications.swift */; };
 		C05103A5521F23F340AAC4C1 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510E78CEF630B7FD0E98F8 /* DataSource.swift */; };
 		C05103F14ADA0FC3831832C1 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510C0073874BEF0B4E8C82 /* Notifications.swift */; };
+		C051049F616E3B0A37B5317F /* CSSColorParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510977F490EDA465069459 /* CSSColorParser.swift */; };
 		C0510507594D146212174682 /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = C051012FF1FBD602C5FBD0F4 /* Keychain.swift */; };
 		C051052BB3E9E30B8C8FED8D /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = C051012FF1FBD602C5FBD0F4 /* Keychain.swift */; };
 		C0510620DCF6FB2EC8544273 /* StatusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05108C20D63ADD8371E8E21 /* StatusCell.swift */; };
@@ -55,6 +56,7 @@
 		C0510A76DB37079062A00410 /* BBCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510E861D583AA341DF3DF6 /* BBCodeView.swift */; };
 		C0510AAEC3A80969B484B4C1 /* StatusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05108C20D63ADD8371E8E21 /* StatusCell.swift */; };
 		C0510B245A8B36872AC592E6 /* ClientManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510F58D66C1F0BE57E6307 /* ClientManager.swift */; };
+		C0510C0F6DF96107BF990381 /* CSSColorParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510977F490EDA465069459 /* CSSColorParser.swift */; };
 		C0510CE8752219D4CD0E8BF1 /* TimelineSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510BF7B092B3F32B183235 /* TimelineSwitch.swift */; };
 		C0510D8CA3EBD322E138E114 /* NibViewOwner.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05101716E8E1EF871FA7B83 /* NibViewOwner.swift */; };
 		C0510D8D9F4AD754587C208F /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510E78CEF630B7FD0E98F8 /* DataSource.swift */; };
@@ -103,6 +105,7 @@
 		C05101716E8E1EF871FA7B83 /* NibViewOwner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NibViewOwner.swift; sourceTree = "<group>"; };
 		C051064B7C25EC8814050796 /* HTMLStyleParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTMLStyleParser.swift; sourceTree = "<group>"; };
 		C05108C20D63ADD8371E8E21 /* StatusCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusCell.swift; sourceTree = "<group>"; };
+		C0510977F490EDA465069459 /* CSSColorParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSSColorParser.swift; sourceTree = "<group>"; };
 		C0510BA3BD81793EAFE37660 /* StatusContentContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusContentContainerView.swift; sourceTree = "<group>"; };
 		C0510BF7B092B3F32B183235 /* TimelineSwitch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineSwitch.swift; sourceTree = "<group>"; };
 		C0510C0073874BEF0B4E8C82 /* Notifications.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
@@ -187,6 +190,7 @@
 				1A2D22631FBAE48A00F4A236 /* TimelineSwitch.xib */,
 				1AB797711FA62DFF006D3265 /* LaunchScreen.storyboard */,
 				1AB7976C1FA62DFF006D3265 /* Main.storyboard */,
+				C0510977F490EDA465069459 /* CSSColorParser.swift */,
 			);
 			path = KnzkAlt;
 			sourceTree = "<group>";
@@ -498,6 +502,7 @@
 				C05107EF09B1BF0C3D7D424B /* BBCodeView.swift in Sources */,
 				C05108E85C5B23571843038D /* StatusContentContainerView.swift in Sources */,
 				C05107831B00E604341CE149 /* HTMLStyleParser.swift in Sources */,
+				C0510C0F6DF96107BF990381 /* CSSColorParser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -525,6 +530,7 @@
 				C0510A76DB37079062A00410 /* BBCodeView.swift in Sources */,
 				C0510DB6EDDD7DE98C884A9B /* StatusContentContainerView.swift in Sources */,
 				C05109D9A1BBCB02A108BF4D /* HTMLStyleParser.swift in Sources */,
+				C051049F616E3B0A37B5317F /* CSSColorParser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
