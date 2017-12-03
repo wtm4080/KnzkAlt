@@ -98,4 +98,60 @@ struct HTMLStyleParser {
             }
         }
     }()
+
+    let fontSizeKey = "font-size"
+    lazy var fontSize: CGFloat? = {
+        guard let value = keyValues[fontSizeKey]?.first else {
+            return nil
+        }
+
+        let medium = BBCodeView.defaultFontSize
+
+        switch value.lowercased() {
+
+        case "xx-small":
+            return medium * 0.4
+        case "x-small":
+            return medium * 0.6
+        case "small":
+            return medium * 0.8
+        case "medium":
+            return medium
+        case "large":
+            return medium * 1.2
+        case "x-large":
+            return medium * 1.4
+        case "xx-large":
+            return medium * 1.6
+
+        case "larger":
+            return medium * 1.2
+        case "smaller":
+            return medium * 0.8
+
+        default:
+            if value.count > 2 {
+                if value.hasSuffix("px") {
+                    return Float(value.dropLast(2)).map { CGFloat($0) }
+                }
+                else if value.hasSuffix("em") {
+                    return Float(value.dropLast(2)).map { medium * CGFloat($0) }
+                }
+                else {
+                    return nil
+                }
+            }
+            else if value.count > 1 && value.hasSuffix("%") {
+                if let normalized = Int(value).map({ Double($0) / 100.0 }) {
+                    return medium * CGFloat(normalized)
+                }
+                else {
+                    return nil
+                }
+            }
+            else {
+                return nil
+            }
+        }
+    }()
 }
