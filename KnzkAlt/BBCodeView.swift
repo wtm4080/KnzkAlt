@@ -140,7 +140,7 @@ class BBCodeView: UITextView {
         let handleElement = {
             (element: XMLElement) -> NSMutableAttributedString in
 
-            var attrs = _htmlAttrsToAttrsDict(
+            let attrs = _htmlAttrsToAttrsDict(
                     tag: elementToTag(element),
                     htmlAttrs: element.attributes
             )
@@ -327,6 +327,7 @@ enum BBCodeCustomAttrs {
         handledAttrsLogger.markAsHandled(attr: "font-family")
         handledAttrsLogger.markAsHandled(attr: "-webkit-font-feature-settings")
         handledAttrsLogger.markAsHandled(attr: "-moz-font-feature-settings")
+        handledAttrsLogger.markAsHandled(attr: "font-feature-settings")
 
         handledAttrsLogger.logUnhandledAttrs(
                 allAttrs: styles.keyValues,
