@@ -49,7 +49,7 @@ extension UIColor {
         let getDigits = {
             () -> UInt32 in
 
-            v % 0xFF
+            v % (0xFF + 1)
         }
         let dropDigits = {
             () -> Void in
