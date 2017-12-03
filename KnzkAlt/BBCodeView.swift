@@ -147,17 +147,6 @@ class BBCodeView: UITextView {
 
             let s = collectChildContents()
 
-            let attrsOnCollected = s.attributes(
-                    at: 0,
-                    longestEffectiveRange: nil,
-                    in: NSRange(location: 0, length: s.length)
-            )
-            let isPresentFontAttr = attrsOnCollected[NSAttributedStringKey.font] != nil
-
-            if attrs[NSAttributedStringKey.font] == nil && !isPresentFontAttr {
-                attrs[NSAttributedStringKey.font] = BBCodeView.defaultFont
-            }
-
             applyAttrs(s, attrs)
 
             return s
@@ -202,7 +191,14 @@ class BBCodeView: UITextView {
             }
         }
         else {
-            return notParsed()
+            let s = notParsed()
+            s.addAttribute(
+                    NSAttributedStringKey.font,
+                    value: BBCodeView.defaultFont,
+                    range: NSRange(location: 0, length: s.length)
+            )
+
+            return s
         }
     }
 
