@@ -160,7 +160,7 @@ class BBCodeView: UITextView {
 
                 switch tag {
 
-                case _contentRootTag, "p", "a", "span":
+                case _contentRootTag, "p", "a", "span", "u":
                     return handleElement(element)
 
                 case "br":
@@ -258,6 +258,9 @@ class BBCodeView: UITextView {
             handledAttrsLogger.markAsHandled(attr: styleAttr)
 
             result = styleAttrs
+
+        case "u":
+            result = [NSAttributedStringKey.underlineStyle: NSUnderlineStyle.styleSingle.rawValue]
 
         default:
             NSLog("[Warning] Unrecognized tag for converting html attrs to attrs dict:\ntag: \(tag), htmlAttrs: \(String(describing: htmlAttrs))")
