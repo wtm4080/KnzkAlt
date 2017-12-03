@@ -93,6 +93,7 @@ struct CSSColorParser {
         }
 
         switch key.lowercased() {
+
         // CSS Level 1
         case "black":
             return c(0x000000)
@@ -130,6 +131,132 @@ struct CSSColorParser {
         // CSS Level 2 (Revision 1)
         case "orange":
             return c(0xffa500)
+
+        // CSS Color Module Level 3
+        case "aliceblue":
+            return c(0xf0f8ff)
+        case "antiquewhite":
+            return c(0xfaebd7)
+        case "aquamarine":
+            return c(0x7fffd4)
+        case "azure":
+            return c(0xf0ffff)
+        case "beige":
+            return c(0xf5f5dc)
+        case "bisque":
+            return c(0xffe4c4)
+        case "blanchedalmond":
+            return c(0xffebcd)
+        case "blueviolet":
+            return c(0x8a2be2)
+        case "brown":
+            return c(0xa52a2a)
+        case "burlywood":
+            return c(0xdeb887)
+        case "cadetblue":
+            return c(0x5f9ea0)
+        case "chartreuse":
+            return c(0x7fff00)
+        case "chocolate":
+            return c(0xd2691e)
+        case "coral":
+            return c(0xff7f50)
+        case "cornflowerblue":
+            return c(0x6495ed)
+        case "cornsilk":
+            return c(0xfff8dc)
+        case "crimson":
+            return c(0xdc143c)
+        case "cyan":
+            return c(0x00ffff)
+        case "darkblue":
+            return c(0x00008b)
+        case "darkcyan":
+            return c(0x008b8b)
+        case "darkgoldenrod":
+            return c(0xb8860b)
+        case "darkgray":
+            return c(0xa9a9a9)
+        case "darkgreen":
+            return c(0x006400)
+        case "darkkhaki":
+            return c(0xbdb76b)
+        case "darkmagenta":
+            return c(0x8b008b)
+        case "darkolivegreen":
+            return c(0x556b2f)
+        case "darkorange":
+            return c(0xff8c00)
+        case "darkorchid":
+            return c(0x9932cc)
+        case "darkred":
+            return c(0x8b0000)
+        case "darksalmon":
+            return c(0xe9967a)
+        case "darkseagreen":
+            return c(0x8fbc8f)
+        case "darkslateblue":
+            return c(0x483d8b)
+        case "darkslategray":
+            return c(0x2f4f4f)
+        case "darkturquoise":
+            return c(0x00ced1)
+        case "darkviolet":
+            return c(0x9400d3)
+        case "deeppink":
+            return c(0xff1493)
+        case "deepskyblue":
+            return c(0x00bfff)
+        case "dimgray":
+            return c(0x696969)
+        case "dodgerblue":
+            return c(0x1e90ff)
+        case "firebrick":
+            return c(0xb22222)
+        case "floralwhite":
+            return c(0xfffaf0)
+        case "forestgreen":
+            return c(0x228b22)
+        case "gainsboro":
+            return c(0xdcdcdc)
+        case "ghostwhite":
+            return c(0xf8f8ff)
+        case "gold":
+            return c(0xffd700)
+        case "goldenrod":
+            return c(0xdaa520)
+        case "greenyellow":
+            return c(0xadff2f)
+        case "grey":
+            return c(0x808080)
+        case "honeydew":
+            return c(0xf0fff0)
+        case "hotpink":
+            return c(0xff69b4)
+        case "indianred":
+            return c(0xcd5c5c)
+        case "indigo":
+            return c(0x4b0082)
+        case "ivory":
+            return c(0xfffff0)
+        case "khaki":
+            return c(0xf0e68c)
+        case "lavender":
+            return c(0xe6e6fa)
+        case "lavenderblush":
+            return c(0xfff0f5)
+        case "lawngreen":
+            return c(0x7cfc00)
+        case "lemonchiffon":
+            return c(0xfffacd)
+        case "lightblue":
+            return c(0xadd8e6)
+        case "lightcoral":
+            return c(0xf08080)
+        case "lightcyan":
+            return c(0xe0ffff)
+        case "lightgoldenrodyellow":
+            return c(0xfafad2)
         default:
             return nil
         }
