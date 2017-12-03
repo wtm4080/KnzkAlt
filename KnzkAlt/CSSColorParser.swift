@@ -38,6 +38,8 @@ extension UIColor {
             self.init(hex32: rawValue)
         }
         else {
+            NSLog("[Warning] Unsupported CSS hex color value: \(hex)")
+
             return nil
         }
     }
@@ -385,6 +387,8 @@ struct CSSColorParser {
             return c(0x663399)
 
         default:
+            NSLog("[Warning] Unsupported CSS color key: \(key)")
+
             return nil
         }
     }
