@@ -33,7 +33,17 @@ struct HTMLStyleParser {
         return [String: [String]](uniqueKeysWithValues: kvPairs)
     }()
 
+    let foregroundColorKey = "color"
     lazy var foregroundColor: UIColor? = {
-        return UIColor.black
+        guard let value = keyValues[foregroundColorKey]?.first else {
+            return nil
+        }
+
+        if value.hasPrefix("#") {
+            return CSSColorParser.fromHex(hex: value)
+        }
+        else {
+            return CSSColorParser.fromKeyword(key: value)
+        }
     }()
 }

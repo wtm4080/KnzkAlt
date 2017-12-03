@@ -299,7 +299,7 @@ enum BBCodeCustomAttrs {
         if let c = styles.foregroundColor {
             attrs[NSAttributedStringKey.foregroundColor] = c
         }
-        handledAttrsLogger.markAsHandled(attr: "color")
+        handledAttrsLogger.markAsHandled(attr: styles.foregroundColorKey)
 
         handledAttrsLogger.logUnhandledAttrs(
                 allAttrs: styles.keyValues,
