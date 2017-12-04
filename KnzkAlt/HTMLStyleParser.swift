@@ -130,16 +130,11 @@ struct HTMLStyleParser {
             return medium * 0.8
 
         default:
-            if value.count > 2 {
-                if value.hasSuffix("px") {
-                    return Float(value.dropLast(2)).map { CGFloat($0) }
-                }
-                else if value.hasSuffix("em") {
-                    return Float(value.dropLast(2)).map { medium * CGFloat($0) }
-                }
-                else {
-                    return nil
-                }
+            if value.count > 2 && value.hasSuffix("px") {
+                return Float(value.dropLast(2)).map { CGFloat($0) }
+            }
+            else if value.count > 2 && value.hasSuffix("em") {
+                return Float(value.dropLast(2)).map { medium * CGFloat($0) }
             }
             else if value.count > 1 && value.hasSuffix("%") {
                 if let normalized = Int(value).map({ Double($0) / 100.0 }) {
