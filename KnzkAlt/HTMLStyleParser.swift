@@ -99,6 +99,7 @@ struct HTMLStyleParser {
         }
     }()
 
+    // https://developer.mozilla.org/ja/docs/Web/CSS/font-size
     let fontSizeKey = "font-size"
     lazy var fontSize: CGFloat? = {
         guard let value = keyValues[fontSizeKey]?.first else {
