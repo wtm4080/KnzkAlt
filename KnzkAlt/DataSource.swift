@@ -51,6 +51,16 @@ class DataSource: NSObject, UITableViewDataSource {
         return _currentTL.statuses.count
     }
 
+    func cellHeight(at: Int) -> CGFloat {
+        let cell = _currentTL.statuses[at].view
+        cell.setNeedsLayout()
+        cell.layoutIfNeeded()
+
+        let size = cell.contentView.systemLayoutSizeFitting(UILayoutFittingCompressedSize)
+
+        return size.height
+    }
+
     private var _currentTL: DataSourceTimeline {
         switch _currentTLKind {
             case .home:

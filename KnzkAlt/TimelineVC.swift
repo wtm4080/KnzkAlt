@@ -30,6 +30,9 @@ class TimelineVC: UITableViewController {
 
         navigationItem.titleView = _timelineSwitchOwner.view
 
+        tableView.estimatedRowHeight = 20
+        tableView.rowHeight = UITableViewAutomaticDimension
+
         Notifications.loadedTL.register(
                 observer: self,
                 selector: #selector(type(of: self)._observeLoadedTL(n:))
@@ -81,6 +84,13 @@ class TimelineVC: UITableViewController {
         Notifications.requestTL.post(
                 tlParams: TLParams(kind: _timelineSwitchOwner.currentTLKind, pos: pos)
         )
+    }
+
+    override func tableView(
+            _ tableView: UITableView,
+            estimatedHeightForRowAt indexPath: IndexPath
+    ) -> CGFloat {
+        return DataSource.shared.cellHeight(at: indexPath.row)
     }
 
     override func scrollViewDidScroll(_ sv: UIScrollView) {
