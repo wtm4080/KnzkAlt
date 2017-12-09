@@ -48,6 +48,8 @@ class BBCodeView: UITextView {
 
     override func draw(_ rect: CGRect) {
         super.draw(rect)
+
+        NSLog("[\(String(format: "%p", _textStorage))] draw()")
     }
 
     private static let _contentRootTag = "__content_root__"
@@ -291,10 +293,32 @@ struct HandledAttrsLogger {
 }
 
 class BBCodeLayoutManager: NSLayoutManager {
-    override func drawGlyphs(forGlyphRange glyphsToShow: NSRange, at origin: CGPoint) {
-        super.drawGlyphs(forGlyphRange: glyphsToShow, at: origin)
+//    override func drawGlyphs(forGlyphRange glyphsToShow: NSRange, at origin: CGPoint) {
+//        super.drawGlyphs(forGlyphRange: glyphsToShow, at: origin)
+//
+//        NSLog("[\(String(format: "%p", textStorage!))] Range: [\(glyphsToShow.location), \(glyphsToShow.location + glyphsToShow.length)), Origin: (\(origin.x), \(origin.y)), Attrs: \(String(describing: textStorage?.attributes(at: glyphsToShow.location, effectiveRange: nil)))")
+//    }
 
-        //NSLog("Attrs: \(textStorage?.attributes(at: glyphsToShow.location, effectiveRange: nil))")
+    override func showCGGlyphs(
+            _ glyphs: UnsafePointer<CGGlyph>,
+            positions: UnsafePointer<CGPoint>,
+            count glyphCount: Int,
+            font: UIFont,
+            matrix textMatrix: CGAffineTransform,
+            attributes: [NSAttributedStringKey: Any],
+            in graphicsContext: CGContext) {
+
+        super.showCGGlyphs(
+                glyphs,
+                positions: positions,
+                count: glyphCount,
+                font: font,
+                matrix: textMatrix,
+                attributes: attributes,
+                in: graphicsContext
+        )
+
+        NSLog("[\(String(format: "%p", textStorage!))] showCGGlyphs(): count: \(glyphCount), font: \(font), attrs: \(attributes), isContextExist: \(graphicsContext)")
     }
 }
 
