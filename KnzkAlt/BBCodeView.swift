@@ -348,6 +348,12 @@ enum BBCodeCustomAttrs {
         handledAttrsLogger.markAsHandled(attr: "-moz-font-feature-settings")
         handledAttrsLogger.markAsHandled(attr: "font-feature-settings")
 
+        if let isStrikethrough = styles.isStrikethrough, isStrikethrough {
+            attrs[NSAttributedStringKey.strikethroughStyle] = NSUnderlineStyle.styleSingle.rawValue
+
+            handledAttrsLogger.markAsHandled(attr: styles.isStrikethroughKey)
+        }
+
         handledAttrsLogger.logUnhandledAttrs(
                 allAttrs: styles.keyValues,
                 tagName: tagName + ".style"

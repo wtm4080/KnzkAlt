@@ -151,4 +151,15 @@ struct HTMLStyleParser {
             }
         }
     }()
+
+    // https://developer.mozilla.org/ja/docs/Web/CSS/text-decoration
+    // TODO: handle other decoration properties
+    let isStrikethroughKey = "text-decoration"
+    lazy var isStrikethrough: Bool? = {
+        guard let value = keyValues[isStrikethroughKey]?.first else {
+            return nil
+        }
+
+        return value.lowercased() == "line-through"
+    }()
 }
