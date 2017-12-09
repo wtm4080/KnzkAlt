@@ -131,6 +131,7 @@ struct HTMLStyleParser {
             return medium * 0.8
 
         default:
+            // TODO: consider device ppi and other units
             if value.count > 2 && value.hasSuffix("px") {
                 return Float(value.dropLast(2)).map { CGFloat($0) }
             }
