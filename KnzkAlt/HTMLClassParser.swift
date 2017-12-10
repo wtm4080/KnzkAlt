@@ -49,4 +49,24 @@ struct HTMLClassParser {
 
         return CGFloat(min(rate, 10.0))
     }()
+
+    lazy var isFlipVertical: Bool = {
+        let key = "fa-flip-vertical"
+
+        let isPresent = keys.contains(key)
+
+        _processed.insert(key)
+
+        return isPresent
+    }()
+
+    lazy var isFlipHorizontal: Bool = {
+        let key = "fa-flip-horizontal"
+
+        let isPresent = keys.contains(key)
+
+        _processed.insert(key)
+
+        return isPresent
+    }()
 }

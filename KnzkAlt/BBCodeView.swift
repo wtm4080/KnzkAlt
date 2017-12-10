@@ -87,7 +87,7 @@ class BBCodeView: UITextView {
 
     private static func _traverseHTML(
             current: XMLNode,
-            currentTraversalDepth: Int = 0
+            currentTraversalDepth: UInt = 0
     ) -> NSMutableAttributedString {
 
         let notParsed = { NSMutableAttributedString(string: current.stringValue) }
@@ -96,12 +96,14 @@ class BBCodeView: UITextView {
             return notParsed()
         }
 
+        let children = current.toElement()?.childNodes(ofTypes: [.Element, .Text])
+
         let collectChildContents = {
             () -> NSMutableAttributedString in
 
             let defaultResult = { NSMutableAttributedString(string: current.stringValue) }
 
-            guard let children = current.toElement()?.childNodes(ofTypes: [.Element, .Text]) else {
+            guard let children = children else {
                 return defaultResult()
             }
 
@@ -109,15 +111,19 @@ class BBCodeView: UITextView {
                 return defaultResult()
             }
 
+            let traverse = {
+                (childNode: XMLNode) -> NSMutableAttributedString in
+
+                return _traverseHTML(
+                        current: childNode,
+                        currentTraversalDepth: currentTraversalDepth + 1
+                )
+            }
+
             let s = NSMutableAttributedString()
 
             children.forEach {
-                s.append(
-                        _traverseHTML(
-                                current: $0,
-                                currentTraversalDepth: currentTraversalDepth + 1
-                        )
-                )
+                s.append(traverse($0))
             }
 
             return s
@@ -142,16 +148,46 @@ class BBCodeView: UITextView {
         let handleElement = {
             (element: XMLElement) -> NSMutableAttributedString in
 
-            let attrs = _htmlAttrsToAttrsDict(
+            var attrs = _htmlAttrsToAttrsDict(
                     tag: elementToTag(element),
                     htmlAttrs: element.attributes
             )
 
-            let s = collectChildContents()
+            let collectedChildContents = collectChildContents()
 
-            applyAttrs(s, attrs)
+            // if current node has only one child element,
+            // merge their BBCode values
+            if let children = children, children.count == 1 && children[0].toElement() != nil {
+                let childAttrs = collectedChildContents.attributes(
+                        at: 0,
+                        longestEffectiveRange: nil,
+                        in: NSRange(location: 0, length: collectedChildContents.length)
+                )
 
-            return s
+                var duplicatedBBCodeAttrs: [NSAttributedStringKey: (current: BBCodeCustomValue, child: BBCodeCustomValue)] = [:]
+                childAttrs.forEach {
+                    let childKV = $0
+
+                    if
+                            let currentV = attrs[childKV.key] as? BBCodeCustomValue,
+                            let childV = childKV.value as? BBCodeCustomValue {
+                        duplicatedBBCodeAttrs[childKV.key] = (current: currentV, child: childV)
+                    }
+                }
+
+                duplicatedBBCodeAttrs.forEach {
+                    collectedChildContents.removeAttribute(
+                            $0.key,
+                            range: NSRange(location: 0, length: collectedChildContents.length)
+                    )
+
+                    attrs[$0.key] = $0.value.current.merging(other: $0.value.child)
+                }
+            }
+
+            applyAttrs(collectedChildContents, attrs)
+
+            return collectedChildContents
         }
 
         if let element = current.toElement() {
@@ -357,7 +393,9 @@ class BBCodeLayoutManager: NSLayoutManager {
             return pairs
         }()
 
-        NSLog("[\(String(format: "%p", textStorage!))] showCGGlyphs(): count: \(glyphCount), font: \(font), attrs: \(attributes)\nglyph pos pairs: \(String(describing: glyphPosPairs))\n")
+        let bbCodeAttrs = attributes.filter({BBCodeCustomAttrs.allValues.contains($0.key)})
+
+        NSLog("[\(String(format: "%p", textStorage!))] showCGGlyphs(): BBCode attrs: \(bbCodeAttrs)\nglyph pos pairs: \(String(describing: glyphPosPairs))\n")
     }
 }
 
@@ -368,6 +406,19 @@ enum BBCodeCustomAttrs: String {
     case pulse = "BBCode.Pulse"
     case quote = "BBCode.Quote"
     case code = "BBCode.Code"
+
+    static let allValues = Set<NSAttributedStringKey>([
+        BBCodeCustomAttrs.flipVertical.attrKey,
+        BBCodeCustomAttrs.flipHorizontal.attrKey,
+        BBCodeCustomAttrs.spin.attrKey,
+        BBCodeCustomAttrs.pulse.attrKey,
+        BBCodeCustomAttrs.quote.attrKey,
+        BBCodeCustomAttrs.code.attrKey
+    ])
+
+    var attrKey: NSAttributedStringKey {
+        return NSAttributedStringKey(rawValue)
+    }
 
     static func htmlStyleToAttrsDict(
             htmlStyle: String,
@@ -429,6 +480,14 @@ enum BBCodeCustomAttrs: String {
             handledAttrsLogger.markAsHandled(attr: styles.isStrikethroughKey)
         }
 
+        if classAttrs.isFlipVertical {
+            attrs[BBCodeCustomAttrs.flipVertical.attrKey] = BBCodeCustomValue(multiFactor: 1)
+        }
+
+        if classAttrs.isFlipHorizontal {
+            attrs[BBCodeCustomAttrs.flipHorizontal.attrKey] = BBCodeCustomValue(multiFactor: 1)
+        }
+
         handledAttrsLogger.logUnhandledAttrs(
                 allAttrs: styles.keyValues,
                 tagName: tagName + ".style"
@@ -442,5 +501,21 @@ enum BBCodeCustomAttrs: String {
         )
 
         return attrs
+    }
+}
+
+class BBCodeCustomValue: CustomDebugStringConvertible {
+    let multiFactor: UInt
+
+    init(multiFactor: UInt = 1) {
+        self.multiFactor = multiFactor
+    }
+
+    func merging(other: BBCodeCustomValue) -> BBCodeCustomValue {
+        return BBCodeCustomValue(multiFactor: multiFactor + other.multiFactor)
+    }
+
+    var debugDescription: String {
+        return "BBCodeCustomValue(multiFactor: \(multiFactor)"
     }
 }
