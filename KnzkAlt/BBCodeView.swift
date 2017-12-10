@@ -193,14 +193,27 @@ class BBCodeView: UITextView {
             }
         }
         else {
-            let s = notParsed()
-            s.addAttribute(
+            var s = current.stringValue
+            let replace = {
+                (from: String, to: String) -> Void in
+
+                s = s.replacingOccurrences(of: from, with: to)
+            }
+
+            // https://developer.mozilla.org/en-US/docs/Glossary/Entity
+            replace("&amp;", "&")
+            replace("&lt;", "<")
+            replace("&gt;", ">")
+            replace("&quot;", "\"")
+
+            let attributed = NSMutableAttributedString(string: s)
+            attributed.addAttribute(
                     NSAttributedStringKey.font,
                     value: BBCodeView.defaultFont,
-                    range: NSRange(location: 0, length: s.length)
+                    range: NSRange(location: 0, length: attributed.length)
             )
 
-            return s
+            return attributed
         }
     }
 
