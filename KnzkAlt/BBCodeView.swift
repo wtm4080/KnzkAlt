@@ -248,16 +248,19 @@ class BBCodeView: UITextView {
 
         case "span":
             // ignoring
-            if let classAttr = htmlAttrs["class"], classAttr == "ellipsis" || classAttr == "" {
-                handledAttrsLogger.markAsHandled(attr: "class")
+            let classAttr = "class"
+            if let classAttrValue = htmlAttrs[classAttr], classAttrValue == "ellipsis" || classAttrValue == "" {
+                handledAttrsLogger.markAsHandled(attr: classAttr)
             }
 
             let styleAttr = "style"
             let styleAttrs = BBCodeCustomAttrs.htmlStyleToAttrsDict(
                     htmlStyle: htmlAttrs[styleAttr] ?? "",
+                    classAttr: htmlAttrs[classAttr] ?? "",
                     tagName: tag
             )
             handledAttrsLogger.markAsHandled(attr: styleAttr)
+            handledAttrsLogger.markAsHandled(attr: classAttr)
 
             result = styleAttrs
 
@@ -283,8 +286,20 @@ struct HandledAttrsLogger {
         _handledAttrs.insert(attr)
     }
 
+    mutating func markAsHandled(attrs: Set<String>) {
+        _handledAttrs.formUnion(attrs)
+    }
+
     func logUnhandledAttrs(allAttrs: [String: Any], tagName: String) {
         let unhandled = allAttrs.filter { !_handledAttrs.contains($0.key) }
+
+        unhandled.forEach {
+            NSLog("[Warning] Unhandled HTML attr for <\(tagName)> tag: \(String(describing: $0))")
+        }
+    }
+
+    func logUnhandledAttrs(allAttrs: [String], tagName: String) {
+        let unhandled = allAttrs.filter { !_handledAttrs.contains($0) }
 
         unhandled.forEach {
             NSLog("[Warning] Unhandled HTML attr for <\(tagName)> tag: \(String(describing: $0))")
@@ -333,17 +348,26 @@ class BBCodeLayoutManager: NSLayoutManager {
     }
 }
 
-enum BBCodeCustomAttrs {
+enum BBCodeCustomAttrs: String {
+    case flipVertical = "BBCode.FlipVertical"
+    case flipHorizontal = "BBCode.FlipHorizontal"
+    case spin = "BBCode.Spin"
+    case pulse = "BBCode.Pulse"
+    case quote = "BBCode.Quote"
+    case code = "BBCode.Code"
+
     static func htmlStyleToAttrsDict(
             htmlStyle: String,
+            classAttr: String,
             tagName: String
     ) -> [NSAttributedStringKey: Any] {
 
-        guard !htmlStyle.isEmpty else {
+        guard !htmlStyle.isEmpty || !classAttr.isEmpty else {
             return [:]
         }
 
         var styles = HTMLStyleParser(rawValue: htmlStyle)
+        var classAttrs = HTMLClassParser(rawValue: classAttr)
 
         var attrs: [NSAttributedStringKey: Any] = [:]
 
@@ -354,7 +378,7 @@ enum BBCodeCustomAttrs {
         }
         handledAttrsLogger.markAsHandled(attr: styles.foregroundColorKey)
 
-        let fontSize = styles.fontSize
+        let fontSize = styles.fontSize.map({$0 * (classAttrs.largeRate ?? 1.0)})
         handledAttrsLogger.markAsHandled(attr: styles.fontSizeKey)
 
         if styles.isItalic {
@@ -375,6 +399,9 @@ enum BBCodeCustomAttrs {
         else if let fontSize = fontSize {
             attrs[NSAttributedStringKey.font] = UIFont.systemFont(ofSize: fontSize)
         }
+        else if let largeLate = classAttrs.largeRate {
+            attrs[NSAttributedStringKey.font] = UIFont.systemFont(ofSize: BBCodeView.defaultFontSize * largeLate)
+        }
         else {
             // no-op
         }
@@ -392,6 +419,13 @@ enum BBCodeCustomAttrs {
         handledAttrsLogger.logUnhandledAttrs(
                 allAttrs: styles.keyValues,
                 tagName: tagName + ".style"
+        )
+
+        var handledClassAttrsLogger = HandledAttrsLogger()
+        handledClassAttrsLogger.markAsHandled(attrs: classAttrs.processedAttrs)
+        handledClassAttrsLogger.logUnhandledAttrs(
+                allAttrs: classAttrs.keys,
+                tagName: tagName + ".class"
         )
 
         return attrs
