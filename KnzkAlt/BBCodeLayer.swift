@@ -32,4 +32,20 @@ class BBCodeLayer: CALayer {
     override var debugDescription: String {
         return "BBCodeLayer: BBCode attrs: \(bbCodeAttrs)\nglyph pos pairs: \(String(describing: glyphPosPairs))\nother attrs: \(String(describing: otherAttrs))\n"
     }
+
+    lazy var origin: CGPoint = {
+        return glyphPosPairs.first?.1 ?? CGPoint.zero
+    }()
+
+    override func draw(in ctx: CGContext) {
+        let toLocalPos = {
+            [unowned self] (p: CGPoint) -> CGPoint in
+
+            let o = self.origin
+
+            return CGPoint(x: p.x - o.x, y: p.y - o.y)
+        }
+
+        let local = glyphPosPairs.map({($0.0, toLocalPos($0.1))})
+    }
 }
