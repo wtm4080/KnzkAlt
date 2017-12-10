@@ -16,6 +16,15 @@ class StatusCell: UITableViewCell {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
+
+    lazy var cellHeight: CGFloat = {
+        setNeedsLayout()
+        layoutIfNeeded()
+
+        let size = contentView.systemLayoutSizeFitting(UILayoutFittingCompressedSize)
+
+        return size.height
+    }()
 }
 
 class StatusCellOwner: NibViewOwner<StatusCell> {

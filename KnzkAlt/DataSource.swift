@@ -53,12 +53,8 @@ class DataSource: NSObject, UITableViewDataSource {
 
     func cellHeight(at: Int) -> CGFloat {
         let cell = _currentTL.statuses[at].view
-        cell.setNeedsLayout()
-        cell.layoutIfNeeded()
 
-        let size = cell.contentView.systemLayoutSizeFitting(UILayoutFittingCompressedSize)
-
-        return size.height
+        return cell.cellHeight
     }
 
     private var _currentTL: DataSourceTimeline {
