@@ -49,7 +49,7 @@ class BBCodeView: UITextView {
     override func draw(_ rect: CGRect) {
         super.draw(rect)
 
-        NSLog("[\(String(format: "%p", _textStorage))] draw()")
+        //NSLog("[\(String(format: "%p", _textStorage))] draw()")
     }
 
     private static let _contentRootTag = "__content_root__"

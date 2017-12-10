@@ -17,6 +17,6 @@ class BBCodeCustomValue: CustomDebugStringConvertible {
     }
 
     var debugDescription: String {
-        return "BBCodeCustomValue(multiFactor: \(multiFactor)"
+        return "BBCodeCustomValue(multiFactor: \(multiFactor))"
     }
 }

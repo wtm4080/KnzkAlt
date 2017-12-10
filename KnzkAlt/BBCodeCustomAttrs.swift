@@ -13,14 +13,30 @@ enum BBCodeCustomAttrs: String {
     case quote = "BBCode.Quote"
     case code = "BBCode.Code"
 
-    static let allValues = Set<NSAttributedStringKey>([
-        BBCodeCustomAttrs.flipVertical.attrKey,
-        BBCodeCustomAttrs.flipHorizontal.attrKey,
-        BBCodeCustomAttrs.spin.attrKey,
-        BBCodeCustomAttrs.pulse.attrKey,
-        BBCodeCustomAttrs.quote.attrKey,
-        BBCodeCustomAttrs.code.attrKey
-    ])
+    static func rebuild(
+            from attrs: [NSAttributedStringKey: Any]
+    ) -> (bbCodeAttrs: [BBCodeCustomAttrs: BBCodeCustomValue], otherAttrs: [NSAttributedStringKey: Any]) {
+
+        var bbCodeAttrs = [BBCodeCustomAttrs: BBCodeCustomValue]()
+        var otherAttrs = [NSAttributedStringKey: Any]()
+
+        attrs.forEach {
+            switch $0.key.rawValue {
+            case
+                    BBCodeCustomAttrs.flipVertical.rawValue,
+                    BBCodeCustomAttrs.flipHorizontal.rawValue,
+                    BBCodeCustomAttrs.spin.rawValue,
+                    BBCodeCustomAttrs.pulse.rawValue,
+                    BBCodeCustomAttrs.quote.rawValue,
+                    BBCodeCustomAttrs.code.rawValue:
+                bbCodeAttrs[BBCodeCustomAttrs(rawValue: $0.key.rawValue)!] = ($0.value as? BBCodeCustomValue)!
+            default:
+                otherAttrs[$0.key] = $0.value
+            }
+        }
+
+        return (bbCodeAttrs: bbCodeAttrs, otherAttrs: otherAttrs)
+    }
 
     var attrKey: NSAttributedStringKey {
         return NSAttributedStringKey(rawValue)

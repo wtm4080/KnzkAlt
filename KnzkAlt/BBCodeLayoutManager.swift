@@ -15,29 +15,39 @@ class BBCodeLayoutManager: NSLayoutManager {
             attributes: [NSAttributedStringKey: Any],
             in graphicsContext: CGContext) {
 
-        super.showCGGlyphs(
-                glyphs,
-                positions: positions,
-                count: glyphCount,
-                font: font,
-                matrix: textMatrix,
-                attributes: attributes,
-                in: graphicsContext
-        )
+        let attrs = BBCodeCustomAttrs.rebuild(from: attributes)
 
-        let glyphPosPairs = {
-            () -> [(CGGlyph, CGPoint)] in
+        if attrs.bbCodeAttrs.isEmpty {
+            super.showCGGlyphs(
+                    glyphs,
+                    positions: positions,
+                    count: glyphCount,
+                    font: font,
+                    matrix: textMatrix,
+                    attributes: attributes,
+                    in: graphicsContext
+            )
+        }
+        else {
+            let glyphPosPairs = {
+                () -> [(CGGlyph, CGPoint)] in
 
-            var pairs: [(CGGlyph, CGPoint)] = []
-            for i in 0 ..< glyphCount {
-                pairs.append((glyphs[i], positions[i]))
-            }
+                var pairs: [(CGGlyph, CGPoint)] = []
+                for i in 0 ..< glyphCount {
+                    pairs.append((glyphs[i], positions[i]))
+                }
 
-            return pairs
-        }()
+                return pairs
+            }()
 
-        let bbCodeAttrs = attributes.filter({BBCodeCustomAttrs.allValues.contains($0.key)})
+            let bbCodeLayer = BBCodeLayer(
+                    glyphPosPairs: glyphPosPairs,
+                    matrix: textMatrix,
+                    bbCodeAttrs: attrs.bbCodeAttrs,
+                    otherAttrs: attrs.otherAttrs
+            )
 
-        NSLog("[\(String(format: "%p", textStorage!))] showCGGlyphs(): BBCode attrs: \(bbCodeAttrs)\nglyph pos pairs: \(String(describing: glyphPosPairs))\n")
+            NSLog("[\(String(format: "%p", textStorage!))] showCGGlyphs(): \(bbCodeLayer.debugDescription)")
+        }
     }
 }
