@@ -318,7 +318,18 @@ class BBCodeLayoutManager: NSLayoutManager {
                 in: graphicsContext
         )
 
-        NSLog("[\(String(format: "%p", textStorage!))] showCGGlyphs(): count: \(glyphCount), font: \(font), attrs: \(attributes), isContextExist: \(graphicsContext)")
+        let glyphPosPairs = {
+            () -> [(CGGlyph, CGPoint)] in
+
+            var pairs: [(CGGlyph, CGPoint)] = []
+            for i in 0 ..< glyphCount {
+                pairs.append((glyphs[i], positions[i]))
+            }
+
+            return pairs
+        }()
+
+        NSLog("[\(String(format: "%p", textStorage!))] showCGGlyphs(): count: \(glyphCount), font: \(font), attrs: \(attributes)\nglyph pos pairs: \(String(describing: glyphPosPairs))\n")
     }
 }
 
