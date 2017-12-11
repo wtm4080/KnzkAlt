@@ -56,6 +56,149 @@ class BBCodeLayer: CALayer {
         }
 
         let local = glyphPosPairs.map({($0.0, toLocalPos($0.1))})
+
+        ctx.saveGState()
+        defer {
+            ctx.restoreGState()
+        }
+
+        _setDrawContextState(ctx: ctx)
+
+        ctx.showGlyphs(
+                glyphPosPairs.map({$0.0}),
+                at: glyphPosPairs.map({$0.1})
+        )
+
+        _drawPostEffects(ctx: ctx)
+    }
+
+    private func _drawPostEffects(ctx: CGContext) {
+        otherAttrs.forEach {
+            ctx.saveGState()
+            defer {
+                ctx.restoreGState()
+            }
+
+            let uStyle = {
+                (v: Any) -> NSUnderlineStyle in
+
+                NSUnderlineStyle(rawValue: v as! Int) ?? .styleNone
+            }
+
+            let color = {
+                (key: NSAttributedStringKey) -> UIColor? in
+
+                self.otherAttrs[key] as? UIColor
+            }
+
+            switch $0.key {
+
+            case NSAttributedStringKey.strikethroughStyle:
+                _drawUnderline(
+                        style: uStyle($0.value),
+                        baseY: self.bounds.size.height/2,
+                        color: color(NSAttributedStringKey.strikethroughColor),
+                        ctx: ctx
+                )
+
+            case NSAttributedStringKey.underlineStyle:
+                _drawUnderline(
+                        style: uStyle($0.value),
+                        baseY: self.fontToGetSize.ascender,
+                        color: color(NSAttributedStringKey.underlineColor),
+                        ctx: ctx)
+
+            default:
+                break
+            }
+        }
+    }
+
+    private func _drawUnderline(
+            style: NSUnderlineStyle,
+            baseY: CGFloat,
+            color: UIColor?,
+            ctx: CGContext
+    ) {
+        if style != .styleNone {
+            if let color = color {
+                ctx.setStrokeColor(color.cgColor)
+            }
+
+            let defaultLineWidth = CGFloat(2)
+
+            let drawLine = {
+                (beginY: [CGFloat]) -> () in
+
+                beginY.forEach {
+                    ctx.beginPath()
+                    ctx.move(to: CGPoint(x: 0, y: $0))
+                    ctx.addLine(to: CGPoint(x: self.bounds.size.width, y: $0))
+                    ctx.strokePath()
+                }
+            }
+
+            let height = bounds.size.height
+            let centerY = height / 2
+
+            switch style {
+
+            case .styleSingle:
+                ctx.setLineWidth(defaultLineWidth)
+                drawLine([centerY])
+
+            case .styleThick:
+                ctx.setLineWidth(defaultLineWidth * 2)
+                drawLine([centerY])
+
+            case .styleDouble:
+                ctx.setLineWidth(defaultLineWidth)
+
+                let margin = height / 5
+                drawLine([centerY + margin, centerY - margin])
+
+            default:
+                ctx.setLineWidth(defaultLineWidth)
+                drawLine([centerY])
+            }
+        }
+    }
+
+    private func _setDrawContextState(ctx: CGContext) {
+        ctx.setFont(BBCodeLayer._toCGFont(from: font))
+        ctx.setLineWidth(3)
+
+        var textMatrix = matrix
+        textMatrix.tx = 0
+        textMatrix.ty = 0
+
+        otherAttrs.forEach {
+            switch $0.key {
+
+            case NSAttributedStringKey.font:
+                ctx.setFont(BBCodeLayer._toCGFont(from: $0.value as! UIFont))
+
+            case NSAttributedStringKey.foregroundColor:
+                let color = ($0.value as! UIColor).cgColor
+                ctx.setStrokeColor(color)
+                ctx.setFillColor(color)
+
+                if let strokeColor = otherAttrs[NSAttributedStringKey.strokeColor] as? UIColor {
+                    ctx.setStrokeColor(strokeColor.cgColor)
+                }
+
+            case NSAttributedStringKey.shadow:
+                let s = $0.value as! NSShadow
+                ctx.setShadow(
+                        offset: s.shadowOffset,
+                        blur: s.shadowBlurRadius,
+                        color: (s.shadowColor as! UIColor).cgColor
+                )
+
+            default:
+                break
+            }
+        }
     }
 
     private func _setBBCodeProps() {
@@ -98,16 +241,32 @@ class BBCodeLayer: CALayer {
         }
 
         drawsAsynchronously = true
+
+        cornerRadius = 1
+
+        otherAttrs.forEach {
+            switch $0.key {
+
+            case NSAttributedStringKey.backgroundColor:
+                backgroundColor = ($0.value as! UIColor).cgColor
+
+            default:
+                break
+            }
+        }
     }
 
-    private func _setBounds() {
-        let fontToGetSize: UIFont
+    lazy var fontToGetSize: UIFont = {
         if let f = otherAttrs[NSAttributedStringKey.font] as? UIFont {
-            fontToGetSize = f
+            return f
         }
         else {
-            fontToGetSize = font
+            return font
         }
+    }()
+
+    private func _setBounds() {
+        let fontToGetSize = self.fontToGetSize
 
         let lastPosX = glyphPosPairs.last.map({$0.1.x - origin.x}) ?? 0.0
 
@@ -124,12 +283,7 @@ class BBCodeLayer: CALayer {
 
         let boundsSize: CGSize
         if var lastGlyph = glyphPosPairs.last?.0 {
-            let ctFont = CTFontCreateWithFontDescriptor(
-                    fontToGetSize.fontDescriptor as CTFontDescriptor,
-                    fontToGetSize.pointSize,
-                    nil
-            )
-            let cgFont = CTFontCopyGraphicsFont(ctFont, nil)
+            let cgFont = BBCodeLayer._toCGFont(from: fontToGetSize)
 
             let pBoundingBox = UnsafeMutablePointer<CGRect>.allocate(capacity: 1)
 
@@ -159,5 +313,15 @@ class BBCodeLayer: CALayer {
                 origin: CGPoint.zero,
                 size: boundsSize
         )
+    }
+
+    private static func _toCGFont(from f: UIFont) -> CGFont {
+        let ctFont = CTFontCreateWithFontDescriptor(
+                f.fontDescriptor as CTFontDescriptor,
+                f.pointSize,
+                nil
+        )
+
+        return CTFontCopyGraphicsFont(ctFont, nil)
     }
 }
