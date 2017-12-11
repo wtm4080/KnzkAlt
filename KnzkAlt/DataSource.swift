@@ -8,9 +8,9 @@ import UIKit
 class DataSource: NSObject, UITableViewDataSource {
     static let shared = DataSource()
 
-    private let _homeTL = DataSourceTimeline()
-    private let _localTL = DataSourceTimeline()
-    private let _federationTL = DataSourceTimeline()
+    private var _homeTL = DataSourceTimeline()
+    private var _localTL = DataSourceTimeline()
+    private var _federationTL = DataSourceTimeline()
 
     private var _currentTLKind = TLKind.home
 
@@ -24,6 +24,10 @@ class DataSource: NSObject, UITableViewDataSource {
         Notifications.switchTL.register(
                 observer: self,
                 selector: #selector(type(of: self)._observeSwitchTL(n:))
+        )
+        Notifications.logoutPerformed.register(
+                observer: self,
+                selector: #selector(type(of: self)._observeLogoutPerformed(n:))
         )
     }
 
@@ -41,6 +45,16 @@ class DataSource: NSObject, UITableViewDataSource {
         _currentTLKind = tlParams.kind
 
         Notifications.switchedTL.post(tlParams: tlParams)
+    }
+
+    @objc private func _observeLogoutPerformed(n: Notification) {
+        _homeTL = DataSourceTimeline()
+        _localTL = DataSourceTimeline()
+        _federationTL = DataSourceTimeline()
+
+        Notifications.switchTL.post(
+                tlParams: TLParams(kind: .home, pos: .unspecified)
+        )
     }
 
     func tableView(_ _: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

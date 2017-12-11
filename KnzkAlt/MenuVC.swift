@@ -10,9 +10,6 @@ import UIKit
 
 class MenuVC: UITableViewController {
     @IBAction func logoutAction(_ sender: Any) {
-        var kc = Keychain.shared
-        kc.accessToken = nil
-
-        Notifications.logoutPerformed.post()
+        ClientManager.shared.logout()
     }
 }

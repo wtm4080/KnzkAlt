@@ -82,6 +82,13 @@ class ClientManager {
         }
     }
 
+    func logout() {
+        var kc = Keychain.shared
+        kc.accessToken = nil
+
+        Notifications.logoutPerformed.post()
+    }
+
     private func _tlParamsToRequestRange(
             _ tlParams: TLParams,
             firstId: Int?,

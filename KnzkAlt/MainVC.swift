@@ -57,6 +57,8 @@ class MainVC: UITabBarController {
 
     @objc private func _observeLogoutPerformed(n: Notification) {
         _presentInitialVC()
+
+        self.selectedIndex = 0
     }
 
     private func _presentInitialVC() {
