@@ -26,6 +26,76 @@ class BBCodeLayer: CALayer {
         self.otherAttrs = otherAttrs
 
         super.init()
+
+        _setBounds()
+
+        _setLayerProps()
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("BBCodeLayer does not support init?(coder:).")
+    }
+
+    override var debugDescription: String {
+        return "BBCodeLayer: BBCode attrs: \(bbCodeAttrs)\nglyph pos pairs: \(String(describing: glyphPosPairs))\nother attrs: \(String(describing: otherAttrs))\n"
+    }
+
+    lazy var origin: CGPoint = {
+        return glyphPosPairs.first?.1 ?? CGPoint.zero
+    }()
+
+    override func draw(in ctx: CGContext) {
+        let toLocalPos = {
+            [unowned self] (p: CGPoint) -> CGPoint in
+
+            let o = self.origin
+
+            return CGPoint(x: p.x - o.x, y: p.y - o.y)
+        }
+
+        let local = glyphPosPairs.map({($0.0, toLocalPos($0.1))})
+    }
+
+    private func _setBBCodeProps() {
+        bbCodeAttrs.forEach {
+            let factor = $0.value.multiFactor
+
+            let flipFactor = {
+                CGFloat(factor % 2 == 0 ? 1.0 : -1.0)
+            }
+
+            switch $0.key {
+
+            case .flipVertical:
+                setAffineTransform(
+                        affineTransform().scaledBy(x: 1.0, y: flipFactor())
+                )
+            case .flipHorizontal:
+                setAffineTransform(
+                        affineTransform().scaledBy(x: flipFactor(), y: 1.0)
+                )
+
+            case .spin:
+                // TODO: apply spin animation
+                break
+
+            case .pulse:
+                // TODO: apply pulse animation
+                break
+
+            default:
+                NSLog("[Warning] Unrecognized BBCode attr on BBCodeLayer: \(String(describing: $0))")
+            }
+        }
+    }
+
+    private func _setLayerProps() {
+        if bbCodeAttrs[.spin] != nil {
+            allowsEdgeAntialiasing = true
+            edgeAntialiasingMask = [.layerLeftEdge, .layerRightEdge, .layerBottomEdge, .layerTopEdge]
+        }
+
+        drawsAsynchronously = true
     }
 
     private func _setBounds() {
@@ -87,29 +157,5 @@ class BBCodeLayer: CALayer {
                 origin: CGPoint.zero,
                 size: boundsSize
         )
-    }
-
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("BBCodeLayer does not support init?(coder:).")
-    }
-
-    override var debugDescription: String {
-        return "BBCodeLayer: BBCode attrs: \(bbCodeAttrs)\nglyph pos pairs: \(String(describing: glyphPosPairs))\nother attrs: \(String(describing: otherAttrs))\n"
-    }
-
-    lazy var origin: CGPoint = {
-        return glyphPosPairs.first?.1 ?? CGPoint.zero
-    }()
-
-    override func draw(in ctx: CGContext) {
-        let toLocalPos = {
-            [unowned self] (p: CGPoint) -> CGPoint in
-
-            let o = self.origin
-
-            return CGPoint(x: p.x - o.x, y: p.y - o.y)
-        }
-
-        let local = glyphPosPairs.map({($0.0, toLocalPos($0.1))})
     }
 }
