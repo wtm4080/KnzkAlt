@@ -30,6 +30,8 @@ class BBCodeLayer: CALayer {
         _setBounds()
 
         _setLayerProps()
+
+        _setBBCodeProps()
     }
 
     required init?(coder aDecoder: NSCoder) {
