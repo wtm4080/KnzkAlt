@@ -27,11 +27,41 @@ class BBCodeLayer: CALayer {
 
         super.init()
 
+        _init()
+    }
+
+    override init(layer: Any) {
+        if let other = layer as? BBCodeLayer {
+            self.glyphPosPairs = other.glyphPosPairs
+            self.font = other.font
+            self.matrix = other.matrix
+            self.bbCodeAttrs = other.bbCodeAttrs
+            self.otherAttrs = other.otherAttrs
+        }
+        else {
+            self.glyphPosPairs = []
+            self.font = UIFont.systemFont(ofSize: 8)
+            self.matrix = CGAffineTransform.identity
+            self.bbCodeAttrs = [:]
+            self.otherAttrs = [:]
+        }
+
+        super.init(layer: layer)
+
+        _init()
+    }
+
+    private func _init() {
         _setFrame()
 
         _setLayerProps()
 
         _setBBCodeProps()
+
+        NSLog("BBCodeLayer frame: \(String(describing: frame))")
+
+        needsDisplayOnBoundsChange = true
+        setNeedsDisplay()
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -53,6 +83,7 @@ class BBCodeLayer: CALayer {
             let o = self.origin
 
             return CGPoint(x: p.x - o.x, y: p.y - o.y)
+            //return CGPoint.zero
         }
 
         let local = glyphPosPairs.map({($0.0, toLocalPos($0.1))})
@@ -68,6 +99,7 @@ class BBCodeLayer: CALayer {
                 local.map({$0.0}),
                 at: local.map({$0.1})
         )
+        //("test" as NSString).draw(at: CGPoint.zero)
 
         _drawPostEffects(ctx: ctx)
     }
@@ -104,7 +136,7 @@ class BBCodeLayer: CALayer {
             case NSAttributedStringKey.underlineStyle:
                 _drawUnderline(
                         style: uStyle($0.value),
-                        baseY: self.fontToGetSize.ascender,
+                        baseY: self.bounds.size.height,
                         color: color(NSAttributedStringKey.underlineColor),
                         ctx: ctx)
 
@@ -125,7 +157,7 @@ class BBCodeLayer: CALayer {
                 ctx.setStrokeColor(color.cgColor)
             }
 
-            let defaultLineWidth = CGFloat(2)
+            let defaultLineWidth = CGFloat(1)
 
             let drawLine = {
                 (beginY: [CGFloat]) -> () in
@@ -139,27 +171,26 @@ class BBCodeLayer: CALayer {
             }
 
             let height = bounds.size.height
-            let centerY = height / 2
 
             switch style {
 
             case .styleSingle:
                 ctx.setLineWidth(defaultLineWidth)
-                drawLine([centerY])
+                drawLine([baseY])
 
             case .styleThick:
                 ctx.setLineWidth(defaultLineWidth * 2)
-                drawLine([centerY])
+                drawLine([baseY])
 
             case .styleDouble:
                 ctx.setLineWidth(defaultLineWidth)
 
-                let margin = height / 5
-                drawLine([centerY + margin, centerY - margin])
+                let margin = height / 10
+                drawLine([baseY + margin, baseY - margin])
 
             default:
                 ctx.setLineWidth(defaultLineWidth)
-                drawLine([centerY])
+                drawLine([baseY])
             }
         }
     }
@@ -171,6 +202,7 @@ class BBCodeLayer: CALayer {
         var textMatrix = matrix
         textMatrix.tx = 0
         textMatrix.ty = 0
+        ctx.textMatrix = textMatrix
 
         otherAttrs.forEach {
             switch $0.key {
@@ -254,6 +286,11 @@ class BBCodeLayer: CALayer {
                 break
             }
         }
+
+        isGeometryFlipped = true
+
+        borderWidth = 1
+        borderColor = UIColor.black.cgColor
     }
 
     lazy var fontToGetSize: UIFont = {
@@ -281,37 +318,39 @@ class BBCodeLayer: CALayer {
             )
         }
 
-        let boundsSize: CGSize
-        if var lastGlyph = glyphPosPairs.last?.0 {
-            let cgFont = BBCodeLayer._toCGFont(from: fontToGetSize)
-
-            let pBoundingBox = UnsafeMutablePointer<CGRect>.allocate(capacity: 1)
-
-            let result = cgFont.getGlyphBBoxes(
-                    glyphs: &lastGlyph,
-                    count: 1,
-                    bboxes: pBoundingBox
-            )
-
-            if result {
-                let lastGlyphSize = pBoundingBox[0].size
-
-                boundsSize = CGSize(
-                        width: lastPosX + lastGlyphSize.width,
-                        height: lastGlyphSize.height
-                )
-            }
-            else {
-                boundsSize = defaultBoundsSize()
-            }
-        }
-        else {
-            boundsSize = defaultBoundsSize()
-        }
+//        let boundsSize: CGSize
+//        if let lastGlyph = glyphPosPairs.last?.0 {
+//            let cgFont = BBCodeLayer._toCGFont(from: fontToGetSize)
+//
+//            let pLastGlyph = UnsafeMutablePointer<CGGlyph>.allocate(capacity: 1)
+//            pLastGlyph[0] = lastGlyph
+//            let pBoundingBox = UnsafeMutablePointer<CGRect>.allocate(capacity: 1)
+//
+//            let result = cgFont.getGlyphBBoxes(
+//                    glyphs: UnsafePointer<CGGlyph>(pLastGlyph),
+//                    count: 1,
+//                    bboxes: pBoundingBox
+//            )
+//
+//            if result {
+//                let lastGlyphSize = pBoundingBox[0].size
+//
+//                boundsSize = CGSize(
+//                        width: lastPosX + lastGlyphSize.width,
+//                        height: lastGlyphSize.height
+//                )
+//            }
+//            else {
+//                boundsSize = defaultBoundsSize()
+//            }
+//        }
+//        else {
+//            boundsSize = defaultBoundsSize()
+//        }
 
         frame = CGRect(
                 origin: origin,
-                size: boundsSize
+                size: defaultBoundsSize()
         )
     }
 

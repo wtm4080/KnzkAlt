@@ -6,10 +6,10 @@
 import UIKit
 
 class BBCodeLayoutManager: NSLayoutManager {
-    let contentLayer: CALayer
+    let contentView: UIView
 
-    init(contentLayer: CALayer) {
-        self.contentLayer = contentLayer
+    init(contentView: UIView) {
+        self.contentView = contentView
 
         super.init()
     }
@@ -60,7 +60,8 @@ class BBCodeLayoutManager: NSLayoutManager {
                     otherAttrs: attrs.otherAttrs
             )
 
-            contentLayer.addSublayer(bbCodeLayer)
+            contentView.layer.addSublayer(bbCodeLayer)
+            //contentView.setNeedsDisplay()
 
             //NSLog("[\(String(format: "%p", textStorage!))] showCGGlyphs(): \(bbCodeLayer.debugDescription)")
         }

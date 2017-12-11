@@ -16,7 +16,7 @@ class BBCodeView: UITextView {
 
         super.init(frame: frame, textContainer: textContainer)
 
-        let layoutManager = BBCodeLayoutManager(contentLayer: layer)
+        let layoutManager = BBCodeLayoutManager(contentView: self.subviews.first!)
         layoutManager.addTextContainer(textContainer)
 
         _textStorage.addLayoutManager(layoutManager)
