@@ -42,6 +42,7 @@ class BBCodeLayoutManager: NSLayoutManager {
 
             let bbCodeLayer = BBCodeLayer(
                     glyphPosPairs: glyphPosPairs,
+                    font: font,
                     matrix: textMatrix,
                     bbCodeAttrs: attrs.bbCodeAttrs,
                     otherAttrs: attrs.otherAttrs
