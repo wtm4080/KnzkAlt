@@ -20,7 +20,7 @@ class ClientManager {
 
     private var _standard: Client {
         return Client(
-                baseURL: "https://knzk.me",
+                baseURL: "https://\(Login.host)",
                 accessToken: Keychain.shared.accessToken)
     }
 

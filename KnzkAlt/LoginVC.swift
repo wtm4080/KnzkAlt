@@ -47,6 +47,8 @@ class LoginVC: UIViewController, WKNavigationDelegate {
         view.bringSubview(toFront: _progressView)
         _progressView.isHidden = true
         _progressView.progress = 0.0
+
+        title = Login.host
     }
 
     deinit {

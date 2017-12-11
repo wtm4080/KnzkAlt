@@ -42,7 +42,7 @@ struct LoginResult {
 }
 
 struct Login {
-    static let host = "knzk.me"
+    static let host = "kirishima.cloud"
 
     static func login() -> Promise<Result<LoginResult, LoginError>> {
         guard let appsURL = URL(string: "https://\(host)/api/v1/apps") else {

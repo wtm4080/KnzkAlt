@@ -27,7 +27,11 @@ class DataSource: NSObject, UITableViewDataSource {
         )
         Notifications.logoutPerformed.register(
                 observer: self,
-                selector: #selector(type(of: self)._observeLogoutPerformed(n:))
+                selector: #selector(type(of: self)._observeResets(n:))
+        )
+        Notifications.accessTokenRefreshed.register(
+                observer: self,
+                selector: #selector(type(of: self)._observeResets(n:))
         )
     }
 
@@ -47,14 +51,8 @@ class DataSource: NSObject, UITableViewDataSource {
         Notifications.switchedTL.post(tlParams: tlParams)
     }
 
-    @objc private func _observeLogoutPerformed(n: Notification) {
-        _homeTL = DataSourceTimeline()
-        _localTL = DataSourceTimeline()
-        _federationTL = DataSourceTimeline()
-
-        Notifications.switchTL.post(
-                tlParams: TLParams(kind: .home, pos: .unspecified)
-        )
+    @objc private func _observeResets(n: Notification) {
+        _reset()
     }
 
     func tableView(_ _: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -80,5 +78,15 @@ class DataSource: NSObject, UITableViewDataSource {
             case .federation:
                 return _federationTL
         }
+    }
+
+    private func _reset() {
+        _homeTL = DataSourceTimeline()
+        _localTL = DataSourceTimeline()
+        _federationTL = DataSourceTimeline()
+
+        Notifications.switchTL.post(
+                tlParams: TLParams(kind: .home, pos: .unspecified)
+        )
     }
 }
