@@ -27,7 +27,7 @@ class BBCodeLayer: CALayer {
 
         super.init()
 
-        _setBounds()
+        _setFrame()
 
         _setLayerProps()
 
@@ -65,8 +65,8 @@ class BBCodeLayer: CALayer {
         _setDrawContextState(ctx: ctx)
 
         ctx.showGlyphs(
-                glyphPosPairs.map({$0.0}),
-                at: glyphPosPairs.map({$0.1})
+                local.map({$0.0}),
+                at: local.map({$0.1})
         )
 
         _drawPostEffects(ctx: ctx)
@@ -265,7 +265,7 @@ class BBCodeLayer: CALayer {
         }
     }()
 
-    private func _setBounds() {
+    private func _setFrame() {
         let fontToGetSize = self.fontToGetSize
 
         let lastPosX = glyphPosPairs.last.map({$0.1.x - origin.x}) ?? 0.0
@@ -309,8 +309,8 @@ class BBCodeLayer: CALayer {
             boundsSize = defaultBoundsSize()
         }
 
-        bounds = CGRect(
-                origin: CGPoint.zero,
+        frame = CGRect(
+                origin: origin,
                 size: boundsSize
         )
     }

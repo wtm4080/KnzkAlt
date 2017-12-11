@@ -6,6 +6,18 @@
 import UIKit
 
 class BBCodeLayoutManager: NSLayoutManager {
+    let contentLayer: CALayer
+
+    init(contentLayer: CALayer) {
+        self.contentLayer = contentLayer
+
+        super.init()
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("BBCodeLayoutManager does not support init?(coder:).")
+    }
+
     override func showCGGlyphs(
             _ glyphs: UnsafePointer<CGGlyph>,
             positions: UnsafePointer<CGPoint>,
@@ -48,7 +60,9 @@ class BBCodeLayoutManager: NSLayoutManager {
                     otherAttrs: attrs.otherAttrs
             )
 
-            NSLog("[\(String(format: "%p", textStorage!))] showCGGlyphs(): \(bbCodeLayer.debugDescription)")
+            contentLayer.addSublayer(bbCodeLayer)
+
+            //NSLog("[\(String(format: "%p", textStorage!))] showCGGlyphs(): \(bbCodeLayer.debugDescription)")
         }
     }
 }
