@@ -97,8 +97,12 @@ class BBCodeLayer: CALayer {
                 )
 
             case .spin:
-                // TODO: apply spin animation
-                break
+                let a = CABasicAnimation(keyPath: "transform.rotation")
+                a.toValue = 2.0 * .pi
+                a.duration = 2
+                a.repeatCount = .infinity
+                a.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear)
+                add(a, forKey: "spin")
 
             case .pulse:
                 // TODO: apply pulse animation

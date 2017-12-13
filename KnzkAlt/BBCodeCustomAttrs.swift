@@ -103,11 +103,15 @@ enum BBCodeCustomAttrs: String {
         }
 
         if classAttrs.isFlipVertical {
-            attrs[BBCodeCustomAttrs.flipVertical.attrKey] = BBCodeCustomValue(multiFactor: 1)
+            attrs[BBCodeCustomAttrs.flipVertical.attrKey] = BBCodeCustomValue()
         }
 
         if classAttrs.isFlipHorizontal {
-            attrs[BBCodeCustomAttrs.flipHorizontal.attrKey] = BBCodeCustomValue(multiFactor: 1)
+            attrs[BBCodeCustomAttrs.flipHorizontal.attrKey] = BBCodeCustomValue()
+        }
+
+        if classAttrs.isSpin {
+            attrs[BBCodeCustomAttrs.spin.attrKey] = BBCodeCustomValue()
         }
 
         handledAttrsLogger.logUnhandledAttrs(
