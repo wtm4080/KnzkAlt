@@ -105,8 +105,14 @@ class BBCodeLayer: CALayer {
                 add(a, forKey: "spin")
 
             case .pulse:
-                // TODO: apply pulse animation
-                break
+                let a = CABasicAnimation(keyPath: "opacity")
+                a.fromValue = 1.0
+                a.toValue = 0.5
+                a.duration = 1
+                a.repeatCount = .infinity
+                a.autoreverses = true
+                a.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+                add(a, forKey: "pulse")
 
             default:
                 NSLog("[Warning] Unrecognized BBCode attr on BBCodeLayer: \(String(describing: $0))")

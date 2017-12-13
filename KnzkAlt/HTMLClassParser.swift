@@ -79,4 +79,14 @@ struct HTMLClassParser {
 
         return isPresent
     }()
+
+    lazy var isPulse: Bool = {
+        let key = "bbcode-pulse-loading"
+
+        let isPresent = keys.contains(key)
+
+        _processed.insert(key)
+
+        return isPresent
+    }()
 }

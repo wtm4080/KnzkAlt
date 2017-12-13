@@ -114,6 +114,10 @@ enum BBCodeCustomAttrs: String {
             attrs[BBCodeCustomAttrs.spin.attrKey] = BBCodeCustomValue()
         }
 
+        if classAttrs.isPulse {
+            attrs[BBCodeCustomAttrs.pulse.attrKey] = BBCodeCustomValue()
+        }
+
         handledAttrsLogger.logUnhandledAttrs(
                 allAttrs: styles.keyValues,
                 tagName: tagName + ".style"
