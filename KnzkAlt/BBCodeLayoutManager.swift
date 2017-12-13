@@ -52,32 +52,19 @@ class BBCodeLayoutManager: NSLayoutManager {
                 return pairs
             }()
 
-            let origin: () -> CGPoint = {
+            let origin = {
+                () -> CGPoint in
+
                 var p = glyphPosPairs.first?.1 ?? CGPoint.zero
 
                 // TODO: fix to convert appropriate coordinates
                 p.y -= 12.0/15.0 * BBCodeView.defaultFontSize
 
                 return p
-            }
-
-            let lastPosX = glyphPosPairs.last.map({$0.1.x - origin().x}) ?? 0.0
-            let defaultBoundsSize = {
-                () -> CGSize in
-
-                let sizeUnit = font.ascender + font.descender
-
-                return CGSize(
-                        width: lastPosX + sizeUnit*2,
-                        height: sizeUnit
-                )
-            }
+            }()
 
             attrs.bbCodeAttrs.forEach {
-                $0.value.boundingRectInContainer = CGRect(
-                        origin: origin(),
-                        size: defaultBoundsSize()
-                )
+                $0.value.position = origin
             }
 
             DispatchQueue.main.async {

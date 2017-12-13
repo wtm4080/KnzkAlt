@@ -20,5 +20,5 @@ class BBCodeCustomValue: CustomDebugStringConvertible {
         return "BBCodeCustomValue(multiFactor: \(multiFactor))"
     }
 
-    var boundingRectInContainer: CGRect?
+    var position: CGPoint?
 }
