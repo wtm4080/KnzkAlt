@@ -99,7 +99,7 @@ class BBCodeLayer: CALayer {
             case .spin:
                 let a = CABasicAnimation(keyPath: "transform.rotation")
                 a.toValue = 2.0 * .pi
-                a.duration = 2
+                a.duration = 2.0 / Double(factor)
                 a.repeatCount = .infinity
                 a.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear)
                 add(a, forKey: "spin")
@@ -107,8 +107,8 @@ class BBCodeLayer: CALayer {
             case .pulse:
                 let a = CABasicAnimation(keyPath: "opacity")
                 a.fromValue = 1.0
-                a.toValue = 0.5
-                a.duration = 1
+                a.toValue = 0.5 / Double(factor)
+                a.duration = 1.0 / Double(factor)
                 a.repeatCount = .infinity
                 a.autoreverses = true
                 a.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
