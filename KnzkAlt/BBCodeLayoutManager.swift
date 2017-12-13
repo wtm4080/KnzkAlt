@@ -6,10 +6,10 @@
 import UIKit
 
 class BBCodeLayoutManager: NSLayoutManager {
-    let contentView: UIView
+    let bbCodeView: BBCodeView
 
-    init(contentView: UIView) {
-        self.contentView = contentView
+    init(bbCodeView: BBCodeView) {
+        self.bbCodeView = bbCodeView
 
         super.init()
     }
@@ -72,8 +72,6 @@ class BBCodeLayoutManager: NSLayoutManager {
             )
         }
         else {
-            return
-
             let glyphPosPairs = {
                 () -> [(CGGlyph, CGPoint)] in
 
@@ -84,6 +82,39 @@ class BBCodeLayoutManager: NSLayoutManager {
 
                 return pairs
             }()
+
+            let origin: () -> CGPoint = {
+                glyphPosPairs.first?.1 ?? CGPoint.zero
+            }
+
+            let lastPosX = glyphPosPairs.last.map({$0.1.x - origin().x}) ?? 0.0
+            let defaultBoundsSize = {
+                () -> CGSize in
+
+                let sizeUnit = font.ascender + font.descender
+
+                return CGSize(
+                        width: lastPosX + sizeUnit,
+                        height: sizeUnit
+                )
+            }
+
+            attrs.bbCodeAttrs.forEach {
+                var v = $0.value
+
+                v.boundingRectInContainer = CGRect(
+                        origin: origin(),
+                        size: defaultBoundsSize()
+                )
+            }
+
+            DispatchQueue.main.async {
+                [weak self] in
+
+                self?.bbCodeView.constructBBCodeLayers()
+            }
+
+            return
 
 //            let bbCodeCharsRange = characterRange(
 //                    forGlyphRange: glyphsToShow,
@@ -112,56 +143,40 @@ class BBCodeLayoutManager: NSLayoutManager {
 //            contentView.layer.addSublayer(bbCodeLayer)
             //contentView.setNeedsDisplay()
 
-            let origin: () -> CGPoint = {
-                glyphPosPairs.first?.1 ?? CGPoint.zero
-            }
-
-            let lastPosX = glyphPosPairs.last.map({$0.1.x - origin().x}) ?? 0.0
-            let defaultBoundsSize = {
-                () -> CGSize in
-
-                let sizeUnit = font.ascender + font.descender
-
-                return CGSize(
-                        width: lastPosX + sizeUnit,
-                        height: sizeUnit
-                )
-            }
-
-            UIGraphicsBeginImageContext(defaultBoundsSize())
-            defer {
-                UIGraphicsEndImageContext()
-            }
-            let imageContext = UIGraphicsGetCurrentContext()!
-            imageContext.setFont(BBCodeLayoutManager._toCGFont(from: font))
-            imageContext.textMatrix = textMatrix
-
-            super.showCGGlyphs(
-                    glyphs,
-                    positions: glyphPosPairs.map({$0.1}),
-                    count: glyphCount,
-                    font: font,
-                    matrix: textMatrix,
-                    attributes: attributes,
-                    in: imageContext
-                    //in: graphicsContext
-            )
-
-            if let image = UIGraphicsGetImageFromCurrentImageContext() {
-                let layer = CALayer()
-                layer.frame = CGRect(origin: CGPoint(x: 0, y: 0), size: defaultBoundsSize())
-                layer.contents = image.cgImage
-                layer.borderWidth = 1
-                layer.borderColor = UIColor.black.cgColor
-
-                layer.needsDisplayOnBoundsChange = true
-                layer.setNeedsDisplay()
-
-                contentView.layer.addSublayer(layer)
-
-//                let imageView = UIImageView(image: image)
-//                contentView.addSubview(imageView)
-            }
+//            UIGraphicsBeginImageContext(defaultBoundsSize())
+//            defer {
+//                UIGraphicsEndImageContext()
+//            }
+//            let imageContext = UIGraphicsGetCurrentContext()!
+//            imageContext.setFont(BBCodeLayoutManager._toCGFont(from: font))
+//            imageContext.textMatrix = textMatrix
+//
+//            super.showCGGlyphs(
+//                    glyphs,
+//                    positions: glyphPosPairs.map({$0.1}),
+//                    count: glyphCount,
+//                    font: font,
+//                    matrix: textMatrix,
+//                    attributes: attributes,
+//                    in: imageContext
+//                    //in: graphicsContext
+//            )
+//
+//            if let image = UIGraphicsGetImageFromCurrentImageContext() {
+//                let layer = CALayer()
+//                layer.frame = CGRect(origin: CGPoint(x: 0, y: 0), size: defaultBoundsSize())
+//                layer.contents = image.cgImage
+//                layer.borderWidth = 1
+//                layer.borderColor = UIColor.black.cgColor
+//
+//                layer.needsDisplayOnBoundsChange = true
+//                layer.setNeedsDisplay()
+//
+//                contentView.layer.addSublayer(layer)
+//
+////                let imageView = UIImageView(image: image)
+////                contentView.addSubview(imageView)
+//            }
 
             //NSLog("[\(String(format: "%p", textStorage!))] showCGGlyphs(): \(bbCodeLayer.debugDescription)")
         }

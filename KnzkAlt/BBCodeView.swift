@@ -16,7 +16,7 @@ class BBCodeView: UITextView {
 
         super.init(frame: frame, textContainer: textContainer)
 
-        let layoutManager = BBCodeLayoutManager(contentView: self.subviews.first!)
+        let layoutManager = BBCodeLayoutManager(bbCodeView: self)
         layoutManager.addTextContainer(textContainer)
 
         _textStorage.addLayoutManager(layoutManager)
@@ -50,11 +50,9 @@ class BBCodeView: UITextView {
         super.draw(rect)
 
         //NSLog("[\(String(format: "%p", _textStorage))] draw()")
-
-        _drawBBCodeLayers()
     }
 
-    private func _drawBBCodeLayers() {
+    func constructBBCodeLayers() {
         _textStorage.enumerateAttributes(
                 in: NSRange(
                         location: 0,
@@ -69,15 +67,19 @@ class BBCodeView: UITextView {
                 return
             }
 
-            let glyphRange = layoutManager.glyphRange(
-                    forCharacterRange: charRange,
-                    actualCharacterRange: nil
-            )
+//            let glyphRange = layoutManager.glyphRange(
+//                    forCharacterRange: charRange,
+//                    actualCharacterRange: nil
+//            )
+//
+//            let boundingRect = layoutManager.boundingRect(
+//                    forGlyphRange: glyphRange,
+//                    in: textContainer
+//            )
 
-            let boundingRect = layoutManager.boundingRect(
-                    forGlyphRange: glyphRange,
-                    in: textContainer
-            )
+            guard let boundingRect = attrs.bbCodeAttrs.first?.value.boundingRectInContainer else {
+                return
+            }
 
             UIGraphicsBeginImageContext(boundingRect.size)
             defer {
