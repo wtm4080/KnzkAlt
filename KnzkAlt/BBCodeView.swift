@@ -81,28 +81,14 @@ class BBCodeView: UITextView {
                 return
             }
 
-            UIGraphicsBeginImageContext(boundingRect.size)
-            defer {
-                UIGraphicsEndImageContext()
-            }
+            let stringToDraw = _textStorage.attributedSubstring(from: charRange).string
 
-            let stringToDraw = _textStorage.attributedSubstring(from: charRange).string as NSString
-
-            stringToDraw.draw(
-                    at: CGPoint.zero,
-                    withAttributes: attrs.otherAttrs
+            let layer = BBCodeLayer(
+                    stringToDraw: stringToDraw,
+                    frame: boundingRect,
+                    bbCodeAttrs: attrs.bbCodeAttrs,
+                    otherAttrs: attrs.otherAttrs
             )
-
-            let layer = CALayer()
-            layer.frame = boundingRect
-
-            if let image = UIGraphicsGetImageFromCurrentImageContext() {
-                layer.contents = image.cgImage
-            }
-            else {
-                layer.borderColor = UIColor.black.cgColor
-                layer.borderWidth = 1
-            }
 
             self.layer.addSublayer(layer)
         }

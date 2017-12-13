@@ -100,9 +100,7 @@ class BBCodeLayoutManager: NSLayoutManager {
             }
 
             attrs.bbCodeAttrs.forEach {
-                var v = $0.value
-
-                v.boundingRectInContainer = CGRect(
+                $0.value.boundingRectInContainer = CGRect(
                         origin: origin(),
                         size: defaultBoundsSize()
                 )
