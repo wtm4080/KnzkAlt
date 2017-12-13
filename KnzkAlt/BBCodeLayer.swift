@@ -11,7 +11,7 @@ class BBCodeLayer: CALayer {
 
     init(
             stringToDraw: String,
-            frame: CGRect,
+            position: CGPoint,
             bbCodeAttrs: [BBCodeCustomAttrs: BBCodeCustomValue],
             otherAttrs: [NSAttributedStringKey: Any]
     ) {
@@ -20,7 +20,12 @@ class BBCodeLayer: CALayer {
 
         super.init()
 
-        self.frame = frame
+        let sToDraw = stringToDraw as NSString
+
+        self.frame = CGRect(
+                origin: position,
+                size: sToDraw.size(withAttributes: otherAttrs)
+        )
 
         _init()
 
@@ -29,7 +34,7 @@ class BBCodeLayer: CALayer {
             UIGraphicsEndImageContext()
         }
 
-        (stringToDraw as NSString).draw(in: bounds, withAttributes: otherAttrs)
+        sToDraw.draw(in: bounds, withAttributes: otherAttrs)
 
         if let image = UIGraphicsGetImageFromCurrentImageContext() {
             contents = image.cgImage
@@ -56,13 +61,9 @@ class BBCodeLayer: CALayer {
     }
 
     private func _init() {
-        //_setFrame()
-
         _setLayerProps()
 
         _setBBCodeProps()
-
-        NSLog("BBCodeLayer frame: \(String(describing: frame))")
 
         needsDisplayOnBoundsChange = true
         setNeedsDisplay()
@@ -75,146 +76,6 @@ class BBCodeLayer: CALayer {
     override var debugDescription: String {
         return "BBCodeLayer: BBCode attrs: \(bbCodeAttrs)\nother attrs: \(String(describing: otherAttrs))\n"
     }
-
-//    override func draw(in ctx: CGContext) {
-//        ctx.saveGState()
-//        defer {
-//            ctx.restoreGState()
-//        }
-//
-//        //_setDrawContextState(ctx: ctx)
-//
-//        //_drawPostEffects(ctx: ctx)
-//    }
-
-//    private func _drawPostEffects(ctx: CGContext) {
-//        otherAttrs.forEach {
-//            ctx.saveGState()
-//            defer {
-//                ctx.restoreGState()
-//            }
-//
-//            let uStyle = {
-//                (v: Any) -> NSUnderlineStyle in
-//
-//                NSUnderlineStyle(rawValue: v as! Int) ?? .styleNone
-//            }
-//
-//            let color = {
-//                (key: NSAttributedStringKey) -> UIColor? in
-//
-//                self.otherAttrs[key] as? UIColor
-//            }
-//
-//            switch $0.key {
-//
-//            case NSAttributedStringKey.strikethroughStyle:
-//                _drawUnderline(
-//                        style: uStyle($0.value),
-//                        baseY: self.bounds.size.height/2,
-//                        color: color(NSAttributedStringKey.strikethroughColor),
-//                        ctx: ctx
-//                )
-//
-//            case NSAttributedStringKey.underlineStyle:
-//                _drawUnderline(
-//                        style: uStyle($0.value),
-//                        baseY: self.bounds.size.height,
-//                        color: color(NSAttributedStringKey.underlineColor),
-//                        ctx: ctx)
-//
-//            default:
-//                break
-//            }
-//        }
-//    }
-
-//    private func _drawUnderline(
-//            style: NSUnderlineStyle,
-//            baseY: CGFloat,
-//            color: UIColor?,
-//            ctx: CGContext
-//    ) {
-//        if style != .styleNone {
-//            if let color = color {
-//                ctx.setStrokeColor(color.cgColor)
-//            }
-//
-//            let defaultLineWidth = CGFloat(1)
-//
-//            let drawLine = {
-//                (beginY: [CGFloat]) -> () in
-//
-//                beginY.forEach {
-//                    ctx.beginPath()
-//                    ctx.move(to: CGPoint(x: 0, y: $0))
-//                    ctx.addLine(to: CGPoint(x: self.bounds.size.width, y: $0))
-//                    ctx.strokePath()
-//                }
-//            }
-//
-//            let height = bounds.size.height
-//
-//            switch style {
-//
-//            case .styleSingle:
-//                ctx.setLineWidth(defaultLineWidth)
-//                drawLine([baseY])
-//
-//            case .styleThick:
-//                ctx.setLineWidth(defaultLineWidth * 2)
-//                drawLine([baseY])
-//
-//            case .styleDouble:
-//                ctx.setLineWidth(defaultLineWidth)
-//
-//                let margin = height / 10
-//                drawLine([baseY + margin, baseY - margin])
-//
-//            default:
-//                ctx.setLineWidth(defaultLineWidth)
-//                drawLine([baseY])
-//            }
-//        }
-//    }
-
-//    private func _setDrawContextState(ctx: CGContext) {
-//        ctx.setFont(BBCodeLayer._toCGFont(from: font))
-//        ctx.setLineWidth(3)
-//
-//        var textMatrix = matrix
-//        textMatrix.tx = 0
-//        textMatrix.ty = 0
-//        ctx.textMatrix = textMatrix
-//
-//        otherAttrs.forEach {
-//            switch $0.key {
-//
-//            case NSAttributedStringKey.font:
-//                ctx.setFont(BBCodeLayer._toCGFont(from: $0.value as! UIFont))
-//
-//            case NSAttributedStringKey.foregroundColor:
-//                let color = ($0.value as! UIColor).cgColor
-//                ctx.setStrokeColor(color)
-//                ctx.setFillColor(color)
-//
-//                if let strokeColor = otherAttrs[NSAttributedStringKey.strokeColor] as? UIColor {
-//                    ctx.setStrokeColor(strokeColor.cgColor)
-//                }
-//
-//            case NSAttributedStringKey.shadow:
-//                let s = $0.value as! NSShadow
-//                ctx.setShadow(
-//                        offset: s.shadowOffset,
-//                        blur: s.shadowBlurRadius,
-//                        color: (s.shadowColor as! UIColor).cgColor
-//                )
-//
-//            default:
-//                break
-//            }
-//        }
-//    }
 
     private func _setBBCodeProps() {
         bbCodeAttrs.forEach {
@@ -254,95 +115,5 @@ class BBCodeLayer: CALayer {
             allowsEdgeAntialiasing = true
             edgeAntialiasingMask = [.layerLeftEdge, .layerRightEdge, .layerBottomEdge, .layerTopEdge]
         }
-
-        drawsAsynchronously = true
-
-        cornerRadius = 1
-
-//        otherAttrs.forEach {
-//            switch $0.key {
-//
-//            case NSAttributedStringKey.backgroundColor:
-//                backgroundColor = ($0.value as! UIColor).cgColor
-//
-//            default:
-//                break
-//            }
-//        }
-
-        //isGeometryFlipped = true
-
-//        borderWidth = 1
-//        borderColor = UIColor.black.cgColor
     }
-
-//    lazy var fontToGetSize: UIFont = {
-//        if let f = otherAttrs[NSAttributedStringKey.font] as? UIFont {
-//            return f
-//        }
-//        else {
-//            return font
-//        }
-//    }()
-
-//    private func _setFrame() {
-//        let fontToGetSize = self.fontToGetSize
-//
-//        let lastPosX = glyphPosPairs.last.map({$0.1.x - origin.x}) ?? 0.0
-//        let defaultBoundsSize = {
-//            () -> CGSize in
-//
-//            let sizeUnit = fontToGetSize.ascender + fontToGetSize.descender
-//
-//            return CGSize(
-//                    width: lastPosX + sizeUnit,
-//                    height: sizeUnit
-//            )
-//        }
-//
-////        let boundsSize: CGSize
-////        if let lastGlyph = glyphPosPairs.last?.0 {
-////            let cgFont = BBCodeLayer._toCGFont(from: fontToGetSize)
-////
-////            let pLastGlyph = UnsafeMutablePointer<CGGlyph>.allocate(capacity: 1)
-////            pLastGlyph[0] = lastGlyph
-////            let pBoundingBox = UnsafeMutablePointer<CGRect>.allocate(capacity: 1)
-////
-////            let result = cgFont.getGlyphBBoxes(
-////                    glyphs: UnsafePointer<CGGlyph>(pLastGlyph),
-////                    count: 1,
-////                    bboxes: pBoundingBox
-////            )
-////
-////            if result {
-////                let lastGlyphSize = pBoundingBox[0].size
-////
-////                boundsSize = CGSize(
-////                        width: lastPosX + lastGlyphSize.width,
-////                        height: lastGlyphSize.height
-////                )
-////            }
-////            else {
-////                boundsSize = defaultBoundsSize()
-////            }
-////        }
-////        else {
-////            boundsSize = defaultBoundsSize()
-////        }
-//
-//        frame = CGRect(
-//                origin: origin,
-//                size: defaultBoundsSize()
-//        )
-//    }
-
-//    private static func _toCGFont(from f: UIFont) -> CGFont {
-//        let ctFont = CTFontCreateWithFontDescriptor(
-//                f.fontDescriptor as CTFontDescriptor,
-//                f.pointSize,
-//                nil
-//        )
-//
-//        return CTFontCopyGraphicsFont(ctFont, nil)
-//    }
 }

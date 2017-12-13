@@ -22,7 +22,7 @@ class BBCodeView: UITextView {
         _textStorage.addLayoutManager(layoutManager)
 
         isEditable = false
-        textContainerInset = UIEdgeInsets.zero
+        textContainerInset = UIEdgeInsets(top: 4, left: 0, bottom: 4, right: 0)
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -46,12 +46,6 @@ class BBCodeView: UITextView {
         }
     }
 
-    override func draw(_ rect: CGRect) {
-        super.draw(rect)
-
-        //NSLog("[\(String(format: "%p", _textStorage))] draw()")
-    }
-
     func constructBBCodeLayers() {
         _textStorage.enumerateAttributes(
                 in: NSRange(
@@ -67,16 +61,6 @@ class BBCodeView: UITextView {
                 return
             }
 
-//            let glyphRange = layoutManager.glyphRange(
-//                    forCharacterRange: charRange,
-//                    actualCharacterRange: nil
-//            )
-//
-//            let boundingRect = layoutManager.boundingRect(
-//                    forGlyphRange: glyphRange,
-//                    in: textContainer
-//            )
-
             guard let boundingRect = attrs.bbCodeAttrs.first?.value.boundingRectInContainer else {
                 return
             }
@@ -85,12 +69,12 @@ class BBCodeView: UITextView {
 
             let layer = BBCodeLayer(
                     stringToDraw: stringToDraw,
-                    frame: boundingRect,
+                    position: boundingRect.origin,
                     bbCodeAttrs: attrs.bbCodeAttrs,
                     otherAttrs: attrs.otherAttrs
             )
 
-            self.layer.addSublayer(layer)
+            self.subviews[0].layer.addSublayer(layer)
         }
     }
 
