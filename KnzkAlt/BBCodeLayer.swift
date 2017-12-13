@@ -99,7 +99,7 @@ class BBCodeLayer: CALayer {
                 local.map({$0.0}),
                 at: local.map({$0.1})
         )
-        //("test" as NSString).draw(at: CGPoint.zero)
+        ("test" as NSString).draw(in: bounds, withAttributes: otherAttrs)
 
         _drawPostEffects(ctx: ctx)
     }
@@ -306,7 +306,6 @@ class BBCodeLayer: CALayer {
         let fontToGetSize = self.fontToGetSize
 
         let lastPosX = glyphPosPairs.last.map({$0.1.x - origin.x}) ?? 0.0
-
         let defaultBoundsSize = {
             () -> CGSize in
 

@@ -50,6 +50,60 @@ class BBCodeView: UITextView {
         super.draw(rect)
 
         //NSLog("[\(String(format: "%p", _textStorage))] draw()")
+
+        _drawBBCodeLayers()
+    }
+
+    private func _drawBBCodeLayers() {
+        _textStorage.enumerateAttributes(
+                in: NSRange(
+                        location: 0,
+                        length: _textStorage.length
+                )
+        ) {
+            rawAttrs, charRange, _ in
+
+            let attrs = BBCodeCustomAttrs.rebuild(from: rawAttrs)
+
+            guard !attrs.bbCodeAttrs.isEmpty else {
+                return
+            }
+
+            let glyphRange = layoutManager.glyphRange(
+                    forCharacterRange: charRange,
+                    actualCharacterRange: nil
+            )
+
+            let boundingRect = layoutManager.boundingRect(
+                    forGlyphRange: glyphRange,
+                    in: textContainer
+            )
+
+            UIGraphicsBeginImageContext(boundingRect.size)
+            defer {
+                UIGraphicsEndImageContext()
+            }
+
+            let stringToDraw = _textStorage.attributedSubstring(from: charRange).string as NSString
+
+            stringToDraw.draw(
+                    at: CGPoint.zero,
+                    withAttributes: attrs.otherAttrs
+            )
+
+            let layer = CALayer()
+            layer.frame = boundingRect
+
+            if let image = UIGraphicsGetImageFromCurrentImageContext() {
+                layer.contents = image.cgImage
+            }
+            else {
+                layer.borderColor = UIColor.black.cgColor
+                layer.borderWidth = 1
+            }
+
+            self.layer.addSublayer(layer)
+        }
     }
 
     private static let _contentRootTag = "__content_root__"

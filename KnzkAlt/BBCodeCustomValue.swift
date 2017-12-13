@@ -3,7 +3,7 @@
 // Copyright (c) 2017 AtCurio. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 class BBCodeCustomValue: CustomDebugStringConvertible {
     let multiFactor: UInt
@@ -19,4 +19,6 @@ class BBCodeCustomValue: CustomDebugStringConvertible {
     var debugDescription: String {
         return "BBCodeCustomValue(multiFactor: \(multiFactor))"
     }
+
+    var boundingRectInContainer: CGRect?
 }
