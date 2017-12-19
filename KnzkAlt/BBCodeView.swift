@@ -47,11 +47,13 @@ class BBCodeView: UITextView {
     }
 
     func constructBBCodeLayers() {
+        //_constructBBCodeLayers(attrKey: BBCodeCustomAttrs.spin.attrKey)
         _textStorage.enumerateAttributes(
                 in: NSRange(
                         location: 0,
                         length: _textStorage.length
-                )
+                ),
+                options: [.longestEffectiveRangeNotRequired]
         ) {
             rawAttrs, charRange, _ in
 
@@ -61,20 +63,114 @@ class BBCodeView: UITextView {
                 return
             }
 
-            guard let boundingRect = attrs.bbCodeAttrs.first?.value.boundingRectInContainer else {
+            guard let position = attrs.bbCodeAttrs.first?.value.position else {
                 return
             }
 
-            let stringToDraw = _textStorage.attributedSubstring(from: charRange).string
+//            let pointOp = {
+//                (lhs: CGPoint, rhs: CGPoint, op: (CGFloat, CGFloat) -> CGFloat) -> CGPoint in
+//
+//                CGPoint(x: op(lhs.x, rhs.x), y: op(lhs.y, rhs.y))
+//            }
 
             let layer = BBCodeLayer(
-                    stringToDraw: stringToDraw,
-                    position: boundingRect.origin,
+                    stringToDraw: _textStorage.attributedSubstring(from: charRange).string,
+                    position: position,
                     bbCodeAttrs: attrs.bbCodeAttrs,
                     otherAttrs: attrs.otherAttrs
             )
 
             self.subviews[0].layer.addSublayer(layer)
+        }
+
+//        let rootLayer = subviews[0].layer
+//
+//        rootLayer.sublayers?.forEach {
+//            $0.removeFromSuperlayer()
+//        }
+//
+//        _constructBBCodeLayers(
+//                substring: NSMutableAttributedString(attributedString: _textStorage),
+//                rootLayer: rootLayer,
+//                layerOrigin: CGPoint.zero
+//        )
+    }
+
+//    private func _constructBBCodeLayers(attrKey: NSAttributedStringKey) {
+//        var limitRange = NSRange(location: 0, length: _textStorage.length)
+//        var effectiveRange = NSRange()
+//
+//        while limitRange.length > 0 {
+//            let attrValue = _textStorage.attribute(
+//                    attrKey,
+//                    at: limitRange.location,
+//                    longestEffectiveRange: &effectiveRange,
+//                    in: limitRange
+//            )
+//
+//            NSLog("attrValue: \(String(describing: attrValue))")
+//
+//            limitRange = NSRange(
+//                    location: NSMaxRange(effectiveRange),
+//                    length: NSMaxRange(limitRange) - NSMaxRange(effectiveRange)
+//            )
+//        }
+//    }
+
+    private func _constructBBCodeLayers(
+            substring: NSMutableAttributedString,
+            rootLayer: CALayer,
+            layerOrigin: CGPoint
+    ) {
+        guard substring.length > 0 else {
+            return
+        }
+
+        let subRange = NSRange(
+                location: 0,
+                length: substring.length
+        )
+
+        substring.enumerateAttributes(in: subRange, options: .longestEffectiveRangeNotRequired) {
+            rawAttrs, charRange, _ in
+
+            let attrs = BBCodeCustomAttrs.rebuild(from: rawAttrs)
+
+            guard !attrs.bbCodeAttrs.isEmpty else {
+                return
+            }
+
+            guard let position = attrs.bbCodeAttrs.first?.value.position else {
+                return
+            }
+
+            let pointOp = {
+                (lhs: CGPoint, rhs: CGPoint, op: (CGFloat, CGFloat) -> CGFloat) -> CGPoint in
+
+                CGPoint(x: op(lhs.x, rhs.x), y: op(lhs.y, rhs.y))
+            }
+
+            let layer = BBCodeLayer(
+                    stringToDraw: substring.string,
+                    position: pointOp(position, layerOrigin, -),
+                    bbCodeAttrs: attrs.bbCodeAttrs,
+                    otherAttrs: attrs.otherAttrs
+            )
+
+            let attrRemovedSubstring = NSMutableAttributedString(
+                    attributedString: substring.attributedSubstring(from: charRange)
+            )
+            attrs.bbCodeAttrs.forEach {
+                attrRemovedSubstring.removeAttribute($0.key.attrKey, range: charRange)
+            }
+
+            _constructBBCodeLayers(
+                    substring: attrRemovedSubstring,
+                    rootLayer: layer,
+                    layerOrigin: pointOp(layerOrigin, position, +)
+            )
+
+            rootLayer.addSublayer(layer)
         }
     }
 
@@ -103,7 +199,11 @@ class BBCodeView: UITextView {
             return
         }
 
-        set(BBCodeView._traverseHTML(current: root))
+        let traverseResult = BBCodeView._traverseHTML(current: root)
+        if traverseResult.string.hasPrefix("\n\n") {
+            traverseResult.deleteCharacters(in: NSRange(location: 0, length: 2))
+        }
+        set(traverseResult)
     }
 
     private static let _maxHTMLTraversalDepth = 50
@@ -224,8 +324,16 @@ class BBCodeView: UITextView {
 
                 switch tag {
 
-                case _contentRootTag, "p", "a", "span", "u":
+                case _contentRootTag, "a", "span", "u":
                     return handleElement(element)
+
+                case "p":
+                    let handled = handleElement(element)
+
+                    let prefixed = NSMutableAttributedString(string: "\n\n")
+                    prefixed.append(handled)
+
+                    return prefixed
 
                 case "br":
                     return NSMutableAttributedString(string: "\n")
