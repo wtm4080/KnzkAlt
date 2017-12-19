@@ -324,7 +324,7 @@ class BBCodeView: UITextView {
 
                 switch tag {
 
-                case _contentRootTag, "p", "div", "a", "span", "u":
+                case _contentRootTag, "p", "div", "a", "span", "u", "pre":
                     return handleElement(element)
 
                 case "br":
@@ -455,6 +455,12 @@ class BBCodeView: UITextView {
             handledAttrsLogger.markAsHandled(attr: classAttrKey)
 
             result = styleAttrs.merging(classAttrs, uniquingKeysWith: {$1})
+
+        case "pre":
+            result = [
+                NSAttributedStringKey.backgroundColor: UIColor.init(white: 0.8, alpha: 0.4),
+                NSAttributedStringKey.foregroundColor: UIColor(hex24: 0x800080)
+            ]
 
         case "u":
             result = [NSAttributedStringKey.underlineStyle: NSUnderlineStyle.styleSingle.rawValue]
