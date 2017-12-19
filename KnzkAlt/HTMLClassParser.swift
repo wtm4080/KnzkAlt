@@ -89,4 +89,14 @@ struct HTMLClassParser {
 
         return isPresent
     }()
+
+    lazy var isQuote: Bool = {
+        let key = "quote"
+
+        let isPresent = keys.contains(key)
+
+        _processed.insert(key)
+
+        return isPresent
+    }()
 }

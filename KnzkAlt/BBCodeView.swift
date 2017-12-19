@@ -200,8 +200,8 @@ class BBCodeView: UITextView {
         }
 
         let traverseResult = BBCodeView._traverseHTML(current: root)
-        if traverseResult.string.hasPrefix("\n\n") {
-            traverseResult.deleteCharacters(in: NSRange(location: 0, length: 2))
+        while traverseResult.string.hasPrefix("\n") {
+            traverseResult.deleteCharacters(in: NSRange(location: 0, length: 1))
         }
         set(traverseResult)
     }
@@ -324,16 +324,8 @@ class BBCodeView: UITextView {
 
                 switch tag {
 
-                case _contentRootTag, "a", "span", "u":
+                case _contentRootTag, "p", "div", "a", "span", "u":
                     return handleElement(element)
-
-                case "p":
-                    let handled = handleElement(element)
-
-                    let prefixed = NSMutableAttributedString(string: "\n\n")
-                    prefixed.append(handled)
-
-                    return prefixed
 
                 case "br":
                     return NSMutableAttributedString(string: "\n")
@@ -347,16 +339,27 @@ class BBCodeView: UITextView {
 
             if tag == "span", let classAttr = element.attributes["class"] {
                 switch classAttr {
+
                     case "invisible":
                         return NSMutableAttributedString()
+
                     case "ellipsis":
                         let handled = handleAsDefault()
                         handled.append(NSAttributedString(string: "..."))
 
                         return handled
+
                     default:
                         return handleAsDefault()
                 }
+            }
+            else if tag == "p" || tag == "div" {
+                let handled = handleAsDefault()
+
+                let prefixed = NSMutableAttributedString(string: "\n\n")
+                prefixed.append(handled)
+
+                return prefixed
             }
             else {
                 return handleAsDefault()
@@ -429,23 +432,29 @@ class BBCodeView: UITextView {
 
             result = hrefAttrs()
 
-        case "span":
-            // ignoring
-            let classAttr = "class"
-            if let classAttrValue = htmlAttrs[classAttr], classAttrValue == "ellipsis" || classAttrValue == "" {
-                handledAttrsLogger.markAsHandled(attr: classAttr)
-            }
+        case "span", "div":
+            let classAttrKey = "class"
+            let classAttrValue = htmlAttrs[classAttrKey] ?? ""
 
             let styleAttr = "style"
             let styleAttrs = BBCodeCustomAttrs.htmlStyleToAttrsDict(
                     htmlStyle: htmlAttrs[styleAttr] ?? "",
-                    classAttr: htmlAttrs[classAttr] ?? "",
+                    classAttr: classAttrValue,
                     tagName: tag
             )
             handledAttrsLogger.markAsHandled(attr: styleAttr)
-            handledAttrsLogger.markAsHandled(attr: classAttr)
 
-            result = styleAttrs
+            var classAttrs: [NSAttributedStringKey: Any] = [:]
+            var classParser = HTMLClassParser(rawValue: classAttrValue)
+
+            if classParser.isQuote {
+                classAttrs[NSAttributedStringKey.backgroundColor] = UIColor.init(white: 0.8, alpha: 0.4)
+                classAttrs[NSAttributedStringKey.foregroundColor] = UIColor.init(hex24: 0x008b8b)
+            }
+
+            handledAttrsLogger.markAsHandled(attr: classAttrKey)
+
+            result = styleAttrs.merging(classAttrs, uniquingKeysWith: {$1})
 
         case "u":
             result = [NSAttributedStringKey.underlineStyle: NSUnderlineStyle.styleSingle.rawValue]
