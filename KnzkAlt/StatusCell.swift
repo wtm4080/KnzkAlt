@@ -100,6 +100,12 @@ class StatusCellOwner: NibViewOwner<StatusCell> {
         iconImageView.layer.cornerRadius = imageCornerRadius
         btByImageView.clipsToBounds = true
         btByImageView.layer.cornerRadius = imageCornerRadius
+
+        let gestureForStatusDetail = UITapGestureRecognizer(
+                target: self,
+                action: #selector(type(of: self)._statusDetailAction(sender:))
+        )
+        bbCodeView.addGestureRecognizer(gestureForStatusDetail)
     }
 
     var status: Status {
@@ -224,5 +230,11 @@ class StatusCellOwner: NibViewOwner<StatusCell> {
                 button.isSelected = isSelectedPrevious
             }
         }
+    }
+
+    @objc private func _statusDetailAction(sender: Any) {
+        Notifications.showStatusDetail.post(
+                statusDetail: StatusDetailParams(status: _status)
+        )
     }
 }

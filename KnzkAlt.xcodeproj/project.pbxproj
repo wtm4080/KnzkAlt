@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A00762D1FEE426A003D865E /* StatusDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A00762B1FEE4269003D865E /* StatusDetailVC.swift */; };
+		1A00762E1FEE426A003D865E /* StatusDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A00762B1FEE4269003D865E /* StatusDetailVC.swift */; };
+		1A00762F1FEE426A003D865E /* StatusDetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A00762C1FEE4269003D865E /* StatusDetailVC.xib */; };
+		1A0076301FEE426A003D865E /* StatusDetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A00762C1FEE4269003D865E /* StatusDetailVC.xib */; };
+		1A0076321FEE43D8003D865E /* TimelineNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0076311FEE43D8003D865E /* TimelineNavigation.swift */; };
+		1A0076331FEE43D8003D865E /* TimelineNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0076311FEE43D8003D865E /* TimelineNavigation.swift */; };
 		1A2D22641FBAE48A00F4A236 /* TimelineSwitch.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A2D22631FBAE48A00F4A236 /* TimelineSwitch.xib */; };
 		1A2D22651FBAE48A00F4A236 /* TimelineSwitch.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A2D22631FBAE48A00F4A236 /* TimelineSwitch.xib */; };
 		1A5696EC1FB4A82A00BC82DC /* MastodonKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A5696EB1FB4A82A00BC82DC /* MastodonKit.framework */; };
@@ -88,6 +94,9 @@
 
 /* Begin PBXFileReference section */
 		1441A9221CCB3CD160F614DA /* Pods_KnzkAltTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KnzkAltTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1A00762B1FEE4269003D865E /* StatusDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusDetailVC.swift; sourceTree = "<group>"; };
+		1A00762C1FEE4269003D865E /* StatusDetailVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StatusDetailVC.xib; sourceTree = "<group>"; };
+		1A0076311FEE43D8003D865E /* TimelineNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineNavigation.swift; sourceTree = "<group>"; };
 		1A2D22631FBAE48A00F4A236 /* TimelineSwitch.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimelineSwitch.xib; sourceTree = "<group>"; };
 		1A5696EB1FB4A82A00BC82DC /* MastodonKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MastodonKit.framework; path = ../Test/Carthage/Build/iOS/MastodonKit.framework; sourceTree = "<group>"; };
 		1A5696EE1FB5A7A000BC82DC /* StatusCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StatusCell.xib; sourceTree = "<group>"; };
@@ -207,11 +216,14 @@
 				1AB7978B1FA63CC4006D3265 /* ProfileVC.swift */,
 				C05108C20D63ADD8371E8E21 /* StatusCell.swift */,
 				C0510BA3BD81793EAFE37660 /* StatusContentContainerView.swift */,
+				1A00762B1FEE4269003D865E /* StatusDetailVC.swift */,
+				1A0076311FEE43D8003D865E /* TimelineNavigation.swift */,
 				C0510BF7B092B3F32B183235 /* TimelineSwitch.swift */,
 				1AB797681FA62DFF006D3265 /* TimelineVC.swift */,
 				1AB797881FA63C7A006D3265 /* TootVC.swift */,
 				1AB7976F1FA62DFF006D3265 /* Assets.xcassets */,
 				1A5696EE1FB5A7A000BC82DC /* StatusCell.xib */,
+				1A00762C1FEE4269003D865E /* StatusDetailVC.xib */,
 				1A2D22631FBAE48A00F4A236 /* TimelineSwitch.xib */,
 				1AB797711FA62DFF006D3265 /* LaunchScreen.storyboard */,
 				1AB7976C1FA62DFF006D3265 /* Main.storyboard */,
@@ -345,6 +357,7 @@
 				1AB797701FA62DFF006D3265 /* Assets.xcassets in Resources */,
 				1AB7976E1FA62DFF006D3265 /* Main.storyboard in Resources */,
 				1A5696EF1FB5A7A000BC82DC /* StatusCell.xib in Resources */,
+				1A00762F1FEE426A003D865E /* StatusDetailVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -354,6 +367,7 @@
 			files = (
 				1A2D22651FBAE48A00F4A236 /* TimelineSwitch.xib in Resources */,
 				1A5696F01FB5A7A000BC82DC /* StatusCell.xib in Resources */,
+				1A0076301FEE426A003D865E /* StatusDetailVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -508,6 +522,7 @@
 				1AAB136D1FB41DA300844F51 /* MainVC.swift in Sources */,
 				1AB7976B1FA62DFF006D3265 /* NotificationVC.swift in Sources */,
 				1AB797951FA641DE006D3265 /* LoginVC.swift in Sources */,
+				1A0076321FEE43D8003D865E /* TimelineNavigation.swift in Sources */,
 				1AB797671FA62DFF006D3265 /* AppDelegate.swift in Sources */,
 				1AB797891FA63C7A006D3265 /* TootVC.swift in Sources */,
 				1AB797921FA64112006D3265 /* InitialVC.swift in Sources */,
@@ -527,6 +542,7 @@
 				C05108E85C5B23571843038D /* StatusContentContainerView.swift in Sources */,
 				C05107831B00E604341CE149 /* HTMLStyleParser.swift in Sources */,
 				C0510C0F6DF96107BF990381 /* CSSColorParser.swift in Sources */,
+				1A00762D1FEE426A003D865E /* StatusDetailVC.swift in Sources */,
 				C0510B2FE862D5958AC98DD6 /* HTMLClassParser.swift in Sources */,
 				C0510ECD7B81D8C3E1EA304F /* HandledAttrsLogger.swift in Sources */,
 				C051060908BBD89E4FF2E038 /* BBCodeLayoutManager.swift in Sources */,
@@ -559,9 +575,11 @@
 				C05100EC91B6E1765FC8196F /* IconStorage.swift in Sources */,
 				C0510A76DB37079062A00410 /* BBCodeView.swift in Sources */,
 				C0510DB6EDDD7DE98C884A9B /* StatusContentContainerView.swift in Sources */,
+				1A00762E1FEE426A003D865E /* StatusDetailVC.swift in Sources */,
 				C05109D9A1BBCB02A108BF4D /* HTMLStyleParser.swift in Sources */,
 				C051049F616E3B0A37B5317F /* CSSColorParser.swift in Sources */,
 				C05109E74F1DEF41745FE259 /* HTMLClassParser.swift in Sources */,
+				1A0076331FEE43D8003D865E /* TimelineNavigation.swift in Sources */,
 				C051020ED75B9A72962DE8FD /* HandledAttrsLogger.swift in Sources */,
 				C0510072B2354C78E593B4CF /* BBCodeLayoutManager.swift in Sources */,
 				C05108B816E67F22D9884576 /* BBCodeCustomAttrs.swift in Sources */,

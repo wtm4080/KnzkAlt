@@ -32,6 +32,8 @@ enum Notifications {
     case switchTL
     case switchedTL
 
+    case showStatusDetail
+
     private var _nc: NotificationCenter {
         return NotificationCenter.default
     }
@@ -55,6 +57,15 @@ enum Notifications {
                 _post(userInfo: [String(describing: TLParams.self): tlParams])
             default:
                 fatalError("Invalid posting case with TLParams: \(String(describing: self))")
+        }
+    }
+
+    func post(statusDetail: StatusDetailParams) {
+        switch self {
+        case .showStatusDetail:
+            _post(userInfo: [String(describing: StatusDetailParams.self): statusDetail])
+        default:
+            fatalError("Invalid posting case with StatusDetailParams: \(String(describing: self))")
         }
     }
 
@@ -94,5 +105,17 @@ enum Notifications {
         }
 
         return params as? TLParams
+    }
+
+    static func statusDetailParams(from n: Notification) -> StatusDetailParams? {
+        guard let userInfo = n.userInfo else {
+            return nil
+        }
+
+        guard let params = userInfo[String(describing: StatusDetailParams.self)] else {
+            return nil
+        }
+
+        return params as? StatusDetailParams
     }
 }
