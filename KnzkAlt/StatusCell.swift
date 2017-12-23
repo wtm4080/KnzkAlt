@@ -94,6 +94,12 @@ class StatusCellOwner: NibViewOwner<StatusCell> {
                     url: URL(string: status.account.avatar)!,
                     for: self)
         }
+
+        let imageCornerRadius = CGFloat(4)
+        iconImageView.clipsToBounds = true
+        iconImageView.layer.cornerRadius = imageCornerRadius
+        btByImageView.clipsToBounds = true
+        btByImageView.layer.cornerRadius = imageCornerRadius
     }
 
     var status: Status {
