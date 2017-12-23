@@ -33,6 +33,7 @@ enum Notifications {
     case switchedTL
 
     case showStatusDetail
+    case showAccountDetail
 
     private var _nc: NotificationCenter {
         return NotificationCenter.default
@@ -66,6 +67,15 @@ enum Notifications {
             _post(userInfo: [String(describing: StatusDetailParams.self): statusDetail])
         default:
             fatalError("Invalid posting case with StatusDetailParams: \(String(describing: self))")
+        }
+    }
+
+    func post(accountDetail: AccountDetailParams) {
+        switch self {
+        case .showAccountDetail:
+            _post(userInfo: [String(describing: AccountDetailParams.self): accountDetail])
+        default:
+            fatalError("Invalid posting case with AccountDetailParams: \(String(describing: self))")
         }
     }
 
@@ -117,5 +127,17 @@ enum Notifications {
         }
 
         return params as? StatusDetailParams
+    }
+
+    static func accountDetailParams(from n: Notification) -> AccountDetailParams? {
+        guard let userInfo = n.userInfo else {
+            return nil
+        }
+
+        guard let params = userInfo[String(describing: AccountDetailParams.self)] else {
+            return nil
+        }
+
+        return params as? AccountDetailParams
     }
 }

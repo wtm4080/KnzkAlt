@@ -31,7 +31,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="375" height="135.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OmA-YZ-jIW">
+                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OmA-YZ-jIW">
                         <rect key="frame" x="16" y="11" width="52" height="52"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="52" id="bHe-Uj-Ovn"/>
@@ -86,7 +86,7 @@
                         <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="W04-4h-Uib" userLabel="BT by Image View">
+                    <imageView hidden="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="W04-4h-Uib" userLabel="BT by Image View">
                         <rect key="frame" x="48" y="71" width="20" height="20"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="20" id="nAx-mt-pyF"/>

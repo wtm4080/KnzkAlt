@@ -106,6 +106,18 @@ class StatusCellOwner: NibViewOwner<StatusCell> {
                 action: #selector(type(of: self)._statusDetailAction(sender:))
         )
         bbCodeView.addGestureRecognizer(gestureForStatusDetail)
+
+        let gestureForAccountDetail = UITapGestureRecognizer(
+                target: self,
+                action: #selector(type(of: self)._accountDetailAction(sender:))
+        )
+        iconImageView.addGestureRecognizer(gestureForAccountDetail)
+
+        let gestureForBTByAccountDetail = UITapGestureRecognizer(
+                target: self,
+                action: #selector(type(of: self)._btAccountDetailAction(sender:))
+        )
+        btByImageView.addGestureRecognizer(gestureForBTByAccountDetail)
     }
 
     var status: Status {
@@ -235,6 +247,24 @@ class StatusCellOwner: NibViewOwner<StatusCell> {
     @objc private func _statusDetailAction(sender: Any) {
         Notifications.showStatusDetail.post(
                 statusDetail: StatusDetailParams(status: _status)
+        )
+    }
+
+    @objc private func _accountDetailAction(sender: Any) {
+        let account = _status.account
+
+        Notifications.showAccountDetail.post(
+                accountDetail: AccountDetailParams(account: account)
+        )
+    }
+
+    @objc private func _btAccountDetailAction(sender: Any) {
+        guard let account = _status.reblog?.account else {
+            return
+        }
+
+        Notifications.showAccountDetail.post(
+                accountDetail: AccountDetailParams(account: account)
         )
     }
 }

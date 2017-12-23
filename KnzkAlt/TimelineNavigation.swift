@@ -16,6 +16,10 @@ class TimelineNavigation: UINavigationController {
                 observer: self,
                 selector: #selector(type(of: self)._observeShowStatusDetail(n:))
         )
+        Notifications.showAccountDetail.register(
+                observer: self,
+                selector: #selector(type(of: self)._observeShowAccountDetail(n:))
+        )
     }
 
     deinit {
@@ -26,6 +30,14 @@ class TimelineNavigation: UINavigationController {
         let params = Notifications.statusDetailParams(from: n)!
 
         let vc = StatusDetailVC(params: params)
+
+        pushViewController(vc, animated: true)
+    }
+
+    @objc private func _observeShowAccountDetail(n: Notification) {
+        let params = Notifications.accountDetailParams(from: n)!
+
+        let vc = AccountDetailVC(params: params)
 
         pushViewController(vc, animated: true)
     }

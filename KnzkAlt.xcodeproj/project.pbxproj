@@ -13,6 +13,10 @@
 		1A0076301FEE426A003D865E /* StatusDetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A00762C1FEE4269003D865E /* StatusDetailVC.xib */; };
 		1A0076321FEE43D8003D865E /* TimelineNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0076311FEE43D8003D865E /* TimelineNavigation.swift */; };
 		1A0076331FEE43D8003D865E /* TimelineNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0076311FEE43D8003D865E /* TimelineNavigation.swift */; };
+		1A0076361FEE4E5C003D865E /* AccountDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0076341FEE4E5C003D865E /* AccountDetailVC.swift */; };
+		1A0076371FEE4E5C003D865E /* AccountDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A0076341FEE4E5C003D865E /* AccountDetailVC.swift */; };
+		1A0076381FEE4E5C003D865E /* AccountDetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A0076351FEE4E5C003D865E /* AccountDetailVC.xib */; };
+		1A0076391FEE4E5C003D865E /* AccountDetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A0076351FEE4E5C003D865E /* AccountDetailVC.xib */; };
 		1A2D22641FBAE48A00F4A236 /* TimelineSwitch.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A2D22631FBAE48A00F4A236 /* TimelineSwitch.xib */; };
 		1A2D22651FBAE48A00F4A236 /* TimelineSwitch.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A2D22631FBAE48A00F4A236 /* TimelineSwitch.xib */; };
 		1A5696EC1FB4A82A00BC82DC /* MastodonKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A5696EB1FB4A82A00BC82DC /* MastodonKit.framework */; };
@@ -97,6 +101,8 @@
 		1A00762B1FEE4269003D865E /* StatusDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusDetailVC.swift; sourceTree = "<group>"; };
 		1A00762C1FEE4269003D865E /* StatusDetailVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StatusDetailVC.xib; sourceTree = "<group>"; };
 		1A0076311FEE43D8003D865E /* TimelineNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineNavigation.swift; sourceTree = "<group>"; };
+		1A0076341FEE4E5C003D865E /* AccountDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDetailVC.swift; sourceTree = "<group>"; };
+		1A0076351FEE4E5C003D865E /* AccountDetailVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AccountDetailVC.xib; sourceTree = "<group>"; };
 		1A2D22631FBAE48A00F4A236 /* TimelineSwitch.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimelineSwitch.xib; sourceTree = "<group>"; };
 		1A5696EB1FB4A82A00BC82DC /* MastodonKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MastodonKit.framework; path = ../Test/Carthage/Build/iOS/MastodonKit.framework; sourceTree = "<group>"; };
 		1A5696EE1FB5A7A000BC82DC /* StatusCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StatusCell.xib; sourceTree = "<group>"; };
@@ -190,6 +196,7 @@
 			isa = PBXGroup;
 			children = (
 				1AB797741FA62DFF006D3265 /* Info.plist */,
+				1A0076341FEE4E5C003D865E /* AccountDetailVC.swift */,
 				1AB797661FA62DFF006D3265 /* AppDelegate.swift */,
 				C05108FFE47EF06C331AB942 /* BBCodeCustomAttrs.swift */,
 				C05109A8D56CD09C44EE1FC6 /* BBCodeCustomValue.swift */,
@@ -222,6 +229,7 @@
 				1AB797681FA62DFF006D3265 /* TimelineVC.swift */,
 				1AB797881FA63C7A006D3265 /* TootVC.swift */,
 				1AB7976F1FA62DFF006D3265 /* Assets.xcassets */,
+				1A0076351FEE4E5C003D865E /* AccountDetailVC.xib */,
 				1A5696EE1FB5A7A000BC82DC /* StatusCell.xib */,
 				1A00762C1FEE4269003D865E /* StatusDetailVC.xib */,
 				1A2D22631FBAE48A00F4A236 /* TimelineSwitch.xib */,
@@ -357,6 +365,7 @@
 				1AB797701FA62DFF006D3265 /* Assets.xcassets in Resources */,
 				1AB7976E1FA62DFF006D3265 /* Main.storyboard in Resources */,
 				1A5696EF1FB5A7A000BC82DC /* StatusCell.xib in Resources */,
+				1A0076381FEE4E5C003D865E /* AccountDetailVC.xib in Resources */,
 				1A00762F1FEE426A003D865E /* StatusDetailVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -366,6 +375,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1A2D22651FBAE48A00F4A236 /* TimelineSwitch.xib in Resources */,
+				1A0076391FEE4E5C003D865E /* AccountDetailVC.xib in Resources */,
 				1A5696F01FB5A7A000BC82DC /* StatusCell.xib in Resources */,
 				1A0076301FEE426A003D865E /* StatusDetailVC.xib in Resources */,
 			);
@@ -527,6 +537,7 @@
 				1AB797891FA63C7A006D3265 /* TootVC.swift in Sources */,
 				1AB797921FA64112006D3265 /* InitialVC.swift in Sources */,
 				1AAB136A1FB370C100844F51 /* Login.swift in Sources */,
+				1A0076361FEE4E5C003D865E /* AccountDetailVC.swift in Sources */,
 				1AB797691FA62DFF006D3265 /* TimelineVC.swift in Sources */,
 				1AB7978F1FA63CEB006D3265 /* MenuVC.swift in Sources */,
 				C0510507594D146212174682 /* Keychain.swift in Sources */,
@@ -573,6 +584,7 @@
 				C0510170D7DB9C24A414C466 /* TimelineSwitch.swift in Sources */,
 				C0510322552B7BC134908B3C /* DataSourceTimeline.swift in Sources */,
 				C05100EC91B6E1765FC8196F /* IconStorage.swift in Sources */,
+				1A0076371FEE4E5C003D865E /* AccountDetailVC.swift in Sources */,
 				C0510A76DB37079062A00410 /* BBCodeView.swift in Sources */,
 				C0510DB6EDDD7DE98C884A9B /* StatusContentContainerView.swift in Sources */,
 				1A00762E1FEE426A003D865E /* StatusDetailVC.swift in Sources */,
