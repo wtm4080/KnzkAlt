@@ -283,7 +283,7 @@ class BBCodeView: UITextView {
 
             // if current node has only one child element,
             // merge their BBCode values
-            if let children = children, children.count == 1 && children[0].toElement() != nil {
+            if let children = children, children.count == 1 && children[0].toElement() != nil && collectedChildContents.length > 0 {
                 let childAttrs = collectedChildContents.attributes(
                         at: 0,
                         longestEffectiveRange: nil,
