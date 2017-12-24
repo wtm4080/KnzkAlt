@@ -46,8 +46,11 @@ class BBCodeView: UITextView {
         }
     }
 
+    var rootLayer: CALayer {
+        return subviews[0].layer
+    }
+
     func constructBBCodeLayers() {
-        //_constructBBCodeLayers(attrKey: BBCodeCustomAttrs.spin.attrKey)
         _textStorage.enumerateAttributes(
                 in: NSRange(
                         location: 0,
@@ -67,12 +70,6 @@ class BBCodeView: UITextView {
                 return
             }
 
-//            let pointOp = {
-//                (lhs: CGPoint, rhs: CGPoint, op: (CGFloat, CGFloat) -> CGFloat) -> CGPoint in
-//
-//                CGPoint(x: op(lhs.x, rhs.x), y: op(lhs.y, rhs.y))
-//            }
-
             let layer = BBCodeLayer(
                     stringToDraw: _textStorage.attributedSubstring(from: charRange).string,
                     position: position,
@@ -80,97 +77,21 @@ class BBCodeView: UITextView {
                     otherAttrs: attrs.otherAttrs
             )
 
-            self.subviews[0].layer.addSublayer(layer)
+            self.rootLayer.addSublayer(layer)
         }
-
-//        let rootLayer = subviews[0].layer
-//
-//        rootLayer.sublayers?.forEach {
-//            $0.removeFromSuperlayer()
-//        }
-//
-//        _constructBBCodeLayers(
-//                substring: NSMutableAttributedString(attributedString: _textStorage),
-//                rootLayer: rootLayer,
-//                layerOrigin: CGPoint.zero
-//        )
     }
 
-//    private func _constructBBCodeLayers(attrKey: NSAttributedStringKey) {
-//        var limitRange = NSRange(location: 0, length: _textStorage.length)
-//        var effectiveRange = NSRange()
-//
-//        while limitRange.length > 0 {
-//            let attrValue = _textStorage.attribute(
-//                    attrKey,
-//                    at: limitRange.location,
-//                    longestEffectiveRange: &effectiveRange,
-//                    in: limitRange
-//            )
-//
-//            NSLog("attrValue: \(String(describing: attrValue))")
-//
-//            limitRange = NSRange(
-//                    location: NSMaxRange(effectiveRange),
-//                    length: NSMaxRange(limitRange) - NSMaxRange(effectiveRange)
-//            )
-//        }
-//    }
+    func resumeLayerAnimations() {
+        BBCodeView._resumeLayerAnimations(rootLayer: rootLayer)
+    }
 
-    private func _constructBBCodeLayers(
-            substring: NSMutableAttributedString,
-            rootLayer: CALayer,
-            layerOrigin: CGPoint
-    ) {
-        guard substring.length > 0 else {
-            return
+    private static func _resumeLayerAnimations(rootLayer: CALayer) {
+        rootLayer.sublayers?.forEach {
+            _resumeLayerAnimations(rootLayer: $0)
         }
 
-        let subRange = NSRange(
-                location: 0,
-                length: substring.length
-        )
-
-        substring.enumerateAttributes(in: subRange, options: .longestEffectiveRangeNotRequired) {
-            rawAttrs, charRange, _ in
-
-            let attrs = BBCodeCustomAttrs.rebuild(from: rawAttrs)
-
-            guard !attrs.bbCodeAttrs.isEmpty else {
-                return
-            }
-
-            guard let position = attrs.bbCodeAttrs.first?.value.position else {
-                return
-            }
-
-            let pointOp = {
-                (lhs: CGPoint, rhs: CGPoint, op: (CGFloat, CGFloat) -> CGFloat) -> CGPoint in
-
-                CGPoint(x: op(lhs.x, rhs.x), y: op(lhs.y, rhs.y))
-            }
-
-            let layer = BBCodeLayer(
-                    stringToDraw: substring.string,
-                    position: pointOp(position, layerOrigin, -),
-                    bbCodeAttrs: attrs.bbCodeAttrs,
-                    otherAttrs: attrs.otherAttrs
-            )
-
-            let attrRemovedSubstring = NSMutableAttributedString(
-                    attributedString: substring.attributedSubstring(from: charRange)
-            )
-            attrs.bbCodeAttrs.forEach {
-                attrRemovedSubstring.removeAttribute($0.key.attrKey, range: charRange)
-            }
-
-            _constructBBCodeLayers(
-                    substring: attrRemovedSubstring,
-                    rootLayer: layer,
-                    layerOrigin: pointOp(layerOrigin, position, +)
-            )
-
-            rootLayer.addSublayer(layer)
+        if let l = rootLayer as? BBCodeLayer {
+            l.resumeAnimations()
         }
     }
 

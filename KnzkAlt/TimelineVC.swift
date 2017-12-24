@@ -45,6 +45,12 @@ class TimelineVC: UITableViewController {
         _postRequestTL(pos: .unspecified)
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
+        _resumeBBCodeAnimations()
+    }
+
     deinit {
         Notifications.unregisterAll(observer: self)
     }
@@ -116,5 +122,17 @@ class TimelineVC: UITableViewController {
         }
 
         _tlTopIndexPaths[_timelineSwitchOwner.currentTLKind] = tableView.indexPathsForVisibleRows?.first
+
+        _resumeBBCodeAnimations()
+    }
+
+    private func _resumeBBCodeAnimations() {
+        tableView.visibleCells.forEach {
+            guard let cell = $0 as? StatusCell else {
+                return
+            }
+
+            cell.resumeBBCodeAnimations()
+        }
     }
 }

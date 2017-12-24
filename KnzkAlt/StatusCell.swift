@@ -9,6 +9,8 @@ import MastodonKit
 class StatusCell: UITableViewCell {
     static let reuseIdentifier = "Status"
 
+    weak var owner: StatusCellOwner?
+
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: StatusCell.reuseIdentifier)
     }
@@ -25,6 +27,14 @@ class StatusCell: UITableViewCell {
 
         return size.height
     }()
+
+    func resumeBBCodeAnimations() {
+        guard let owner = self.owner else {
+            return
+        }
+
+        owner.resumeBBCodeAnimations()
+    }
 }
 
 class StatusCellOwner: NibViewOwner<StatusCell> {
@@ -52,6 +62,8 @@ class StatusCellOwner: NibViewOwner<StatusCell> {
 
     convenience init(status: Status) {
         self.init()
+
+        view.owner = self
         
         _status = status
 
@@ -212,6 +224,10 @@ class StatusCellOwner: NibViewOwner<StatusCell> {
                 doAction: .favourite,
                 undoAction: .unfavourite,
                 isSelected: {$0.favourited})
+    }
+
+    func resumeBBCodeAnimations() {
+        bbCodeView.resumeLayerAnimations()
     }
 
     private func _performStatusAction(

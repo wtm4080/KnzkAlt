@@ -97,22 +97,26 @@ class BBCodeLayer: CALayer {
                 )
 
             case .spin:
+                let key = "spin"
                 let a = CABasicAnimation(keyPath: "transform.rotation")
+                a.delegate = BBCodeLayerAnimationDelegate(layer: self, animationKey: key)
                 a.toValue = 2.0 * .pi
                 a.duration = 2.0 / Double(factor)
                 a.repeatCount = .infinity
                 a.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear)
-                add(a, forKey: "spin")
+                add(a, forKey: key)
 
             case .pulse:
+                let key = "pulse"
                 let a = CABasicAnimation(keyPath: "opacity")
+                a.delegate = BBCodeLayerAnimationDelegate(layer: self, animationKey: key)
                 a.fromValue = 1.0
                 a.toValue = 0.5 / Double(factor)
                 a.duration = 1.0 / Double(factor)
                 a.repeatCount = .infinity
                 a.autoreverses = true
                 a.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
-                add(a, forKey: "pulse")
+                add(a, forKey: key)
 
             default:
                 NSLog("[Warning] Unrecognized BBCode attr on BBCodeLayer: \(String(describing: $0))")
@@ -124,6 +128,36 @@ class BBCodeLayer: CALayer {
         if bbCodeAttrs[.spin] != nil {
             allowsEdgeAntialiasing = true
             edgeAntialiasingMask = [.layerLeftEdge, .layerRightEdge, .layerBottomEdge, .layerTopEdge]
+        }
+    }
+
+    private var _detachedAnimations: [String: CAAnimation] = [:]
+
+    fileprivate func addDetachedAnimation(a: CAAnimation, key: String) {
+        _detachedAnimations[key] = a
+    }
+
+    func resumeAnimations() {
+        _detachedAnimations.forEach {
+            self.add($0.value, forKey: $0.key)
+        }
+
+        _detachedAnimations.removeAll()
+    }
+}
+
+class BBCodeLayerAnimationDelegate: NSObject, CAAnimationDelegate {
+    weak private var _layer: BBCodeLayer?
+    let animationKey: String
+
+    init(layer: BBCodeLayer, animationKey: String) {
+        _layer = layer
+        self.animationKey = animationKey
+    }
+
+    func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
+        if !flag {
+            _layer?.addDetachedAnimation(a: anim, key: animationKey)
         }
     }
 }
