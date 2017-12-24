@@ -13,6 +13,7 @@ target 'KnzkAlt' do
   pod 'KeychainAccess'
   pod 'Deque', '~> 3.1'
   pod 'Fuzi', '~> 2.0.0'
+  pod 'SwiftGifOrigin', :git => 'https://github.com/wtm4080/SwiftGif.git', :branch => 'master'
 
 
   target 'KnzkAltTests' do

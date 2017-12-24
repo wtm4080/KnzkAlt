@@ -6,6 +6,7 @@
 import UIKit
 import Hydra
 import MastodonKit
+import SwiftGifOrigin
 
 class IconStorage {
     static let shared = IconStorage()
@@ -32,7 +33,7 @@ class IconStorage {
 
             switch result {
             case .success(let data, _):
-                let image = UIImage(data: data)
+                let image = UIImage.gif(data: data)
                 self._icons[url] = image
                 statusCellSetter(image)
             default:
