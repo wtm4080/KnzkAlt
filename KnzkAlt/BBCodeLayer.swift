@@ -139,6 +139,7 @@ class BBCodeLayer: CALayer {
 
     func resumeAnimations() {
         _detachedAnimations.forEach {
+            self.removeAnimation(forKey: $0.key)
             self.add($0.value, forKey: $0.key)
         }
 
