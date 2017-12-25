@@ -26,4 +26,22 @@ class StatusContentContainerView: UIStackView {
             return _bbCodeView
         }
     }
+
+    func addMedia(videoURL: URL?, isNSFW: Bool) -> MediaView {
+        let mediaView = MediaView(
+                frame: CGRect(
+                        origin: CGPoint.zero,
+                        size: CGSize(
+                                width: bounds.size.width,
+                                height: bounds.size.width/16 * 9
+                        )
+                ),
+                videoURL: videoURL,
+                isNSFW: isNSFW
+        )
+
+        addArrangedSubview(mediaView)
+
+        return mediaView
+    }
 }

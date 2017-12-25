@@ -47,7 +47,7 @@
 		3F557620A6190728E09C6B1B /* Pods_KnzkAltTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1441A9221CCB3CD160F614DA /* Pods_KnzkAltTests.framework */; };
 		9AD8BDA67D0C7E0146BDA5F9 /* Pods_KnzkAlt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92B3B098B3DC0D2CC7E8217B /* Pods_KnzkAlt.framework */; };
 		C0510072B2354C78E593B4CF /* BBCodeLayoutManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510E3131A932895DD4EAD0 /* BBCodeLayoutManager.swift */; };
-		C05100EC91B6E1765FC8196F /* IconStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510054A28107527411C10A /* IconStorage.swift */; };
+		C05100EC91B6E1765FC8196F /* MediaStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510054A28107527411C10A /* MediaStorage.swift */; };
 		C0510169E259F193A6BC6D8A /* NibViewOwner.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05101716E8E1EF871FA7B83 /* NibViewOwner.swift */; };
 		C0510170D7DB9C24A414C466 /* TimelineSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510BF7B092B3F32B183235 /* TimelineSwitch.swift */; };
 		C051020ED75B9A72962DE8FD /* HandledAttrsLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = C051035AB6AD731EF073631E /* HandledAttrsLogger.swift */; };
@@ -57,6 +57,7 @@
 		C05103A5521F23F340AAC4C1 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510E78CEF630B7FD0E98F8 /* DataSource.swift */; };
 		C05103F14ADA0FC3831832C1 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510C0073874BEF0B4E8C82 /* Notifications.swift */; };
 		C051049F616E3B0A37B5317F /* CSSColorParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510977F490EDA465069459 /* CSSColorParser.swift */; };
+		C05104BC0B19D02976E0328F /* MediaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05101488F2F0BE4FCC8DA41 /* MediaView.swift */; };
 		C0510507594D146212174682 /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = C051012FF1FBD602C5FBD0F4 /* Keychain.swift */; };
 		C051052BB3E9E30B8C8FED8D /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = C051012FF1FBD602C5FBD0F4 /* Keychain.swift */; };
 		C051060908BBD89E4FF2E038 /* BBCodeLayoutManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510E3131A932895DD4EAD0 /* BBCodeLayoutManager.swift */; };
@@ -77,10 +78,11 @@
 		C0510C0F6DF96107BF990381 /* CSSColorParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510977F490EDA465069459 /* CSSColorParser.swift */; };
 		C0510CDC0AB79449950BBC10 /* BBCodeLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510944D4672256653D6DEE /* BBCodeLayer.swift */; };
 		C0510CE8752219D4CD0E8BF1 /* TimelineSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510BF7B092B3F32B183235 /* TimelineSwitch.swift */; };
+		C0510D59FF842EF7CC1AE609 /* MediaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05101488F2F0BE4FCC8DA41 /* MediaView.swift */; };
 		C0510D8CA3EBD322E138E114 /* NibViewOwner.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05101716E8E1EF871FA7B83 /* NibViewOwner.swift */; };
 		C0510D8D9F4AD754587C208F /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510E78CEF630B7FD0E98F8 /* DataSource.swift */; };
 		C0510DB6EDDD7DE98C884A9B /* StatusContentContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510BA3BD81793EAFE37660 /* StatusContentContainerView.swift */; };
-		C0510E2786ED2B2F5EE9ACB0 /* IconStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510054A28107527411C10A /* IconStorage.swift */; };
+		C0510E2786ED2B2F5EE9ACB0 /* MediaStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510054A28107527411C10A /* MediaStorage.swift */; };
 		C0510E73AA3AC136A95E2BCC /* BBCodeCustomValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05109A8D56CD09C44EE1FC6 /* BBCodeCustomValue.swift */; };
 		C0510ECD7B81D8C3E1EA304F /* HandledAttrsLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = C051035AB6AD731EF073631E /* HandledAttrsLogger.swift */; };
 		C0510F168927F8EDE269784E /* BBCodeCustomAttrs.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05108FFE47EF06C331AB942 /* BBCodeCustomAttrs.swift */; };
@@ -127,8 +129,9 @@
 		8345777460A049931A822898 /* Pods-KnzkAlt.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KnzkAlt.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KnzkAlt/Pods-KnzkAlt.debug.xcconfig"; sourceTree = "<group>"; };
 		92B3B098B3DC0D2CC7E8217B /* Pods_KnzkAlt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KnzkAlt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6D9B3DB25218238497DA448 /* Pods-KnzkAltTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KnzkAltTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KnzkAltTests/Pods-KnzkAltTests.debug.xcconfig"; sourceTree = "<group>"; };
-		C0510054A28107527411C10A /* IconStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IconStorage.swift; sourceTree = "<group>"; };
+		C0510054A28107527411C10A /* MediaStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaStorage.swift; sourceTree = "<group>"; };
 		C051012FF1FBD602C5FBD0F4 /* Keychain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Keychain.swift; sourceTree = "<group>"; };
+		C05101488F2F0BE4FCC8DA41 /* MediaView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaView.swift; sourceTree = "<group>"; };
 		C05101716E8E1EF871FA7B83 /* NibViewOwner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NibViewOwner.swift; sourceTree = "<group>"; };
 		C051035AB6AD731EF073631E /* HandledAttrsLogger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HandledAttrsLogger.swift; sourceTree = "<group>"; };
 		C051064B7C25EC8814050796 /* HTMLStyleParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTMLStyleParser.swift; sourceTree = "<group>"; };
@@ -210,7 +213,7 @@
 				C051035AB6AD731EF073631E /* HandledAttrsLogger.swift */,
 				C05108635C288A96525F66DB /* HTMLClassParser.swift */,
 				C051064B7C25EC8814050796 /* HTMLStyleParser.swift */,
-				C0510054A28107527411C10A /* IconStorage.swift */,
+				C0510054A28107527411C10A /* MediaStorage.swift */,
 				1AB797911FA64112006D3265 /* InitialVC.swift */,
 				C051012FF1FBD602C5FBD0F4 /* Keychain.swift */,
 				1AAB13691FB370C100844F51 /* Login.swift */,
@@ -235,6 +238,7 @@
 				1A2D22631FBAE48A00F4A236 /* TimelineSwitch.xib */,
 				1AB797711FA62DFF006D3265 /* LaunchScreen.storyboard */,
 				1AB7976C1FA62DFF006D3265 /* Main.storyboard */,
+				C05101488F2F0BE4FCC8DA41 /* MediaView.swift */,
 			);
 			path = KnzkAlt;
 			sourceTree = "<group>";
@@ -550,7 +554,7 @@
 				C0510169E259F193A6BC6D8A /* NibViewOwner.swift in Sources */,
 				C0510CE8752219D4CD0E8BF1 /* TimelineSwitch.swift in Sources */,
 				C05106C22C6FBC9327CCF73A /* DataSourceTimeline.swift in Sources */,
-				C0510E2786ED2B2F5EE9ACB0 /* IconStorage.swift in Sources */,
+				C0510E2786ED2B2F5EE9ACB0 /* MediaStorage.swift in Sources */,
 				C05107EF09B1BF0C3D7D424B /* BBCodeView.swift in Sources */,
 				C05108E85C5B23571843038D /* StatusContentContainerView.swift in Sources */,
 				C05107831B00E604341CE149 /* HTMLStyleParser.swift in Sources */,
@@ -562,6 +566,7 @@
 				C0510F168927F8EDE269784E /* BBCodeCustomAttrs.swift in Sources */,
 				C0510E73AA3AC136A95E2BCC /* BBCodeCustomValue.swift in Sources */,
 				C0510CDC0AB79449950BBC10 /* BBCodeLayer.swift in Sources */,
+				C05104BC0B19D02976E0328F /* MediaView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -585,7 +590,7 @@
 				C0510D8CA3EBD322E138E114 /* NibViewOwner.swift in Sources */,
 				C0510170D7DB9C24A414C466 /* TimelineSwitch.swift in Sources */,
 				C0510322552B7BC134908B3C /* DataSourceTimeline.swift in Sources */,
-				C05100EC91B6E1765FC8196F /* IconStorage.swift in Sources */,
+				C05100EC91B6E1765FC8196F /* MediaStorage.swift in Sources */,
 				1A0076371FEE4E5C003D865E /* AccountDetailVC.swift in Sources */,
 				C0510A76DB37079062A00410 /* BBCodeView.swift in Sources */,
 				C0510DB6EDDD7DE98C884A9B /* StatusContentContainerView.swift in Sources */,
@@ -599,6 +604,7 @@
 				C05108B816E67F22D9884576 /* BBCodeCustomAttrs.swift in Sources */,
 				C0510795C5C0366F61A6E5C5 /* BBCodeCustomValue.swift in Sources */,
 				C05109217CC67F46F053C282 /* BBCodeLayer.swift in Sources */,
+				C0510D59FF842EF7CC1AE609 /* MediaView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

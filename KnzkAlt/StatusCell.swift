@@ -60,6 +60,10 @@ class StatusCellOwner: NibViewOwner<StatusCell> {
         super.init()
     }
 
+    static let imageCornerRadius = CGFloat(4)
+
+    weak var _tableView: UITableView?
+
     convenience init(status: Status) {
         self.init()
 
@@ -92,32 +96,66 @@ class StatusCellOwner: NibViewOwner<StatusCell> {
             self.favButton.isSelected = s.favourited ?? false
         }
 
+        let setAttachments = {
+            (status: Status) -> () in
+
+            let isNSFW = status.sensitive ?? true
+            let attachmentsPrefix = status.mediaAttachments.prefix(4)
+            attachmentsPrefix.forEach {
+                switch $0.type {
+                case .video:
+                    let _ = self.contentContainerView.addMedia(
+                            videoURL: URL(string: $0.url),
+                            isNSFW: isNSFW
+                    )
+                default:
+                    if let url = URL(string: $0.url) {
+                        let mediaView = self.contentContainerView.addMedia(
+                                videoURL: nil,
+                                isNSFW: isNSFW
+                        )
+
+                        MediaStorage.shared.loadAttachment(
+                                url: url,
+                                for: mediaView
+                        )
+                    }
+                    else {
+                        NSLog("[Warning] Cannot handle attachment URL: \($0.url)")
+                    }
+                }
+            }
+        }
+
         if let reblogStatus = status.reblog {
             setProps(reblogStatus)
 
             btByLabel.isHidden = false
             btByImageView.isHidden = false
 
-            IconStorage.shared.loadIcon(
+            MediaStorage.shared.loadIcon(
                     url: URL(string: reblogStatus.account.avatar)!,
                     for: self)
-            IconStorage.shared.loadBtByIcon(
+            MediaStorage.shared.loadBtByIcon(
                     url: URL(string: status.account.avatar)!,
                     for: self)
+
+            setAttachments(reblogStatus)
         }
         else {
             setProps(status)
 
-            IconStorage.shared.loadIcon(
+            MediaStorage.shared.loadIcon(
                     url: URL(string: status.account.avatar)!,
                     for: self)
+
+            setAttachments(status)
         }
 
-        let imageCornerRadius = CGFloat(4)
         iconImageView.clipsToBounds = true
-        iconImageView.layer.cornerRadius = imageCornerRadius
+        iconImageView.layer.cornerRadius = StatusCellOwner.imageCornerRadius
         btByImageView.clipsToBounds = true
-        btByImageView.layer.cornerRadius = imageCornerRadius
+        btByImageView.layer.cornerRadius = StatusCellOwner.imageCornerRadius
 
         let gestureForStatusDetail = UITapGestureRecognizer(
                 target: self,
@@ -196,10 +234,14 @@ class StatusCellOwner: NibViewOwner<StatusCell> {
             bbCodeView.text = newValue
         }
     }
+
+    var contentContainerView: StatusContentContainerView {
+        return contentView as! StatusContentContainerView
+    }
     
     var bbCodeView: BBCodeView {
         get {
-            return (contentView as! StatusContentContainerView).bbCodeView
+            return contentContainerView.bbCodeView
         }
     }
     

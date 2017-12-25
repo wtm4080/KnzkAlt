@@ -35,6 +35,8 @@ enum Notifications {
     case showStatusDetail
     case showAccountDetail
 
+    case loadedAttachment
+
     private var _nc: NotificationCenter {
         return NotificationCenter.default
     }
@@ -45,7 +47,7 @@ enum Notifications {
 
     func post() {
         switch self {
-            case .accessTokenRefreshed, .logoutPerformed:
+            case .accessTokenRefreshed, .logoutPerformed, .loadedAttachment:
                 _post()
             default:
                 fatalError("Invalid posting case without params.")
@@ -80,16 +82,11 @@ enum Notifications {
     }
 
     private func _post(userInfo: [AnyHashable: Any]? = nil) {
-        if Thread.isMainThread {
-            _nc.post(name: _name, object: nil, userInfo: userInfo)
-        }
-        else {
-            let nc = _nc
-            let name = _name
+        let nc = _nc
+        let name = _name
 
-            DispatchQueue.main.async {
-                nc.post(name: name, object: nil, userInfo: userInfo)
-            }
+        DispatchQueue.main.async {
+            nc.post(name: name, object: nil, userInfo: userInfo)
         }
     }
 

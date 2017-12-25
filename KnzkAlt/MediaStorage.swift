@@ -8,46 +8,54 @@ import Hydra
 import MastodonKit
 import SwiftGifOrigin
 
-class IconStorage {
-    static let shared = IconStorage()
+class MediaStorage {
+    static let shared = MediaStorage()
     private init() {}
 
-    private var _loadingsIcons: [URL: Promise<Result<Data>>] = [:]
-    private var _icons: [URL: UIImage] = [:]
+    private var _loadingsMedia: [URL: Promise<Result<Data>>] = [:]
+    private var _media: [URL: UIImage] = [:]
 
     func loadIcon(url: URL, for s: StatusCellOwner) {
-        _loadIcon(url: url) {
+        _loadMedia(url: url) {
             s.iconImage = $0
         }
     }
 
     func loadBtByIcon(url: URL, for s: StatusCellOwner) {
-        _loadIcon(url: url) {
+        _loadMedia(url: url) {
             s.btByIconImage = $0
         }
     }
 
-    private func _loadIcon(url: URL, for statusCellSetter: @escaping (UIImage?) -> ()) {
-        let updateIcon = {
+    func loadAttachment(url: URL, for mediaView: MediaView) {
+        _loadMedia(url: url) {
+            if let img = $0 {
+                mediaView.setImage(image: img)
+            }
+        }
+    }
+
+    private func _loadMedia(url: URL, for statusCellSetter: @escaping (UIImage?) -> ()) {
+        let updateMedia = {
             [unowned self] (result: Result<Data>) in
 
             switch result {
             case .success(let data, _):
                 let image = UIImage.gif(data: data)
-                self._icons[url] = image
+                self._media[url] = image
                 statusCellSetter(image)
             default:
                 NSLog("Loading image error: \(result)")
             }
         }
 
-        if let currentLoading = _loadingsIcons[url] {
+        if let currentLoading = _loadingsMedia[url] {
             currentLoading.then(in: .main) {
-                updateIcon($0)
+                updateMedia($0)
             }
         }
         else {
-            _loadingsIcons[url] = Promise<Result<Data>>(in: .background) {
+            _loadingsMedia[url] = Promise<Result<Data>>(in: .background) {
                 resolved, _, _ in
 
                 URLSession.shared.dataTask(with: url) {
@@ -61,7 +69,7 @@ class IconStorage {
                     }
                 }.resume()
             }.then(in: .main) {
-                updateIcon($0)
+                updateMedia($0)
             }
         }
     }

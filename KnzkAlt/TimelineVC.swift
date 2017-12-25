@@ -41,6 +41,10 @@ class TimelineVC: UITableViewController {
                 observer: self,
                 selector: #selector(type(of: self)._observeSwitchedTL(n:))
         )
+        Notifications.loadedAttachment.register(
+                observer: self,
+                selector: #selector(type(of: self)._observeLoadedAttachment(n:))
+        )
 
         _postRequestTL(pos: .unspecified)
     }
@@ -76,6 +80,10 @@ class TimelineVC: UITableViewController {
 
             tableView.flashScrollIndicators()
         }
+    }
+
+    @objc private func _observeLoadedAttachment(n: Notification) {
+        tableView.reloadData()
     }
 
     @objc private func _refresh(sender: UIRefreshControl) {
