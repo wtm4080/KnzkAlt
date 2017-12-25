@@ -73,7 +73,13 @@ class StatusCellOwner: NibViewOwner<StatusCell> {
             self.displayName = s.account.displayName
             self.userId = s.account.acct
             self.tootDate = s.createdAt
-            self.content = s.content
+
+            if s.spoilerText.isEmpty {
+                self.content = s.content
+            }
+            else {
+                self.content = s.spoilerText + "<p><a href='about:blank'>Read more &gt;&gt;</a></p>"
+            }
 
             switch s.visibility {
                 case .public, .unlisted:
