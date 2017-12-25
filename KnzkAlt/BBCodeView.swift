@@ -129,7 +129,7 @@ class BBCodeView: UITextView {
 
     private static let _maxHTMLTraversalDepth = 50
 
-    static let defaultFontSize = CGFloat(15)
+    static let defaultFontSize = CGFloat(16)
     static let defaultFont = UIFont.systemFont(ofSize: defaultFontSize)
 
     private static func _traverseHTML(
