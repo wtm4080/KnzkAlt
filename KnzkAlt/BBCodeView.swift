@@ -46,6 +46,8 @@ class BBCodeView: UITextView {
         }
     }
 
+    var emojis: [String: URL] = [:]
+
     var rootLayer: CALayer {
         return subviews[0].layer
     }
@@ -120,7 +122,7 @@ class BBCodeView: UITextView {
             return
         }
 
-        let traverseResult = BBCodeView._traverseHTML(current: root)
+        let traverseResult = _traverseHTML(current: root)
         while traverseResult.string.hasPrefix("\n") {
             traverseResult.deleteCharacters(in: NSRange(location: 0, length: 1))
         }
@@ -132,14 +134,14 @@ class BBCodeView: UITextView {
     static let defaultFontSize = CGFloat(16)
     static let defaultFont = UIFont.systemFont(ofSize: defaultFontSize)
 
-    private static func _traverseHTML(
+    private func _traverseHTML(
             current: XMLNode,
             currentTraversalDepth: UInt = 0
     ) -> NSMutableAttributedString {
 
         let notParsed = { NSMutableAttributedString(string: current.stringValue) }
 
-        guard currentTraversalDepth <= _maxHTMLTraversalDepth else {
+        guard currentTraversalDepth <= BBCodeView._maxHTMLTraversalDepth else {
             return notParsed()
         }
 
@@ -161,7 +163,7 @@ class BBCodeView: UITextView {
             let traverse = {
                 (childNode: XMLNode) -> NSMutableAttributedString in
 
-                return _traverseHTML(
+                return self._traverseHTML(
                         current: childNode,
                         currentTraversalDepth: currentTraversalDepth + 1
                 )
@@ -195,7 +197,7 @@ class BBCodeView: UITextView {
         let handleElement = {
             (element: XMLElement) -> NSMutableAttributedString in
 
-            var attrs = _htmlAttrsToAttrsDict(
+            var attrs = BBCodeView._htmlAttrsToAttrsDict(
                     tag: elementToTag(element),
                     htmlAttrs: element.attributes
             )
@@ -245,7 +247,7 @@ class BBCodeView: UITextView {
 
                 switch tag {
 
-                case _contentRootTag, "p", "div", "a", "span", "u", "pre":
+                case BBCodeView._contentRootTag, "p", "div", "a", "span", "u", "pre":
                     return handleElement(element)
 
                 case "br":
@@ -301,6 +303,59 @@ class BBCodeView: UITextView {
             replace("&quot;", "\"")
 
             let attributed = NSMutableAttributedString(string: s)
+
+            let emojiRegex = try? NSRegularExpression(pattern: "(?:\\s+|^|​)(:[a-zA-Z0-9_+\\-]+?:)(?:\\s+|$|​)")
+            let extractEmojiCode = {
+                (s: String) -> (code: String, range: NSRange)? in
+
+                NSLog("Matching for emoji: \(s)")
+
+                let match = emojiRegex!.firstMatch(
+                        in: s,
+                        range: NSRange(
+                                location: 0,
+                                length: attributed.length
+                        )
+                )
+
+                guard (match?.numberOfRanges ?? 0) == 2 else {
+                    return nil
+                }
+
+                let range = match!.range(at: 1)
+                let sliceRange =
+                        String.Index(encodedOffset: range.location) ..<
+                                String.Index(encodedOffset: range.location + range.length)
+
+                var slicedCode = String(s[sliceRange])
+                slicedCode.removeFirst()
+                slicedCode.removeLast()
+
+                return (slicedCode, range)
+            }
+
+            while
+                    let emojiCode = extractEmojiCode(attributed.string),
+                    let emojiURL = emojis[emojiCode.code] {
+
+                let textAttachment = CustomTextAttachment()
+
+//                textAttachment.bounds = CGRect(
+//                        origin: CGPoint.zero,
+//                        size: CGSize(
+//                                width: BBCodeView.defaultFont.pointSize,
+//                                height: BBCodeView.defaultFont.pointSize
+//                        )
+//                )
+
+                MediaStorage.shared.loadEmoji(url: emojiURL, textAttachment: textAttachment, textStorage: _textStorage)
+
+                attributed.replaceCharacters(
+                        in: emojiCode.range,
+                        with: NSAttributedString(attachment: textAttachment)
+                )
+            }
+
             attributed.addAttribute(
                     NSAttributedStringKey.font,
                     value: BBCodeView.defaultFont,

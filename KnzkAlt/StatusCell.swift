@@ -78,6 +78,12 @@ class StatusCellOwner: NibViewOwner<StatusCell> {
             self.userId = s.account.acct
             self.tootDate = s.createdAt
 
+            var emojis: [String: URL] = [:]
+            for emoji in s.emojis {
+                emojis[emoji.shortCode] = emoji.url
+            }
+            self.bbCodeView.emojis = emojis
+
             if s.spoilerText.isEmpty {
                 self.content = s.content
             }

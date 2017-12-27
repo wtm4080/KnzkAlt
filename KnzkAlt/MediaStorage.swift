@@ -35,6 +35,18 @@ class MediaStorage {
         }
     }
 
+    func loadEmoji(url: URL, textAttachment: NSTextAttachment, textStorage: NSTextStorage) {
+        _loadMedia(url: url) {
+            if let img = $0 {
+                textStorage.beginEditing()
+
+                textAttachment.image = img
+
+                textStorage.endEditing()
+            }
+        }
+    }
+
     private func _loadMedia(url: URL, for statusCellSetter: @escaping (UIImage?) -> ()) {
         let updateMedia = {
             [unowned self] (result: Result<Data>) in

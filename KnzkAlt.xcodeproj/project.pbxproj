@@ -68,6 +68,7 @@
 		C05108B816E67F22D9884576 /* BBCodeCustomAttrs.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05108FFE47EF06C331AB942 /* BBCodeCustomAttrs.swift */; };
 		C05108E85C5B23571843038D /* StatusContentContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510BA3BD81793EAFE37660 /* StatusContentContainerView.swift */; };
 		C05109217CC67F46F053C282 /* BBCodeLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510944D4672256653D6DEE /* BBCodeLayer.swift */; };
+		C051099E545885B7EBAA0D87 /* CustomTextAttachment.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510A73EB893E1C124C7612 /* CustomTextAttachment.swift */; };
 		C05109D9A1BBCB02A108BF4D /* HTMLStyleParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = C051064B7C25EC8814050796 /* HTMLStyleParser.swift */; };
 		C05109E74F1DEF41745FE259 /* HTMLClassParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05108635C288A96525F66DB /* HTMLClassParser.swift */; };
 		C0510A76DB37079062A00410 /* BBCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510E861D583AA341DF3DF6 /* BBCodeView.swift */; };
@@ -77,6 +78,7 @@
 		C0510C0F6DF96107BF990381 /* CSSColorParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510977F490EDA465069459 /* CSSColorParser.swift */; };
 		C0510CDC0AB79449950BBC10 /* BBCodeLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510944D4672256653D6DEE /* BBCodeLayer.swift */; };
 		C0510CE8752219D4CD0E8BF1 /* TimelineSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510BF7B092B3F32B183235 /* TimelineSwitch.swift */; };
+		C0510D020368E39B17E1968C /* CustomTextAttachment.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510A73EB893E1C124C7612 /* CustomTextAttachment.swift */; };
 		C0510D59FF842EF7CC1AE609 /* MediaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05101488F2F0BE4FCC8DA41 /* MediaView.swift */; };
 		C0510D8CA3EBD322E138E114 /* NibViewOwner.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05101716E8E1EF871FA7B83 /* NibViewOwner.swift */; };
 		C0510D8D9F4AD754587C208F /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510E78CEF630B7FD0E98F8 /* DataSource.swift */; };
@@ -140,6 +142,7 @@
 		C0510944D4672256653D6DEE /* BBCodeLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BBCodeLayer.swift; sourceTree = "<group>"; };
 		C0510977F490EDA465069459 /* CSSColorParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSSColorParser.swift; sourceTree = "<group>"; };
 		C05109A8D56CD09C44EE1FC6 /* BBCodeCustomValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BBCodeCustomValue.swift; sourceTree = "<group>"; };
+		C0510A73EB893E1C124C7612 /* CustomTextAttachment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTextAttachment.swift; sourceTree = "<group>"; };
 		C0510BA3BD81793EAFE37660 /* StatusContentContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusContentContainerView.swift; sourceTree = "<group>"; };
 		C0510BF7B092B3F32B183235 /* TimelineSwitch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineSwitch.swift; sourceTree = "<group>"; };
 		C0510C0073874BEF0B4E8C82 /* Notifications.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
@@ -237,6 +240,7 @@
 				1AB797711FA62DFF006D3265 /* LaunchScreen.storyboard */,
 				1AB7976C1FA62DFF006D3265 /* Main.storyboard */,
 				C05101488F2F0BE4FCC8DA41 /* MediaView.swift */,
+				C0510A73EB893E1C124C7612 /* CustomTextAttachment.swift */,
 			);
 			path = KnzkAlt;
 			sourceTree = "<group>";
@@ -535,6 +539,7 @@
 				C0510E73AA3AC136A95E2BCC /* BBCodeCustomValue.swift in Sources */,
 				C0510CDC0AB79449950BBC10 /* BBCodeLayer.swift in Sources */,
 				C05104BC0B19D02976E0328F /* MediaView.swift in Sources */,
+				C0510D020368E39B17E1968C /* CustomTextAttachment.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -573,6 +578,7 @@
 				C0510795C5C0366F61A6E5C5 /* BBCodeCustomValue.swift in Sources */,
 				C05109217CC67F46F053C282 /* BBCodeLayer.swift in Sources */,
 				C0510D59FF842EF7CC1AE609 /* MediaView.swift in Sources */,
+				C051099E545885B7EBAA0D87 /* CustomTextAttachment.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
