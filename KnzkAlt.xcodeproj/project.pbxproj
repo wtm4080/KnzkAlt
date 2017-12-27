@@ -19,7 +19,6 @@
 		1A0076391FEE4E5C003D865E /* AccountDetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A0076351FEE4E5C003D865E /* AccountDetailVC.xib */; };
 		1A2D22641FBAE48A00F4A236 /* TimelineSwitch.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A2D22631FBAE48A00F4A236 /* TimelineSwitch.xib */; };
 		1A2D22651FBAE48A00F4A236 /* TimelineSwitch.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A2D22631FBAE48A00F4A236 /* TimelineSwitch.xib */; };
-		1A5696EC1FB4A82A00BC82DC /* MastodonKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A5696EB1FB4A82A00BC82DC /* MastodonKit.framework */; };
 		1A5696ED1FB4A84C00BC82DC /* MastodonKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A5696EB1FB4A82A00BC82DC /* MastodonKit.framework */; };
 		1A5696EF1FB5A7A000BC82DC /* StatusCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A5696EE1FB5A7A000BC82DC /* StatusCell.xib */; };
 		1A5696F01FB5A7A000BC82DC /* StatusCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1A5696EE1FB5A7A000BC82DC /* StatusCell.xib */; };
@@ -159,7 +158,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				9AD8BDA67D0C7E0146BDA5F9 /* Pods_KnzkAlt.framework in Frameworks */,
-				1A5696EC1FB4A82A00BC82DC /* MastodonKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,7 +284,6 @@
 				1AB797611FA62DFF006D3265 /* Resources */,
 				A9C137E8C1F1666CAFF62A65 /* [CP] Embed Pods Frameworks */,
 				EFFB3DBBAD0F928A55F51BCE /* [CP] Copy Pods Resources */,
-				1A5696BF1FB493AB00BC82DC /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -307,7 +304,6 @@
 				1AB797771FA62DFF006D3265 /* Resources */,
 				03C444560CCACB6B2D9A1853 /* [CP] Embed Pods Frameworks */,
 				924AC09F4EE68C3B59AD7C4B /* [CP] Copy Pods Resources */,
-				1A5696C01FB4948100BC82DC /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -403,36 +399,6 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KnzkAltTests/Pods-KnzkAltTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		1A5696BF1FB493AB00BC82DC /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/MastodonKit.framework",
-			);
-			outputPaths = (
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/MastodonKit.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks";
-		};
-		1A5696C01FB4948100BC82DC /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/MastodonKit.framework",
-			);
-			outputPaths = (
-				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/MastodonKit.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks";
-		};
 		28184C1383645325228B5D9A /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -477,6 +443,7 @@
 				"${BUILT_PRODUCTS_DIR}/Fuzi/Fuzi.framework",
 				"${BUILT_PRODUCTS_DIR}/HydraAsync/Hydra.framework",
 				"${BUILT_PRODUCTS_DIR}/KeychainAccess/KeychainAccess.framework",
+				"${BUILT_PRODUCTS_DIR}/MastodonKit/MastodonKit.framework",
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftGifOrigin/SwiftGifOrigin.framework",
 			);
@@ -486,6 +453,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Fuzi.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Hydra.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainAccess.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MastodonKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftGifOrigin.framework",
 			);
@@ -752,10 +720,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = UHH463TU7S;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = KnzkAlt/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.atcurio.KnzkAlt;
@@ -772,10 +737,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = UHH463TU7S;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = KnzkAlt/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.atcurio.KnzkAlt;
@@ -798,7 +760,6 @@
 					"\"$PODS_CONFIGURATION_BUILD_DIR/HydraAsync\"",
 					"\"$PODS_CONFIGURATION_BUILD_DIR/KeychainAccess\"",
 					"\"$PODS_CONFIGURATION_BUILD_DIR/Result\"",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = KnzkAltTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -823,7 +784,6 @@
 					"\"$PODS_CONFIGURATION_BUILD_DIR/HydraAsync\"",
 					"\"$PODS_CONFIGURATION_BUILD_DIR/KeychainAccess\"",
 					"\"$PODS_CONFIGURATION_BUILD_DIR/Result\"",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = KnzkAltTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
