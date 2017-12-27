@@ -15,7 +15,7 @@
 
 ## Licence
 
-[KnzkApp License (Restricted BSD License)](https://github.com/wtm4080/KnzkAlt/blob/develop/LICENCE)
+[KnzkApp License (Restricted BSD License)](https://github.com/wtm4080/KnzkAlt/blob/develop/LICENSE)
 
 ## To-Do list
 
