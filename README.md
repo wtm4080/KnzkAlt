@@ -21,6 +21,11 @@
 
 ### For first release
 
+* Refactor and add unit tests
+* HockeyApp
+* Fastlane
+* CI
+
 * Timeline
   * Read more cell
   * Attachment detail view navigation
@@ -170,20 +175,12 @@
 
 * UI animations
 
-* Refactor and add unit tests
-
 * Refine BBCodeView
   * Support to display user display name
 
 * Refine Timeline attachments stack view to collection view
 
 * Force touch media preview
-
-* HockeyApp
-
-* Fastlane
-
-* CI
 
 * Support latest Mastodon API features
   * Refine MastodonKit
