@@ -315,7 +315,7 @@ class StatusCellOwner: NibViewOwner<StatusCell> {
     }
 
     @objc private func _statusDetailAction(sender: Any) {
-        Notifications.showStatusDetail.post(
+        AppNotification.shared.post.showStatusDetail(
                 statusDetail: StatusDetailParams(status: _status)
         )
     }
@@ -323,7 +323,7 @@ class StatusCellOwner: NibViewOwner<StatusCell> {
     @objc private func _accountDetailAction(sender: Any) {
         let account = _status.account
 
-        Notifications.showAccountDetail.post(
+        AppNotification.shared.post.showAccountDetail(
                 accountDetail: AccountDetailParams(account: account)
         )
     }
@@ -333,7 +333,7 @@ class StatusCellOwner: NibViewOwner<StatusCell> {
             return
         }
 
-        Notifications.showAccountDetail.post(
+        AppNotification.shared.post.showAccountDetail(
                 accountDetail: AccountDetailParams(account: account)
         )
     }

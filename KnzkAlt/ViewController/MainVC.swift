@@ -8,22 +8,12 @@
 
 import UIKit
 
-class MainVC: UITabBarController {
+class MainVC: UITabBarController, ANAccessTokenRefreshed, ANLogoutPerformed {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        Notifications.accessTokenRefreshed.register(
-                observer: self,
-                selector: #selector(type(of: self)._observeAccessTokenRefreshed(n:))
-        )
-        Notifications.logoutPerformed.register(
-                observer: self,
-                selector: #selector(type(of: self)._observeLogoutPerformed(n:))
-        )
-    }
-
-    deinit {
-        Notifications.unregisterAll(observer: self)
+        AppNotification.shared.observer.register(observer: self as ANAccessTokenRefreshed)
+        AppNotification.shared.observer.register(observer: self as ANLogoutPerformed)
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -34,7 +24,7 @@ class MainVC: UITabBarController {
         }
     }
 
-    @objc private func _observeAccessTokenRefreshed(n: Notification) {
+    func observeAccessTokenRefreshed() {
         if let at = Keychain.shared.accessToken, !at.isEmpty {
             let alert = UIAlertController(
                     title: "Login",
@@ -55,7 +45,7 @@ class MainVC: UITabBarController {
         self.selectedIndex = 0
     }
 
-    @objc private func _observeLogoutPerformed(n: Notification) {
+    func observeLogoutPerformed() {
         _presentInitialVC()
 
         self.selectedIndex = 0

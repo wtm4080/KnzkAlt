@@ -44,7 +44,6 @@
 		1AA89DEF20198444008EC484 /* HandledAttrsLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA89DEC20198444008EC484 /* HandledAttrsLogger.swift */; };
 		1AA89DF120198491008EC484 /* CustomTextAttachment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA89DF020198491008EC484 /* CustomTextAttachment.swift */; };
 		1AA89DF4201984C3008EC484 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA89DF3201984C3008EC484 /* Login.swift */; };
-		1AA89DF720198500008EC484 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA89DF620198500008EC484 /* Notifications.swift */; };
 		1AB797671FA62DFF006D3265 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB797661FA62DFF006D3265 /* AppDelegate.swift */; };
 		1AB7976E1FA62DFF006D3265 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AB7976C1FA62DFF006D3265 /* Main.storyboard */; };
 		1AB797701FA62DFF006D3265 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1AB7976F1FA62DFF006D3265 /* Assets.xcassets */; };
@@ -58,6 +57,8 @@
 		C051063C8F94487D951F3992 /* LoadPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = C051044B0362D353B18AA631 /* LoadPosition.swift */; };
 		C05106A4B78EB97153B89723 /* AppNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510B64372D7F837A34D11B /* AppNotification.swift */; };
 		C051072FF9FAE361D97372C6 /* TLParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510A6EDA359DE7A9CB6842 /* TLParams.swift */; };
+		C051090AA4B00DD5B7F7454E /* AppNotificationObserving.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510397D489014CC8992656 /* AppNotificationObserving.swift */; };
+		C0510AB9760FB8BA76DD3A23 /* AppNotificationObserving.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510397D489014CC8992656 /* AppNotificationObserving.swift */; };
 		C0510BAD1599A65D9A486F1B /* LoadPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = C051044B0362D353B18AA631 /* LoadPosition.swift */; };
 		C0510EB5724E95D8924D1103 /* AppNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510B64372D7F837A34D11B /* AppNotification.swift */; };
 /* End PBXBuildFile section */
@@ -111,7 +112,6 @@
 		1AA89DEC20198444008EC484 /* HandledAttrsLogger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HandledAttrsLogger.swift; sourceTree = "<group>"; };
 		1AA89DF020198491008EC484 /* CustomTextAttachment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTextAttachment.swift; sourceTree = "<group>"; };
 		1AA89DF3201984C3008EC484 /* Login.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
-		1AA89DF620198500008EC484 /* Notifications.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
 		1AB797631FA62DFF006D3265 /* KnzkAlt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KnzkAlt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AB797661FA62DFF006D3265 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1AB7976D1FA62DFF006D3265 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -124,6 +124,7 @@
 		8345777460A049931A822898 /* Pods-KnzkAlt.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KnzkAlt.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KnzkAlt/Pods-KnzkAlt.debug.xcconfig"; sourceTree = "<group>"; };
 		92B3B098B3DC0D2CC7E8217B /* Pods_KnzkAlt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KnzkAlt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6D9B3DB25218238497DA448 /* Pods-KnzkAltTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KnzkAltTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KnzkAltTests/Pods-KnzkAltTests.debug.xcconfig"; sourceTree = "<group>"; };
+		C0510397D489014CC8992656 /* AppNotificationObserving.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppNotificationObserving.swift; sourceTree = "<group>"; };
 		C051044B0362D353B18AA631 /* LoadPosition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadPosition.swift; sourceTree = "<group>"; };
 		C05105506BF8250C08BE5640 /* TLKind.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TLKind.swift; sourceTree = "<group>"; };
 		C0510A6EDA359DE7A9CB6842 /* TLParams.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TLParams.swift; sourceTree = "<group>"; };
@@ -245,9 +246,9 @@
 			children = (
 				C0510B64372D7F837A34D11B /* AppNotification.swift */,
 				C051044B0362D353B18AA631 /* LoadPosition.swift */,
-				1AA89DF620198500008EC484 /* Notifications.swift */,
 				C05105506BF8250C08BE5640 /* TLKind.swift */,
 				C0510A6EDA359DE7A9CB6842 /* TLParams.swift */,
+				C0510397D489014CC8992656 /* AppNotificationObserving.swift */,
 			);
 			path = AppNotification;
 			sourceTree = "<group>";
@@ -577,7 +578,6 @@
 				1AA89DB820198210008EC484 /* TootVC.swift in Sources */,
 				1AA89DED20198444008EC484 /* NibViewOwner.swift in Sources */,
 				1AA89DC720198322008EC484 /* StatusContentContainerView.swift in Sources */,
-				1AA89DF720198500008EC484 /* Notifications.swift in Sources */,
 				1AA89DE1201983BF008EC484 /* DataSourceTimeline.swift in Sources */,
 				1AA89DC920198322008EC484 /* MediaView.swift in Sources */,
 				1AA89DD62019832B008EC484 /* BBCodeCustomValue.swift in Sources */,
@@ -585,6 +585,7 @@
 				C051013C90808EA14D21585D /* TLKind.swift in Sources */,
 				C051063C8F94487D951F3992 /* LoadPosition.swift in Sources */,
 				C051072FF9FAE361D97372C6 /* TLParams.swift in Sources */,
+				C0510AB9760FB8BA76DD3A23 /* AppNotificationObserving.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -597,6 +598,7 @@
 				C0510254A99C77FABC3E33FA /* TLKind.swift in Sources */,
 				C0510BAD1599A65D9A486F1B /* LoadPosition.swift in Sources */,
 				C0510559AFC5A879C211EC84 /* TLParams.swift in Sources */,
+				C051090AA4B00DD5B7F7454E /* AppNotificationObserving.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

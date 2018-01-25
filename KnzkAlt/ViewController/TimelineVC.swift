@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TimelineVC: UITableViewController {
+class TimelineVC: UITableViewController, ANLoadedTL, ANSwitchedTL, ANLoadedAttachment {
     private let _refreshControl = UIRefreshControl()
 
     private var _reservedRefreshingBottom = false
@@ -33,18 +33,9 @@ class TimelineVC: UITableViewController {
         tableView.estimatedRowHeight = 20
         tableView.rowHeight = UITableViewAutomaticDimension
 
-        Notifications.loadedTL.register(
-                observer: self,
-                selector: #selector(type(of: self)._observeLoadedTL(n:))
-        )
-        Notifications.switchedTL.register(
-                observer: self,
-                selector: #selector(type(of: self)._observeSwitchedTL(n:))
-        )
-        Notifications.loadedAttachment.register(
-                observer: self,
-                selector: #selector(type(of: self)._observeLoadedAttachment(n:))
-        )
+        AppNotification.shared.observer.register(observer: self as ANLoadedTL)
+        AppNotification.shared.observer.register(observer: self as ANSwitchedTL)
+        AppNotification.shared.observer.register(observer: self as ANLoadedAttachment)
 
         _postRequestTL(pos: .unspecified)
     }
@@ -55,11 +46,7 @@ class TimelineVC: UITableViewController {
         _resumeBBCodeAnimations()
     }
 
-    deinit {
-        Notifications.unregisterAll(observer: self)
-    }
-
-    @objc private func _observeLoadedTL(n: Notification) {
+    func observeLoadedTL(tlParams: TLParams) {
         tableView.reloadData()
 
         _refreshControl.endRefreshing()
@@ -69,9 +56,9 @@ class TimelineVC: UITableViewController {
         _reservedRefreshingBottom = false
     }
 
-    @objc private func _observeSwitchedTL(n: Notification) {
+    func observeSwitchedTL(tlParams: TLParams) {
         tableView.reloadData()
-        
+
         if tableView.numberOfRows(inSection: 0) == 0 {
             _postRequestTL(pos: .unspecified)
         }
@@ -82,7 +69,7 @@ class TimelineVC: UITableViewController {
         }
     }
 
-    @objc private func _observeLoadedAttachment(n: Notification) {
+    func observeLoadedAttachment() {
         tableView.reloadData()
     }
 
@@ -95,7 +82,7 @@ class TimelineVC: UITableViewController {
     }
 
     private func _postRequestTL(pos: LoadPosition) {
-        Notifications.requestTL.post(
+        AppNotification.shared.post.requestTL(
                 tlParams: TLParams(kind: _timelineSwitchOwner.currentTLKind, pos: pos)
         )
     }

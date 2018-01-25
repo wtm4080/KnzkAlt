@@ -86,7 +86,7 @@ class ClientManager {
         var kc = Keychain.shared
         kc.accessToken = nil
 
-        Notifications.logoutPerformed.post()
+        AppNotification.shared.post.logoutPerformed()
     }
 
     private func _tlParamsToRequestRange(

@@ -8,36 +8,22 @@
 
 import UIKit
 
-class TimelineNavigation: UINavigationController {
+class TimelineNavigation: UINavigationController, ANShowStatusDetail, ANShowAccountDetail {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        Notifications.showStatusDetail.register(
-                observer: self,
-                selector: #selector(type(of: self)._observeShowStatusDetail(n:))
-        )
-        Notifications.showAccountDetail.register(
-                observer: self,
-                selector: #selector(type(of: self)._observeShowAccountDetail(n:))
-        )
+        AppNotification.shared.observer.register(observer: self as ANShowStatusDetail)
+        AppNotification.shared.observer.register(observer: self as ANShowAccountDetail)
     }
 
-    deinit {
-        Notifications.unregisterAll(observer: self)
-    }
-
-    @objc private func _observeShowStatusDetail(n: Notification) {
-        let params = Notifications.statusDetailParams(from: n)!
-
-        let vc = StatusDetailVC(params: params)
+    func observeShowStatusDetail(statusDetail: StatusDetailParams) {
+        let vc = StatusDetailVC(params: statusDetail)
 
         pushViewController(vc, animated: true)
     }
 
-    @objc private func _observeShowAccountDetail(n: Notification) {
-        let params = Notifications.accountDetailParams(from: n)!
-
-        let vc = AccountDetailVC(params: params)
+    func observeShowAccountDetail(accountDetail: AccountDetailParams) {
+        let vc = AccountDetailVC(params: accountDetail)
 
         pushViewController(vc, animated: true)
     }

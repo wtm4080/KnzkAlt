@@ -5,7 +5,7 @@
 
 import UIKit
 
-class DataSource: NSObject, UITableViewDataSource {
+class DataSource: NSObject, UITableViewDataSource, ANRequestTL, ANSwitchTL, ANLogoutPerformed, ANAccessTokenRefreshed {
     static let shared = DataSource()
 
     private var _homeTL = DataSourceTimeline()
@@ -17,41 +17,27 @@ class DataSource: NSObject, UITableViewDataSource {
     private override init() {
         super.init()
 
-        Notifications.requestTL.register(
-                observer: self,
-                selector: #selector(type(of: self)._observeRequestTL(n:))
-        )
-        Notifications.switchTL.register(
-                observer: self,
-                selector: #selector(type(of: self)._observeSwitchTL(n:))
-        )
-        Notifications.logoutPerformed.register(
-                observer: self,
-                selector: #selector(type(of: self)._observeResets(n:))
-        )
-        Notifications.accessTokenRefreshed.register(
-                observer: self,
-                selector: #selector(type(of: self)._observeResets(n:))
-        )
+        AppNotification.shared.observer.register(observer: self as ANRequestTL)
+        AppNotification.shared.observer.register(observer: self as ANSwitchTL)
+        AppNotification.shared.observer.register(observer: self as ANLogoutPerformed)
+        AppNotification.shared.observer.register(observer: self as ANAccessTokenRefreshed)
     }
 
-    deinit {
-        Notifications.unregisterAll(observer: self)
+    func observeRequestTL(tlParams: TLParams) {
+        _currentTL.loadStatuses(tlParams: tlParams)
     }
 
-    @objc private func _observeRequestTL(n: Notification) {
-        _currentTL.loadStatuses(tlParams: Notifications.tlParams(from: n)!)
-    }
-
-    @objc private func _observeSwitchTL(n: Notification) {
-        let tlParams = Notifications.tlParams(from: n)!
-
+    func observeSwitchTL(tlParams: TLParams) {
         _currentTLKind = tlParams.kind
 
-        Notifications.switchedTL.post(tlParams: tlParams)
+        AppNotification.shared.post.switchedTL(tlParams: tlParams)
     }
 
-    @objc private func _observeResets(n: Notification) {
+    func observeLogoutPerformed() {
+        _reset()
+    }
+
+    func observeAccessTokenRefreshed() {
         _reset()
     }
 
@@ -85,7 +71,7 @@ class DataSource: NSObject, UITableViewDataSource {
         _localTL = DataSourceTimeline()
         _federationTL = DataSourceTimeline()
 
-        Notifications.switchTL.post(
+        AppNotification.shared.post.switchTL(
                 tlParams: TLParams(kind: .home, pos: .unspecified)
         )
     }

@@ -139,7 +139,7 @@ class LoginVC: UIViewController, WKNavigationDelegate {
 
                 self?.navigationController?.dismiss(animated: true)
 
-                Notifications.accessTokenRefreshed.post()
+                AppNotification.shared.post.accessTokenRefreshed()
             }
         }
     }

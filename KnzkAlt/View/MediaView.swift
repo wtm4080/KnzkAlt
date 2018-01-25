@@ -132,7 +132,7 @@ class MediaView: UIView {
 
         _indicatorView!.stopAnimating()
 
-        Notifications.loadedAttachment.post()
+        AppNotification.shared.post.loadedAttachment()
     }
 
     @objc private func _showAction(sender: Any) {

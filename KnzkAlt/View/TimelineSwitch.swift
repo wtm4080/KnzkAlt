@@ -47,7 +47,7 @@ class TimelineSwitchOwner: NibViewOwner<TimelineSwitch> {
 
         _updateButtonStates()
 
-        Notifications.switchTL.post(
+        AppNotification.shared.post.switchTL(
                 tlParams: TLParams(kind: tlKind, pos: .unspecified)
         )
     }

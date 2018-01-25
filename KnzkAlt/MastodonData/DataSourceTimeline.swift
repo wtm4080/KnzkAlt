@@ -61,7 +61,7 @@ class DataSourceTimeline {
                 }
 
                 self._loadingStatuses = nil
-                Notifications.loadedTL.post(tlParams: tlParams)
+                AppNotification.shared.post.loadedTL(tlParams: tlParams)
             }
         }
     }
