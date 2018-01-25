@@ -52,6 +52,8 @@
 		1AB7977E1FA62DFF006D3265 /* KnzkAltTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB7977D1FA62DFF006D3265 /* KnzkAltTests.swift */; };
 		3F557620A6190728E09C6B1B /* Pods_KnzkAltTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1441A9221CCB3CD160F614DA /* Pods_KnzkAltTests.framework */; };
 		9AD8BDA67D0C7E0146BDA5F9 /* Pods_KnzkAlt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92B3B098B3DC0D2CC7E8217B /* Pods_KnzkAlt.framework */; };
+		C05106A4B78EB97153B89723 /* AppNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510B64372D7F837A34D11B /* AppNotification.swift */; };
+		C0510EB5724E95D8924D1103 /* AppNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510B64372D7F837A34D11B /* AppNotification.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -116,6 +118,7 @@
 		8345777460A049931A822898 /* Pods-KnzkAlt.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KnzkAlt.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KnzkAlt/Pods-KnzkAlt.debug.xcconfig"; sourceTree = "<group>"; };
 		92B3B098B3DC0D2CC7E8217B /* Pods_KnzkAlt.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KnzkAlt.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6D9B3DB25218238497DA448 /* Pods-KnzkAltTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KnzkAltTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KnzkAltTests/Pods-KnzkAltTests.debug.xcconfig"; sourceTree = "<group>"; };
+		C0510B64372D7F837A34D11B /* AppNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppNotification.swift; sourceTree = "<group>"; };
 		EECF72E7564B24B31527EAD4 /* Pods-KnzkAlt.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KnzkAlt.release.xcconfig"; path = "Pods/Target Support Files/Pods-KnzkAlt/Pods-KnzkAlt.release.xcconfig"; sourceTree = "<group>"; };
 		F990127F00E99EEB06FA4F22 /* Pods-KnzkAltTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KnzkAltTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-KnzkAltTests/Pods-KnzkAltTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -232,6 +235,7 @@
 			isa = PBXGroup;
 			children = (
 				1AA89DF620198500008EC484 /* Notifications.swift */,
+				C0510B64372D7F837A34D11B /* AppNotification.swift */,
 			);
 			path = AppNotification;
 			sourceTree = "<group>";
@@ -565,6 +569,7 @@
 				1AA89DE1201983BF008EC484 /* DataSourceTimeline.swift in Sources */,
 				1AA89DC920198322008EC484 /* MediaView.swift in Sources */,
 				1AA89DD62019832B008EC484 /* BBCodeCustomValue.swift in Sources */,
+				C0510EB5724E95D8924D1103 /* AppNotification.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -573,6 +578,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1AB7977E1FA62DFF006D3265 /* KnzkAltTests.swift in Sources */,
+				C05106A4B78EB97153B89723 /* AppNotification.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
