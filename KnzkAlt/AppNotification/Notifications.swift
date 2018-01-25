@@ -5,23 +5,6 @@
 
 import Foundation
 
-enum TLKind {
-    case home
-    case local
-    case federation
-}
-
-enum LoadPosition {
-    case top
-    case bottom
-    case unspecified
-}
-
-struct TLParams {
-    let kind: TLKind
-    let pos: LoadPosition
-}
-
 enum Notifications {
     case accessTokenRefreshed
     case logoutPerformed
