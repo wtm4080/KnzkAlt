@@ -13,9 +13,8 @@ target 'KnzkAlt' do
   pod 'KeychainAccess'
   pod 'Deque', '~> 3.1'
   pod 'Fuzi', '~> 2.0.0'
-  pod 'SwiftGifOrigin', :git => 'https://github.com/wtm4080/SwiftGif.git', :branch => 'master'
   pod 'MastodonKit', :git => 'https://github.com/wtm4080/MastodonKit.git', :branch => 'develop-knzk'
-
+  pod 'Kingfisher', '~> 4.0'
 
   target 'KnzkAltTests' do
     inherit! :search_paths

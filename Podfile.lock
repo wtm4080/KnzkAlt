@@ -3,44 +3,38 @@ PODS:
   - Fuzi (2.0.1)
   - HydraAsync (1.2.1)
   - KeychainAccess (3.1.0)
+  - Kingfisher (4.6.1)
   - MastodonKit (1.1.1)
   - Result (3.0.0)
-  - SwiftGifOrigin (1.6.1)
 
 DEPENDENCIES:
   - Deque (~> 3.1)
   - Fuzi (~> 2.0.0)
   - HydraAsync
   - KeychainAccess
+  - Kingfisher (~> 4.0)
   - MastodonKit (from `https://github.com/wtm4080/MastodonKit.git`, branch `develop-knzk`)
   - Result (~> 3.0.0)
-  - SwiftGifOrigin (from `https://github.com/wtm4080/SwiftGif.git`, branch `master`)
 
 EXTERNAL SOURCES:
   MastodonKit:
     :branch: develop-knzk
     :git: https://github.com/wtm4080/MastodonKit.git
-  SwiftGifOrigin:
-    :branch: master
-    :git: https://github.com/wtm4080/SwiftGif.git
 
 CHECKOUT OPTIONS:
   MastodonKit:
     :commit: 704629160206202eee2717b9e951bd7bbf44db9f
     :git: https://github.com/wtm4080/MastodonKit.git
-  SwiftGifOrigin:
-    :commit: e641f9637036a5346f69a30dcf1f365d2eed1927
-    :git: https://github.com/wtm4080/SwiftGif.git
 
 SPEC CHECKSUMS:
   Deque: b3acddc26fa0940e20def752ede39290422c6906
   Fuzi: f64983dea705491d3aedd32351247a09523e7efd
   HydraAsync: 8f2ab62d57e140b4ca587ae0f66e1eb04e8e6965
   KeychainAccess: 94c5540b32eabf7bc32bfb976a268e8ea05fd6da
+  Kingfisher: 1f9157d9c02b380cbd0b7cc890161195164eb634
   MastodonKit: d2bfd6dcc117df3dd7ffa7939903edc254107390
   Result: 1b3e431f37cbcd3ad89c6aa9ab0ae55515fae3b6
-  SwiftGifOrigin: 3a54b40fd899a7cf01466f7aef3b95f76ea5f938
 
-PODFILE CHECKSUM: 3d84f3eb21e509c80375c084e0a80529cf24e749
+PODFILE CHECKSUM: 309de58f27e8eaf651058ab9b688f84ca9321510
 
 COCOAPODS: 1.4.0

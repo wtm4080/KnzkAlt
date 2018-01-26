@@ -5,6 +5,7 @@
 
 import UIKit
 import MastodonKit
+import Kingfisher
 
 class StatusCell: UITableViewCell {
     static let reuseIdentifier = "Status"
@@ -121,10 +122,7 @@ class StatusCellOwner: NibViewOwner<StatusCell> {
                                 isNSFW: isNSFW
                         )
 
-                        MediaStorage.shared.loadAttachment(
-                                url: url,
-                                for: mediaView
-                        )
+                        mediaView.setImage(imageURL: url)
                     }
                     else {
                         NSLog("[Warning] Cannot handle attachment URL: \($0.url)")
@@ -139,21 +137,15 @@ class StatusCellOwner: NibViewOwner<StatusCell> {
             btByLabel.isHidden = false
             btByImageView.isHidden = false
 
-            MediaStorage.shared.loadIcon(
-                    url: URL(string: reblogStatus.account.avatar)!,
-                    for: self)
-            MediaStorage.shared.loadBtByIcon(
-                    url: URL(string: status.account.avatar)!,
-                    for: self)
+            setIconImage(url: URL(string: reblogStatus.account.avatar))
+            setBTIconImage(url: URL(string: status.account.avatar))
 
             setAttachments(reblogStatus)
         }
         else {
             setProps(status)
 
-            MediaStorage.shared.loadIcon(
-                    url: URL(string: status.account.avatar)!,
-                    for: self)
+            setIconImage(url: URL(string: status.account.avatar))
 
             setAttachments(status)
         }
@@ -192,6 +184,14 @@ class StatusCellOwner: NibViewOwner<StatusCell> {
         }
         set {
             iconImageView.image = newValue
+        }
+    }
+
+    func setIconImage(url: URL?) {
+        iconImageView.kf.indicatorType = .activity
+
+        if let url = url {
+            iconImageView.kf.setImage(with: url)
         }
     }
 
@@ -257,6 +257,14 @@ class StatusCellOwner: NibViewOwner<StatusCell> {
         }
         set {
             btByImageView.image = newValue
+        }
+    }
+
+    func setBTIconImage(url: URL?) {
+        btByImageView.kf.indicatorType = .activity
+
+        if let url = url {
+            btByImageView.kf.setImage(with: url)
         }
     }
 

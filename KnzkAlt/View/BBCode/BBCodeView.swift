@@ -5,6 +5,7 @@
 
 import UIKit
 import Fuzi
+import Kingfisher
 
 class BBCodeView: UITextView {
     private let _textStorage = NSTextStorage()
@@ -340,15 +341,37 @@ class BBCodeView: UITextView {
 
                 let textAttachment = CustomTextAttachment()
 
-//                textAttachment.bounds = CGRect(
-//                        origin: CGPoint.zero,
-//                        size: CGSize(
-//                                width: BBCodeView.defaultFont.pointSize,
-//                                height: BBCodeView.defaultFont.pointSize
-//                        )
-//                )
+                let setEmoji = {
+                    [weak self] (image: UIImage) in
 
-                MediaStorage.shared.loadEmoji(url: emojiURL, textAttachment: textAttachment, textStorage: _textStorage)
+                    self?._textStorage.beginEditing()
+
+                    textAttachment.image = image
+
+                    self?._textStorage.endEditing()
+                }
+
+                ImageCache.default.retrieveImage(forKey: emojiURL.absoluteString, options: nil) {
+                    image, _ in
+
+                    if let image = image {
+                        setEmoji(image)
+                    }
+                    else {
+                        ImageDownloader.default.downloadImage(with: emojiURL, options: [], progressBlock: nil) {
+                            image, error, _, _ in
+
+                            if let image = image {
+                                setEmoji(image)
+
+                                ImageCache.default.store(image, forKey: emojiURL.absoluteString)
+                            }
+                            else if let error = error {
+                                NSLog("[Warning] Failed to load emoji image on BBCodeView: URL: \(emojiURL), error: \(error.localizedDescription)")
+                            }
+                        }
+                    }
+                }
 
                 attributed.replaceCharacters(
                         in: emojiCode.range,

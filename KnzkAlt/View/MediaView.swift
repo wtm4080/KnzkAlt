@@ -5,6 +5,7 @@
 
 import UIKit
 import AVFoundation
+import Kingfisher
 
 class MediaView: UIView {
     private let _contentView: UIView
@@ -122,17 +123,25 @@ class MediaView: UIView {
         return _contentView.intrinsicContentSize
     }
 
-    func setImage(image: UIImage) {
-        _contentView.bounds.size = image.size
-
+    func setImage(imageURL: URL) {
         let imageView = _contentView as! UIImageView
-        imageView.image = image
+        imageView.kf.indicatorType = .activity
+        imageView.kf.setImage(with: imageURL) {
+            [weak self] (image, error, cacheType, _) in
 
-        invalidateIntrinsicContentSize()
+            if let image = image {
+                self?._contentView.bounds.size = image.size
 
-        _indicatorView!.stopAnimating()
+                self?.invalidateIntrinsicContentSize()
 
-        AppNotification.shared.post.loadedAttachment()
+                self?._indicatorView!.stopAnimating()
+
+                AppNotification.shared.post.loadedAttachment()
+            }
+            else if let error = error {
+                NSLog("[Warning] Failed to load image on MediaView: URL: \(imageURL), error: \(error.localizedDescription)")
+            }
+        }
     }
 
     @objc private func _showAction(sender: Any) {

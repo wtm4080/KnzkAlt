@@ -33,7 +33,6 @@
 		1AA89DD62019832B008EC484 /* BBCodeCustomValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA89DD12019832B008EC484 /* BBCodeCustomValue.swift */; };
 		1AA89DD820198337008EC484 /* StatusDetailVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1AA89DD720198337008EC484 /* StatusDetailVC.xib */; };
 		1AA89DDE201983BF008EC484 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA89DDA201983BF008EC484 /* DataSource.swift */; };
-		1AA89DDF201983BF008EC484 /* MediaStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA89DDB201983BF008EC484 /* MediaStorage.swift */; };
 		1AA89DE0201983BF008EC484 /* ClientManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA89DDC201983BF008EC484 /* ClientManager.swift */; };
 		1AA89DE1201983BF008EC484 /* DataSourceTimeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA89DDD201983BF008EC484 /* DataSourceTimeline.swift */; };
 		1AA89DE72019843B008EC484 /* CSSColorParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA89DE42019843A008EC484 /* CSSColorParser.swift */; };
@@ -101,7 +100,6 @@
 		1AA89DD12019832B008EC484 /* BBCodeCustomValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BBCodeCustomValue.swift; sourceTree = "<group>"; };
 		1AA89DD720198337008EC484 /* StatusDetailVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StatusDetailVC.xib; sourceTree = "<group>"; };
 		1AA89DDA201983BF008EC484 /* DataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
-		1AA89DDB201983BF008EC484 /* MediaStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaStorage.swift; sourceTree = "<group>"; };
 		1AA89DDC201983BF008EC484 /* ClientManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClientManager.swift; sourceTree = "<group>"; };
 		1AA89DDD201983BF008EC484 /* DataSourceTimeline.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataSourceTimeline.swift; sourceTree = "<group>"; };
 		1AA89DE42019843A008EC484 /* CSSColorParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSSColorParser.swift; sourceTree = "<group>"; };
@@ -207,7 +205,6 @@
 				1AA89DDC201983BF008EC484 /* ClientManager.swift */,
 				1AA89DDA201983BF008EC484 /* DataSource.swift */,
 				1AA89DDD201983BF008EC484 /* DataSourceTimeline.swift */,
-				1AA89DDB201983BF008EC484 /* MediaStorage.swift */,
 			);
 			path = MastodonData;
 			sourceTree = "<group>";
@@ -489,9 +486,9 @@
 				"${BUILT_PRODUCTS_DIR}/Fuzi/Fuzi.framework",
 				"${BUILT_PRODUCTS_DIR}/HydraAsync/Hydra.framework",
 				"${BUILT_PRODUCTS_DIR}/KeychainAccess/KeychainAccess.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/MastodonKit/MastodonKit.framework",
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftGifOrigin/SwiftGifOrigin.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -499,9 +496,9 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Fuzi.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Hydra.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainAccess.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MastodonKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftGifOrigin.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -554,7 +551,6 @@
 				1AA89DEE20198444008EC484 /* Keychain.swift in Sources */,
 				1AA89DE0201983BF008EC484 /* ClientManager.swift in Sources */,
 				1AA89DE82019843B008EC484 /* HTMLStyleParser.swift in Sources */,
-				1AA89DDF201983BF008EC484 /* MediaStorage.swift in Sources */,
 				1AA89DD22019832B008EC484 /* BBCodeView.swift in Sources */,
 				1AA89DB920198210008EC484 /* NotificationVC.swift in Sources */,
 				1AA89DEF20198444008EC484 /* HandledAttrsLogger.swift in Sources */,
