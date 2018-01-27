@@ -15,6 +15,7 @@ target 'KnzkAlt' do
   pod 'Fuzi', '~> 2.0.0'
   pod 'MastodonKit', :git => 'https://github.com/wtm4080/MastodonKit.git', :branch => 'develop-knzk'
   pod 'Kingfisher', '~> 4.0'
+  pod 'RealmSwift'
 
   target 'KnzkAltTests' do
     inherit! :search_paths

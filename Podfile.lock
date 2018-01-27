@@ -5,6 +5,11 @@ PODS:
   - KeychainAccess (3.1.0)
   - Kingfisher (4.6.1)
   - MastodonKit (1.1.1)
+  - Realm (3.1.0):
+    - Realm/Headers (= 3.1.0)
+  - Realm/Headers (3.1.0)
+  - RealmSwift (3.1.0):
+    - Realm (= 3.1.0)
   - Result (3.0.0)
 
 DEPENDENCIES:
@@ -14,6 +19,7 @@ DEPENDENCIES:
   - KeychainAccess
   - Kingfisher (~> 4.0)
   - MastodonKit (from `https://github.com/wtm4080/MastodonKit.git`, branch `develop-knzk`)
+  - RealmSwift
   - Result (~> 3.0.0)
 
 EXTERNAL SOURCES:
@@ -33,8 +39,10 @@ SPEC CHECKSUMS:
   KeychainAccess: 94c5540b32eabf7bc32bfb976a268e8ea05fd6da
   Kingfisher: 1f9157d9c02b380cbd0b7cc890161195164eb634
   MastodonKit: d2bfd6dcc117df3dd7ffa7939903edc254107390
+  Realm: 09513d7c054678d65cd02ce09871f805b0d758ac
+  RealmSwift: e868fee9b10e5490ad94b6b6ecd9027944da1824
   Result: 1b3e431f37cbcd3ad89c6aa9ab0ae55515fae3b6
 
-PODFILE CHECKSUM: 309de58f27e8eaf651058ab9b688f84ca9321510
+PODFILE CHECKSUM: f58b1238352c801b01cd0abf49b201f7b135bf72
 
 COCOAPODS: 1.4.0
