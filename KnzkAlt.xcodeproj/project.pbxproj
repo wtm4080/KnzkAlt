@@ -52,8 +52,10 @@
 		9AD8BDA67D0C7E0146BDA5F9 /* Pods_KnzkAlt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92B3B098B3DC0D2CC7E8217B /* Pods_KnzkAlt.framework */; };
 		C051013C90808EA14D21585D /* TLKind.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05105506BF8250C08BE5640 /* TLKind.swift */; };
 		C0510254A99C77FABC3E33FA /* TLKind.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05105506BF8250C08BE5640 /* TLKind.swift */; };
+		C051055256C0780A5C82EB2C /* ServiceAccountUpdateCredentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510BC7EEAEAFAC15E6958E /* ServiceAccountUpdateCredentials.swift */; };
 		C0510559AFC5A879C211EC84 /* TLParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510A6EDA359DE7A9CB6842 /* TLParams.swift */; };
 		C051063C8F94487D951F3992 /* LoadPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = C051044B0362D353B18AA631 /* LoadPosition.swift */; };
+		C051066ED164A42AB6654868 /* ServiceAccountUpdateCredentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510BC7EEAEAFAC15E6958E /* ServiceAccountUpdateCredentials.swift */; };
 		C05106A4B78EB97153B89723 /* AppNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510B64372D7F837A34D11B /* AppNotification.swift */; };
 		C051072FF9FAE361D97372C6 /* TLParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510A6EDA359DE7A9CB6842 /* TLParams.swift */; };
 		C051090AA4B00DD5B7F7454E /* AppNotificationObserving.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510397D489014CC8992656 /* AppNotificationObserving.swift */; };
@@ -133,6 +135,7 @@
 		C05105506BF8250C08BE5640 /* TLKind.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TLKind.swift; sourceTree = "<group>"; };
 		C0510A6EDA359DE7A9CB6842 /* TLParams.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TLParams.swift; sourceTree = "<group>"; };
 		C0510B64372D7F837A34D11B /* AppNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppNotification.swift; sourceTree = "<group>"; };
+		C0510BC7EEAEAFAC15E6958E /* ServiceAccountUpdateCredentials.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceAccountUpdateCredentials.swift; sourceTree = "<group>"; };
 		EECF72E7564B24B31527EAD4 /* Pods-KnzkAlt.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KnzkAlt.release.xcconfig"; path = "Pods/Target Support Files/Pods-KnzkAlt/Pods-KnzkAlt.release.xcconfig"; sourceTree = "<group>"; };
 		F990127F00E99EEB06FA4F22 /* Pods-KnzkAltTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KnzkAltTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-KnzkAltTests/Pods-KnzkAltTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -338,6 +341,7 @@
 			children = (
 				C0510464002C87B6D4E6B85C /* ServiceAccount.swift */,
 				C0510095203EE6D16FB6AF01 /* ServiceAccountVerifyCredentials.swift */,
+				C0510BC7EEAEAFAC15E6958E /* ServiceAccountUpdateCredentials.swift */,
 			);
 			path = Accounts;
 			sourceTree = "<group>";
@@ -616,6 +620,7 @@
 				C0510AB9760FB8BA76DD3A23 /* AppNotificationObserving.swift in Sources */,
 				C05109F51D821C8DA7092C38 /* ServiceAccount.swift in Sources */,
 				C0510AB23B64D8C844A416BD /* ServiceAccountVerifyCredentials.swift in Sources */,
+				C051066ED164A42AB6654868 /* ServiceAccountUpdateCredentials.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -631,6 +636,7 @@
 				C051090AA4B00DD5B7F7454E /* AppNotificationObserving.swift in Sources */,
 				C0510E28CF65BB7B57799BFD /* ServiceAccount.swift in Sources */,
 				C05109E05F897F9D201ECCC4 /* ServiceAccountVerifyCredentials.swift in Sources */,
+				C051055256C0780A5C82EB2C /* ServiceAccountUpdateCredentials.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
