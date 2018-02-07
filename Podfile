@@ -16,6 +16,7 @@ target 'KnzkAlt' do
   pod 'MastodonKit', :git => 'https://github.com/wtm4080/MastodonKit.git', :branch => 'develop-knzk'
   pod 'Kingfisher', '~> 4.0'
   pod 'RealmSwift'
+  pod 'Moya', '~> 10.0'
 
   target 'KnzkAltTests' do
     inherit! :search_paths

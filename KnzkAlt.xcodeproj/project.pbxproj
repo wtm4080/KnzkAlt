@@ -57,8 +57,10 @@
 		C05106A4B78EB97153B89723 /* AppNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510B64372D7F837A34D11B /* AppNotification.swift */; };
 		C051072FF9FAE361D97372C6 /* TLParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510A6EDA359DE7A9CB6842 /* TLParams.swift */; };
 		C051090AA4B00DD5B7F7454E /* AppNotificationObserving.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510397D489014CC8992656 /* AppNotificationObserving.swift */; };
+		C05109F51D821C8DA7092C38 /* ServiceAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510464002C87B6D4E6B85C /* ServiceAccount.swift */; };
 		C0510AB9760FB8BA76DD3A23 /* AppNotificationObserving.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510397D489014CC8992656 /* AppNotificationObserving.swift */; };
 		C0510BAD1599A65D9A486F1B /* LoadPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = C051044B0362D353B18AA631 /* LoadPosition.swift */; };
+		C0510E28CF65BB7B57799BFD /* ServiceAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510464002C87B6D4E6B85C /* ServiceAccount.swift */; };
 		C0510EB5724E95D8924D1103 /* AppNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510B64372D7F837A34D11B /* AppNotification.swift */; };
 /* End PBXBuildFile section */
 
@@ -124,6 +126,7 @@
 		A6D9B3DB25218238497DA448 /* Pods-KnzkAltTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KnzkAltTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KnzkAltTests/Pods-KnzkAltTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C0510397D489014CC8992656 /* AppNotificationObserving.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppNotificationObserving.swift; sourceTree = "<group>"; };
 		C051044B0362D353B18AA631 /* LoadPosition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadPosition.swift; sourceTree = "<group>"; };
+		C0510464002C87B6D4E6B85C /* ServiceAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceAccount.swift; sourceTree = "<group>"; };
 		C05105506BF8250C08BE5640 /* TLKind.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TLKind.swift; sourceTree = "<group>"; };
 		C0510A6EDA359DE7A9CB6842 /* TLParams.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TLParams.swift; sourceTree = "<group>"; };
 		C0510B64372D7F837A34D11B /* AppNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppNotification.swift; sourceTree = "<group>"; };
@@ -205,6 +208,7 @@
 				1AA89DDC201983BF008EC484 /* ClientManager.swift */,
 				1AA89DDA201983BF008EC484 /* DataSource.swift */,
 				1AA89DDD201983BF008EC484 /* DataSourceTimeline.swift */,
+				C0510ABD2BF5121B9DFFF7BD /* ServiceAccess */,
 			);
 			path = MastodonData;
 			sourceTree = "<group>";
@@ -316,6 +320,22 @@
 				F990127F00E99EEB06FA4F22 /* Pods-KnzkAltTests.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		C0510ABD2BF5121B9DFFF7BD /* ServiceAccess */ = {
+			isa = PBXGroup;
+			children = (
+				C0510C1B729B2DCA7384AD93 /* Accounts */,
+			);
+			path = ServiceAccess;
+			sourceTree = "<group>";
+		};
+		C0510C1B729B2DCA7384AD93 /* Accounts */ = {
+			isa = PBXGroup;
+			children = (
+				C0510464002C87B6D4E6B85C /* ServiceAccount.swift */,
+			);
+			path = Accounts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -482,24 +502,28 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-KnzkAlt/Pods-KnzkAlt-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Deque/Deque.framework",
 				"${BUILT_PRODUCTS_DIR}/Fuzi/Fuzi.framework",
 				"${BUILT_PRODUCTS_DIR}/HydraAsync/Hydra.framework",
 				"${BUILT_PRODUCTS_DIR}/KeychainAccess/KeychainAccess.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/MastodonKit/MastodonKit.framework",
+				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Deque.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Fuzi.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Hydra.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainAccess.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MastodonKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
@@ -586,6 +610,7 @@
 				C051063C8F94487D951F3992 /* LoadPosition.swift in Sources */,
 				C051072FF9FAE361D97372C6 /* TLParams.swift in Sources */,
 				C0510AB9760FB8BA76DD3A23 /* AppNotificationObserving.swift in Sources */,
+				C05109F51D821C8DA7092C38 /* ServiceAccount.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -599,6 +624,7 @@
 				C0510BAD1599A65D9A486F1B /* LoadPosition.swift in Sources */,
 				C0510559AFC5A879C211EC84 /* TLParams.swift in Sources */,
 				C051090AA4B00DD5B7F7454E /* AppNotificationObserving.swift in Sources */,
+				C0510E28CF65BB7B57799BFD /* ServiceAccount.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

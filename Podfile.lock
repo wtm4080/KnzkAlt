@@ -1,10 +1,16 @@
 PODS:
+  - Alamofire (4.6.0)
   - Deque (3.1.0)
   - Fuzi (2.0.1)
   - HydraAsync (1.2.1)
   - KeychainAccess (3.1.0)
   - Kingfisher (4.6.1)
   - MastodonKit (1.1.1)
+  - Moya (10.0.2):
+    - Moya/Core (= 10.0.2)
+  - Moya/Core (10.0.2):
+    - Alamofire (~> 4.1)
+    - Result (~> 3.0)
   - Realm (3.1.0):
     - Realm/Headers (= 3.1.0)
   - Realm/Headers (3.1.0)
@@ -19,6 +25,7 @@ DEPENDENCIES:
   - KeychainAccess
   - Kingfisher (~> 4.0)
   - MastodonKit (from `https://github.com/wtm4080/MastodonKit.git`, branch `develop-knzk`)
+  - Moya (~> 10.0)
   - RealmSwift
   - Result (~> 3.0.0)
 
@@ -33,16 +40,18 @@ CHECKOUT OPTIONS:
     :git: https://github.com/wtm4080/MastodonKit.git
 
 SPEC CHECKSUMS:
+  Alamofire: f41a599bd63041760b26d393ec1069d9d7b917f4
   Deque: b3acddc26fa0940e20def752ede39290422c6906
   Fuzi: f64983dea705491d3aedd32351247a09523e7efd
   HydraAsync: 8f2ab62d57e140b4ca587ae0f66e1eb04e8e6965
   KeychainAccess: 94c5540b32eabf7bc32bfb976a268e8ea05fd6da
   Kingfisher: 1f9157d9c02b380cbd0b7cc890161195164eb634
   MastodonKit: d2bfd6dcc117df3dd7ffa7939903edc254107390
+  Moya: 2b0531a9fef318e0bc484030c3db1e6f279ccb66
   Realm: 09513d7c054678d65cd02ce09871f805b0d758ac
   RealmSwift: e868fee9b10e5490ad94b6b6ecd9027944da1824
   Result: 1b3e431f37cbcd3ad89c6aa9ab0ae55515fae3b6
 
-PODFILE CHECKSUM: f58b1238352c801b01cd0abf49b201f7b135bf72
+PODFILE CHECKSUM: bc3728f1d9dcd66de6245f1563530987a092d4a5
 
 COCOAPODS: 1.4.0
