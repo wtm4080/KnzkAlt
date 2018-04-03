@@ -12,6 +12,7 @@ struct ServiceAccountUpdateCredentials: TargetType {
     let note: String?
     let avatar: Data?
     let header: Data?
+    let locked: Bool?
 
     let path = "/api/v1/accounts/update_credentials"
     let method: Method = .patch
