@@ -65,6 +65,7 @@
 		C0510445F8777001DD6D98F0 /* EmojiEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C051070132C021083E614997 /* EmojiEntity.swift */; };
 		C05104605270A2FD0D668298 /* TagEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05108603EF7A8E434FAC086 /* TagEntity.swift */; };
 		C051047539A4205F8A2057F2 /* ContextEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510B3E19313621F69EE6F8 /* ContextEntity.swift */; };
+		C05104CACFE414703802282A /* AccountUnfollowService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05109552F8A64890D8C2355 /* AccountUnfollowService.swift */; };
 		C05104E6F70BCE319854D1D6 /* StatusEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510C066E620C529A0EE48C /* StatusEntity.swift */; };
 		C051055256C0780A5C82EB2C /* AccountUpdateCredentialsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510BC7EEAEAFAC15E6958E /* AccountUpdateCredentialsService.swift */; };
 		C0510559AFC5A879C211EC84 /* TLParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510A6EDA359DE7A9CB6842 /* TLParams.swift */; };
@@ -78,6 +79,7 @@
 		C051072D45D450DCFA2660BD /* AccountFollowingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510E034C77C46585AB2043 /* AccountFollowingService.swift */; };
 		C051072FF9FAE361D97372C6 /* TLParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510A6EDA359DE7A9CB6842 /* TLParams.swift */; };
 		C0510736A212DEF854ACA281 /* ReportEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C051019870D034469F3AD2F8 /* ReportEntity.swift */; };
+		C051074B1A38D357FF79D357 /* AccountUnfollowService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05109552F8A64890D8C2355 /* AccountUnfollowService.swift */; };
 		C051078C8657AEAC6A0CF71F /* ListEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510D3CD067A7EB94BB4E57 /* ListEntity.swift */; };
 		C05108220F60422D85117716 /* RelationshipEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510F25DF98F0D364250CBB /* RelationshipEntity.swift */; };
 		C05108A5D5258D16D4CA4D6E /* InstanceEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510383514BEEDFCD2C4DA3 /* InstanceEntity.swift */; };
@@ -185,6 +187,7 @@
 		C05108603EF7A8E434FAC086 /* TagEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagEntity.swift; sourceTree = "<group>"; };
 		C051093806951CCD0FA7A62A /* ResultsEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultsEntity.swift; sourceTree = "<group>"; };
 		C051094FC434FE7975558048 /* AccountStatusesService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountStatusesService.swift; sourceTree = "<group>"; };
+		C05109552F8A64890D8C2355 /* AccountUnfollowService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountUnfollowService.swift; sourceTree = "<group>"; };
 		C05109AABF769C638A219CE5 /* CardEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardEntity.swift; sourceTree = "<group>"; };
 		C05109E58D06AF6375380E30 /* AccountFollowersService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountFollowersService.swift; sourceTree = "<group>"; };
 		C0510A6EDA359DE7A9CB6842 /* TLParams.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TLParams.swift; sourceTree = "<group>"; };
@@ -396,6 +399,7 @@
 				C0510E034C77C46585AB2043 /* AccountFollowingService.swift */,
 				C051094FC434FE7975558048 /* AccountStatusesService.swift */,
 				C0510493656584A06A334EF1 /* AccountFollowService.swift */,
+				C05109552F8A64890D8C2355 /* AccountUnfollowService.swift */,
 			);
 			path = Accounts;
 			sourceTree = "<group>";
@@ -729,6 +733,7 @@
 				C05100B643DB6D893B4C439D /* TagEntity.swift in Sources */,
 				C0510593305FD51918636E38 /* AccountStatusesService.swift in Sources */,
 				C0510BAB7EC024BEB67A48AC /* AccountFollowService.swift in Sources */,
+				C05104CACFE414703802282A /* AccountUnfollowService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -765,6 +770,7 @@
 				C05104605270A2FD0D668298 /* TagEntity.swift in Sources */,
 				C0510D03EC60E7140F65D5DD /* AccountStatusesService.swift in Sources */,
 				C0510D3E6858CAED9AAE850D /* AccountFollowService.swift in Sources */,
+				C051074B1A38D357FF79D357 /* AccountUnfollowService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
