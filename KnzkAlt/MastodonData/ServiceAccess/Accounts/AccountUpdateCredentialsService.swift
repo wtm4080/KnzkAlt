@@ -5,7 +5,7 @@
 
 import Moya
 
-struct ServiceAccountUpdateCredentials: TargetType {
+struct AccountUpdateCredentialsService: TargetType {
     let baseURL: URL
 
     let displayName: String?

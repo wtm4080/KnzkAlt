@@ -5,7 +5,7 @@
 
 import Moya
 
-struct ServiceAccountFollowing: TargetType {
+struct AccountFollowersService: TargetType {
     let baseURL: URL
 
     let id: String
@@ -13,8 +13,8 @@ struct ServiceAccountFollowing: TargetType {
     let since_id: Int?
     let limit: Int?
 
-    var path: String { return  "/api/v1/accounts/\(id)/following" }
-    let method: Moya.Method = .get
+    var path: String { return "/api/v1/accounts/\(id)/followers" }
+    let method: Method = .get
     let task: Task = .requestPlain
     let sampleData = "".data(using: .utf8)!
     let headers: [String: String]? = nil

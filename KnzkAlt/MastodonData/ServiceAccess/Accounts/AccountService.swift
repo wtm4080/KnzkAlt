@@ -5,7 +5,7 @@
 
 import Moya
 
-struct ServiceAccount: TargetType {
+struct AccountService: TargetType {
     let baseURL: URL
 
     let id: String

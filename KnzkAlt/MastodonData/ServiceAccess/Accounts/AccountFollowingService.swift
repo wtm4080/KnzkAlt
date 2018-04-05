@@ -5,11 +5,16 @@
 
 import Moya
 
-struct ServiceAccountVerifyCredentials: TargetType {
+struct AccountFollowingService: TargetType {
     let baseURL: URL
 
-    let path = "/api/v1/accounts/verify_credentials"
-    let method: Method = .get
+    let id: String
+    let max_id: Int?
+    let since_id: Int?
+    let limit: Int?
+
+    var path: String { return  "/api/v1/accounts/\(id)/following" }
+    let method: Moya.Method = .get
     let task: Task = .requestPlain
     let sampleData = "".data(using: .utf8)!
     let headers: [String: String]? = nil
