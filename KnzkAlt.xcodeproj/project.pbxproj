@@ -91,10 +91,12 @@
 		C0510AB9760FB8BA76DD3A23 /* AppNotificationObserving.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510397D489014CC8992656 /* AppNotificationObserving.swift */; };
 		C0510B4A177CC7EE5AD4899C /* NotificationEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510E07791688F5FC5542A8 /* NotificationEntity.swift */; };
 		C0510B634ACE56BB71276C23 /* MentionEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C051042043F872A0C0540E14 /* MentionEntity.swift */; };
+		C0510BAB7EC024BEB67A48AC /* AccountFollowService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510493656584A06A334EF1 /* AccountFollowService.swift */; };
 		C0510BAD1599A65D9A486F1B /* LoadPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = C051044B0362D353B18AA631 /* LoadPosition.swift */; };
 		C0510CE0FB112AA065F154E6 /* InstanceEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510383514BEEDFCD2C4DA3 /* InstanceEntity.swift */; };
 		C0510D03EC60E7140F65D5DD /* AccountStatusesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C051094FC434FE7975558048 /* AccountStatusesService.swift */; };
 		C0510D133FB0EBDE2CEABAF7 /* AccountEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510B976CCCC6263FFFC187 /* AccountEntity.swift */; };
+		C0510D3E6858CAED9AAE850D /* AccountFollowService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510493656584A06A334EF1 /* AccountFollowService.swift */; };
 		C0510D6189877E841E7C9272 /* ListEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510D3CD067A7EB94BB4E57 /* ListEntity.swift */; };
 		C0510E28CF65BB7B57799BFD /* AccountService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510464002C87B6D4E6B85C /* AccountService.swift */; };
 		C0510E3F2F4572569C06CECE /* StatusEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510C066E620C529A0EE48C /* StatusEntity.swift */; };
@@ -175,6 +177,7 @@
 		C051042043F872A0C0540E14 /* MentionEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MentionEntity.swift; sourceTree = "<group>"; };
 		C051044B0362D353B18AA631 /* LoadPosition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadPosition.swift; sourceTree = "<group>"; };
 		C0510464002C87B6D4E6B85C /* AccountService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountService.swift; sourceTree = "<group>"; };
+		C0510493656584A06A334EF1 /* AccountFollowService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountFollowService.swift; sourceTree = "<group>"; };
 		C051053C506A7BE31F61E8E8 /* AttachmentEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttachmentEntity.swift; sourceTree = "<group>"; };
 		C05105506BF8250C08BE5640 /* TLKind.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TLKind.swift; sourceTree = "<group>"; };
 		C0510640DFA2BA0DB32501E0 /* ApplicationEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationEntity.swift; sourceTree = "<group>"; };
@@ -392,6 +395,7 @@
 				C05109E58D06AF6375380E30 /* AccountFollowersService.swift */,
 				C0510E034C77C46585AB2043 /* AccountFollowingService.swift */,
 				C051094FC434FE7975558048 /* AccountStatusesService.swift */,
+				C0510493656584A06A334EF1 /* AccountFollowService.swift */,
 			);
 			path = Accounts;
 			sourceTree = "<group>";
@@ -724,6 +728,7 @@
 				C05106237B93C5EDFAE1EE75 /* ResultsEntity.swift in Sources */,
 				C05100B643DB6D893B4C439D /* TagEntity.swift in Sources */,
 				C0510593305FD51918636E38 /* AccountStatusesService.swift in Sources */,
+				C0510BAB7EC024BEB67A48AC /* AccountFollowService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -759,6 +764,7 @@
 				C05101F0DB646DCD709EB26F /* ResultsEntity.swift in Sources */,
 				C05104605270A2FD0D668298 /* TagEntity.swift in Sources */,
 				C0510D03EC60E7140F65D5DD /* AccountStatusesService.swift in Sources */,
+				C0510D3E6858CAED9AAE850D /* AccountFollowService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
