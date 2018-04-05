@@ -30,4 +30,13 @@ struct AccountEntity {
 struct AccountCompoundEntity {
     let original: AccountEntity
     let moved: AccountEntity?
+
+    // source value is present when accessing GET /api/v1/accounts/verify_credentials
+    let source: AccountSource?
+}
+
+struct AccountSource {
+    let privacy: StatusEntityVisibility
+    let sensitive: Bool
+    let note: String
 }
