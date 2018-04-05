@@ -68,6 +68,7 @@
 		C05104E6F70BCE319854D1D6 /* StatusEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510C066E620C529A0EE48C /* StatusEntity.swift */; };
 		C051055256C0780A5C82EB2C /* AccountUpdateCredentialsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510BC7EEAEAFAC15E6958E /* AccountUpdateCredentialsService.swift */; };
 		C0510559AFC5A879C211EC84 /* TLParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510A6EDA359DE7A9CB6842 /* TLParams.swift */; };
+		C0510593305FD51918636E38 /* AccountStatusesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C051094FC434FE7975558048 /* AccountStatusesService.swift */; };
 		C05106237B93C5EDFAE1EE75 /* ResultsEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C051093806951CCD0FA7A62A /* ResultsEntity.swift */; };
 		C051063C8F94487D951F3992 /* LoadPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = C051044B0362D353B18AA631 /* LoadPosition.swift */; };
 		C0510641C30FD4E91C21F6AB /* NotificationEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510E07791688F5FC5542A8 /* NotificationEntity.swift */; };
@@ -92,6 +93,7 @@
 		C0510B634ACE56BB71276C23 /* MentionEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C051042043F872A0C0540E14 /* MentionEntity.swift */; };
 		C0510BAD1599A65D9A486F1B /* LoadPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = C051044B0362D353B18AA631 /* LoadPosition.swift */; };
 		C0510CE0FB112AA065F154E6 /* InstanceEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510383514BEEDFCD2C4DA3 /* InstanceEntity.swift */; };
+		C0510D03EC60E7140F65D5DD /* AccountStatusesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C051094FC434FE7975558048 /* AccountStatusesService.swift */; };
 		C0510D133FB0EBDE2CEABAF7 /* AccountEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510B976CCCC6263FFFC187 /* AccountEntity.swift */; };
 		C0510D6189877E841E7C9272 /* ListEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510D3CD067A7EB94BB4E57 /* ListEntity.swift */; };
 		C0510E28CF65BB7B57799BFD /* AccountService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510464002C87B6D4E6B85C /* AccountService.swift */; };
@@ -179,6 +181,7 @@
 		C051070132C021083E614997 /* EmojiEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmojiEntity.swift; sourceTree = "<group>"; };
 		C05108603EF7A8E434FAC086 /* TagEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagEntity.swift; sourceTree = "<group>"; };
 		C051093806951CCD0FA7A62A /* ResultsEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultsEntity.swift; sourceTree = "<group>"; };
+		C051094FC434FE7975558048 /* AccountStatusesService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountStatusesService.swift; sourceTree = "<group>"; };
 		C05109AABF769C638A219CE5 /* CardEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardEntity.swift; sourceTree = "<group>"; };
 		C05109E58D06AF6375380E30 /* AccountFollowersService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountFollowersService.swift; sourceTree = "<group>"; };
 		C0510A6EDA359DE7A9CB6842 /* TLParams.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TLParams.swift; sourceTree = "<group>"; };
@@ -388,6 +391,7 @@
 				C0510BC7EEAEAFAC15E6958E /* AccountUpdateCredentialsService.swift */,
 				C05109E58D06AF6375380E30 /* AccountFollowersService.swift */,
 				C0510E034C77C46585AB2043 /* AccountFollowingService.swift */,
+				C051094FC434FE7975558048 /* AccountStatusesService.swift */,
 			);
 			path = Accounts;
 			sourceTree = "<group>";
@@ -719,6 +723,7 @@
 				C0510736A212DEF854ACA281 /* ReportEntity.swift in Sources */,
 				C05106237B93C5EDFAE1EE75 /* ResultsEntity.swift in Sources */,
 				C05100B643DB6D893B4C439D /* TagEntity.swift in Sources */,
+				C0510593305FD51918636E38 /* AccountStatusesService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -753,6 +758,7 @@
 				C0510398E7A1C9FC0648B8DA /* ReportEntity.swift in Sources */,
 				C05101F0DB646DCD709EB26F /* ResultsEntity.swift in Sources */,
 				C05104605270A2FD0D668298 /* TagEntity.swift in Sources */,
+				C0510D03EC60E7140F65D5DD /* AccountStatusesService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
