@@ -450,7 +450,6 @@
 				1AB797601FA62DFF006D3265 /* Frameworks */,
 				1AB797611FA62DFF006D3265 /* Resources */,
 				7CC6BCECAAD57C9A6CFB7BE5 /* [CP] Embed Pods Frameworks */,
-				A47C29C74BF95FC3B59CE39F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -469,8 +468,6 @@
 				1AB797751FA62DFF006D3265 /* Sources */,
 				1AB797761FA62DFF006D3265 /* Frameworks */,
 				1AB797771FA62DFF006D3265 /* Resources */,
-				032AAD0BFFD385AD70DD6F3B /* [CP] Embed Pods Frameworks */,
-				00358437C33F0F89FC5A2532 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -547,36 +544,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		00358437C33F0F89FC5A2532 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KnzkAltTests/Pods-KnzkAltTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		032AAD0BFFD385AD70DD6F3B /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KnzkAltTests/Pods-KnzkAltTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		63B03F127C479FACB9081DB6 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -631,21 +598,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KnzkAlt/Pods-KnzkAlt-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		A47C29C74BF95FC3B59CE39F /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KnzkAlt/Pods-KnzkAlt-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		F597D8447B6E55F9B99B462C /* [CP] Check Pods Manifest.lock */ = {

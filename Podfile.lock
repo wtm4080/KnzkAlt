@@ -1,21 +1,21 @@
 PODS:
-  - Alamofire (4.7.1)
+  - Alamofire (4.7.2)
   - Deque (3.1.0)
-  - Fuzi (2.0.1)
+  - Fuzi (2.0.2)
   - HydraAsync (1.2.1)
-  - KeychainAccess (3.1.0)
-  - Kingfisher (4.6.4)
+  - KeychainAccess (3.1.1)
+  - Kingfisher (4.8.0)
   - MastodonKit (1.1.1)
   - Moya (10.0.2):
     - Moya/Core (= 10.0.2)
   - Moya/Core (10.0.2):
     - Alamofire (~> 4.1)
     - Result (~> 3.0)
-  - Realm (3.3.1):
-    - Realm/Headers (= 3.3.1)
-  - Realm/Headers (3.3.1)
-  - RealmSwift (3.3.1):
-    - Realm (= 3.3.1)
+  - Realm (3.5.0):
+    - Realm/Headers (= 3.5.0)
+  - Realm/Headers (3.5.0)
+  - RealmSwift (3.5.0):
+    - Realm (= 3.5.0)
   - Result (3.0.0)
 
 DEPENDENCIES:
@@ -29,6 +29,19 @@ DEPENDENCIES:
   - RealmSwift
   - Result (~> 3.0.0)
 
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - Alamofire
+    - Deque
+    - Fuzi
+    - HydraAsync
+    - KeychainAccess
+    - Kingfisher
+    - Moya
+    - Realm
+    - RealmSwift
+    - Result
+
 EXTERNAL SOURCES:
   MastodonKit:
     :branch: develop-knzk
@@ -40,18 +53,18 @@ CHECKOUT OPTIONS:
     :git: https://github.com/wtm4080/MastodonKit.git
 
 SPEC CHECKSUMS:
-  Alamofire: 68d7d521118d49c615a8d2214d87cdf525599d30
+  Alamofire: e4fa87002c137ba2d8d634d2c51fabcda0d5c223
   Deque: b3acddc26fa0940e20def752ede39290422c6906
-  Fuzi: f64983dea705491d3aedd32351247a09523e7efd
+  Fuzi: a890c1b79058033e1dcc7e14f9a62e0936e728ef
   HydraAsync: 8f2ab62d57e140b4ca587ae0f66e1eb04e8e6965
-  KeychainAccess: 94c5540b32eabf7bc32bfb976a268e8ea05fd6da
-  Kingfisher: 68498a706e46c2a050b0c9572f100e5db407f6e0
+  KeychainAccess: 7bd430028059754a3debab3cfc0bd1fc7fb85df3
+  Kingfisher: 976d828df2b24834c6a3f2fc4d82cdbd26552be1
   MastodonKit: d2bfd6dcc117df3dd7ffa7939903edc254107390
   Moya: 2b0531a9fef318e0bc484030c3db1e6f279ccb66
-  Realm: 63ebf4903b446b0bdf2131244eb1e1549925c724
-  RealmSwift: f28fe8507bdfb8f1c924962401b83e7b9d7abb5c
+  Realm: 0378021c424e4e2bd6a0e63b27881e929d9b9ad1
+  RealmSwift: 3322562622fda2ad596985ead4d8d8be30cf838c
   Result: 1b3e431f37cbcd3ad89c6aa9ab0ae55515fae3b6
 
 PODFILE CHECKSUM: 289bd2f5ca92425a5d0ce1dde0c8b08238ba921a
 
-COCOAPODS: 1.4.0
+COCOAPODS: 1.5.0
