@@ -6,9 +6,9 @@ PODS:
   - KeychainAccess (3.1.1)
   - Kingfisher (4.8.0)
   - MastodonKit (1.1.1)
-  - Moya (10.0.2):
-    - Moya/Core (= 10.0.2)
-  - Moya/Core (10.0.2):
+  - Moya (11.0.2):
+    - Moya/Core (= 11.0.2)
+  - Moya/Core (11.0.2):
     - Alamofire (~> 4.1)
     - Result (~> 3.0)
   - Realm (3.5.0):
@@ -16,7 +16,14 @@ PODS:
   - Realm/Headers (3.5.0)
   - RealmSwift (3.5.0):
     - Realm (= 3.5.0)
-  - Result (3.0.0)
+  - Result (3.2.4)
+  - RxBlocking (4.1.2):
+    - RxSwift (~> 4.0)
+  - RxCocoa (4.1.2):
+    - RxSwift (~> 4.0)
+  - RxSwift (4.1.2)
+  - RxTest (4.1.2):
+    - RxSwift (~> 4.0)
 
 DEPENDENCIES:
   - Deque (~> 3.1)
@@ -25,12 +32,16 @@ DEPENDENCIES:
   - KeychainAccess
   - Kingfisher (~> 4.0)
   - MastodonKit (from `https://github.com/wtm4080/MastodonKit.git`, branch `develop-knzk`)
-  - Moya (~> 10.0)
+  - Moya
   - RealmSwift
-  - Result (~> 3.0.0)
+  - Result
+  - RxBlocking
+  - RxCocoa
+  - RxSwift
+  - RxTest
 
 SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
+  https://github.com/cocoapods/specs.git:
     - Alamofire
     - Deque
     - Fuzi
@@ -41,6 +52,10 @@ SPEC REPOS:
     - Realm
     - RealmSwift
     - Result
+    - RxBlocking
+    - RxCocoa
+    - RxSwift
+    - RxTest
 
 EXTERNAL SOURCES:
   MastodonKit:
@@ -60,11 +75,15 @@ SPEC CHECKSUMS:
   KeychainAccess: 7bd430028059754a3debab3cfc0bd1fc7fb85df3
   Kingfisher: 976d828df2b24834c6a3f2fc4d82cdbd26552be1
   MastodonKit: d2bfd6dcc117df3dd7ffa7939903edc254107390
-  Moya: 2b0531a9fef318e0bc484030c3db1e6f279ccb66
+  Moya: a725035953bc1c0eb1be505ab903984501d82440
   Realm: 0378021c424e4e2bd6a0e63b27881e929d9b9ad1
   RealmSwift: 3322562622fda2ad596985ead4d8d8be30cf838c
-  Result: 1b3e431f37cbcd3ad89c6aa9ab0ae55515fae3b6
+  Result: d2d07204ce72856f1fd9130bbe42c35a7b0fea10
+  RxBlocking: f6054985901412fc8c02daa84e92d4ba68c61389
+  RxCocoa: d88ba0f1f6abf040011a9eb4b539324fc426843a
+  RxSwift: e49536837d9901277638493ea537394d4b55f570
+  RxTest: e634f15fd2c2cd0e0120132ef7a4f7be69ad0393
 
-PODFILE CHECKSUM: 289bd2f5ca92425a5d0ce1dde0c8b08238ba921a
+PODFILE CHECKSUM: 473fd14c4bb3524f3062b37e9443194fae9c7535
 
-COCOAPODS: 1.5.0
+COCOAPODS: 1.5.3
