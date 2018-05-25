@@ -48,10 +48,10 @@ target 'KnzkAlt' do
 
   pod 'HydraAsync'
   pod 'KeychainAccess'
-  pod 'Deque', '~> 3.1'
-  pod 'Fuzi', '~> 2.0.0'
+  pod 'Deque'
+  pod 'Fuzi'
   pod 'MastodonKit', :git => 'https://github.com/wtm4080/MastodonKit.git', :branch => 'develop-knzk'
-  pod 'Kingfisher', '~> 4.0'
+  pod 'Kingfisher'
 end
 
 target 'KnzkAltTests' do
