@@ -63,38 +63,6 @@
 		1AD9FD2A20B719BF00F87213 /* ClientStack.h in Headers */ = {isa = PBXBuildFile; fileRef = 1AD9FD1A20B719BE00F87213 /* ClientStack.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1AD9FD2D20B719BF00F87213 /* ClientStack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AD9FD1820B719BE00F87213 /* ClientStack.framework */; };
 		1AD9FD2E20B719BF00F87213 /* ClientStack.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1AD9FD1820B719BE00F87213 /* ClientStack.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		1AF3E31820B84C9D00907123 /* AttachmentEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3E30820B84C9C00907123 /* AttachmentEntity.swift */; };
-		1AF3E31920B84C9D00907123 /* AttachmentEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3E30820B84C9C00907123 /* AttachmentEntity.swift */; };
-		1AF3E31A20B84C9D00907123 /* AccountEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3E30920B84C9C00907123 /* AccountEntity.swift */; };
-		1AF3E31B20B84C9D00907123 /* AccountEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3E30920B84C9C00907123 /* AccountEntity.swift */; };
-		1AF3E31C20B84C9D00907123 /* TagEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3E30A20B84C9C00907123 /* TagEntity.swift */; };
-		1AF3E31D20B84C9D00907123 /* TagEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3E30A20B84C9C00907123 /* TagEntity.swift */; };
-		1AF3E31E20B84C9D00907123 /* CardEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3E30B20B84C9C00907123 /* CardEntity.swift */; };
-		1AF3E31F20B84C9D00907123 /* CardEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3E30B20B84C9C00907123 /* CardEntity.swift */; };
-		1AF3E32020B84C9D00907123 /* ApplicationEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3E30C20B84C9D00907123 /* ApplicationEntity.swift */; };
-		1AF3E32120B84C9D00907123 /* ApplicationEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3E30C20B84C9D00907123 /* ApplicationEntity.swift */; };
-		1AF3E32220B84C9D00907123 /* ContextEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3E30D20B84C9D00907123 /* ContextEntity.swift */; };
-		1AF3E32320B84C9D00907123 /* ContextEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3E30D20B84C9D00907123 /* ContextEntity.swift */; };
-		1AF3E32420B84C9D00907123 /* MentionEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3E30E20B84C9D00907123 /* MentionEntity.swift */; };
-		1AF3E32520B84C9D00907123 /* MentionEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3E30E20B84C9D00907123 /* MentionEntity.swift */; };
-		1AF3E32620B84C9D00907123 /* ListEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3E30F20B84C9D00907123 /* ListEntity.swift */; };
-		1AF3E32720B84C9D00907123 /* ListEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3E30F20B84C9D00907123 /* ListEntity.swift */; };
-		1AF3E32820B84C9D00907123 /* ErrorEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3E31020B84C9D00907123 /* ErrorEntity.swift */; };
-		1AF3E32920B84C9D00907123 /* ErrorEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3E31020B84C9D00907123 /* ErrorEntity.swift */; };
-		1AF3E32A20B84C9D00907123 /* InstanceEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3E31120B84C9D00907123 /* InstanceEntity.swift */; };
-		1AF3E32B20B84C9D00907123 /* InstanceEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3E31120B84C9D00907123 /* InstanceEntity.swift */; };
-		1AF3E32C20B84C9D00907123 /* NotificationEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3E31220B84C9D00907123 /* NotificationEntity.swift */; };
-		1AF3E32D20B84C9D00907123 /* NotificationEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3E31220B84C9D00907123 /* NotificationEntity.swift */; };
-		1AF3E32E20B84C9D00907123 /* StatusEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3E31320B84C9D00907123 /* StatusEntity.swift */; };
-		1AF3E32F20B84C9D00907123 /* StatusEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3E31320B84C9D00907123 /* StatusEntity.swift */; };
-		1AF3E33020B84C9D00907123 /* RelationshipEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3E31420B84C9D00907123 /* RelationshipEntity.swift */; };
-		1AF3E33120B84C9D00907123 /* RelationshipEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3E31420B84C9D00907123 /* RelationshipEntity.swift */; };
-		1AF3E33220B84C9D00907123 /* ResultsEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3E31520B84C9D00907123 /* ResultsEntity.swift */; };
-		1AF3E33320B84C9D00907123 /* ResultsEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3E31520B84C9D00907123 /* ResultsEntity.swift */; };
-		1AF3E33420B84C9D00907123 /* EmojiEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3E31620B84C9D00907123 /* EmojiEntity.swift */; };
-		1AF3E33520B84C9D00907123 /* EmojiEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3E31620B84C9D00907123 /* EmojiEntity.swift */; };
-		1AF3E33620B84C9D00907123 /* ReportEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3E31720B84C9D00907123 /* ReportEntity.swift */; };
-		1AF3E33720B84C9D00907123 /* ReportEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3E31720B84C9D00907123 /* ReportEntity.swift */; };
 		1AF3E35D20B84E0200907123 /* AccountService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3E35520B84E0200907123 /* AccountService.swift */; };
 		1AF3E35E20B84E0200907123 /* AccountService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3E35520B84E0200907123 /* AccountService.swift */; };
 		1AF3E35F20B84E0200907123 /* AccountStatusesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3E35620B84E0200907123 /* AccountStatusesService.swift */; };
@@ -111,6 +79,38 @@
 		1AF3E36A20B84E0200907123 /* AccountFollowingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3E35B20B84E0200907123 /* AccountFollowingService.swift */; };
 		1AF3E36B20B84E0200907123 /* AccountFollowersService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3E35C20B84E0200907123 /* AccountFollowersService.swift */; };
 		1AF3E36C20B84E0200907123 /* AccountFollowersService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3E35C20B84E0200907123 /* AccountFollowersService.swift */; };
+		1AF3E37D20B84EE600907123 /* AttachmentEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3E36D20B84EE500907123 /* AttachmentEntity.swift */; };
+		1AF3E37E20B84EE600907123 /* AttachmentEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3E36D20B84EE500907123 /* AttachmentEntity.swift */; };
+		1AF3E37F20B84EE600907123 /* AccountEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3E36E20B84EE500907123 /* AccountEntity.swift */; };
+		1AF3E38020B84EE600907123 /* AccountEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3E36E20B84EE500907123 /* AccountEntity.swift */; };
+		1AF3E38120B84EE600907123 /* TagEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3E36F20B84EE500907123 /* TagEntity.swift */; };
+		1AF3E38220B84EE600907123 /* TagEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3E36F20B84EE500907123 /* TagEntity.swift */; };
+		1AF3E38320B84EE600907123 /* CardEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3E37020B84EE500907123 /* CardEntity.swift */; };
+		1AF3E38420B84EE600907123 /* CardEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3E37020B84EE500907123 /* CardEntity.swift */; };
+		1AF3E38520B84EE600907123 /* ApplicationEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3E37120B84EE500907123 /* ApplicationEntity.swift */; };
+		1AF3E38620B84EE600907123 /* ApplicationEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3E37120B84EE500907123 /* ApplicationEntity.swift */; };
+		1AF3E38720B84EE600907123 /* ContextEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3E37220B84EE500907123 /* ContextEntity.swift */; };
+		1AF3E38820B84EE600907123 /* ContextEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3E37220B84EE500907123 /* ContextEntity.swift */; };
+		1AF3E38920B84EE600907123 /* MentionEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3E37320B84EE500907123 /* MentionEntity.swift */; };
+		1AF3E38A20B84EE600907123 /* MentionEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3E37320B84EE500907123 /* MentionEntity.swift */; };
+		1AF3E38B20B84EE600907123 /* ListEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3E37420B84EE500907123 /* ListEntity.swift */; };
+		1AF3E38C20B84EE600907123 /* ListEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3E37420B84EE500907123 /* ListEntity.swift */; };
+		1AF3E38D20B84EE600907123 /* ErrorEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3E37520B84EE500907123 /* ErrorEntity.swift */; };
+		1AF3E38E20B84EE600907123 /* ErrorEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3E37520B84EE500907123 /* ErrorEntity.swift */; };
+		1AF3E38F20B84EE600907123 /* InstanceEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3E37620B84EE500907123 /* InstanceEntity.swift */; };
+		1AF3E39020B84EE600907123 /* InstanceEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3E37620B84EE500907123 /* InstanceEntity.swift */; };
+		1AF3E39120B84EE600907123 /* NotificationEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3E37720B84EE500907123 /* NotificationEntity.swift */; };
+		1AF3E39220B84EE600907123 /* NotificationEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3E37720B84EE500907123 /* NotificationEntity.swift */; };
+		1AF3E39320B84EE600907123 /* StatusEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3E37820B84EE500907123 /* StatusEntity.swift */; };
+		1AF3E39420B84EE600907123 /* StatusEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3E37820B84EE500907123 /* StatusEntity.swift */; };
+		1AF3E39520B84EE600907123 /* RelationshipEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3E37920B84EE500907123 /* RelationshipEntity.swift */; };
+		1AF3E39620B84EE600907123 /* RelationshipEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3E37920B84EE500907123 /* RelationshipEntity.swift */; };
+		1AF3E39720B84EE600907123 /* ResultsEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3E37A20B84EE500907123 /* ResultsEntity.swift */; };
+		1AF3E39820B84EE600907123 /* ResultsEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3E37A20B84EE500907123 /* ResultsEntity.swift */; };
+		1AF3E39920B84EE600907123 /* EmojiEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3E37B20B84EE600907123 /* EmojiEntity.swift */; };
+		1AF3E39A20B84EE600907123 /* EmojiEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3E37B20B84EE600907123 /* EmojiEntity.swift */; };
+		1AF3E39B20B84EE600907123 /* ReportEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3E37C20B84EE600907123 /* ReportEntity.swift */; };
+		1AF3E39C20B84EE600907123 /* ReportEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3E37C20B84EE600907123 /* ReportEntity.swift */; };
 		38FE96E2A1B539CED169F23F /* Pods_KnzkAlt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84C1FDE5DB4231518E199FD0 /* Pods_KnzkAlt.framework */; };
 		4567996B4395CCE68AC818D9 /* Pods_ClientStackDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BF42E30169CA2116B4BCAB1 /* Pods_ClientStackDemo.framework */; };
 		7558EFB8ADCCF686ADED80B6 /* Pods_ClientStackDemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28264C095798523FBE0635C2 /* Pods_ClientStackDemoTests.framework */; };
@@ -278,22 +278,6 @@
 		1AD9FD2020B719BF00F87213 /* ClientStackTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ClientStackTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AD9FD2720B719BF00F87213 /* ClientStackTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientStackTests.swift; sourceTree = "<group>"; };
 		1AD9FD2920B719BF00F87213 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1AF3E30820B84C9C00907123 /* AttachmentEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AttachmentEntity.swift; path = ClientStack_Mac/AttachmentEntity.swift; sourceTree = SOURCE_ROOT; };
-		1AF3E30920B84C9C00907123 /* AccountEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AccountEntity.swift; path = ClientStack_Mac/AccountEntity.swift; sourceTree = SOURCE_ROOT; };
-		1AF3E30A20B84C9C00907123 /* TagEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TagEntity.swift; path = ClientStack_Mac/TagEntity.swift; sourceTree = SOURCE_ROOT; };
-		1AF3E30B20B84C9C00907123 /* CardEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CardEntity.swift; path = ClientStack_Mac/CardEntity.swift; sourceTree = SOURCE_ROOT; };
-		1AF3E30C20B84C9D00907123 /* ApplicationEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ApplicationEntity.swift; path = ClientStack_Mac/ApplicationEntity.swift; sourceTree = SOURCE_ROOT; };
-		1AF3E30D20B84C9D00907123 /* ContextEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContextEntity.swift; path = ClientStack_Mac/ContextEntity.swift; sourceTree = SOURCE_ROOT; };
-		1AF3E30E20B84C9D00907123 /* MentionEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MentionEntity.swift; path = ClientStack_Mac/MentionEntity.swift; sourceTree = SOURCE_ROOT; };
-		1AF3E30F20B84C9D00907123 /* ListEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ListEntity.swift; path = ClientStack_Mac/ListEntity.swift; sourceTree = SOURCE_ROOT; };
-		1AF3E31020B84C9D00907123 /* ErrorEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ErrorEntity.swift; path = ClientStack_Mac/ErrorEntity.swift; sourceTree = SOURCE_ROOT; };
-		1AF3E31120B84C9D00907123 /* InstanceEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InstanceEntity.swift; path = ClientStack_Mac/InstanceEntity.swift; sourceTree = SOURCE_ROOT; };
-		1AF3E31220B84C9D00907123 /* NotificationEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NotificationEntity.swift; path = ClientStack_Mac/NotificationEntity.swift; sourceTree = SOURCE_ROOT; };
-		1AF3E31320B84C9D00907123 /* StatusEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StatusEntity.swift; path = ClientStack_Mac/StatusEntity.swift; sourceTree = SOURCE_ROOT; };
-		1AF3E31420B84C9D00907123 /* RelationshipEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RelationshipEntity.swift; path = ClientStack_Mac/RelationshipEntity.swift; sourceTree = SOURCE_ROOT; };
-		1AF3E31520B84C9D00907123 /* ResultsEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ResultsEntity.swift; path = ClientStack_Mac/ResultsEntity.swift; sourceTree = SOURCE_ROOT; };
-		1AF3E31620B84C9D00907123 /* EmojiEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EmojiEntity.swift; path = ClientStack_Mac/EmojiEntity.swift; sourceTree = SOURCE_ROOT; };
-		1AF3E31720B84C9D00907123 /* ReportEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReportEntity.swift; path = ClientStack_Mac/ReportEntity.swift; sourceTree = SOURCE_ROOT; };
 		1AF3E35520B84E0200907123 /* AccountService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AccountService.swift; path = ClientStackSrc/Service/Accounts/AccountService.swift; sourceTree = SOURCE_ROOT; };
 		1AF3E35620B84E0200907123 /* AccountStatusesService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AccountStatusesService.swift; path = ClientStackSrc/Service/Accounts/AccountStatusesService.swift; sourceTree = SOURCE_ROOT; };
 		1AF3E35720B84E0200907123 /* AccountVerifyCredentialsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AccountVerifyCredentialsService.swift; path = ClientStackSrc/Service/Accounts/AccountVerifyCredentialsService.swift; sourceTree = SOURCE_ROOT; };
@@ -302,6 +286,22 @@
 		1AF3E35A20B84E0200907123 /* AccountUnfollowService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AccountUnfollowService.swift; path = ClientStackSrc/Service/Accounts/AccountUnfollowService.swift; sourceTree = SOURCE_ROOT; };
 		1AF3E35B20B84E0200907123 /* AccountFollowingService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AccountFollowingService.swift; path = ClientStackSrc/Service/Accounts/AccountFollowingService.swift; sourceTree = SOURCE_ROOT; };
 		1AF3E35C20B84E0200907123 /* AccountFollowersService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AccountFollowersService.swift; path = ClientStackSrc/Service/Accounts/AccountFollowersService.swift; sourceTree = SOURCE_ROOT; };
+		1AF3E36D20B84EE500907123 /* AttachmentEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AttachmentEntity.swift; path = ClientStackSrc/Entity/AttachmentEntity.swift; sourceTree = SOURCE_ROOT; };
+		1AF3E36E20B84EE500907123 /* AccountEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AccountEntity.swift; path = ClientStackSrc/Entity/AccountEntity.swift; sourceTree = SOURCE_ROOT; };
+		1AF3E36F20B84EE500907123 /* TagEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TagEntity.swift; path = ClientStackSrc/Entity/TagEntity.swift; sourceTree = SOURCE_ROOT; };
+		1AF3E37020B84EE500907123 /* CardEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CardEntity.swift; path = ClientStackSrc/Entity/CardEntity.swift; sourceTree = SOURCE_ROOT; };
+		1AF3E37120B84EE500907123 /* ApplicationEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ApplicationEntity.swift; path = ClientStackSrc/Entity/ApplicationEntity.swift; sourceTree = SOURCE_ROOT; };
+		1AF3E37220B84EE500907123 /* ContextEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContextEntity.swift; path = ClientStackSrc/Entity/ContextEntity.swift; sourceTree = SOURCE_ROOT; };
+		1AF3E37320B84EE500907123 /* MentionEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MentionEntity.swift; path = ClientStackSrc/Entity/MentionEntity.swift; sourceTree = SOURCE_ROOT; };
+		1AF3E37420B84EE500907123 /* ListEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ListEntity.swift; path = ClientStackSrc/Entity/ListEntity.swift; sourceTree = SOURCE_ROOT; };
+		1AF3E37520B84EE500907123 /* ErrorEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ErrorEntity.swift; path = ClientStackSrc/Entity/ErrorEntity.swift; sourceTree = SOURCE_ROOT; };
+		1AF3E37620B84EE500907123 /* InstanceEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InstanceEntity.swift; path = ClientStackSrc/Entity/InstanceEntity.swift; sourceTree = SOURCE_ROOT; };
+		1AF3E37720B84EE500907123 /* NotificationEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NotificationEntity.swift; path = ClientStackSrc/Entity/NotificationEntity.swift; sourceTree = SOURCE_ROOT; };
+		1AF3E37820B84EE500907123 /* StatusEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StatusEntity.swift; path = ClientStackSrc/Entity/StatusEntity.swift; sourceTree = SOURCE_ROOT; };
+		1AF3E37920B84EE500907123 /* RelationshipEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RelationshipEntity.swift; path = ClientStackSrc/Entity/RelationshipEntity.swift; sourceTree = SOURCE_ROOT; };
+		1AF3E37A20B84EE500907123 /* ResultsEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ResultsEntity.swift; path = ClientStackSrc/Entity/ResultsEntity.swift; sourceTree = SOURCE_ROOT; };
+		1AF3E37B20B84EE600907123 /* EmojiEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EmojiEntity.swift; path = ClientStackSrc/Entity/EmojiEntity.swift; sourceTree = SOURCE_ROOT; };
+		1AF3E37C20B84EE600907123 /* ReportEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReportEntity.swift; path = ClientStackSrc/Entity/ReportEntity.swift; sourceTree = SOURCE_ROOT; };
 		28264C095798523FBE0635C2 /* Pods_ClientStackDemoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ClientStackDemoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		31F3FEB5CAF3A096FF00A9D2 /* Pods-ClientStackTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ClientStackTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ClientStackTests/Pods-ClientStackTests.debug.xcconfig"; sourceTree = "<group>"; };
 		3989EC96912FCD97CFCC1CF4 /* Pods-ClientStackDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ClientStackDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ClientStackDemo/Pods-ClientStackDemo.debug.xcconfig"; sourceTree = "<group>"; };
@@ -624,22 +624,22 @@
 		1AF3E33820B84CDF00907123 /* Entity */ = {
 			isa = PBXGroup;
 			children = (
-				1AF3E30920B84C9C00907123 /* AccountEntity.swift */,
-				1AF3E30C20B84C9D00907123 /* ApplicationEntity.swift */,
-				1AF3E30820B84C9C00907123 /* AttachmentEntity.swift */,
-				1AF3E30B20B84C9C00907123 /* CardEntity.swift */,
-				1AF3E30D20B84C9D00907123 /* ContextEntity.swift */,
-				1AF3E31620B84C9D00907123 /* EmojiEntity.swift */,
-				1AF3E31020B84C9D00907123 /* ErrorEntity.swift */,
-				1AF3E31120B84C9D00907123 /* InstanceEntity.swift */,
-				1AF3E30F20B84C9D00907123 /* ListEntity.swift */,
-				1AF3E30E20B84C9D00907123 /* MentionEntity.swift */,
-				1AF3E31220B84C9D00907123 /* NotificationEntity.swift */,
-				1AF3E31420B84C9D00907123 /* RelationshipEntity.swift */,
-				1AF3E31720B84C9D00907123 /* ReportEntity.swift */,
-				1AF3E31520B84C9D00907123 /* ResultsEntity.swift */,
-				1AF3E31320B84C9D00907123 /* StatusEntity.swift */,
-				1AF3E30A20B84C9C00907123 /* TagEntity.swift */,
+				1AF3E36E20B84EE500907123 /* AccountEntity.swift */,
+				1AF3E37120B84EE500907123 /* ApplicationEntity.swift */,
+				1AF3E36D20B84EE500907123 /* AttachmentEntity.swift */,
+				1AF3E37020B84EE500907123 /* CardEntity.swift */,
+				1AF3E37220B84EE500907123 /* ContextEntity.swift */,
+				1AF3E37B20B84EE600907123 /* EmojiEntity.swift */,
+				1AF3E37520B84EE500907123 /* ErrorEntity.swift */,
+				1AF3E37620B84EE500907123 /* InstanceEntity.swift */,
+				1AF3E37420B84EE500907123 /* ListEntity.swift */,
+				1AF3E37320B84EE500907123 /* MentionEntity.swift */,
+				1AF3E37720B84EE500907123 /* NotificationEntity.swift */,
+				1AF3E37920B84EE500907123 /* RelationshipEntity.swift */,
+				1AF3E37C20B84EE600907123 /* ReportEntity.swift */,
+				1AF3E37A20B84EE500907123 /* ResultsEntity.swift */,
+				1AF3E37820B84EE500907123 /* StatusEntity.swift */,
+				1AF3E36F20B84EE500907123 /* TagEntity.swift */,
 			);
 			name = Entity;
 			sourceTree = "<group>";
@@ -1383,30 +1383,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1AF3E32020B84C9D00907123 /* ApplicationEntity.swift in Sources */,
+				1AF3E37F20B84EE600907123 /* AccountEntity.swift in Sources */,
+				1AF3E39720B84EE600907123 /* ResultsEntity.swift in Sources */,
 				1AF3E36520B84E0200907123 /* AccountUpdateCredentialsService.swift in Sources */,
+				1AF3E38520B84EE600907123 /* ApplicationEntity.swift in Sources */,
+				1AF3E38F20B84EE600907123 /* InstanceEntity.swift in Sources */,
 				1AF3E36920B84E0200907123 /* AccountFollowingService.swift in Sources */,
+				1AF3E39B20B84EE600907123 /* ReportEntity.swift in Sources */,
+				1AF3E38B20B84EE600907123 /* ListEntity.swift in Sources */,
 				1AF3E35F20B84E0200907123 /* AccountStatusesService.swift in Sources */,
-				1AF3E31C20B84C9D00907123 /* TagEntity.swift in Sources */,
-				1AF3E32220B84C9D00907123 /* ContextEntity.swift in Sources */,
+				1AF3E38120B84EE600907123 /* TagEntity.swift in Sources */,
+				1AF3E38D20B84EE600907123 /* ErrorEntity.swift in Sources */,
+				1AF3E37D20B84EE600907123 /* AttachmentEntity.swift in Sources */,
 				1AF3E36720B84E0200907123 /* AccountUnfollowService.swift in Sources */,
-				1AF3E32A20B84C9D00907123 /* InstanceEntity.swift in Sources */,
-				1AF3E31A20B84C9D00907123 /* AccountEntity.swift in Sources */,
-				1AF3E33020B84C9D00907123 /* RelationshipEntity.swift in Sources */,
-				1AF3E33620B84C9D00907123 /* ReportEntity.swift in Sources */,
+				1AF3E38720B84EE600907123 /* ContextEntity.swift in Sources */,
 				1AF3E36120B84E0200907123 /* AccountVerifyCredentialsService.swift in Sources */,
-				1AF3E32620B84C9D00907123 /* ListEntity.swift in Sources */,
 				1AF3E36320B84E0200907123 /* AccountFollowService.swift in Sources */,
-				1AF3E32E20B84C9D00907123 /* StatusEntity.swift in Sources */,
+				1AF3E39520B84EE600907123 /* RelationshipEntity.swift in Sources */,
 				1AF3E35D20B84E0200907123 /* AccountService.swift in Sources */,
-				1AF3E32420B84C9D00907123 /* MentionEntity.swift in Sources */,
-				1AF3E32C20B84C9D00907123 /* NotificationEntity.swift in Sources */,
-				1AF3E31E20B84C9D00907123 /* CardEntity.swift in Sources */,
+				1AF3E38320B84EE600907123 /* CardEntity.swift in Sources */,
+				1AF3E39920B84EE600907123 /* EmojiEntity.swift in Sources */,
+				1AF3E39120B84EE600907123 /* NotificationEntity.swift in Sources */,
+				1AF3E38920B84EE600907123 /* MentionEntity.swift in Sources */,
+				1AF3E39320B84EE600907123 /* StatusEntity.swift in Sources */,
 				1AF3E36B20B84E0200907123 /* AccountFollowersService.swift in Sources */,
-				1AF3E33220B84C9D00907123 /* ResultsEntity.swift in Sources */,
-				1AF3E31820B84C9D00907123 /* AttachmentEntity.swift in Sources */,
-				1AF3E33420B84C9D00907123 /* EmojiEntity.swift in Sources */,
-				1AF3E32820B84C9D00907123 /* ErrorEntity.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1416,29 +1416,29 @@
 			files = (
 				1AF3E36020B84E0200907123 /* AccountStatusesService.swift in Sources */,
 				1AF3E36C20B84E0200907123 /* AccountFollowersService.swift in Sources */,
+				1AF3E39020B84EE600907123 /* InstanceEntity.swift in Sources */,
+				1AF3E39220B84EE600907123 /* NotificationEntity.swift in Sources */,
 				1AF3E36220B84E0200907123 /* AccountVerifyCredentialsService.swift in Sources */,
-				1AF3E33120B84C9D00907123 /* RelationshipEntity.swift in Sources */,
+				1AF3E38620B84EE600907123 /* ApplicationEntity.swift in Sources */,
+				1AF3E39420B84EE600907123 /* StatusEntity.swift in Sources */,
+				1AF3E38220B84EE600907123 /* TagEntity.swift in Sources */,
+				1AF3E38A20B84EE600907123 /* MentionEntity.swift in Sources */,
 				1AF3E36620B84E0200907123 /* AccountUpdateCredentialsService.swift in Sources */,
-				1AF3E32720B84C9D00907123 /* ListEntity.swift in Sources */,
 				1A95E78820B8295B003049C6 /* ClientStack_MacTests.swift in Sources */,
+				1AF3E38020B84EE600907123 /* AccountEntity.swift in Sources */,
+				1AF3E38820B84EE600907123 /* ContextEntity.swift in Sources */,
+				1AF3E39A20B84EE600907123 /* EmojiEntity.swift in Sources */,
+				1AF3E38C20B84EE600907123 /* ListEntity.swift in Sources */,
 				1AF3E36420B84E0200907123 /* AccountFollowService.swift in Sources */,
-				1AF3E32320B84C9D00907123 /* ContextEntity.swift in Sources */,
-				1AF3E32F20B84C9D00907123 /* StatusEntity.swift in Sources */,
-				1AF3E31920B84C9D00907123 /* AttachmentEntity.swift in Sources */,
-				1AF3E31B20B84C9D00907123 /* AccountEntity.swift in Sources */,
-				1AF3E32120B84C9D00907123 /* ApplicationEntity.swift in Sources */,
-				1AF3E33320B84C9D00907123 /* ResultsEntity.swift in Sources */,
+				1AF3E38420B84EE600907123 /* CardEntity.swift in Sources */,
 				1AF3E35E20B84E0200907123 /* AccountService.swift in Sources */,
-				1AF3E32520B84C9D00907123 /* MentionEntity.swift in Sources */,
+				1AF3E39820B84EE600907123 /* ResultsEntity.swift in Sources */,
 				1AF3E36A20B84E0200907123 /* AccountFollowingService.swift in Sources */,
 				1AF3E36820B84E0200907123 /* AccountUnfollowService.swift in Sources */,
-				1AF3E33720B84C9D00907123 /* ReportEntity.swift in Sources */,
-				1AF3E31D20B84C9D00907123 /* TagEntity.swift in Sources */,
-				1AF3E31F20B84C9D00907123 /* CardEntity.swift in Sources */,
-				1AF3E32920B84C9D00907123 /* ErrorEntity.swift in Sources */,
-				1AF3E33520B84C9D00907123 /* EmojiEntity.swift in Sources */,
-				1AF3E32B20B84C9D00907123 /* InstanceEntity.swift in Sources */,
-				1AF3E32D20B84C9D00907123 /* NotificationEntity.swift in Sources */,
+				1AF3E37E20B84EE600907123 /* AttachmentEntity.swift in Sources */,
+				1AF3E39620B84EE600907123 /* RelationshipEntity.swift in Sources */,
+				1AF3E38E20B84EE600907123 /* ErrorEntity.swift in Sources */,
+				1AF3E39C20B84EE600907123 /* ReportEntity.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
