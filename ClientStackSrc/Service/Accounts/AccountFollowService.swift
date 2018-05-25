@@ -11,7 +11,7 @@ struct AccountFollowService: TargetType {
     let id: String
 
     var path: String { return "/api/v1/accounts/\(id)/follow" }
-    let method: Method = .post
+    let method: Moya.Method = .post
     let task: Task = .requestPlain
     let sampleData = "".data(using: .utf8)!
     let headers: [String: String]? = nil

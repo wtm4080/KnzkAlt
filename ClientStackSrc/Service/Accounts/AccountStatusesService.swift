@@ -17,7 +17,7 @@ struct AccountStatusesService: TargetType {
     let limit: UInt?
 
     var path: String { return "/api/v1/accounts/\(id)/statuses" }
-    let method: Method = .get
+    let method: Moya.Method = .get
     let task: Task = .requestPlain
     let sampleData = "".data(using: .utf8)!
     let headers: [String: String]? = nil

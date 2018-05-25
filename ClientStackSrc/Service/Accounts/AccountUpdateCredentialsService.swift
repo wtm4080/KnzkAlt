@@ -15,7 +15,7 @@ struct AccountUpdateCredentialsService: TargetType {
     let locked: Bool?
 
     let path = "/api/v1/accounts/update_credentials"
-    let method: Method = .patch
+    let method: Moya.Method = .patch
     let task: Task = .uploadMultipart([])
     let sampleData: Data = "".data(using: .utf8)!
     let headers: [String: String]? = nil

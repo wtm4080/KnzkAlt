@@ -63,68 +63,68 @@
 		1AD9FD2A20B719BF00F87213 /* ClientStack.h in Headers */ = {isa = PBXBuildFile; fileRef = 1AD9FD1A20B719BE00F87213 /* ClientStack.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1AD9FD2D20B719BF00F87213 /* ClientStack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AD9FD1820B719BE00F87213 /* ClientStack.framework */; };
 		1AD9FD2E20B719BF00F87213 /* ClientStack.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1AD9FD1820B719BE00F87213 /* ClientStack.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		1AF3E31820B84C9D00907123 /* AttachmentEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3E30820B84C9C00907123 /* AttachmentEntity.swift */; };
+		1AF3E31920B84C9D00907123 /* AttachmentEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3E30820B84C9C00907123 /* AttachmentEntity.swift */; };
+		1AF3E31A20B84C9D00907123 /* AccountEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3E30920B84C9C00907123 /* AccountEntity.swift */; };
+		1AF3E31B20B84C9D00907123 /* AccountEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3E30920B84C9C00907123 /* AccountEntity.swift */; };
+		1AF3E31C20B84C9D00907123 /* TagEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3E30A20B84C9C00907123 /* TagEntity.swift */; };
+		1AF3E31D20B84C9D00907123 /* TagEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3E30A20B84C9C00907123 /* TagEntity.swift */; };
+		1AF3E31E20B84C9D00907123 /* CardEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3E30B20B84C9C00907123 /* CardEntity.swift */; };
+		1AF3E31F20B84C9D00907123 /* CardEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3E30B20B84C9C00907123 /* CardEntity.swift */; };
+		1AF3E32020B84C9D00907123 /* ApplicationEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3E30C20B84C9D00907123 /* ApplicationEntity.swift */; };
+		1AF3E32120B84C9D00907123 /* ApplicationEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3E30C20B84C9D00907123 /* ApplicationEntity.swift */; };
+		1AF3E32220B84C9D00907123 /* ContextEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3E30D20B84C9D00907123 /* ContextEntity.swift */; };
+		1AF3E32320B84C9D00907123 /* ContextEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3E30D20B84C9D00907123 /* ContextEntity.swift */; };
+		1AF3E32420B84C9D00907123 /* MentionEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3E30E20B84C9D00907123 /* MentionEntity.swift */; };
+		1AF3E32520B84C9D00907123 /* MentionEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3E30E20B84C9D00907123 /* MentionEntity.swift */; };
+		1AF3E32620B84C9D00907123 /* ListEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3E30F20B84C9D00907123 /* ListEntity.swift */; };
+		1AF3E32720B84C9D00907123 /* ListEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3E30F20B84C9D00907123 /* ListEntity.swift */; };
+		1AF3E32820B84C9D00907123 /* ErrorEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3E31020B84C9D00907123 /* ErrorEntity.swift */; };
+		1AF3E32920B84C9D00907123 /* ErrorEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3E31020B84C9D00907123 /* ErrorEntity.swift */; };
+		1AF3E32A20B84C9D00907123 /* InstanceEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3E31120B84C9D00907123 /* InstanceEntity.swift */; };
+		1AF3E32B20B84C9D00907123 /* InstanceEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3E31120B84C9D00907123 /* InstanceEntity.swift */; };
+		1AF3E32C20B84C9D00907123 /* NotificationEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3E31220B84C9D00907123 /* NotificationEntity.swift */; };
+		1AF3E32D20B84C9D00907123 /* NotificationEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3E31220B84C9D00907123 /* NotificationEntity.swift */; };
+		1AF3E32E20B84C9D00907123 /* StatusEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3E31320B84C9D00907123 /* StatusEntity.swift */; };
+		1AF3E32F20B84C9D00907123 /* StatusEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3E31320B84C9D00907123 /* StatusEntity.swift */; };
+		1AF3E33020B84C9D00907123 /* RelationshipEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3E31420B84C9D00907123 /* RelationshipEntity.swift */; };
+		1AF3E33120B84C9D00907123 /* RelationshipEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3E31420B84C9D00907123 /* RelationshipEntity.swift */; };
+		1AF3E33220B84C9D00907123 /* ResultsEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3E31520B84C9D00907123 /* ResultsEntity.swift */; };
+		1AF3E33320B84C9D00907123 /* ResultsEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3E31520B84C9D00907123 /* ResultsEntity.swift */; };
+		1AF3E33420B84C9D00907123 /* EmojiEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3E31620B84C9D00907123 /* EmojiEntity.swift */; };
+		1AF3E33520B84C9D00907123 /* EmojiEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3E31620B84C9D00907123 /* EmojiEntity.swift */; };
+		1AF3E33620B84C9D00907123 /* ReportEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3E31720B84C9D00907123 /* ReportEntity.swift */; };
+		1AF3E33720B84C9D00907123 /* ReportEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3E31720B84C9D00907123 /* ReportEntity.swift */; };
+		1AF3E35D20B84E0200907123 /* AccountService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3E35520B84E0200907123 /* AccountService.swift */; };
+		1AF3E35E20B84E0200907123 /* AccountService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3E35520B84E0200907123 /* AccountService.swift */; };
+		1AF3E35F20B84E0200907123 /* AccountStatusesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3E35620B84E0200907123 /* AccountStatusesService.swift */; };
+		1AF3E36020B84E0200907123 /* AccountStatusesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3E35620B84E0200907123 /* AccountStatusesService.swift */; };
+		1AF3E36120B84E0200907123 /* AccountVerifyCredentialsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3E35720B84E0200907123 /* AccountVerifyCredentialsService.swift */; };
+		1AF3E36220B84E0200907123 /* AccountVerifyCredentialsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3E35720B84E0200907123 /* AccountVerifyCredentialsService.swift */; };
+		1AF3E36320B84E0200907123 /* AccountFollowService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3E35820B84E0200907123 /* AccountFollowService.swift */; };
+		1AF3E36420B84E0200907123 /* AccountFollowService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3E35820B84E0200907123 /* AccountFollowService.swift */; };
+		1AF3E36520B84E0200907123 /* AccountUpdateCredentialsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3E35920B84E0200907123 /* AccountUpdateCredentialsService.swift */; };
+		1AF3E36620B84E0200907123 /* AccountUpdateCredentialsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3E35920B84E0200907123 /* AccountUpdateCredentialsService.swift */; };
+		1AF3E36720B84E0200907123 /* AccountUnfollowService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3E35A20B84E0200907123 /* AccountUnfollowService.swift */; };
+		1AF3E36820B84E0200907123 /* AccountUnfollowService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3E35A20B84E0200907123 /* AccountUnfollowService.swift */; };
+		1AF3E36920B84E0200907123 /* AccountFollowingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3E35B20B84E0200907123 /* AccountFollowingService.swift */; };
+		1AF3E36A20B84E0200907123 /* AccountFollowingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3E35B20B84E0200907123 /* AccountFollowingService.swift */; };
+		1AF3E36B20B84E0200907123 /* AccountFollowersService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3E35C20B84E0200907123 /* AccountFollowersService.swift */; };
+		1AF3E36C20B84E0200907123 /* AccountFollowersService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3E35C20B84E0200907123 /* AccountFollowersService.swift */; };
 		38FE96E2A1B539CED169F23F /* Pods_KnzkAlt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84C1FDE5DB4231518E199FD0 /* Pods_KnzkAlt.framework */; };
 		4567996B4395CCE68AC818D9 /* Pods_ClientStackDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BF42E30169CA2116B4BCAB1 /* Pods_ClientStackDemo.framework */; };
 		7558EFB8ADCCF686ADED80B6 /* Pods_ClientStackDemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28264C095798523FBE0635C2 /* Pods_ClientStackDemoTests.framework */; };
 		BDDEF27E9805E16510C2F318 /* Pods_ClientStack_MacTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04707C2074D4A29DD67C15C1 /* Pods_ClientStack_MacTests.framework */; };
-		C05100437A968D463D85F64F /* AttachmentEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C051053C506A7BE31F61E8E8 /* AttachmentEntity.swift */; };
-		C05100B643DB6D893B4C439D /* TagEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05108603EF7A8E434FAC086 /* TagEntity.swift */; };
 		C051013C90808EA14D21585D /* TLKind.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05105506BF8250C08BE5640 /* TLKind.swift */; };
-		C05101F0DB646DCD709EB26F /* ResultsEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C051093806951CCD0FA7A62A /* ResultsEntity.swift */; };
-		C0510243533088973581EB8A /* CardEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05109AABF769C638A219CE5 /* CardEntity.swift */; };
 		C0510254A99C77FABC3E33FA /* TLKind.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05105506BF8250C08BE5640 /* TLKind.swift */; };
-		C05102888197321098453456 /* ApplicationEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510640DFA2BA0DB32501E0 /* ApplicationEntity.swift */; };
-		C05102DD74C1ECEED8E7A5F0 /* RelationshipEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510F25DF98F0D364250CBB /* RelationshipEntity.swift */; };
-		C05102F8EE2719EDF1A1FE6C /* CardEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05109AABF769C638A219CE5 /* CardEntity.swift */; };
-		C0510381AB5F379C67B3C346 /* EmojiEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C051070132C021083E614997 /* EmojiEntity.swift */; };
-		C0510398E7A1C9FC0648B8DA /* ReportEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C051019870D034469F3AD2F8 /* ReportEntity.swift */; };
-		C05103AE36E61D30D2F9A67B /* MentionEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C051042043F872A0C0540E14 /* MentionEntity.swift */; };
-		C05103FA06FEB5826160D6F9 /* ErrorEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05103070BF5A6E812B015F3 /* ErrorEntity.swift */; };
-		C0510445F8777001DD6D98F0 /* EmojiEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C051070132C021083E614997 /* EmojiEntity.swift */; };
-		C05104605270A2FD0D668298 /* TagEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05108603EF7A8E434FAC086 /* TagEntity.swift */; };
-		C051047539A4205F8A2057F2 /* ContextEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510B3E19313621F69EE6F8 /* ContextEntity.swift */; };
-		C05104CACFE414703802282A /* AccountUnfollowService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05109552F8A64890D8C2355 /* AccountUnfollowService.swift */; };
-		C05104E6F70BCE319854D1D6 /* StatusEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510C066E620C529A0EE48C /* StatusEntity.swift */; };
-		C051055256C0780A5C82EB2C /* AccountUpdateCredentialsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510BC7EEAEAFAC15E6958E /* AccountUpdateCredentialsService.swift */; };
 		C0510559AFC5A879C211EC84 /* TLParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510A6EDA359DE7A9CB6842 /* TLParams.swift */; };
-		C0510593305FD51918636E38 /* AccountStatusesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C051094FC434FE7975558048 /* AccountStatusesService.swift */; };
-		C05106237B93C5EDFAE1EE75 /* ResultsEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C051093806951CCD0FA7A62A /* ResultsEntity.swift */; };
 		C051063C8F94487D951F3992 /* LoadPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = C051044B0362D353B18AA631 /* LoadPosition.swift */; };
-		C0510641C30FD4E91C21F6AB /* NotificationEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510E07791688F5FC5542A8 /* NotificationEntity.swift */; };
-		C051066ED164A42AB6654868 /* AccountUpdateCredentialsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510BC7EEAEAFAC15E6958E /* AccountUpdateCredentialsService.swift */; };
 		C05106A4B78EB97153B89723 /* AppNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510B64372D7F837A34D11B /* AppNotification.swift */; };
-		C05106D21767405D8278F098 /* ApplicationEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510640DFA2BA0DB32501E0 /* ApplicationEntity.swift */; };
-		C051072D45D450DCFA2660BD /* AccountFollowingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510E034C77C46585AB2043 /* AccountFollowingService.swift */; };
 		C051072FF9FAE361D97372C6 /* TLParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510A6EDA359DE7A9CB6842 /* TLParams.swift */; };
-		C0510736A212DEF854ACA281 /* ReportEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C051019870D034469F3AD2F8 /* ReportEntity.swift */; };
-		C051074B1A38D357FF79D357 /* AccountUnfollowService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05109552F8A64890D8C2355 /* AccountUnfollowService.swift */; };
-		C051078C8657AEAC6A0CF71F /* ListEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510D3CD067A7EB94BB4E57 /* ListEntity.swift */; };
-		C05108220F60422D85117716 /* RelationshipEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510F25DF98F0D364250CBB /* RelationshipEntity.swift */; };
-		C05108A5D5258D16D4CA4D6E /* InstanceEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510383514BEEDFCD2C4DA3 /* InstanceEntity.swift */; };
 		C051090AA4B00DD5B7F7454E /* AppNotificationObserving.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510397D489014CC8992656 /* AppNotificationObserving.swift */; };
-		C0510933BCCBBE5DF7353F7B /* AccountEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510B976CCCC6263FFFC187 /* AccountEntity.swift */; };
-		C0510951A2720078A005D465 /* AccountFollowersService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05109E58D06AF6375380E30 /* AccountFollowersService.swift */; };
-		C05109E05F897F9D201ECCC4 /* AccountVerifyCredentialsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510095203EE6D16FB6AF01 /* AccountVerifyCredentialsService.swift */; };
-		C05109F51D821C8DA7092C38 /* AccountService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510464002C87B6D4E6B85C /* AccountService.swift */; };
-		C0510AB23B64D8C844A416BD /* AccountVerifyCredentialsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510095203EE6D16FB6AF01 /* AccountVerifyCredentialsService.swift */; };
-		C0510AB6AB05F5EFB5AA8C02 /* ErrorEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05103070BF5A6E812B015F3 /* ErrorEntity.swift */; };
 		C0510AB9760FB8BA76DD3A23 /* AppNotificationObserving.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510397D489014CC8992656 /* AppNotificationObserving.swift */; };
-		C0510B4A177CC7EE5AD4899C /* NotificationEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510E07791688F5FC5542A8 /* NotificationEntity.swift */; };
-		C0510B634ACE56BB71276C23 /* MentionEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C051042043F872A0C0540E14 /* MentionEntity.swift */; };
-		C0510BAB7EC024BEB67A48AC /* AccountFollowService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510493656584A06A334EF1 /* AccountFollowService.swift */; };
 		C0510BAD1599A65D9A486F1B /* LoadPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = C051044B0362D353B18AA631 /* LoadPosition.swift */; };
-		C0510CE0FB112AA065F154E6 /* InstanceEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510383514BEEDFCD2C4DA3 /* InstanceEntity.swift */; };
-		C0510D03EC60E7140F65D5DD /* AccountStatusesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C051094FC434FE7975558048 /* AccountStatusesService.swift */; };
-		C0510D133FB0EBDE2CEABAF7 /* AccountEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510B976CCCC6263FFFC187 /* AccountEntity.swift */; };
-		C0510D3E6858CAED9AAE850D /* AccountFollowService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510493656584A06A334EF1 /* AccountFollowService.swift */; };
-		C0510D6189877E841E7C9272 /* ListEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510D3CD067A7EB94BB4E57 /* ListEntity.swift */; };
-		C0510E28CF65BB7B57799BFD /* AccountService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510464002C87B6D4E6B85C /* AccountService.swift */; };
-		C0510E3F2F4572569C06CECE /* StatusEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510C066E620C529A0EE48C /* StatusEntity.swift */; };
-		C0510E59B55589701E698E3D /* AttachmentEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C051053C506A7BE31F61E8E8 /* AttachmentEntity.swift */; };
-		C0510E8C11EF8C42F4C81976 /* AccountFollowersService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05109E58D06AF6375380E30 /* AccountFollowersService.swift */; };
-		C0510E9F91C1174D4BBC36B9 /* AccountFollowingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510E034C77C46585AB2043 /* AccountFollowingService.swift */; };
 		C0510EB5724E95D8924D1103 /* AppNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510B64372D7F837A34D11B /* AppNotification.swift */; };
-		C0510F76C13CF0A1443ED711 /* ContextEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510B3E19313621F69EE6F8 /* ContextEntity.swift */; };
 		D7AB0DAB123C5B091B1BD680 /* Pods_ClientStackTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD72D3F5D8B03445ADA04547 /* Pods_ClientStackTests.framework */; };
 		E450DB488E5AD6389D77E670 /* Pods_ClientStack_Mac.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFF58623E735D3E9FD0AC6B4 /* Pods_ClientStack_Mac.framework */; };
 		FA4F0FF186534CCAADF713AC /* Pods_KnzkAltTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6ED6DD55E3BB3F15F0DEEF74 /* Pods_KnzkAltTests.framework */; };
@@ -278,6 +278,30 @@
 		1AD9FD2020B719BF00F87213 /* ClientStackTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ClientStackTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AD9FD2720B719BF00F87213 /* ClientStackTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientStackTests.swift; sourceTree = "<group>"; };
 		1AD9FD2920B719BF00F87213 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1AF3E30820B84C9C00907123 /* AttachmentEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AttachmentEntity.swift; path = ClientStack_Mac/AttachmentEntity.swift; sourceTree = SOURCE_ROOT; };
+		1AF3E30920B84C9C00907123 /* AccountEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AccountEntity.swift; path = ClientStack_Mac/AccountEntity.swift; sourceTree = SOURCE_ROOT; };
+		1AF3E30A20B84C9C00907123 /* TagEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TagEntity.swift; path = ClientStack_Mac/TagEntity.swift; sourceTree = SOURCE_ROOT; };
+		1AF3E30B20B84C9C00907123 /* CardEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CardEntity.swift; path = ClientStack_Mac/CardEntity.swift; sourceTree = SOURCE_ROOT; };
+		1AF3E30C20B84C9D00907123 /* ApplicationEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ApplicationEntity.swift; path = ClientStack_Mac/ApplicationEntity.swift; sourceTree = SOURCE_ROOT; };
+		1AF3E30D20B84C9D00907123 /* ContextEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContextEntity.swift; path = ClientStack_Mac/ContextEntity.swift; sourceTree = SOURCE_ROOT; };
+		1AF3E30E20B84C9D00907123 /* MentionEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MentionEntity.swift; path = ClientStack_Mac/MentionEntity.swift; sourceTree = SOURCE_ROOT; };
+		1AF3E30F20B84C9D00907123 /* ListEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ListEntity.swift; path = ClientStack_Mac/ListEntity.swift; sourceTree = SOURCE_ROOT; };
+		1AF3E31020B84C9D00907123 /* ErrorEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ErrorEntity.swift; path = ClientStack_Mac/ErrorEntity.swift; sourceTree = SOURCE_ROOT; };
+		1AF3E31120B84C9D00907123 /* InstanceEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InstanceEntity.swift; path = ClientStack_Mac/InstanceEntity.swift; sourceTree = SOURCE_ROOT; };
+		1AF3E31220B84C9D00907123 /* NotificationEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NotificationEntity.swift; path = ClientStack_Mac/NotificationEntity.swift; sourceTree = SOURCE_ROOT; };
+		1AF3E31320B84C9D00907123 /* StatusEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StatusEntity.swift; path = ClientStack_Mac/StatusEntity.swift; sourceTree = SOURCE_ROOT; };
+		1AF3E31420B84C9D00907123 /* RelationshipEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RelationshipEntity.swift; path = ClientStack_Mac/RelationshipEntity.swift; sourceTree = SOURCE_ROOT; };
+		1AF3E31520B84C9D00907123 /* ResultsEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ResultsEntity.swift; path = ClientStack_Mac/ResultsEntity.swift; sourceTree = SOURCE_ROOT; };
+		1AF3E31620B84C9D00907123 /* EmojiEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EmojiEntity.swift; path = ClientStack_Mac/EmojiEntity.swift; sourceTree = SOURCE_ROOT; };
+		1AF3E31720B84C9D00907123 /* ReportEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReportEntity.swift; path = ClientStack_Mac/ReportEntity.swift; sourceTree = SOURCE_ROOT; };
+		1AF3E35520B84E0200907123 /* AccountService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AccountService.swift; path = ClientStackSrc/Service/Accounts/AccountService.swift; sourceTree = SOURCE_ROOT; };
+		1AF3E35620B84E0200907123 /* AccountStatusesService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AccountStatusesService.swift; path = ClientStackSrc/Service/Accounts/AccountStatusesService.swift; sourceTree = SOURCE_ROOT; };
+		1AF3E35720B84E0200907123 /* AccountVerifyCredentialsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AccountVerifyCredentialsService.swift; path = ClientStackSrc/Service/Accounts/AccountVerifyCredentialsService.swift; sourceTree = SOURCE_ROOT; };
+		1AF3E35820B84E0200907123 /* AccountFollowService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AccountFollowService.swift; path = ClientStackSrc/Service/Accounts/AccountFollowService.swift; sourceTree = SOURCE_ROOT; };
+		1AF3E35920B84E0200907123 /* AccountUpdateCredentialsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AccountUpdateCredentialsService.swift; path = ClientStackSrc/Service/Accounts/AccountUpdateCredentialsService.swift; sourceTree = SOURCE_ROOT; };
+		1AF3E35A20B84E0200907123 /* AccountUnfollowService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AccountUnfollowService.swift; path = ClientStackSrc/Service/Accounts/AccountUnfollowService.swift; sourceTree = SOURCE_ROOT; };
+		1AF3E35B20B84E0200907123 /* AccountFollowingService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AccountFollowingService.swift; path = ClientStackSrc/Service/Accounts/AccountFollowingService.swift; sourceTree = SOURCE_ROOT; };
+		1AF3E35C20B84E0200907123 /* AccountFollowersService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AccountFollowersService.swift; path = ClientStackSrc/Service/Accounts/AccountFollowersService.swift; sourceTree = SOURCE_ROOT; };
 		28264C095798523FBE0635C2 /* Pods_ClientStackDemoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ClientStackDemoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		31F3FEB5CAF3A096FF00A9D2 /* Pods-ClientStackTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ClientStackTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ClientStackTests/Pods-ClientStackTests.debug.xcconfig"; sourceTree = "<group>"; };
 		3989EC96912FCD97CFCC1CF4 /* Pods-ClientStackDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ClientStackDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ClientStackDemo/Pods-ClientStackDemo.debug.xcconfig"; sourceTree = "<group>"; };
@@ -293,35 +317,11 @@
 		8BF42E30169CA2116B4BCAB1 /* Pods_ClientStackDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ClientStackDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		941B4193C937B752AA1EDC33 /* Pods-ClientStack_MacTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ClientStack_MacTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ClientStack_MacTests/Pods-ClientStack_MacTests.release.xcconfig"; sourceTree = "<group>"; };
 		AD72D3F5D8B03445ADA04547 /* Pods_ClientStackTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ClientStackTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C0510095203EE6D16FB6AF01 /* AccountVerifyCredentialsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountVerifyCredentialsService.swift; sourceTree = "<group>"; };
-		C051019870D034469F3AD2F8 /* ReportEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportEntity.swift; sourceTree = "<group>"; };
-		C05103070BF5A6E812B015F3 /* ErrorEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorEntity.swift; sourceTree = "<group>"; };
-		C0510383514BEEDFCD2C4DA3 /* InstanceEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstanceEntity.swift; sourceTree = "<group>"; };
 		C0510397D489014CC8992656 /* AppNotificationObserving.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppNotificationObserving.swift; sourceTree = "<group>"; };
-		C051042043F872A0C0540E14 /* MentionEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MentionEntity.swift; sourceTree = "<group>"; };
 		C051044B0362D353B18AA631 /* LoadPosition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadPosition.swift; sourceTree = "<group>"; };
-		C0510464002C87B6D4E6B85C /* AccountService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountService.swift; sourceTree = "<group>"; };
-		C0510493656584A06A334EF1 /* AccountFollowService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountFollowService.swift; sourceTree = "<group>"; };
-		C051053C506A7BE31F61E8E8 /* AttachmentEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttachmentEntity.swift; sourceTree = "<group>"; };
 		C05105506BF8250C08BE5640 /* TLKind.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TLKind.swift; sourceTree = "<group>"; };
-		C0510640DFA2BA0DB32501E0 /* ApplicationEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationEntity.swift; sourceTree = "<group>"; };
-		C051070132C021083E614997 /* EmojiEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmojiEntity.swift; sourceTree = "<group>"; };
-		C05108603EF7A8E434FAC086 /* TagEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagEntity.swift; sourceTree = "<group>"; };
-		C051093806951CCD0FA7A62A /* ResultsEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultsEntity.swift; sourceTree = "<group>"; };
-		C051094FC434FE7975558048 /* AccountStatusesService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountStatusesService.swift; sourceTree = "<group>"; };
-		C05109552F8A64890D8C2355 /* AccountUnfollowService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountUnfollowService.swift; sourceTree = "<group>"; };
-		C05109AABF769C638A219CE5 /* CardEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardEntity.swift; sourceTree = "<group>"; };
-		C05109E58D06AF6375380E30 /* AccountFollowersService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountFollowersService.swift; sourceTree = "<group>"; };
 		C0510A6EDA359DE7A9CB6842 /* TLParams.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TLParams.swift; sourceTree = "<group>"; };
-		C0510B3E19313621F69EE6F8 /* ContextEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContextEntity.swift; sourceTree = "<group>"; };
 		C0510B64372D7F837A34D11B /* AppNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppNotification.swift; sourceTree = "<group>"; };
-		C0510B976CCCC6263FFFC187 /* AccountEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountEntity.swift; sourceTree = "<group>"; };
-		C0510BC7EEAEAFAC15E6958E /* AccountUpdateCredentialsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountUpdateCredentialsService.swift; sourceTree = "<group>"; };
-		C0510C066E620C529A0EE48C /* StatusEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusEntity.swift; sourceTree = "<group>"; };
-		C0510D3CD067A7EB94BB4E57 /* ListEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListEntity.swift; sourceTree = "<group>"; };
-		C0510E034C77C46585AB2043 /* AccountFollowingService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountFollowingService.swift; sourceTree = "<group>"; };
-		C0510E07791688F5FC5542A8 /* NotificationEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationEntity.swift; sourceTree = "<group>"; };
-		C0510F25DF98F0D364250CBB /* RelationshipEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RelationshipEntity.swift; sourceTree = "<group>"; };
 		D4D2AD351327CD293805901D /* Pods-ClientStack_Mac.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ClientStack_Mac.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ClientStack_Mac/Pods-ClientStack_Mac.debug.xcconfig"; sourceTree = "<group>"; };
 		DD906B5C182A8717F03B0C56 /* Pods-ClientStack.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ClientStack.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ClientStack/Pods-ClientStack.debug.xcconfig"; sourceTree = "<group>"; };
 		DFF58623E735D3E9FD0AC6B4 /* Pods_ClientStack_Mac.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ClientStack_Mac.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -431,6 +431,8 @@
 			children = (
 				1A95E77C20B8295B003049C6 /* ClientStack_Mac.h */,
 				1A95E77D20B8295B003049C6 /* Info.plist */,
+				1AF3E33820B84CDF00907123 /* Entity */,
+				1AF3E35320B84DE900907123 /* Service */,
 			);
 			path = ClientStack_Mac;
 			sourceTree = "<group>";
@@ -497,7 +499,6 @@
 				1AA89DDC201983BF008EC484 /* ClientManager.swift */,
 				1AA89DDA201983BF008EC484 /* DataSource.swift */,
 				1AA89DDD201983BF008EC484 /* DataSourceTimeline.swift */,
-				C0510ABD2BF5121B9DFFF7BD /* ServiceAccess */,
 			);
 			path = MastodonData;
 			sourceTree = "<group>";
@@ -620,6 +621,52 @@
 			path = ClientStackTests;
 			sourceTree = "<group>";
 		};
+		1AF3E33820B84CDF00907123 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				1AF3E30920B84C9C00907123 /* AccountEntity.swift */,
+				1AF3E30C20B84C9D00907123 /* ApplicationEntity.swift */,
+				1AF3E30820B84C9C00907123 /* AttachmentEntity.swift */,
+				1AF3E30B20B84C9C00907123 /* CardEntity.swift */,
+				1AF3E30D20B84C9D00907123 /* ContextEntity.swift */,
+				1AF3E31620B84C9D00907123 /* EmojiEntity.swift */,
+				1AF3E31020B84C9D00907123 /* ErrorEntity.swift */,
+				1AF3E31120B84C9D00907123 /* InstanceEntity.swift */,
+				1AF3E30F20B84C9D00907123 /* ListEntity.swift */,
+				1AF3E30E20B84C9D00907123 /* MentionEntity.swift */,
+				1AF3E31220B84C9D00907123 /* NotificationEntity.swift */,
+				1AF3E31420B84C9D00907123 /* RelationshipEntity.swift */,
+				1AF3E31720B84C9D00907123 /* ReportEntity.swift */,
+				1AF3E31520B84C9D00907123 /* ResultsEntity.swift */,
+				1AF3E31320B84C9D00907123 /* StatusEntity.swift */,
+				1AF3E30A20B84C9C00907123 /* TagEntity.swift */,
+			);
+			name = Entity;
+			sourceTree = "<group>";
+		};
+		1AF3E35320B84DE900907123 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				1AF3E35420B84DEF00907123 /* Accounts */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		1AF3E35420B84DEF00907123 /* Accounts */ = {
+			isa = PBXGroup;
+			children = (
+				1AF3E35C20B84E0200907123 /* AccountFollowersService.swift */,
+				1AF3E35B20B84E0200907123 /* AccountFollowingService.swift */,
+				1AF3E35820B84E0200907123 /* AccountFollowService.swift */,
+				1AF3E35520B84E0200907123 /* AccountService.swift */,
+				1AF3E35620B84E0200907123 /* AccountStatusesService.swift */,
+				1AF3E35A20B84E0200907123 /* AccountUnfollowService.swift */,
+				1AF3E35920B84E0200907123 /* AccountUpdateCredentialsService.swift */,
+				1AF3E35720B84E0200907123 /* AccountVerifyCredentialsService.swift */,
+			);
+			name = Accounts;
+			sourceTree = "<group>";
+		};
 		2AAE723F0C521CE2B966660E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -634,53 +681,6 @@
 				28264C095798523FBE0635C2 /* Pods_ClientStackDemoTests.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		C0510ABD2BF5121B9DFFF7BD /* ServiceAccess */ = {
-			isa = PBXGroup;
-			children = (
-				C0510C1B729B2DCA7384AD93 /* Accounts */,
-				C0510C952E91942C7848B3C9 /* Entity */,
-			);
-			path = ServiceAccess;
-			sourceTree = "<group>";
-		};
-		C0510C1B729B2DCA7384AD93 /* Accounts */ = {
-			isa = PBXGroup;
-			children = (
-				C0510464002C87B6D4E6B85C /* AccountService.swift */,
-				C0510095203EE6D16FB6AF01 /* AccountVerifyCredentialsService.swift */,
-				C0510BC7EEAEAFAC15E6958E /* AccountUpdateCredentialsService.swift */,
-				C05109E58D06AF6375380E30 /* AccountFollowersService.swift */,
-				C0510E034C77C46585AB2043 /* AccountFollowingService.swift */,
-				C051094FC434FE7975558048 /* AccountStatusesService.swift */,
-				C0510493656584A06A334EF1 /* AccountFollowService.swift */,
-				C05109552F8A64890D8C2355 /* AccountUnfollowService.swift */,
-			);
-			path = Accounts;
-			sourceTree = "<group>";
-		};
-		C0510C952E91942C7848B3C9 /* Entity */ = {
-			isa = PBXGroup;
-			children = (
-				C0510B976CCCC6263FFFC187 /* AccountEntity.swift */,
-				C0510640DFA2BA0DB32501E0 /* ApplicationEntity.swift */,
-				C051053C506A7BE31F61E8E8 /* AttachmentEntity.swift */,
-				C05109AABF769C638A219CE5 /* CardEntity.swift */,
-				C0510C066E620C529A0EE48C /* StatusEntity.swift */,
-				C0510B3E19313621F69EE6F8 /* ContextEntity.swift */,
-				C051070132C021083E614997 /* EmojiEntity.swift */,
-				C05103070BF5A6E812B015F3 /* ErrorEntity.swift */,
-				C0510383514BEEDFCD2C4DA3 /* InstanceEntity.swift */,
-				C0510D3CD067A7EB94BB4E57 /* ListEntity.swift */,
-				C051042043F872A0C0540E14 /* MentionEntity.swift */,
-				C0510E07791688F5FC5542A8 /* NotificationEntity.swift */,
-				C0510F25DF98F0D364250CBB /* RelationshipEntity.swift */,
-				C051019870D034469F3AD2F8 /* ReportEntity.swift */,
-				C051093806951CCD0FA7A62A /* ResultsEntity.swift */,
-				C05108603EF7A8E434FAC086 /* TagEntity.swift */,
-			);
-			path = Entity;
 			sourceTree = "<group>";
 		};
 		F5D4882054617EFA13D4FE35 /* Pods */ = {
@@ -910,6 +910,7 @@
 					};
 					1A95E77920B8295B003049C6 = {
 						CreatedOnToolsVersion = 9.4;
+						LastSwiftMigration = 0940;
 						ProvisioningStyle = Automatic;
 					};
 					1A95E78120B8295B003049C6 = {
@@ -1382,6 +1383,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1AF3E32020B84C9D00907123 /* ApplicationEntity.swift in Sources */,
+				1AF3E36520B84E0200907123 /* AccountUpdateCredentialsService.swift in Sources */,
+				1AF3E36920B84E0200907123 /* AccountFollowingService.swift in Sources */,
+				1AF3E35F20B84E0200907123 /* AccountStatusesService.swift in Sources */,
+				1AF3E31C20B84C9D00907123 /* TagEntity.swift in Sources */,
+				1AF3E32220B84C9D00907123 /* ContextEntity.swift in Sources */,
+				1AF3E36720B84E0200907123 /* AccountUnfollowService.swift in Sources */,
+				1AF3E32A20B84C9D00907123 /* InstanceEntity.swift in Sources */,
+				1AF3E31A20B84C9D00907123 /* AccountEntity.swift in Sources */,
+				1AF3E33020B84C9D00907123 /* RelationshipEntity.swift in Sources */,
+				1AF3E33620B84C9D00907123 /* ReportEntity.swift in Sources */,
+				1AF3E36120B84E0200907123 /* AccountVerifyCredentialsService.swift in Sources */,
+				1AF3E32620B84C9D00907123 /* ListEntity.swift in Sources */,
+				1AF3E36320B84E0200907123 /* AccountFollowService.swift in Sources */,
+				1AF3E32E20B84C9D00907123 /* StatusEntity.swift in Sources */,
+				1AF3E35D20B84E0200907123 /* AccountService.swift in Sources */,
+				1AF3E32420B84C9D00907123 /* MentionEntity.swift in Sources */,
+				1AF3E32C20B84C9D00907123 /* NotificationEntity.swift in Sources */,
+				1AF3E31E20B84C9D00907123 /* CardEntity.swift in Sources */,
+				1AF3E36B20B84E0200907123 /* AccountFollowersService.swift in Sources */,
+				1AF3E33220B84C9D00907123 /* ResultsEntity.swift in Sources */,
+				1AF3E31820B84C9D00907123 /* AttachmentEntity.swift in Sources */,
+				1AF3E33420B84C9D00907123 /* EmojiEntity.swift in Sources */,
+				1AF3E32820B84C9D00907123 /* ErrorEntity.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1389,7 +1414,31 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1AF3E36020B84E0200907123 /* AccountStatusesService.swift in Sources */,
+				1AF3E36C20B84E0200907123 /* AccountFollowersService.swift in Sources */,
+				1AF3E36220B84E0200907123 /* AccountVerifyCredentialsService.swift in Sources */,
+				1AF3E33120B84C9D00907123 /* RelationshipEntity.swift in Sources */,
+				1AF3E36620B84E0200907123 /* AccountUpdateCredentialsService.swift in Sources */,
+				1AF3E32720B84C9D00907123 /* ListEntity.swift in Sources */,
 				1A95E78820B8295B003049C6 /* ClientStack_MacTests.swift in Sources */,
+				1AF3E36420B84E0200907123 /* AccountFollowService.swift in Sources */,
+				1AF3E32320B84C9D00907123 /* ContextEntity.swift in Sources */,
+				1AF3E32F20B84C9D00907123 /* StatusEntity.swift in Sources */,
+				1AF3E31920B84C9D00907123 /* AttachmentEntity.swift in Sources */,
+				1AF3E31B20B84C9D00907123 /* AccountEntity.swift in Sources */,
+				1AF3E32120B84C9D00907123 /* ApplicationEntity.swift in Sources */,
+				1AF3E33320B84C9D00907123 /* ResultsEntity.swift in Sources */,
+				1AF3E35E20B84E0200907123 /* AccountService.swift in Sources */,
+				1AF3E32520B84C9D00907123 /* MentionEntity.swift in Sources */,
+				1AF3E36A20B84E0200907123 /* AccountFollowingService.swift in Sources */,
+				1AF3E36820B84E0200907123 /* AccountUnfollowService.swift in Sources */,
+				1AF3E33720B84C9D00907123 /* ReportEntity.swift in Sources */,
+				1AF3E31D20B84C9D00907123 /* TagEntity.swift in Sources */,
+				1AF3E31F20B84C9D00907123 /* CardEntity.swift in Sources */,
+				1AF3E32920B84C9D00907123 /* ErrorEntity.swift in Sources */,
+				1AF3E33520B84C9D00907123 /* EmojiEntity.swift in Sources */,
+				1AF3E32B20B84C9D00907123 /* InstanceEntity.swift in Sources */,
+				1AF3E32D20B84C9D00907123 /* NotificationEntity.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1434,30 +1483,6 @@
 				C051063C8F94487D951F3992 /* LoadPosition.swift in Sources */,
 				C051072FF9FAE361D97372C6 /* TLParams.swift in Sources */,
 				C0510AB9760FB8BA76DD3A23 /* AppNotificationObserving.swift in Sources */,
-				C05109F51D821C8DA7092C38 /* AccountService.swift in Sources */,
-				C0510AB23B64D8C844A416BD /* AccountVerifyCredentialsService.swift in Sources */,
-				C051066ED164A42AB6654868 /* AccountUpdateCredentialsService.swift in Sources */,
-				C0510E8C11EF8C42F4C81976 /* AccountFollowersService.swift in Sources */,
-				C0510E9F91C1174D4BBC36B9 /* AccountFollowingService.swift in Sources */,
-				C0510933BCCBBE5DF7353F7B /* AccountEntity.swift in Sources */,
-				C05106D21767405D8278F098 /* ApplicationEntity.swift in Sources */,
-				C0510E59B55589701E698E3D /* AttachmentEntity.swift in Sources */,
-				C0510243533088973581EB8A /* CardEntity.swift in Sources */,
-				C0510E3F2F4572569C06CECE /* StatusEntity.swift in Sources */,
-				C051047539A4205F8A2057F2 /* ContextEntity.swift in Sources */,
-				C0510381AB5F379C67B3C346 /* EmojiEntity.swift in Sources */,
-				C05103FA06FEB5826160D6F9 /* ErrorEntity.swift in Sources */,
-				C0510CE0FB112AA065F154E6 /* InstanceEntity.swift in Sources */,
-				C051078C8657AEAC6A0CF71F /* ListEntity.swift in Sources */,
-				C05103AE36E61D30D2F9A67B /* MentionEntity.swift in Sources */,
-				C0510B4A177CC7EE5AD4899C /* NotificationEntity.swift in Sources */,
-				C05102DD74C1ECEED8E7A5F0 /* RelationshipEntity.swift in Sources */,
-				C0510736A212DEF854ACA281 /* ReportEntity.swift in Sources */,
-				C05106237B93C5EDFAE1EE75 /* ResultsEntity.swift in Sources */,
-				C05100B643DB6D893B4C439D /* TagEntity.swift in Sources */,
-				C0510593305FD51918636E38 /* AccountStatusesService.swift in Sources */,
-				C0510BAB7EC024BEB67A48AC /* AccountFollowService.swift in Sources */,
-				C05104CACFE414703802282A /* AccountUnfollowService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1471,30 +1496,6 @@
 				C0510BAD1599A65D9A486F1B /* LoadPosition.swift in Sources */,
 				C0510559AFC5A879C211EC84 /* TLParams.swift in Sources */,
 				C051090AA4B00DD5B7F7454E /* AppNotificationObserving.swift in Sources */,
-				C0510E28CF65BB7B57799BFD /* AccountService.swift in Sources */,
-				C05109E05F897F9D201ECCC4 /* AccountVerifyCredentialsService.swift in Sources */,
-				C051055256C0780A5C82EB2C /* AccountUpdateCredentialsService.swift in Sources */,
-				C0510951A2720078A005D465 /* AccountFollowersService.swift in Sources */,
-				C051072D45D450DCFA2660BD /* AccountFollowingService.swift in Sources */,
-				C0510D133FB0EBDE2CEABAF7 /* AccountEntity.swift in Sources */,
-				C05102888197321098453456 /* ApplicationEntity.swift in Sources */,
-				C05100437A968D463D85F64F /* AttachmentEntity.swift in Sources */,
-				C05102F8EE2719EDF1A1FE6C /* CardEntity.swift in Sources */,
-				C05104E6F70BCE319854D1D6 /* StatusEntity.swift in Sources */,
-				C0510F76C13CF0A1443ED711 /* ContextEntity.swift in Sources */,
-				C0510445F8777001DD6D98F0 /* EmojiEntity.swift in Sources */,
-				C0510AB6AB05F5EFB5AA8C02 /* ErrorEntity.swift in Sources */,
-				C05108A5D5258D16D4CA4D6E /* InstanceEntity.swift in Sources */,
-				C0510D6189877E841E7C9272 /* ListEntity.swift in Sources */,
-				C0510B634ACE56BB71276C23 /* MentionEntity.swift in Sources */,
-				C0510641C30FD4E91C21F6AB /* NotificationEntity.swift in Sources */,
-				C05108220F60422D85117716 /* RelationshipEntity.swift in Sources */,
-				C0510398E7A1C9FC0648B8DA /* ReportEntity.swift in Sources */,
-				C05101F0DB646DCD709EB26F /* ResultsEntity.swift in Sources */,
-				C05104605270A2FD0D668298 /* TagEntity.swift in Sources */,
-				C0510D03EC60E7140F65D5DD /* AccountStatusesService.swift in Sources */,
-				C0510D3E6858CAED9AAE850D /* AccountFollowService.swift in Sources */,
-				C051074B1A38D357FF79D357 /* AccountUnfollowService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1585,6 +1586,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3989EC96912FCD97CFCC1CF4 /* Pods-ClientStackDemo.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_ENTITLEMENTS = ClientStackDemo/ClientStackDemo.entitlements;
@@ -1606,6 +1608,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 438E2AC01A909616C930C4FB /* Pods-ClientStackDemo.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_ENTITLEMENTS = ClientStackDemo/ClientStackDemo.entitlements;
@@ -1669,6 +1672,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D4D2AD351327CD293805901D /* Pods-ClientStack_Mac.debug.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
@@ -1688,6 +1692,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -1698,6 +1703,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F54C0086CA9F371544F2CE27 /* Pods-ClientStack_Mac.release.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
@@ -1727,6 +1733,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F92F1064BF77DB2E9B80F5F3 /* Pods-ClientStack_MacTests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
@@ -1746,6 +1753,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 941B4193C937B752AA1EDC33 /* Pods-ClientStack_MacTests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
