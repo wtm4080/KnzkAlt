@@ -9,7 +9,7 @@ struct StatusEntity: Codable {
     let id: String
     let uri: URL
     let url: URL
-    let account: AccountCompoundEntity
+    let account: AccountEntityCompound
     let inReplyToID: String?
     let inReplyToAccountID: String?
     let content: String

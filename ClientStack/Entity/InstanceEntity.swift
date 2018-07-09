@@ -13,5 +13,5 @@ struct InstanceEntity: Codable {
     let version: String
     let urls: [URL] // streaming API
     let languages: [String]
-    let contactAccount: AccountCompoundEntity
+    let contactAccount: AccountEntityCompound
 }

@@ -9,7 +9,7 @@ struct NotificationEntity: Codable {
     let id: String
     let type: NotificationEntityType
     let createdAt: Date
-    let account: AccountCompoundEntity
+    let account: AccountEntityCompound
     let status: StatusCompoundEntity?
 }
 
