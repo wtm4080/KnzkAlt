@@ -5,7 +5,7 @@
 
 import Foundation
 
-struct ResultsEntity {
+struct ResultsEntity: Codable {
     let accounts: [AccountCompoundEntity]
     let statuses: [StatusCompoundEntity]
     let hashtags: [String]

@@ -5,7 +5,7 @@
 
 import Foundation
 
-struct ApplicationEntity {
-    let name: String
-    let website: URL?
+struct ContextEntity: Codable {
+    let ancestors: [StatusEntity]
+    let descenders: [StatusEntity]
 }

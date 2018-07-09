@@ -5,7 +5,7 @@
 
 import Foundation
 
-struct NotificationEntity {
+struct NotificationEntity: Codable {
     let id: String
     let type: NotificationEntityType
     let createdAt: Date
@@ -13,7 +13,15 @@ struct NotificationEntity {
     let status: StatusCompoundEntity?
 }
 
-enum NotificationEntityType {
+enum NotificationEntityType: Codable {
+    init(from decoder: Decoder) throws {
+        fatalError("Not implemented yet.")
+    }
+    
+    func encode(to encoder: Encoder) throws {
+        fatalError("Not implemented yet.")
+    }
+    
     case mention
     case reblog
     case favorite

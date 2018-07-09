@@ -5,7 +5,7 @@
 
 import Foundation
 
-struct ReportEntity {
+struct ListEntity: Codable {
     let id: String
-    let actionTaken: Bool
+    let title: String
 }

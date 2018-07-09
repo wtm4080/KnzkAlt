@@ -5,7 +5,8 @@
 
 import Foundation
 
-struct ContextEntity {
-    let ancestors: [StatusEntity]
-    let descenders: [StatusEntity]
+struct EmojiEntity: Codable {
+    let shortcode: String
+    let staticURL: URL
+    let url: URL
 }

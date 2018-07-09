@@ -5,7 +5,7 @@
 
 import Foundation
 
-struct CardEntity {
+struct CardEntity: Codable {
     let url: URL
     let title: String
     let description: String
@@ -14,14 +14,14 @@ struct CardEntity {
     let oEmbedData: CardEntityOEmbedData?
 }
 
-enum CardEntityType {
+enum CardEntityType: String, Codable{
     case link
     case photo
     case video
     case rich
 }
 
-struct CardEntityOEmbedData {
+struct CardEntityOEmbedData: Codable {
     let authorName: String
     let authorURL: URL
     let providerName: String

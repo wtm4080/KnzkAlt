@@ -5,7 +5,7 @@
 
 import Foundation
 
-struct StatusEntity {
+struct StatusEntity: Codable {
     let id: String
     let uri: URL
     let url: URL
@@ -31,12 +31,12 @@ struct StatusEntity {
     let pinned: Bool?
 }
 
-struct StatusCompoundEntity {
+struct StatusCompoundEntity: Codable {
     let status: StatusEntity
     let reblog: StatusEntity?
 }
 
-enum StatusEntityVisibility {
+enum StatusEntityVisibility: String, Codable {
     case `public`
     case unlisted
     case `private`

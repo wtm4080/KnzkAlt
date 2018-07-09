@@ -5,7 +5,7 @@
 
 import Foundation
 
-struct TagEntity {
-    let name: String
-    let url: URL
+struct ReportEntity: Codable {
+    let id: String
+    let actionTaken: Bool
 }

@@ -5,8 +5,7 @@
 
 import Foundation
 
-struct EmojiEntity {
-    let shortcode: String
-    let staticURL: URL
-    let url: URL
+struct ApplicationEntity: Codable {
+    let name: String
+    let website: URL?
 }

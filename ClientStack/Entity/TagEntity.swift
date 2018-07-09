@@ -5,7 +5,7 @@
 
 import Foundation
 
-struct ListEntity {
-    let id: String
-    let title: String
+struct TagEntity: Codable {
+    let name: String
+    let url: URL
 }

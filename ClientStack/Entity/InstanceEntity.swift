@@ -5,7 +5,7 @@
 
 import Foundation
 
-struct InstanceEntity {
+struct InstanceEntity: Codable {
     let uri: URL
     let title: String
     let description: String

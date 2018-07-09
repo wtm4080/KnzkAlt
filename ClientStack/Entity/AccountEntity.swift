@@ -5,7 +5,7 @@
 
 import Foundation
 
-struct AccountEntity {
+struct AccountEntity: Codable {
     let id: String
     let username: String
     let acct: String
@@ -27,7 +27,7 @@ struct AccountEntity {
     }
 }
 
-struct AccountCompoundEntity {
+struct AccountCompoundEntity: Codable {
     let original: AccountEntity
     let moved: AccountEntity?
 
@@ -35,7 +35,7 @@ struct AccountCompoundEntity {
     let source: AccountSource?
 }
 
-struct AccountSource {
+struct AccountSource: Codable {
     let privacy: StatusEntityVisibility
     let sensitive: Bool
     let note: String

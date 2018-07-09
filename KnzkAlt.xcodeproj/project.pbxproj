@@ -12,12 +12,31 @@
 		1A2D64A120B82A160022EC3F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A2D64A020B82A160022EC3F /* Assets.xcassets */; };
 		1A2D64A420B82A160022EC3F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A2D64A220B82A160022EC3F /* Main.storyboard */; };
 		1A2D64B020B82A160022EC3F /* ClientStackDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2D64AF20B82A160022EC3F /* ClientStackDemoTests.swift */; };
-		1A2D64C620B82A680022EC3F /* ClientStack_Mac.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A95E77A20B8295B003049C6 /* ClientStack_Mac.framework */; };
-		1A2D64C720B82A680022EC3F /* ClientStack_Mac.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1A95E77A20B8295B003049C6 /* ClientStack_Mac.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1A5696ED1FB4A84C00BC82DC /* MastodonKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A5696EB1FB4A82A00BC82DC /* MastodonKit.framework */; };
-		1A95E78320B8295B003049C6 /* ClientStack_Mac.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A95E77A20B8295B003049C6 /* ClientStack_Mac.framework */; };
-		1A95E78820B8295B003049C6 /* ClientStack_MacTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A95E78720B8295B003049C6 /* ClientStack_MacTests.swift */; };
-		1A95E78A20B8295B003049C6 /* ClientStack_Mac.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A95E77C20B8295B003049C6 /* ClientStack_Mac.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1AA1A95920F35DB8002AC5B2 /* NotificationEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA1A94920F35DB7002AC5B2 /* NotificationEntity.swift */; };
+		1AA1A95A20F35DB8002AC5B2 /* ReportEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA1A94A20F35DB7002AC5B2 /* ReportEntity.swift */; };
+		1AA1A95B20F35DB8002AC5B2 /* RelationshipEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA1A94B20F35DB7002AC5B2 /* RelationshipEntity.swift */; };
+		1AA1A95C20F35DB8002AC5B2 /* ListEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA1A94C20F35DB7002AC5B2 /* ListEntity.swift */; };
+		1AA1A95D20F35DB8002AC5B2 /* ErrorEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA1A94D20F35DB7002AC5B2 /* ErrorEntity.swift */; };
+		1AA1A95E20F35DB8002AC5B2 /* EmojiEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA1A94E20F35DB7002AC5B2 /* EmojiEntity.swift */; };
+		1AA1A95F20F35DB8002AC5B2 /* CardEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA1A94F20F35DB7002AC5B2 /* CardEntity.swift */; };
+		1AA1A96020F35DB8002AC5B2 /* StatusEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA1A95020F35DB7002AC5B2 /* StatusEntity.swift */; };
+		1AA1A96120F35DB8002AC5B2 /* TagEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA1A95120F35DB7002AC5B2 /* TagEntity.swift */; };
+		1AA1A96220F35DB8002AC5B2 /* AccountEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA1A95220F35DB7002AC5B2 /* AccountEntity.swift */; };
+		1AA1A96320F35DB8002AC5B2 /* InstanceEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA1A95320F35DB7002AC5B2 /* InstanceEntity.swift */; };
+		1AA1A96420F35DB8002AC5B2 /* ContextEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA1A95420F35DB7002AC5B2 /* ContextEntity.swift */; };
+		1AA1A96520F35DB8002AC5B2 /* MentionEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA1A95520F35DB7002AC5B2 /* MentionEntity.swift */; };
+		1AA1A96620F35DB8002AC5B2 /* ResultsEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA1A95620F35DB7002AC5B2 /* ResultsEntity.swift */; };
+		1AA1A96720F35DB8002AC5B2 /* AttachmentEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA1A95720F35DB8002AC5B2 /* AttachmentEntity.swift */; };
+		1AA1A96820F35DB8002AC5B2 /* ApplicationEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA1A95820F35DB8002AC5B2 /* ApplicationEntity.swift */; };
+		1AA1A97420F35E1A002AC5B2 /* AccountStatusesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA1A96C20F35E19002AC5B2 /* AccountStatusesService.swift */; };
+		1AA1A97520F35E1A002AC5B2 /* AccountUnfollowService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA1A96D20F35E19002AC5B2 /* AccountUnfollowService.swift */; };
+		1AA1A97620F35E1A002AC5B2 /* AccountFollowersService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA1A96E20F35E19002AC5B2 /* AccountFollowersService.swift */; };
+		1AA1A97720F35E1A002AC5B2 /* AccountFollowingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA1A96F20F35E19002AC5B2 /* AccountFollowingService.swift */; };
+		1AA1A97820F35E1A002AC5B2 /* AccountVerifyCredentialsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA1A97020F35E19002AC5B2 /* AccountVerifyCredentialsService.swift */; };
+		1AA1A97920F35E1A002AC5B2 /* AccountService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA1A97120F35E19002AC5B2 /* AccountService.swift */; };
+		1AA1A97A20F35E1A002AC5B2 /* AccountUpdateCredentialsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA1A97220F35E19002AC5B2 /* AccountUpdateCredentialsService.swift */; };
+		1AA1A97B20F35E1A002AC5B2 /* AccountFollowService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA1A97320F35E19002AC5B2 /* AccountFollowService.swift */; };
 		1AA89DB320198210008EC484 /* AccountDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA89DA720198210008EC484 /* AccountDetailVC.swift */; };
 		1AA89DB420198210008EC484 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA89DA820198210008EC484 /* LoginVC.swift */; };
 		1AA89DB520198210008EC484 /* StatusDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA89DA920198210008EC484 /* StatusDetailVC.swift */; };
@@ -63,58 +82,9 @@
 		1AD9FD2A20B719BF00F87213 /* ClientStack.h in Headers */ = {isa = PBXBuildFile; fileRef = 1AD9FD1A20B719BE00F87213 /* ClientStack.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1AD9FD2D20B719BF00F87213 /* ClientStack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AD9FD1820B719BE00F87213 /* ClientStack.framework */; };
 		1AD9FD2E20B719BF00F87213 /* ClientStack.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1AD9FD1820B719BE00F87213 /* ClientStack.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		1AF3E35D20B84E0200907123 /* AccountService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3E35520B84E0200907123 /* AccountService.swift */; };
-		1AF3E35E20B84E0200907123 /* AccountService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3E35520B84E0200907123 /* AccountService.swift */; };
-		1AF3E35F20B84E0200907123 /* AccountStatusesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3E35620B84E0200907123 /* AccountStatusesService.swift */; };
-		1AF3E36020B84E0200907123 /* AccountStatusesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3E35620B84E0200907123 /* AccountStatusesService.swift */; };
-		1AF3E36120B84E0200907123 /* AccountVerifyCredentialsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3E35720B84E0200907123 /* AccountVerifyCredentialsService.swift */; };
-		1AF3E36220B84E0200907123 /* AccountVerifyCredentialsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3E35720B84E0200907123 /* AccountVerifyCredentialsService.swift */; };
-		1AF3E36320B84E0200907123 /* AccountFollowService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3E35820B84E0200907123 /* AccountFollowService.swift */; };
-		1AF3E36420B84E0200907123 /* AccountFollowService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3E35820B84E0200907123 /* AccountFollowService.swift */; };
-		1AF3E36520B84E0200907123 /* AccountUpdateCredentialsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3E35920B84E0200907123 /* AccountUpdateCredentialsService.swift */; };
-		1AF3E36620B84E0200907123 /* AccountUpdateCredentialsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3E35920B84E0200907123 /* AccountUpdateCredentialsService.swift */; };
-		1AF3E36720B84E0200907123 /* AccountUnfollowService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3E35A20B84E0200907123 /* AccountUnfollowService.swift */; };
-		1AF3E36820B84E0200907123 /* AccountUnfollowService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3E35A20B84E0200907123 /* AccountUnfollowService.swift */; };
-		1AF3E36920B84E0200907123 /* AccountFollowingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3E35B20B84E0200907123 /* AccountFollowingService.swift */; };
-		1AF3E36A20B84E0200907123 /* AccountFollowingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3E35B20B84E0200907123 /* AccountFollowingService.swift */; };
-		1AF3E36B20B84E0200907123 /* AccountFollowersService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3E35C20B84E0200907123 /* AccountFollowersService.swift */; };
-		1AF3E36C20B84E0200907123 /* AccountFollowersService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3E35C20B84E0200907123 /* AccountFollowersService.swift */; };
-		1AF3E37D20B84EE600907123 /* AttachmentEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3E36D20B84EE500907123 /* AttachmentEntity.swift */; };
-		1AF3E37E20B84EE600907123 /* AttachmentEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3E36D20B84EE500907123 /* AttachmentEntity.swift */; };
-		1AF3E37F20B84EE600907123 /* AccountEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3E36E20B84EE500907123 /* AccountEntity.swift */; };
-		1AF3E38020B84EE600907123 /* AccountEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3E36E20B84EE500907123 /* AccountEntity.swift */; };
-		1AF3E38120B84EE600907123 /* TagEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3E36F20B84EE500907123 /* TagEntity.swift */; };
-		1AF3E38220B84EE600907123 /* TagEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3E36F20B84EE500907123 /* TagEntity.swift */; };
-		1AF3E38320B84EE600907123 /* CardEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3E37020B84EE500907123 /* CardEntity.swift */; };
-		1AF3E38420B84EE600907123 /* CardEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3E37020B84EE500907123 /* CardEntity.swift */; };
-		1AF3E38520B84EE600907123 /* ApplicationEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3E37120B84EE500907123 /* ApplicationEntity.swift */; };
-		1AF3E38620B84EE600907123 /* ApplicationEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3E37120B84EE500907123 /* ApplicationEntity.swift */; };
-		1AF3E38720B84EE600907123 /* ContextEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3E37220B84EE500907123 /* ContextEntity.swift */; };
-		1AF3E38820B84EE600907123 /* ContextEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3E37220B84EE500907123 /* ContextEntity.swift */; };
-		1AF3E38920B84EE600907123 /* MentionEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3E37320B84EE500907123 /* MentionEntity.swift */; };
-		1AF3E38A20B84EE600907123 /* MentionEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3E37320B84EE500907123 /* MentionEntity.swift */; };
-		1AF3E38B20B84EE600907123 /* ListEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3E37420B84EE500907123 /* ListEntity.swift */; };
-		1AF3E38C20B84EE600907123 /* ListEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3E37420B84EE500907123 /* ListEntity.swift */; };
-		1AF3E38D20B84EE600907123 /* ErrorEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3E37520B84EE500907123 /* ErrorEntity.swift */; };
-		1AF3E38E20B84EE600907123 /* ErrorEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3E37520B84EE500907123 /* ErrorEntity.swift */; };
-		1AF3E38F20B84EE600907123 /* InstanceEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3E37620B84EE500907123 /* InstanceEntity.swift */; };
-		1AF3E39020B84EE600907123 /* InstanceEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3E37620B84EE500907123 /* InstanceEntity.swift */; };
-		1AF3E39120B84EE600907123 /* NotificationEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3E37720B84EE500907123 /* NotificationEntity.swift */; };
-		1AF3E39220B84EE600907123 /* NotificationEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3E37720B84EE500907123 /* NotificationEntity.swift */; };
-		1AF3E39320B84EE600907123 /* StatusEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3E37820B84EE500907123 /* StatusEntity.swift */; };
-		1AF3E39420B84EE600907123 /* StatusEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3E37820B84EE500907123 /* StatusEntity.swift */; };
-		1AF3E39520B84EE600907123 /* RelationshipEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3E37920B84EE500907123 /* RelationshipEntity.swift */; };
-		1AF3E39620B84EE600907123 /* RelationshipEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3E37920B84EE500907123 /* RelationshipEntity.swift */; };
-		1AF3E39720B84EE600907123 /* ResultsEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3E37A20B84EE500907123 /* ResultsEntity.swift */; };
-		1AF3E39820B84EE600907123 /* ResultsEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3E37A20B84EE500907123 /* ResultsEntity.swift */; };
-		1AF3E39920B84EE600907123 /* EmojiEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3E37B20B84EE600907123 /* EmojiEntity.swift */; };
-		1AF3E39A20B84EE600907123 /* EmojiEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3E37B20B84EE600907123 /* EmojiEntity.swift */; };
-		1AF3E39B20B84EE600907123 /* ReportEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3E37C20B84EE600907123 /* ReportEntity.swift */; };
-		1AF3E39C20B84EE600907123 /* ReportEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF3E37C20B84EE600907123 /* ReportEntity.swift */; };
 		38FE96E2A1B539CED169F23F /* Pods_KnzkAlt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84C1FDE5DB4231518E199FD0 /* Pods_KnzkAlt.framework */; };
 		4567996B4395CCE68AC818D9 /* Pods_ClientStackDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BF42E30169CA2116B4BCAB1 /* Pods_ClientStackDemo.framework */; };
 		7558EFB8ADCCF686ADED80B6 /* Pods_ClientStackDemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28264C095798523FBE0635C2 /* Pods_ClientStackDemoTests.framework */; };
-		BDDEF27E9805E16510C2F318 /* Pods_ClientStack_MacTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04707C2074D4A29DD67C15C1 /* Pods_ClientStack_MacTests.framework */; };
 		C051013C90808EA14D21585D /* TLKind.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05105506BF8250C08BE5640 /* TLKind.swift */; };
 		C0510254A99C77FABC3E33FA /* TLKind.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05105506BF8250C08BE5640 /* TLKind.swift */; };
 		C0510559AFC5A879C211EC84 /* TLParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510A6EDA359DE7A9CB6842 /* TLParams.swift */; };
@@ -126,7 +96,6 @@
 		C0510BAD1599A65D9A486F1B /* LoadPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = C051044B0362D353B18AA631 /* LoadPosition.swift */; };
 		C0510EB5724E95D8924D1103 /* AppNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510B64372D7F837A34D11B /* AppNotification.swift */; };
 		D7AB0DAB123C5B091B1BD680 /* Pods_ClientStackTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD72D3F5D8B03445ADA04547 /* Pods_ClientStackTests.framework */; };
-		E450DB488E5AD6389D77E670 /* Pods_ClientStack_Mac.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFF58623E735D3E9FD0AC6B4 /* Pods_ClientStack_Mac.framework */; };
 		FA4F0FF186534CCAADF713AC /* Pods_KnzkAltTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6ED6DD55E3BB3F15F0DEEF74 /* Pods_KnzkAltTests.framework */; };
 		FAC5F13A9E2671EB6666FC17 /* Pods_ClientStack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7837D726311FF8494C4150E5 /* Pods_ClientStack.framework */; };
 /* End PBXBuildFile section */
@@ -138,20 +107,6 @@
 			proxyType = 1;
 			remoteGlobalIDString = 1A2D649920B82A140022EC3F;
 			remoteInfo = ClientStackDemo;
-		};
-		1A2D64C820B82A680022EC3F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 1AB7975B1FA62DFF006D3265 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 1A95E77920B8295B003049C6;
-			remoteInfo = ClientStack_Mac;
-		};
-		1A95E78420B8295B003049C6 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 1AB7975B1FA62DFF006D3265 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 1A95E77920B8295B003049C6;
-			remoteInfo = ClientStack_Mac;
 		};
 		1AB7977A1FA62DFF006D3265 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -190,7 +145,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				1A2D64C720B82A680022EC3F /* ClientStack_Mac.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -222,12 +176,30 @@
 		1A2D64AF20B82A160022EC3F /* ClientStackDemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientStackDemoTests.swift; sourceTree = "<group>"; };
 		1A2D64B120B82A160022EC3F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1A5696EB1FB4A82A00BC82DC /* MastodonKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MastodonKit.framework; path = ../Test/Carthage/Build/iOS/MastodonKit.framework; sourceTree = "<group>"; };
-		1A95E77A20B8295B003049C6 /* ClientStack_Mac.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ClientStack_Mac.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		1A95E77C20B8295B003049C6 /* ClientStack_Mac.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ClientStack_Mac.h; sourceTree = "<group>"; };
-		1A95E77D20B8295B003049C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1A95E78220B8295B003049C6 /* ClientStack_MacTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ClientStack_MacTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		1A95E78720B8295B003049C6 /* ClientStack_MacTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientStack_MacTests.swift; sourceTree = "<group>"; };
-		1A95E78920B8295B003049C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1AA1A94920F35DB7002AC5B2 /* NotificationEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NotificationEntity.swift; path = Entity/NotificationEntity.swift; sourceTree = "<group>"; };
+		1AA1A94A20F35DB7002AC5B2 /* ReportEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReportEntity.swift; path = Entity/ReportEntity.swift; sourceTree = "<group>"; };
+		1AA1A94B20F35DB7002AC5B2 /* RelationshipEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RelationshipEntity.swift; path = Entity/RelationshipEntity.swift; sourceTree = "<group>"; };
+		1AA1A94C20F35DB7002AC5B2 /* ListEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ListEntity.swift; path = Entity/ListEntity.swift; sourceTree = "<group>"; };
+		1AA1A94D20F35DB7002AC5B2 /* ErrorEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ErrorEntity.swift; path = Entity/ErrorEntity.swift; sourceTree = "<group>"; };
+		1AA1A94E20F35DB7002AC5B2 /* EmojiEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EmojiEntity.swift; path = Entity/EmojiEntity.swift; sourceTree = "<group>"; };
+		1AA1A94F20F35DB7002AC5B2 /* CardEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CardEntity.swift; path = Entity/CardEntity.swift; sourceTree = "<group>"; };
+		1AA1A95020F35DB7002AC5B2 /* StatusEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StatusEntity.swift; path = Entity/StatusEntity.swift; sourceTree = "<group>"; };
+		1AA1A95120F35DB7002AC5B2 /* TagEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TagEntity.swift; path = Entity/TagEntity.swift; sourceTree = "<group>"; };
+		1AA1A95220F35DB7002AC5B2 /* AccountEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AccountEntity.swift; path = Entity/AccountEntity.swift; sourceTree = "<group>"; };
+		1AA1A95320F35DB7002AC5B2 /* InstanceEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InstanceEntity.swift; path = Entity/InstanceEntity.swift; sourceTree = "<group>"; };
+		1AA1A95420F35DB7002AC5B2 /* ContextEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContextEntity.swift; path = Entity/ContextEntity.swift; sourceTree = "<group>"; };
+		1AA1A95520F35DB7002AC5B2 /* MentionEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MentionEntity.swift; path = Entity/MentionEntity.swift; sourceTree = "<group>"; };
+		1AA1A95620F35DB7002AC5B2 /* ResultsEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ResultsEntity.swift; path = Entity/ResultsEntity.swift; sourceTree = "<group>"; };
+		1AA1A95720F35DB8002AC5B2 /* AttachmentEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AttachmentEntity.swift; path = Entity/AttachmentEntity.swift; sourceTree = "<group>"; };
+		1AA1A95820F35DB8002AC5B2 /* ApplicationEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ApplicationEntity.swift; path = Entity/ApplicationEntity.swift; sourceTree = "<group>"; };
+		1AA1A96C20F35E19002AC5B2 /* AccountStatusesService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AccountStatusesService.swift; path = ClientStack/Service/Accounts/AccountStatusesService.swift; sourceTree = SOURCE_ROOT; };
+		1AA1A96D20F35E19002AC5B2 /* AccountUnfollowService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AccountUnfollowService.swift; path = ClientStack/Service/Accounts/AccountUnfollowService.swift; sourceTree = SOURCE_ROOT; };
+		1AA1A96E20F35E19002AC5B2 /* AccountFollowersService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AccountFollowersService.swift; path = ClientStack/Service/Accounts/AccountFollowersService.swift; sourceTree = SOURCE_ROOT; };
+		1AA1A96F20F35E19002AC5B2 /* AccountFollowingService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AccountFollowingService.swift; path = ClientStack/Service/Accounts/AccountFollowingService.swift; sourceTree = SOURCE_ROOT; };
+		1AA1A97020F35E19002AC5B2 /* AccountVerifyCredentialsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AccountVerifyCredentialsService.swift; path = ClientStack/Service/Accounts/AccountVerifyCredentialsService.swift; sourceTree = SOURCE_ROOT; };
+		1AA1A97120F35E19002AC5B2 /* AccountService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AccountService.swift; path = ClientStack/Service/Accounts/AccountService.swift; sourceTree = SOURCE_ROOT; };
+		1AA1A97220F35E19002AC5B2 /* AccountUpdateCredentialsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AccountUpdateCredentialsService.swift; path = ClientStack/Service/Accounts/AccountUpdateCredentialsService.swift; sourceTree = SOURCE_ROOT; };
+		1AA1A97320F35E19002AC5B2 /* AccountFollowService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AccountFollowService.swift; path = ClientStack/Service/Accounts/AccountFollowService.swift; sourceTree = SOURCE_ROOT; };
 		1AA89DA720198210008EC484 /* AccountDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountDetailVC.swift; sourceTree = "<group>"; };
 		1AA89DA820198210008EC484 /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		1AA89DA920198210008EC484 /* StatusDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusDetailVC.swift; sourceTree = "<group>"; };
@@ -278,30 +250,6 @@
 		1AD9FD2020B719BF00F87213 /* ClientStackTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ClientStackTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AD9FD2720B719BF00F87213 /* ClientStackTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientStackTests.swift; sourceTree = "<group>"; };
 		1AD9FD2920B719BF00F87213 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1AF3E35520B84E0200907123 /* AccountService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AccountService.swift; path = ClientStackSrc/Service/Accounts/AccountService.swift; sourceTree = SOURCE_ROOT; };
-		1AF3E35620B84E0200907123 /* AccountStatusesService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AccountStatusesService.swift; path = ClientStackSrc/Service/Accounts/AccountStatusesService.swift; sourceTree = SOURCE_ROOT; };
-		1AF3E35720B84E0200907123 /* AccountVerifyCredentialsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AccountVerifyCredentialsService.swift; path = ClientStackSrc/Service/Accounts/AccountVerifyCredentialsService.swift; sourceTree = SOURCE_ROOT; };
-		1AF3E35820B84E0200907123 /* AccountFollowService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AccountFollowService.swift; path = ClientStackSrc/Service/Accounts/AccountFollowService.swift; sourceTree = SOURCE_ROOT; };
-		1AF3E35920B84E0200907123 /* AccountUpdateCredentialsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AccountUpdateCredentialsService.swift; path = ClientStackSrc/Service/Accounts/AccountUpdateCredentialsService.swift; sourceTree = SOURCE_ROOT; };
-		1AF3E35A20B84E0200907123 /* AccountUnfollowService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AccountUnfollowService.swift; path = ClientStackSrc/Service/Accounts/AccountUnfollowService.swift; sourceTree = SOURCE_ROOT; };
-		1AF3E35B20B84E0200907123 /* AccountFollowingService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AccountFollowingService.swift; path = ClientStackSrc/Service/Accounts/AccountFollowingService.swift; sourceTree = SOURCE_ROOT; };
-		1AF3E35C20B84E0200907123 /* AccountFollowersService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AccountFollowersService.swift; path = ClientStackSrc/Service/Accounts/AccountFollowersService.swift; sourceTree = SOURCE_ROOT; };
-		1AF3E36D20B84EE500907123 /* AttachmentEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AttachmentEntity.swift; path = ClientStackSrc/Entity/AttachmentEntity.swift; sourceTree = SOURCE_ROOT; };
-		1AF3E36E20B84EE500907123 /* AccountEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AccountEntity.swift; path = ClientStackSrc/Entity/AccountEntity.swift; sourceTree = SOURCE_ROOT; };
-		1AF3E36F20B84EE500907123 /* TagEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TagEntity.swift; path = ClientStackSrc/Entity/TagEntity.swift; sourceTree = SOURCE_ROOT; };
-		1AF3E37020B84EE500907123 /* CardEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CardEntity.swift; path = ClientStackSrc/Entity/CardEntity.swift; sourceTree = SOURCE_ROOT; };
-		1AF3E37120B84EE500907123 /* ApplicationEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ApplicationEntity.swift; path = ClientStackSrc/Entity/ApplicationEntity.swift; sourceTree = SOURCE_ROOT; };
-		1AF3E37220B84EE500907123 /* ContextEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ContextEntity.swift; path = ClientStackSrc/Entity/ContextEntity.swift; sourceTree = SOURCE_ROOT; };
-		1AF3E37320B84EE500907123 /* MentionEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MentionEntity.swift; path = ClientStackSrc/Entity/MentionEntity.swift; sourceTree = SOURCE_ROOT; };
-		1AF3E37420B84EE500907123 /* ListEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ListEntity.swift; path = ClientStackSrc/Entity/ListEntity.swift; sourceTree = SOURCE_ROOT; };
-		1AF3E37520B84EE500907123 /* ErrorEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ErrorEntity.swift; path = ClientStackSrc/Entity/ErrorEntity.swift; sourceTree = SOURCE_ROOT; };
-		1AF3E37620B84EE500907123 /* InstanceEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InstanceEntity.swift; path = ClientStackSrc/Entity/InstanceEntity.swift; sourceTree = SOURCE_ROOT; };
-		1AF3E37720B84EE500907123 /* NotificationEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NotificationEntity.swift; path = ClientStackSrc/Entity/NotificationEntity.swift; sourceTree = SOURCE_ROOT; };
-		1AF3E37820B84EE500907123 /* StatusEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StatusEntity.swift; path = ClientStackSrc/Entity/StatusEntity.swift; sourceTree = SOURCE_ROOT; };
-		1AF3E37920B84EE500907123 /* RelationshipEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RelationshipEntity.swift; path = ClientStackSrc/Entity/RelationshipEntity.swift; sourceTree = SOURCE_ROOT; };
-		1AF3E37A20B84EE500907123 /* ResultsEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ResultsEntity.swift; path = ClientStackSrc/Entity/ResultsEntity.swift; sourceTree = SOURCE_ROOT; };
-		1AF3E37B20B84EE600907123 /* EmojiEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EmojiEntity.swift; path = ClientStackSrc/Entity/EmojiEntity.swift; sourceTree = SOURCE_ROOT; };
-		1AF3E37C20B84EE600907123 /* ReportEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReportEntity.swift; path = ClientStackSrc/Entity/ReportEntity.swift; sourceTree = SOURCE_ROOT; };
 		28264C095798523FBE0635C2 /* Pods_ClientStackDemoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ClientStackDemoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		31F3FEB5CAF3A096FF00A9D2 /* Pods-ClientStackTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ClientStackTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ClientStackTests/Pods-ClientStackTests.debug.xcconfig"; sourceTree = "<group>"; };
 		3989EC96912FCD97CFCC1CF4 /* Pods-ClientStackDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ClientStackDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ClientStackDemo/Pods-ClientStackDemo.debug.xcconfig"; sourceTree = "<group>"; };
@@ -336,7 +284,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1A2D64C620B82A680022EC3F /* ClientStack_Mac.framework in Frameworks */,
 				4567996B4395CCE68AC818D9 /* Pods_ClientStackDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -346,23 +293,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				7558EFB8ADCCF686ADED80B6 /* Pods_ClientStackDemoTests.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		1A95E77620B8295B003049C6 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				E450DB488E5AD6389D77E670 /* Pods_ClientStack_Mac.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		1A95E77F20B8295B003049C6 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				1A95E78320B8295B003049C6 /* ClientStack_Mac.framework in Frameworks */,
-				BDDEF27E9805E16510C2F318 /* Pods_ClientStack_MacTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -426,24 +356,51 @@
 			path = ClientStackDemoTests;
 			sourceTree = "<group>";
 		};
-		1A95E77B20B8295B003049C6 /* ClientStack_Mac */ = {
+		1AA1A94820F35DA8002AC5B2 /* Entity */ = {
 			isa = PBXGroup;
 			children = (
-				1A95E77C20B8295B003049C6 /* ClientStack_Mac.h */,
-				1A95E77D20B8295B003049C6 /* Info.plist */,
-				1AF3E33820B84CDF00907123 /* Entity */,
-				1AF3E35320B84DE900907123 /* Service */,
+				1AA1A95220F35DB7002AC5B2 /* AccountEntity.swift */,
+				1AA1A95820F35DB8002AC5B2 /* ApplicationEntity.swift */,
+				1AA1A95720F35DB8002AC5B2 /* AttachmentEntity.swift */,
+				1AA1A94F20F35DB7002AC5B2 /* CardEntity.swift */,
+				1AA1A95420F35DB7002AC5B2 /* ContextEntity.swift */,
+				1AA1A94E20F35DB7002AC5B2 /* EmojiEntity.swift */,
+				1AA1A94D20F35DB7002AC5B2 /* ErrorEntity.swift */,
+				1AA1A95320F35DB7002AC5B2 /* InstanceEntity.swift */,
+				1AA1A94C20F35DB7002AC5B2 /* ListEntity.swift */,
+				1AA1A95520F35DB7002AC5B2 /* MentionEntity.swift */,
+				1AA1A94920F35DB7002AC5B2 /* NotificationEntity.swift */,
+				1AA1A94B20F35DB7002AC5B2 /* RelationshipEntity.swift */,
+				1AA1A94A20F35DB7002AC5B2 /* ReportEntity.swift */,
+				1AA1A95620F35DB7002AC5B2 /* ResultsEntity.swift */,
+				1AA1A95020F35DB7002AC5B2 /* StatusEntity.swift */,
+				1AA1A95120F35DB7002AC5B2 /* TagEntity.swift */,
 			);
-			path = ClientStack_Mac;
+			name = Entity;
 			sourceTree = "<group>";
 		};
-		1A95E78620B8295B003049C6 /* ClientStack_MacTests */ = {
+		1AA1A96A20F35DDF002AC5B2 /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				1A95E78720B8295B003049C6 /* ClientStack_MacTests.swift */,
-				1A95E78920B8295B003049C6 /* Info.plist */,
+				1AA1A96B20F35E06002AC5B2 /* Accounts */,
 			);
-			path = ClientStack_MacTests;
+			name = Service;
+			path = "New Group";
+			sourceTree = "<group>";
+		};
+		1AA1A96B20F35E06002AC5B2 /* Accounts */ = {
+			isa = PBXGroup;
+			children = (
+				1AA1A96E20F35E19002AC5B2 /* AccountFollowersService.swift */,
+				1AA1A96F20F35E19002AC5B2 /* AccountFollowingService.swift */,
+				1AA1A97320F35E19002AC5B2 /* AccountFollowService.swift */,
+				1AA1A97120F35E19002AC5B2 /* AccountService.swift */,
+				1AA1A96C20F35E19002AC5B2 /* AccountStatusesService.swift */,
+				1AA1A96D20F35E19002AC5B2 /* AccountUnfollowService.swift */,
+				1AA1A97220F35E19002AC5B2 /* AccountUpdateCredentialsService.swift */,
+				1AA1A97020F35E19002AC5B2 /* AccountVerifyCredentialsService.swift */,
+			);
+			name = Accounts;
 			sourceTree = "<group>";
 		};
 		1AA89DA6201981DB008EC484 /* ViewController */ = {
@@ -551,8 +508,6 @@
 				1AB7977C1FA62DFF006D3265 /* KnzkAltTests */,
 				1AD9FD1920B719BE00F87213 /* ClientStack */,
 				1AD9FD2620B719BF00F87213 /* ClientStackTests */,
-				1A95E77B20B8295B003049C6 /* ClientStack_Mac */,
-				1A95E78620B8295B003049C6 /* ClientStack_MacTests */,
 				1A2D649B20B82A150022EC3F /* ClientStackDemo */,
 				1A2D64AE20B82A160022EC3F /* ClientStackDemoTests */,
 				1AB797641FA62DFF006D3265 /* Products */,
@@ -568,8 +523,6 @@
 				1AB797791FA62DFF006D3265 /* KnzkAltTests.xctest */,
 				1AD9FD1820B719BE00F87213 /* ClientStack.framework */,
 				1AD9FD2020B719BF00F87213 /* ClientStackTests.xctest */,
-				1A95E77A20B8295B003049C6 /* ClientStack_Mac.framework */,
-				1A95E78220B8295B003049C6 /* ClientStack_MacTests.xctest */,
 				1A2D649A20B82A140022EC3F /* ClientStackDemo.app */,
 				1A2D64AB20B82A160022EC3F /* ClientStackDemoTests.xctest */,
 			);
@@ -608,6 +561,8 @@
 			children = (
 				1AD9FD1A20B719BE00F87213 /* ClientStack.h */,
 				1AD9FD1B20B719BE00F87213 /* Info.plist */,
+				1AA1A94820F35DA8002AC5B2 /* Entity */,
+				1AA1A96A20F35DDF002AC5B2 /* Service */,
 			);
 			path = ClientStack;
 			sourceTree = "<group>";
@@ -619,52 +574,6 @@
 				1AD9FD2920B719BF00F87213 /* Info.plist */,
 			);
 			path = ClientStackTests;
-			sourceTree = "<group>";
-		};
-		1AF3E33820B84CDF00907123 /* Entity */ = {
-			isa = PBXGroup;
-			children = (
-				1AF3E36E20B84EE500907123 /* AccountEntity.swift */,
-				1AF3E37120B84EE500907123 /* ApplicationEntity.swift */,
-				1AF3E36D20B84EE500907123 /* AttachmentEntity.swift */,
-				1AF3E37020B84EE500907123 /* CardEntity.swift */,
-				1AF3E37220B84EE500907123 /* ContextEntity.swift */,
-				1AF3E37B20B84EE600907123 /* EmojiEntity.swift */,
-				1AF3E37520B84EE500907123 /* ErrorEntity.swift */,
-				1AF3E37620B84EE500907123 /* InstanceEntity.swift */,
-				1AF3E37420B84EE500907123 /* ListEntity.swift */,
-				1AF3E37320B84EE500907123 /* MentionEntity.swift */,
-				1AF3E37720B84EE500907123 /* NotificationEntity.swift */,
-				1AF3E37920B84EE500907123 /* RelationshipEntity.swift */,
-				1AF3E37C20B84EE600907123 /* ReportEntity.swift */,
-				1AF3E37A20B84EE500907123 /* ResultsEntity.swift */,
-				1AF3E37820B84EE500907123 /* StatusEntity.swift */,
-				1AF3E36F20B84EE500907123 /* TagEntity.swift */,
-			);
-			name = Entity;
-			sourceTree = "<group>";
-		};
-		1AF3E35320B84DE900907123 /* Service */ = {
-			isa = PBXGroup;
-			children = (
-				1AF3E35420B84DEF00907123 /* Accounts */,
-			);
-			path = Service;
-			sourceTree = "<group>";
-		};
-		1AF3E35420B84DEF00907123 /* Accounts */ = {
-			isa = PBXGroup;
-			children = (
-				1AF3E35C20B84E0200907123 /* AccountFollowersService.swift */,
-				1AF3E35B20B84E0200907123 /* AccountFollowingService.swift */,
-				1AF3E35820B84E0200907123 /* AccountFollowService.swift */,
-				1AF3E35520B84E0200907123 /* AccountService.swift */,
-				1AF3E35620B84E0200907123 /* AccountStatusesService.swift */,
-				1AF3E35A20B84E0200907123 /* AccountUnfollowService.swift */,
-				1AF3E35920B84E0200907123 /* AccountUpdateCredentialsService.swift */,
-				1AF3E35720B84E0200907123 /* AccountVerifyCredentialsService.swift */,
-			);
-			name = Accounts;
 			sourceTree = "<group>";
 		};
 		2AAE723F0C521CE2B966660E /* Frameworks */ = {
@@ -709,14 +618,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		1A95E77720B8295B003049C6 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				1A95E78A20B8295B003049C6 /* ClientStack_Mac.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		1AD9FD1520B719BE00F87213 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -742,7 +643,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				1A2D64C920B82A680022EC3F /* PBXTargetDependency */,
 			);
 			name = ClientStackDemo;
 			productName = ClientStackDemo;
@@ -767,45 +667,6 @@
 			name = ClientStackDemoTests;
 			productName = ClientStackDemoTests;
 			productReference = 1A2D64AB20B82A160022EC3F /* ClientStackDemoTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		1A95E77920B8295B003049C6 /* ClientStack_Mac */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 1A95E78F20B8295B003049C6 /* Build configuration list for PBXNativeTarget "ClientStack_Mac" */;
-			buildPhases = (
-				6E77F48F8C4F053654C75980 /* [CP] Check Pods Manifest.lock */,
-				1A95E77520B8295B003049C6 /* Sources */,
-				1A95E77620B8295B003049C6 /* Frameworks */,
-				1A95E77720B8295B003049C6 /* Headers */,
-				1A95E77820B8295B003049C6 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = ClientStack_Mac;
-			productName = ClientStack_Mac;
-			productReference = 1A95E77A20B8295B003049C6 /* ClientStack_Mac.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		1A95E78120B8295B003049C6 /* ClientStack_MacTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 1A95E79020B8295B003049C6 /* Build configuration list for PBXNativeTarget "ClientStack_MacTests" */;
-			buildPhases = (
-				D781399C05862402DF8A3984 /* [CP] Check Pods Manifest.lock */,
-				1A95E77E20B8295B003049C6 /* Sources */,
-				1A95E77F20B8295B003049C6 /* Frameworks */,
-				1A95E78020B8295B003049C6 /* Resources */,
-				A5044C900BD213E4DCC8E56B /* [CP] Embed Pods Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				1A95E78520B8295B003049C6 /* PBXTargetDependency */,
-			);
-			name = ClientStack_MacTests;
-			productName = ClientStack_MacTests;
-			productReference = 1A95E78220B8295B003049C6 /* ClientStack_MacTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		1AB797621FA62DFF006D3265 /* KnzkAlt */ = {
@@ -908,15 +769,6 @@
 						ProvisioningStyle = Automatic;
 						TestTargetID = 1A2D649920B82A140022EC3F;
 					};
-					1A95E77920B8295B003049C6 = {
-						CreatedOnToolsVersion = 9.4;
-						LastSwiftMigration = 0940;
-						ProvisioningStyle = Automatic;
-					};
-					1A95E78120B8295B003049C6 = {
-						CreatedOnToolsVersion = 9.4;
-						ProvisioningStyle = Automatic;
-					};
 					1AB797621FA62DFF006D3265 = {
 						CreatedOnToolsVersion = 9.0.1;
 						ProvisioningStyle = Automatic;
@@ -928,6 +780,7 @@
 					};
 					1AD9FD1720B719BE00F87213 = {
 						CreatedOnToolsVersion = 9.4;
+						LastSwiftMigration = 0940;
 						ProvisioningStyle = Automatic;
 					};
 					1AD9FD1F20B719BF00F87213 = {
@@ -954,8 +807,6 @@
 				1AB797781FA62DFF006D3265 /* KnzkAltTests */,
 				1AD9FD1720B719BE00F87213 /* ClientStack */,
 				1AD9FD1F20B719BF00F87213 /* ClientStackTests */,
-				1A95E77920B8295B003049C6 /* ClientStack_Mac */,
-				1A95E78120B8295B003049C6 /* ClientStack_MacTests */,
 				1A2D649920B82A140022EC3F /* ClientStackDemo */,
 				1A2D64AA20B82A160022EC3F /* ClientStackDemoTests */,
 			);
@@ -973,20 +824,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		1A2D64A920B82A160022EC3F /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		1A95E77820B8295B003049C6 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		1A95E78020B8295B003049C6 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1141,24 +978,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		6E77F48F8C4F053654C75980 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-ClientStack_Mac-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
 		7216BD57D55AD988E0E034E2 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1249,40 +1068,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		A5044C900BD213E4DCC8E56B /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-ClientStack_MacTests/Pods-ClientStack_MacTests-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/RxSwift-macOS/RxSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/RxBlocking-macOS/RxBlocking.framework",
-				"${BUILT_PRODUCTS_DIR}/RxTest-macOS/RxTest.framework",
-				"${BUILT_PRODUCTS_DIR}/Alamofire-macOS/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/Moya-macOS/Moya.framework",
-				"${BUILT_PRODUCTS_DIR}/Realm-macOS/Realm.framework",
-				"${BUILT_PRODUCTS_DIR}/RealmSwift-macOS/RealmSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/Result-macOS/Result.framework",
-				"${BUILT_PRODUCTS_DIR}/RxCocoa-macOS/RxCocoa.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxBlocking.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxTest.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ClientStack_MacTests/Pods-ClientStack_MacTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		AA2269D6A835E90452C6E100 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1295,24 +1080,6 @@
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-ClientStackDemoTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		D781399C05862402DF8A3984 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-ClientStack_MacTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1379,69 +1146,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		1A95E77520B8295B003049C6 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				1AF3E37F20B84EE600907123 /* AccountEntity.swift in Sources */,
-				1AF3E39720B84EE600907123 /* ResultsEntity.swift in Sources */,
-				1AF3E36520B84E0200907123 /* AccountUpdateCredentialsService.swift in Sources */,
-				1AF3E38520B84EE600907123 /* ApplicationEntity.swift in Sources */,
-				1AF3E38F20B84EE600907123 /* InstanceEntity.swift in Sources */,
-				1AF3E36920B84E0200907123 /* AccountFollowingService.swift in Sources */,
-				1AF3E39B20B84EE600907123 /* ReportEntity.swift in Sources */,
-				1AF3E38B20B84EE600907123 /* ListEntity.swift in Sources */,
-				1AF3E35F20B84E0200907123 /* AccountStatusesService.swift in Sources */,
-				1AF3E38120B84EE600907123 /* TagEntity.swift in Sources */,
-				1AF3E38D20B84EE600907123 /* ErrorEntity.swift in Sources */,
-				1AF3E37D20B84EE600907123 /* AttachmentEntity.swift in Sources */,
-				1AF3E36720B84E0200907123 /* AccountUnfollowService.swift in Sources */,
-				1AF3E38720B84EE600907123 /* ContextEntity.swift in Sources */,
-				1AF3E36120B84E0200907123 /* AccountVerifyCredentialsService.swift in Sources */,
-				1AF3E36320B84E0200907123 /* AccountFollowService.swift in Sources */,
-				1AF3E39520B84EE600907123 /* RelationshipEntity.swift in Sources */,
-				1AF3E35D20B84E0200907123 /* AccountService.swift in Sources */,
-				1AF3E38320B84EE600907123 /* CardEntity.swift in Sources */,
-				1AF3E39920B84EE600907123 /* EmojiEntity.swift in Sources */,
-				1AF3E39120B84EE600907123 /* NotificationEntity.swift in Sources */,
-				1AF3E38920B84EE600907123 /* MentionEntity.swift in Sources */,
-				1AF3E39320B84EE600907123 /* StatusEntity.swift in Sources */,
-				1AF3E36B20B84E0200907123 /* AccountFollowersService.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		1A95E77E20B8295B003049C6 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				1AF3E36020B84E0200907123 /* AccountStatusesService.swift in Sources */,
-				1AF3E36C20B84E0200907123 /* AccountFollowersService.swift in Sources */,
-				1AF3E39020B84EE600907123 /* InstanceEntity.swift in Sources */,
-				1AF3E39220B84EE600907123 /* NotificationEntity.swift in Sources */,
-				1AF3E36220B84E0200907123 /* AccountVerifyCredentialsService.swift in Sources */,
-				1AF3E38620B84EE600907123 /* ApplicationEntity.swift in Sources */,
-				1AF3E39420B84EE600907123 /* StatusEntity.swift in Sources */,
-				1AF3E38220B84EE600907123 /* TagEntity.swift in Sources */,
-				1AF3E38A20B84EE600907123 /* MentionEntity.swift in Sources */,
-				1AF3E36620B84E0200907123 /* AccountUpdateCredentialsService.swift in Sources */,
-				1A95E78820B8295B003049C6 /* ClientStack_MacTests.swift in Sources */,
-				1AF3E38020B84EE600907123 /* AccountEntity.swift in Sources */,
-				1AF3E38820B84EE600907123 /* ContextEntity.swift in Sources */,
-				1AF3E39A20B84EE600907123 /* EmojiEntity.swift in Sources */,
-				1AF3E38C20B84EE600907123 /* ListEntity.swift in Sources */,
-				1AF3E36420B84E0200907123 /* AccountFollowService.swift in Sources */,
-				1AF3E38420B84EE600907123 /* CardEntity.swift in Sources */,
-				1AF3E35E20B84E0200907123 /* AccountService.swift in Sources */,
-				1AF3E39820B84EE600907123 /* ResultsEntity.swift in Sources */,
-				1AF3E36A20B84E0200907123 /* AccountFollowingService.swift in Sources */,
-				1AF3E36820B84E0200907123 /* AccountUnfollowService.swift in Sources */,
-				1AF3E37E20B84EE600907123 /* AttachmentEntity.swift in Sources */,
-				1AF3E39620B84EE600907123 /* RelationshipEntity.swift in Sources */,
-				1AF3E38E20B84EE600907123 /* ErrorEntity.swift in Sources */,
-				1AF3E39C20B84EE600907123 /* ReportEntity.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		1AB7975F1FA62DFF006D3265 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1503,6 +1207,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1AA1A96220F35DB8002AC5B2 /* AccountEntity.swift in Sources */,
+				1AA1A95C20F35DB8002AC5B2 /* ListEntity.swift in Sources */,
+				1AA1A97620F35E1A002AC5B2 /* AccountFollowersService.swift in Sources */,
+				1AA1A95F20F35DB8002AC5B2 /* CardEntity.swift in Sources */,
+				1AA1A97A20F35E1A002AC5B2 /* AccountUpdateCredentialsService.swift in Sources */,
+				1AA1A97520F35E1A002AC5B2 /* AccountUnfollowService.swift in Sources */,
+				1AA1A96820F35DB8002AC5B2 /* ApplicationEntity.swift in Sources */,
+				1AA1A95E20F35DB8002AC5B2 /* EmojiEntity.swift in Sources */,
+				1AA1A95A20F35DB8002AC5B2 /* ReportEntity.swift in Sources */,
+				1AA1A95920F35DB8002AC5B2 /* NotificationEntity.swift in Sources */,
+				1AA1A95B20F35DB8002AC5B2 /* RelationshipEntity.swift in Sources */,
+				1AA1A96120F35DB8002AC5B2 /* TagEntity.swift in Sources */,
+				1AA1A96420F35DB8002AC5B2 /* ContextEntity.swift in Sources */,
+				1AA1A96720F35DB8002AC5B2 /* AttachmentEntity.swift in Sources */,
+				1AA1A97B20F35E1A002AC5B2 /* AccountFollowService.swift in Sources */,
+				1AA1A96020F35DB8002AC5B2 /* StatusEntity.swift in Sources */,
+				1AA1A95D20F35DB8002AC5B2 /* ErrorEntity.swift in Sources */,
+				1AA1A97720F35E1A002AC5B2 /* AccountFollowingService.swift in Sources */,
+				1AA1A96620F35DB8002AC5B2 /* ResultsEntity.swift in Sources */,
+				1AA1A96320F35DB8002AC5B2 /* InstanceEntity.swift in Sources */,
+				1AA1A96520F35DB8002AC5B2 /* MentionEntity.swift in Sources */,
+				1AA1A97920F35E1A002AC5B2 /* AccountService.swift in Sources */,
+				1AA1A97820F35E1A002AC5B2 /* AccountVerifyCredentialsService.swift in Sources */,
+				1AA1A97420F35E1A002AC5B2 /* AccountStatusesService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1521,16 +1249,6 @@
 			isa = PBXTargetDependency;
 			target = 1A2D649920B82A140022EC3F /* ClientStackDemo */;
 			targetProxy = 1A2D64AC20B82A160022EC3F /* PBXContainerItemProxy */;
-		};
-		1A2D64C920B82A680022EC3F /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 1A95E77920B8295B003049C6 /* ClientStack_Mac */;
-			targetProxy = 1A2D64C820B82A680022EC3F /* PBXContainerItemProxy */;
-		};
-		1A95E78520B8295B003049C6 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 1A95E77920B8295B003049C6 /* ClientStack_Mac */;
-			targetProxy = 1A95E78420B8295B003049C6 /* PBXContainerItemProxy */;
 		};
 		1AB7977B1FA62DFF006D3265 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -1586,7 +1304,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3989EC96912FCD97CFCC1CF4 /* Pods-ClientStackDemo.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_ENTITLEMENTS = ClientStackDemo/ClientStackDemo.entitlements;
@@ -1608,7 +1325,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 438E2AC01A909616C930C4FB /* Pods-ClientStackDemo.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_ENTITLEMENTS = ClientStackDemo/ClientStackDemo.entitlements;
@@ -1665,107 +1381,6 @@
 				SDKROOT = macosx;
 				SWIFT_VERSION = 4.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ClientStackDemo.app/Contents/MacOS/ClientStackDemo";
-			};
-			name = Release;
-		};
-		1A95E78B20B8295B003049C6 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = D4D2AD351327CD293805901D /* Pods-ClientStack_Mac.debug.xcconfig */;
-			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				CODE_SIGN_IDENTITY = "";
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = UHH463TU7S;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_VERSION = A;
-				INFOPLIST_FILE = ClientStack_Mac/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.13;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.atcurio.ClientStack-Mac";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = macosx;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.0;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		1A95E78C20B8295B003049C6 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = F54C0086CA9F371544F2CE27 /* Pods-ClientStack_Mac.release.xcconfig */;
-			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				CODE_SIGN_IDENTITY = "";
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = UHH463TU7S;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_VERSION = A;
-				INFOPLIST_FILE = ClientStack_Mac/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.13;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.atcurio.ClientStack-Mac";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = macosx;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		1A95E78D20B8295B003049C6 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = F92F1064BF77DB2E9B80F5F3 /* Pods-ClientStack_MacTests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				CODE_SIGN_IDENTITY = "Mac Developer";
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = UHH463TU7S;
-				INFOPLIST_FILE = ClientStack_MacTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.13;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.atcurio.ClientStack-MacTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx;
-				SWIFT_VERSION = 4.0;
-			};
-			name = Debug;
-		};
-		1A95E78E20B8295B003049C6 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 941B4193C937B752AA1EDC33 /* Pods-ClientStack_MacTests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				CODE_SIGN_IDENTITY = "Mac Developer";
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = UHH463TU7S;
-				INFOPLIST_FILE = ClientStack_MacTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.13;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.atcurio.ClientStack-MacTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx;
-				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};
@@ -1886,6 +1501,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 68F7CE2B21DB47D38273C790 /* Pods-KnzkAlt.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = UHH463TU7S;
@@ -1903,6 +1519,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 84E76E508630EC371A50FC55 /* Pods-KnzkAlt.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = UHH463TU7S;
@@ -1966,6 +1583,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = DD906B5C182A8717F03B0C56 /* Pods-ClientStack.debug.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
@@ -1982,6 +1600,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.atcurio.ClientStack;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -1993,6 +1612,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 4FD2EADCC3F50D49107322E0 /* Pods-ClientStack.release.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
@@ -2020,6 +1640,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 31F3FEB5CAF3A096FF00A9D2 /* Pods-ClientStackTests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = UHH463TU7S;
@@ -2038,6 +1659,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 4CB6D435AF94794510516AEA /* Pods-ClientStackTests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = UHH463TU7S;
@@ -2069,24 +1691,6 @@
 			buildConfigurations = (
 				1A2D64BF20B82A160022EC3F /* Debug */,
 				1A2D64C020B82A160022EC3F /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		1A95E78F20B8295B003049C6 /* Build configuration list for PBXNativeTarget "ClientStack_Mac" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				1A95E78B20B8295B003049C6 /* Debug */,
-				1A95E78C20B8295B003049C6 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		1A95E79020B8295B003049C6 /* Build configuration list for PBXNativeTarget "ClientStack_MacTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				1A95E78D20B8295B003049C6 /* Debug */,
-				1A95E78E20B8295B003049C6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

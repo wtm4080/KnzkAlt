@@ -5,7 +5,7 @@
 
 import Foundation
 
-struct MentionEntity {
+struct MentionEntity: Codable {
     let url: URL
     let username: String
     let acct: String
