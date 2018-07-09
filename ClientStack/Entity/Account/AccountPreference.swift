@@ -6,12 +6,12 @@
 import Foundation
 
 /// Extra account attributes
-struct AccountSource: Codable {
+struct AccountPreference {
     /// Selected preference: Default privacy of new toots
-    let privacy: StatusEntityVisibility
+    let defaultPostingVisibility: StatusEntityVisibility
 
     /// Selected preference: Mark media as sensitive by default?
-    let sensitive: Bool
+    let isSensitive: Bool
 
     /// Plain-text version of the account's `note`
     let note: String

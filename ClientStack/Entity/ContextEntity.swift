@@ -5,7 +5,7 @@
 
 import Foundation
 
-struct ContextEntity: Codable {
+struct ContextEntity: Decodable {
     let ancestors: [StatusEntity]
     let descenders: [StatusEntity]
 }

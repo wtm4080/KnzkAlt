@@ -5,7 +5,7 @@
 
 import Foundation
 
-struct TagEntity: Codable {
+struct TagEntity: Decodable {
     let name: String
     let url: URL
 }

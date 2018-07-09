@@ -5,6 +5,6 @@
 
 import Foundation
 
-struct ErrorEntity: Codable {
+struct ErrorEntity: Decodable {
     let error: String
 }

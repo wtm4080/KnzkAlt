@@ -5,7 +5,7 @@
 
 import Foundation
 
-struct AttachmentEntity: Codable {
+struct AttachmentEntity: Decodable {
     let id: String
     let type: AttachmentEntityType
     let url: URL?
@@ -15,18 +15,14 @@ struct AttachmentEntity: Codable {
     let meta: [AttachmentEntityMeta]?
 }
 
-enum AttachmentEntityType: String, Codable {
+enum AttachmentEntityType: String, Decodable {
     case image
     case video
     // When the type is "unknown", it is likely only remote_url is available and local url is missing
     case unknown
 }
 
-enum AttachmentEntityMeta: Codable {
-    func encode(to encoder: Encoder) throws {
-        fatalError("Not implemented yet.")
-    }
-    
+enum AttachmentEntityMeta: Decodable {
     init(from decoder: Decoder) throws {
         fatalError("Not implemented yet.")
     }
@@ -43,7 +39,7 @@ enum AttachmentEntityMeta: Codable {
     case focus(AttachmentEntityFocus)
 }
 
-struct AttachmentEntityFocus: Codable {
+struct AttachmentEntityFocus: Decodable {
     let x: Float // [-1.0, 1.0]
     let y: Float // [-1.0, 1.0]
 }

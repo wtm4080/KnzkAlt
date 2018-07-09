@@ -5,7 +5,7 @@
 
 import Foundation
 
-struct EmojiEntity: Codable {
+struct EmojiEntity: Decodable {
     let shortcode: String
     let staticURL: URL
     let url: URL

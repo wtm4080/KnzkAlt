@@ -79,8 +79,10 @@
 		1AD9FD2E20B719BF00F87213 /* ClientStack.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1AD9FD1820B719BE00F87213 /* ClientStack.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		38FE96E2A1B539CED169F23F /* Pods_KnzkAlt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84C1FDE5DB4231518E199FD0 /* Pods_KnzkAlt.framework */; };
 		C051013C90808EA14D21585D /* TLKind.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05105506BF8250C08BE5640 /* TLKind.swift */; };
+		C0510216E08BCC3BF4E0D2A4 /* AccountEntityCompound+Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05103CE0C852ECC3CE64075 /* AccountEntityCompound+Decodable.swift */; };
 		C0510254A99C77FABC3E33FA /* TLKind.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05105506BF8250C08BE5640 /* TLKind.swift */; };
 		C0510559AFC5A879C211EC84 /* TLParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510A6EDA359DE7A9CB6842 /* TLParams.swift */; };
+		C05105E055122DA4BADF4F7C /* AccountPreference+Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05104DF4EB2B810CC2C6397 /* AccountPreference+Decodable.swift */; };
 		C051063C8F94487D951F3992 /* LoadPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = C051044B0362D353B18AA631 /* LoadPosition.swift */; };
 		C05106A4B78EB97153B89723 /* AppNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510B64372D7F837A34D11B /* AppNotification.swift */; };
 		C051072FF9FAE361D97372C6 /* TLParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510A6EDA359DE7A9CB6842 /* TLParams.swift */; };
@@ -88,7 +90,8 @@
 		C05109F86311D5C217DEFCE1 /* AccountEntityCompound.swift in Sources */ = {isa = PBXBuildFile; fileRef = C051055E18A35E5481A27C4F /* AccountEntityCompound.swift */; };
 		C0510AB9760FB8BA76DD3A23 /* AppNotificationObserving.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510397D489014CC8992656 /* AppNotificationObserving.swift */; };
 		C0510BAD1599A65D9A486F1B /* LoadPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = C051044B0362D353B18AA631 /* LoadPosition.swift */; };
-		C0510DD78A922B5D28A9A5E3 /* AccountSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510858BE8FEB083473478B /* AccountSource.swift */; };
+		C0510CB1FC122EFD3B7642B8 /* AccountEntity+Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C051016562AE79C7461A7055 /* AccountEntity+Decodable.swift */; };
+		C0510DD78A922B5D28A9A5E3 /* AccountPreference.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510858BE8FEB083473478B /* AccountPreference.swift */; };
 		C0510EB5724E95D8924D1103 /* AppNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510B64372D7F837A34D11B /* AppNotification.swift */; };
 		D7AB0DAB123C5B091B1BD680 /* Pods_ClientStackTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD72D3F5D8B03445ADA04547 /* Pods_ClientStackTests.framework */; };
 		FA4F0FF186534CCAADF713AC /* Pods_KnzkAltTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6ED6DD55E3BB3F15F0DEEF74 /* Pods_KnzkAltTests.framework */; };
@@ -233,11 +236,14 @@
 		8BF42E30169CA2116B4BCAB1 /* Pods_ClientStackDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ClientStackDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		941B4193C937B752AA1EDC33 /* Pods-ClientStack_MacTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ClientStack_MacTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ClientStack_MacTests/Pods-ClientStack_MacTests.release.xcconfig"; sourceTree = "<group>"; };
 		AD72D3F5D8B03445ADA04547 /* Pods_ClientStackTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ClientStackTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C051016562AE79C7461A7055 /* AccountEntity+Decodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AccountEntity+Decodable.swift"; sourceTree = "<group>"; };
 		C0510397D489014CC8992656 /* AppNotificationObserving.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppNotificationObserving.swift; sourceTree = "<group>"; };
+		C05103CE0C852ECC3CE64075 /* AccountEntityCompound+Decodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AccountEntityCompound+Decodable.swift"; sourceTree = "<group>"; };
 		C051044B0362D353B18AA631 /* LoadPosition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadPosition.swift; sourceTree = "<group>"; };
+		C05104DF4EB2B810CC2C6397 /* AccountPreference+Decodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AccountPreference+Decodable.swift"; sourceTree = "<group>"; };
 		C05105506BF8250C08BE5640 /* TLKind.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TLKind.swift; sourceTree = "<group>"; };
 		C051055E18A35E5481A27C4F /* AccountEntityCompound.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountEntityCompound.swift; sourceTree = "<group>"; };
-		C0510858BE8FEB083473478B /* AccountSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountSource.swift; sourceTree = "<group>"; };
+		C0510858BE8FEB083473478B /* AccountPreference.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountPreference.swift; sourceTree = "<group>"; };
 		C0510A6EDA359DE7A9CB6842 /* TLParams.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TLParams.swift; sourceTree = "<group>"; };
 		C0510B64372D7F837A34D11B /* AppNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppNotification.swift; sourceTree = "<group>"; };
 		D4D2AD351327CD293805901D /* Pods-ClientStack_Mac.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ClientStack_Mac.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ClientStack_Mac/Pods-ClientStack_Mac.debug.xcconfig"; sourceTree = "<group>"; };
@@ -507,8 +513,11 @@
 			isa = PBXGroup;
 			children = (
 				1A2A54EB20F3621D000098B2 /* AccountEntity.swift */,
+				C051016562AE79C7461A7055 /* AccountEntity+Decodable.swift */,
 				C051055E18A35E5481A27C4F /* AccountEntityCompound.swift */,
-				C0510858BE8FEB083473478B /* AccountSource.swift */,
+				C05103CE0C852ECC3CE64075 /* AccountEntityCompound+Decodable.swift */,
+				C0510858BE8FEB083473478B /* AccountPreference.swift */,
+				C05104DF4EB2B810CC2C6397 /* AccountPreference+Decodable.swift */,
 			);
 			path = Account;
 			sourceTree = "<group>";
@@ -997,7 +1006,10 @@
 				1A2A550E20F3622F000098B2 /* AccountVerifyCredentialsService.swift in Sources */,
 				1A2A550A20F3622F000098B2 /* AccountStatusesService.swift in Sources */,
 				C05109F86311D5C217DEFCE1 /* AccountEntityCompound.swift in Sources */,
-				C0510DD78A922B5D28A9A5E3 /* AccountSource.swift in Sources */,
+				C0510DD78A922B5D28A9A5E3 /* AccountPreference.swift in Sources */,
+				C0510CB1FC122EFD3B7642B8 /* AccountEntity+Decodable.swift in Sources */,
+				C0510216E08BCC3BF4E0D2A4 /* AccountEntityCompound+Decodable.swift in Sources */,
+				C05105E055122DA4BADF4F7C /* AccountPreference+Decodable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

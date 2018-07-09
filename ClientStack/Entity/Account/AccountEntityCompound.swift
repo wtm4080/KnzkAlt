@@ -6,7 +6,7 @@
 import Foundation
 
 /// Compounded Mastodon account entity that contains some account entities and other data
-struct AccountEntityCompound: Codable {
+struct AccountEntityCompound {
     /// Mastodon account entity itself
     let original: AccountEntity
 

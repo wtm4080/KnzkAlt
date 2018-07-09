@@ -5,7 +5,7 @@
 
 import Foundation
 
-struct ReportEntity: Codable {
+struct ReportEntity: Decodable {
     let id: String
     let actionTaken: Bool
 }

@@ -5,7 +5,7 @@
 
 import Foundation
 
-struct ListEntity: Codable {
+struct ListEntity: Decodable {
     let id: String
     let title: String
 }

@@ -5,7 +5,7 @@
 
 import Foundation
 
-struct RelationshipEntity: Codable {
+struct RelationshipEntity: Decodable {
     let id: String
     let following: Bool
     let followedBy: Bool

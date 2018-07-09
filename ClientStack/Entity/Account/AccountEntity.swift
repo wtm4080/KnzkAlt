@@ -6,21 +6,21 @@
 import Foundation
 
 /// Mastodon account entity
-struct AccountEntity: Codable {
+struct AccountEntity {
     /// The ID of account
     let id: String
 
     /// The username of the account
-    let username: String
+    let userName: String
 
     /// Equals `username` for local users, includes `@domain` for remote ones
-    let acct: String
+    let userNameWithDomain: String
 
     /// The account's display name
     let displayName: String
 
     /// Boolean for when the account cannot be followed without waiting for approval first
-    let locked: Bool
+    let isLocked: Bool
 
     /// The time the account was created
     let createdAt: Date
@@ -38,26 +38,26 @@ struct AccountEntity: Codable {
     let note: String
 
     /// URL of the user's profile page (can be remote)
-    let url: URL
+    let profilePageURL: URL
 
     /// URL to the avatar image
-    let avatar: URL
+    let avatarImageURL: URL
 
     /// URL to the avatar static image (gif)
-    let avatarStatic: URL
+    let avatarStaticImageURL: URL
 
     /// URL to the header image
-    let header: URL
+    let headerImageURL: URL
 
     /// URL to the header static image (gif)
-    let headerStatic: URL
+    let headerStaticImageURL: URL
 
     /// `source` value is present when accessing GET /api/v1/accounts/verify_credentials
-    let source: AccountSource?
+    let preference: AccountPreference?
 
     /// Array of profile metadata field, each element has `name` and `value`
-    let fields: [String: String]?
+    let profileMetadata: [String: String]?
 
     /// Boolean to indicate that the account performs automated actions
-    let bot: Bool?
+    let isBot: Bool?
 }

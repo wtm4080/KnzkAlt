@@ -5,7 +5,7 @@
 
 import Foundation
 
-struct ApplicationEntity: Codable {
+struct ApplicationEntity: Decodable {
     let name: String
     let website: URL?
 }
