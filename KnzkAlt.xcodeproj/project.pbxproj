@@ -291,9 +291,7 @@
 		1A2A54DF20F361B1000098B2 /* Entity */ = {
 			isa = PBXGroup;
 			children = (
-				1A2A54EB20F3621D000098B2 /* AccountEntity.swift */,
-				C051055E18A35E5481A27C4F /* AccountEntityCompound.swift */,
-				C0510858BE8FEB083473478B /* AccountSource.swift */,
+				1AF43AE820F36CF900F9E528 /* Account */,
 				1A2A54F120F3621D000098B2 /* ApplicationEntity.swift */,
 				1A2A54F020F3621D000098B2 /* AttachmentEntity.swift */,
 				1A2A54E820F3621C000098B2 /* CardEntity.swift */,
@@ -503,6 +501,16 @@
 				1AD9FD2920B719BF00F87213 /* Info.plist */,
 			);
 			path = ClientStackTests;
+			sourceTree = "<group>";
+		};
+		1AF43AE820F36CF900F9E528 /* Account */ = {
+			isa = PBXGroup;
+			children = (
+				1A2A54EB20F3621D000098B2 /* AccountEntity.swift */,
+				C051055E18A35E5481A27C4F /* AccountEntityCompound.swift */,
+				C0510858BE8FEB083473478B /* AccountSource.swift */,
+			);
+			path = Account;
 			sourceTree = "<group>";
 		};
 		2AAE723F0C521CE2B966660E /* Frameworks */ = {
