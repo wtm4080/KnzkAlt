@@ -95,6 +95,7 @@
 		C051081EBD47B11EA403F3CA /* ErrorEntity+Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510FBEDFD42D07EB8EEA9F /* ErrorEntity+Decodable.swift */; };
 		C051090AA4B00DD5B7F7454E /* AppNotificationObserving.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510397D489014CC8992656 /* AppNotificationObserving.swift */; };
 		C05109F86311D5C217DEFCE1 /* AccountEntityCompound.swift in Sources */ = {isa = PBXBuildFile; fileRef = C051055E18A35E5481A27C4F /* AccountEntityCompound.swift */; };
+		C0510AB95AA4F97CE6C793BC /* ListEntity+Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05103731D41A30C394679AB /* ListEntity+Decodable.swift */; };
 		C0510AB9760FB8BA76DD3A23 /* AppNotificationObserving.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510397D489014CC8992656 /* AppNotificationObserving.swift */; };
 		C0510BAD1599A65D9A486F1B /* LoadPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = C051044B0362D353B18AA631 /* LoadPosition.swift */; };
 		C0510CB1FC122EFD3B7642B8 /* AccountEntity+Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C051016562AE79C7461A7055 /* AccountEntity+Decodable.swift */; };
@@ -256,6 +257,7 @@
 		C051016562AE79C7461A7055 /* AccountEntity+Decodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AccountEntity+Decodable.swift"; sourceTree = "<group>"; };
 		C05102497936B96DB764F4A9 /* AttachmentEntityFocus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttachmentEntityFocus.swift; sourceTree = "<group>"; };
 		C0510305B704EBEE881F9549 /* EmojiEntity+Decodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EmojiEntity+Decodable.swift"; sourceTree = "<group>"; };
+		C05103731D41A30C394679AB /* ListEntity+Decodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ListEntity+Decodable.swift"; sourceTree = "<group>"; };
 		C0510397D489014CC8992656 /* AppNotificationObserving.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppNotificationObserving.swift; sourceTree = "<group>"; };
 		C05103CE0C852ECC3CE64075 /* AccountEntityCompound+Decodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AccountEntityCompound+Decodable.swift"; sourceTree = "<group>"; };
 		C051044B0362D353B18AA631 /* LoadPosition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadPosition.swift; sourceTree = "<group>"; };
@@ -335,7 +337,7 @@
 				1AF43AED20F4D6BF00F9E528 /* Emoji */,
 				1AF43AEE20F4DA6E00F9E528 /* Error */,
 				1AF43AEF20F4DBD600F9E528 /* Instance */,
-				1A2A54E520F3621C000098B2 /* ListEntity.swift */,
+				1AF43AF020F4DF2B00F9E528 /* List */,
 				1A2A54EE20F3621D000098B2 /* MentionEntity.swift */,
 				1A2A54E220F3621C000098B2 /* NotificationEntity.swift */,
 				1A2A54E420F3621C000098B2 /* RelationshipEntity.swift */,
@@ -621,6 +623,15 @@
 				C0510871F66922F32BAF1593 /* InstanceEntity+Decodable.swift */,
 			);
 			path = Instance;
+			sourceTree = "<group>";
+		};
+		1AF43AF020F4DF2B00F9E528 /* List */ = {
+			isa = PBXGroup;
+			children = (
+				1A2A54E520F3621C000098B2 /* ListEntity.swift */,
+				C05103731D41A30C394679AB /* ListEntity+Decodable.swift */,
+			);
+			path = List;
 			sourceTree = "<group>";
 		};
 		2AAE723F0C521CE2B966660E /* Frameworks */ = {
@@ -1126,6 +1137,7 @@
 				C0510EAC75DD1B4DCCA81D22 /* EmojiEntity+Decodable.swift in Sources */,
 				C051081EBD47B11EA403F3CA /* ErrorEntity+Decodable.swift in Sources */,
 				C0510D57DBEFA016461653C0 /* InstanceEntity+Decodable.swift in Sources */,
+				C0510AB95AA4F97CE6C793BC /* ListEntity+Decodable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -5,7 +5,11 @@
 
 import Foundation
 
-struct ListEntity: Decodable {
+/// Mastodon list timeline entity
+struct ListEntity {
+    /// ID of the list
     let id: String
+
+    /// Title of the list
     let title: String
 }
