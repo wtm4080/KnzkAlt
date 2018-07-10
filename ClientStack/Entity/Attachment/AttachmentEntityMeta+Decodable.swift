@@ -9,8 +9,8 @@ extension AttachmentEntityMeta: Decodable {
     private enum CodingKeys: String, CodingKey {
         case smallImageURL = "small"
         case originalImageURL = "original"
-        case width = "width"
-        case height = "height"
+        case width
+        case height
         case imageSize = "size"
         case imageAspectRatio = "aspect"
         case videoFrameRate = "frame_rate"

@@ -7,14 +7,14 @@ import Foundation
 
 extension AttachmentEntity: Decodable {
     private enum CodingKeys: String, CodingKey {
-        case id = "id"
-        case type = "type"
+        case id
+        case type
         case localImageURL = "url"
         case remoteImageURL = "remote_url"
         case previewImageURL = "preview_url"
         case urlText = "text_url"
         case metadata = "meta"
-        case description = "description"
+        case description
     }
 
     init(from decoder: Decoder) throws {

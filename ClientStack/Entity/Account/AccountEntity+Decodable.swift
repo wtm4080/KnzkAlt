@@ -7,7 +7,7 @@ import Foundation
 
 extension AccountEntity: Decodable {
     private enum CodingKeys: String, CodingKey {
-        case id = "id"
+        case id
         case userName = "username"
         case userNameWithDomain = "acct"
         case displayName = "display_name"
@@ -16,7 +16,7 @@ extension AccountEntity: Decodable {
         case followersCount = "followers_count"
         case followingCount = "following_count"
         case statusesCount = "statuses_count"
-        case note = "note"
+        case note
         case profilePageURL = "url"
         case avatarImageURL = "avatar"
         case avatarStaticImageURL = "avatar_static"

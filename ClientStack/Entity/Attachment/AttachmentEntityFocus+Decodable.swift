@@ -7,8 +7,8 @@ import Foundation
 
 extension AttachmentEntityFocus: Decodable {
     private enum CodingKeys: String, CodingKey {
-        case x = "x"
-        case y = "y"
+        case x
+        case y
     }
 
     init(from decoder: Decoder) throws {

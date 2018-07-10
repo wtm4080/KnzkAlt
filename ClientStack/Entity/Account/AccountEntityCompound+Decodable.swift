@@ -7,7 +7,7 @@ import Foundation
 
 extension AccountEntityCompound: Decodable {
     private enum CodingKeys: String, CodingKey {
-        case moved = "moved"
+        case moved
     }
 
     init(from decoder: Decoder) throws {

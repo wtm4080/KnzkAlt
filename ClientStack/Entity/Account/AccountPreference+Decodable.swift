@@ -9,7 +9,7 @@ extension AccountPreference: Decodable {
     private enum CodingKeys: String, CodingKey {
         case defaultPostingVisibility = "privacy"
         case isSensitive = "sensitive"
-        case note = "note"
+        case note
     }
 
     init(from decoder: Decoder) throws {

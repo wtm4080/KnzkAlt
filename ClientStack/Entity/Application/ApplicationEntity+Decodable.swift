@@ -7,7 +7,7 @@ import Foundation
 
 extension ApplicationEntity: Decodable {
     private enum CodingKeys: String, CodingKey {
-        case name = "name"
+        case name
         case websiteURL = "website"
     }
 
