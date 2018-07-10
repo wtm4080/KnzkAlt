@@ -92,6 +92,7 @@
 		C05106A4B78EB97153B89723 /* AppNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510B64372D7F837A34D11B /* AppNotification.swift */; };
 		C05107119E9C5B1481D91FF0 /* CardEntityOEmbedData+Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C051000E281D2186FE02344B /* CardEntityOEmbedData+Decodable.swift */; };
 		C051072FF9FAE361D97372C6 /* TLParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510A6EDA359DE7A9CB6842 /* TLParams.swift */; };
+		C051081EBD47B11EA403F3CA /* ErrorEntity+Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510FBEDFD42D07EB8EEA9F /* ErrorEntity+Decodable.swift */; };
 		C051090AA4B00DD5B7F7454E /* AppNotificationObserving.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510397D489014CC8992656 /* AppNotificationObserving.swift */; };
 		C05109F86311D5C217DEFCE1 /* AccountEntityCompound.swift in Sources */ = {isa = PBXBuildFile; fileRef = C051055E18A35E5481A27C4F /* AccountEntityCompound.swift */; };
 		C0510AB9760FB8BA76DD3A23 /* AppNotificationObserving.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510397D489014CC8992656 /* AppNotificationObserving.swift */; };
@@ -272,6 +273,7 @@
 		C0510C0F04D503ADF600C27C /* AttachmentEntity+Decodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AttachmentEntity+Decodable.swift"; sourceTree = "<group>"; };
 		C0510C744AAA81AA805FF9F7 /* CardEntity+Decodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CardEntity+Decodable.swift"; sourceTree = "<group>"; };
 		C0510F54BDD59C8E1190580F /* AttachmentEntityFocus+Decodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AttachmentEntityFocus+Decodable.swift"; sourceTree = "<group>"; };
+		C0510FBEDFD42D07EB8EEA9F /* ErrorEntity+Decodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ErrorEntity+Decodable.swift"; sourceTree = "<group>"; };
 		D4D2AD351327CD293805901D /* Pods-ClientStack_Mac.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ClientStack_Mac.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ClientStack_Mac/Pods-ClientStack_Mac.debug.xcconfig"; sourceTree = "<group>"; };
 		DD906B5C182A8717F03B0C56 /* Pods-ClientStack.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ClientStack.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ClientStack/Pods-ClientStack.debug.xcconfig"; sourceTree = "<group>"; };
 		DFF58623E735D3E9FD0AC6B4 /* Pods_ClientStack_Mac.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ClientStack_Mac.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -329,7 +331,7 @@
 				1AF43AEB20F4BA0B00F9E528 /* Card */,
 				1AF43AEC20F4D4C400F9E528 /* Context */,
 				1AF43AED20F4D6BF00F9E528 /* Emoji */,
-				1A2A54E620F3621C000098B2 /* ErrorEntity.swift */,
+				1AF43AEE20F4DA6E00F9E528 /* Error */,
 				1A2A54EC20F3621D000098B2 /* InstanceEntity.swift */,
 				1A2A54E520F3621C000098B2 /* ListEntity.swift */,
 				1A2A54EE20F3621D000098B2 /* MentionEntity.swift */,
@@ -599,6 +601,15 @@
 				C0510305B704EBEE881F9549 /* EmojiEntity+Decodable.swift */,
 			);
 			path = Emoji;
+			sourceTree = "<group>";
+		};
+		1AF43AEE20F4DA6E00F9E528 /* Error */ = {
+			isa = PBXGroup;
+			children = (
+				1A2A54E620F3621C000098B2 /* ErrorEntity.swift */,
+				C0510FBEDFD42D07EB8EEA9F /* ErrorEntity+Decodable.swift */,
+			);
+			path = Error;
 			sourceTree = "<group>";
 		};
 		2AAE723F0C521CE2B966660E /* Frameworks */ = {
@@ -1102,6 +1113,7 @@
 				C05107119E9C5B1481D91FF0 /* CardEntityOEmbedData+Decodable.swift in Sources */,
 				C0510F2C67D9749EAED3C3E6 /* ContextEntity+Decodable.swift in Sources */,
 				C0510EAC75DD1B4DCCA81D22 /* EmojiEntity+Decodable.swift in Sources */,
+				C051081EBD47B11EA403F3CA /* ErrorEntity+Decodable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
