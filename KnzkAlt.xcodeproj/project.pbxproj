@@ -102,6 +102,7 @@
 		C0510EB5724E95D8924D1103 /* AppNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510B64372D7F837A34D11B /* AppNotification.swift */; };
 		C0510EE31461CC88A8610A54 /* CardEntityType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05106E7BEA11723DD562DD2 /* CardEntityType.swift */; };
 		C0510F0F2062F721126EA1D8 /* AttachmentEntityType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C051081172BF1C339D8206A0 /* AttachmentEntityType.swift */; };
+		C0510F2C67D9749EAED3C3E6 /* ContextEntity+Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510A944D7C64EF8C9D247D /* ContextEntity+Decodable.swift */; };
 		C0510F642A90E17523FD5FB5 /* AttachmentEntity+Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510C0F04D503ADF600C27C /* AttachmentEntity+Decodable.swift */; };
 		C0510FD66D0B348C44E5740D /* CardEntity+Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510C744AAA81AA805FF9F7 /* CardEntity+Decodable.swift */; };
 		D7AB0DAB123C5B091B1BD680 /* Pods_ClientStackTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD72D3F5D8B03445ADA04547 /* Pods_ClientStackTests.framework */; };
@@ -263,6 +264,7 @@
 		C0510858BE8FEB083473478B /* AccountPreference.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountPreference.swift; sourceTree = "<group>"; };
 		C05109839DED253C18ECCA7E /* AttachmentEntityMeta.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttachmentEntityMeta.swift; sourceTree = "<group>"; };
 		C0510A6EDA359DE7A9CB6842 /* TLParams.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TLParams.swift; sourceTree = "<group>"; };
+		C0510A944D7C64EF8C9D247D /* ContextEntity+Decodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ContextEntity+Decodable.swift"; sourceTree = "<group>"; };
 		C0510B64372D7F837A34D11B /* AppNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppNotification.swift; sourceTree = "<group>"; };
 		C0510C0DD2720A75C031F0DC /* AttachmentEntityMeta+Decodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AttachmentEntityMeta+Decodable.swift"; sourceTree = "<group>"; };
 		C0510C0F04D503ADF600C27C /* AttachmentEntity+Decodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AttachmentEntity+Decodable.swift"; sourceTree = "<group>"; };
@@ -323,7 +325,7 @@
 				1AF43AE920F49B8E00F9E528 /* Application */,
 				1AF43AEA20F49FFC00F9E528 /* Attachment */,
 				1AF43AEB20F4BA0B00F9E528 /* Card */,
-				1A2A54ED20F3621D000098B2 /* ContextEntity.swift */,
+				1AF43AEC20F4D4C400F9E528 /* Context */,
 				1A2A54E720F3621C000098B2 /* EmojiEntity.swift */,
 				1A2A54E620F3621C000098B2 /* ErrorEntity.swift */,
 				1A2A54EC20F3621D000098B2 /* InstanceEntity.swift */,
@@ -577,6 +579,15 @@
 				C05106E7BEA11723DD562DD2 /* CardEntityType.swift */,
 			);
 			path = Card;
+			sourceTree = "<group>";
+		};
+		1AF43AEC20F4D4C400F9E528 /* Context */ = {
+			isa = PBXGroup;
+			children = (
+				1A2A54ED20F3621D000098B2 /* ContextEntity.swift */,
+				C0510A944D7C64EF8C9D247D /* ContextEntity+Decodable.swift */,
+			);
+			path = Context;
 			sourceTree = "<group>";
 		};
 		2AAE723F0C521CE2B966660E /* Frameworks */ = {
@@ -1078,6 +1089,7 @@
 				C051069F38C3D525E07BC7B1 /* CardEntityOEmbedData.swift in Sources */,
 				C0510FD66D0B348C44E5740D /* CardEntity+Decodable.swift in Sources */,
 				C05107119E9C5B1481D91FF0 /* CardEntityOEmbedData+Decodable.swift in Sources */,
+				C0510F2C67D9749EAED3C3E6 /* ContextEntity+Decodable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
