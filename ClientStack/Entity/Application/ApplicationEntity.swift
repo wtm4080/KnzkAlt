@@ -5,7 +5,11 @@
 
 import Foundation
 
-struct ApplicationEntity: Decodable {
+/// Client app entity
+struct ApplicationEntity {
+    /// Name of the app
     let name: String
-    let website: URL?
+
+    /// Homepage URL of the app
+    let websiteURL: URL?
 }

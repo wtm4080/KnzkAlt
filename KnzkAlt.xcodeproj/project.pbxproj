@@ -81,6 +81,7 @@
 		C051013C90808EA14D21585D /* TLKind.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05105506BF8250C08BE5640 /* TLKind.swift */; };
 		C0510216E08BCC3BF4E0D2A4 /* AccountEntityCompound+Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05103CE0C852ECC3CE64075 /* AccountEntityCompound+Decodable.swift */; };
 		C0510254A99C77FABC3E33FA /* TLKind.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05105506BF8250C08BE5640 /* TLKind.swift */; };
+		C05103BA17A222489F4DFA18 /* ApplicationEntity+Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05106715B7764CA72DE9E74 /* ApplicationEntity+Decodable.swift */; };
 		C0510559AFC5A879C211EC84 /* TLParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510A6EDA359DE7A9CB6842 /* TLParams.swift */; };
 		C05105E055122DA4BADF4F7C /* AccountPreference+Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05104DF4EB2B810CC2C6397 /* AccountPreference+Decodable.swift */; };
 		C051063C8F94487D951F3992 /* LoadPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = C051044B0362D353B18AA631 /* LoadPosition.swift */; };
@@ -243,6 +244,7 @@
 		C05104DF4EB2B810CC2C6397 /* AccountPreference+Decodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AccountPreference+Decodable.swift"; sourceTree = "<group>"; };
 		C05105506BF8250C08BE5640 /* TLKind.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TLKind.swift; sourceTree = "<group>"; };
 		C051055E18A35E5481A27C4F /* AccountEntityCompound.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountEntityCompound.swift; sourceTree = "<group>"; };
+		C05106715B7764CA72DE9E74 /* ApplicationEntity+Decodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ApplicationEntity+Decodable.swift"; sourceTree = "<group>"; };
 		C0510858BE8FEB083473478B /* AccountPreference.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountPreference.swift; sourceTree = "<group>"; };
 		C0510A6EDA359DE7A9CB6842 /* TLParams.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TLParams.swift; sourceTree = "<group>"; };
 		C0510B64372D7F837A34D11B /* AppNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppNotification.swift; sourceTree = "<group>"; };
@@ -298,7 +300,7 @@
 			isa = PBXGroup;
 			children = (
 				1AF43AE820F36CF900F9E528 /* Account */,
-				1A2A54F120F3621D000098B2 /* ApplicationEntity.swift */,
+				1AF43AE920F49B8E00F9E528 /* Application */,
 				1A2A54F020F3621D000098B2 /* AttachmentEntity.swift */,
 				1A2A54E820F3621C000098B2 /* CardEntity.swift */,
 				1A2A54ED20F3621D000098B2 /* ContextEntity.swift */,
@@ -520,6 +522,15 @@
 				C05104DF4EB2B810CC2C6397 /* AccountPreference+Decodable.swift */,
 			);
 			path = Account;
+			sourceTree = "<group>";
+		};
+		1AF43AE920F49B8E00F9E528 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				1A2A54F120F3621D000098B2 /* ApplicationEntity.swift */,
+				C05106715B7764CA72DE9E74 /* ApplicationEntity+Decodable.swift */,
+			);
+			path = Application;
 			sourceTree = "<group>";
 		};
 		2AAE723F0C521CE2B966660E /* Frameworks */ = {
@@ -1010,6 +1021,7 @@
 				C0510CB1FC122EFD3B7642B8 /* AccountEntity+Decodable.swift in Sources */,
 				C0510216E08BCC3BF4E0D2A4 /* AccountEntityCompound+Decodable.swift in Sources */,
 				C05105E055122DA4BADF4F7C /* AccountPreference+Decodable.swift in Sources */,
+				C05103BA17A222489F4DFA18 /* ApplicationEntity+Decodable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
