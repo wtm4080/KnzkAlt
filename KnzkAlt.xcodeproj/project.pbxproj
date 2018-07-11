@@ -104,6 +104,7 @@
 		C0510D03AEFD9508F5BBC432 /* PushSubscriptionEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C051056C718DD141C78481FC /* PushSubscriptionEntity.swift */; };
 		C0510D57DBEFA016461653C0 /* InstanceEntity+Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510871F66922F32BAF1593 /* InstanceEntity+Decodable.swift */; };
 		C0510D7FB3C5C4614415C783 /* NotificationEntity+Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05103CBF1E0999479A21F9B /* NotificationEntity+Decodable.swift */; };
+		C0510DC3B70BF68D355D1F3C /* ReportEntity+Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C051039E0D7F5A865F51A7D7 /* ReportEntity+Decodable.swift */; };
 		C0510DD78A922B5D28A9A5E3 /* AccountPreference.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510858BE8FEB083473478B /* AccountPreference.swift */; };
 		C0510E23E35BCC298C8A4321 /* AttachmentEntityMeta+Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510C0DD2720A75C031F0DC /* AttachmentEntityMeta+Decodable.swift */; };
 		C0510E8A41BBB5D482C3FAE6 /* RelationshipEntity+Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510F5FE154CF1954847DE5 /* RelationshipEntity+Decodable.swift */; };
@@ -266,6 +267,7 @@
 		C0510305B704EBEE881F9549 /* EmojiEntity+Decodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EmojiEntity+Decodable.swift"; sourceTree = "<group>"; };
 		C05103731D41A30C394679AB /* ListEntity+Decodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ListEntity+Decodable.swift"; sourceTree = "<group>"; };
 		C0510397D489014CC8992656 /* AppNotificationObserving.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppNotificationObserving.swift; sourceTree = "<group>"; };
+		C051039E0D7F5A865F51A7D7 /* ReportEntity+Decodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ReportEntity+Decodable.swift"; sourceTree = "<group>"; };
 		C05103CBF1E0999479A21F9B /* NotificationEntity+Decodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NotificationEntity+Decodable.swift"; sourceTree = "<group>"; };
 		C05103CE0C852ECC3CE64075 /* AccountEntityCompound+Decodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AccountEntityCompound+Decodable.swift"; sourceTree = "<group>"; };
 		C051044B0362D353B18AA631 /* LoadPosition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadPosition.swift; sourceTree = "<group>"; };
@@ -366,6 +368,15 @@
 			path = Relationship;
 			sourceTree = "<group>";
 		};
+		1A20C55E20F62D65008ADB6F /* Report */ = {
+			isa = PBXGroup;
+			children = (
+				1A2A54E320F3621C000098B2 /* ReportEntity.swift */,
+				C051039E0D7F5A865F51A7D7 /* ReportEntity+Decodable.swift */,
+			);
+			path = Report;
+			sourceTree = "<group>";
+		};
 		1A2A54DF20F361B1000098B2 /* Entity */ = {
 			isa = PBXGroup;
 			children = (
@@ -382,7 +393,7 @@
 				1A20C55B20F62384008ADB6F /* Notification */,
 				1A20C55C20F6263F008ADB6F /* PushSubscription */,
 				1A20C55D20F628C5008ADB6F /* Relationship */,
-				1A2A54E320F3621C000098B2 /* ReportEntity.swift */,
+				1A20C55E20F62D65008ADB6F /* Report */,
 				1A2A54EF20F3621D000098B2 /* ResultsEntity.swift */,
 				1A2A54E920F3621D000098B2 /* StatusEntity.swift */,
 				1A2A54EA20F3621D000098B2 /* TagEntity.swift */,
@@ -1194,6 +1205,7 @@
 				C0510D03AEFD9508F5BBC432 /* PushSubscriptionEntity.swift in Sources */,
 				C05109A58B45BF5792801384 /* PushSubscriptionEntity+Decodable.swift in Sources */,
 				C0510E8A41BBB5D482C3FAE6 /* RelationshipEntity+Decodable.swift in Sources */,
+				C0510DC3B70BF68D355D1F3C /* ReportEntity+Decodable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
