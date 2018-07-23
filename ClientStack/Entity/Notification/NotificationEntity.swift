@@ -20,5 +20,5 @@ struct NotificationEntity {
     let senderAccount: AccountEntityCompound
 
     /// The Status associated with the notification, if applicable
-    let associatedStatus: StatusCompoundEntity?
+    let associatedStatus: StatusEntityCompound?
 }

@@ -16,7 +16,7 @@ extension ResultsEntity: Decodable {
         let values = try decoder.container(keyedBy: CodingKeys.self)
 
         accounts = try values.decode(Array<AccountEntityCompound>.self, forKey: .accounts)
-        statuses = try values.decode(Array<StatusCompoundEntity>.self, forKey: .statuses)
+        statuses = try values.decode(Array<StatusEntityCompound>.self, forKey: .statuses)
         hashtags = try values.decode(Array<String>.self, forKey: .hashtags)
     }
 }

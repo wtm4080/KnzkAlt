@@ -21,6 +21,6 @@ extension NotificationEntity: Decodable {
         type = try values.decode(NotificationEntityType.self, forKey: .type)
         createdAt = try values.decode(Date.self, forKey: .createdAt)
         senderAccount = try values.decode(AccountEntityCompound.self, forKey: .senderAccount)
-        associatedStatus = try values.decodeIfPresent(StatusCompoundEntity.self, forKey: .associatedStatus)
+        associatedStatus = try values.decodeIfPresent(StatusEntityCompound.self, forKey: .associatedStatus)
     }
 }

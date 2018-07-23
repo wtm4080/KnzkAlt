@@ -11,7 +11,7 @@ struct ResultsEntity {
     let accounts: [AccountEntityCompound]
 
     /// An array of matched Statuses
-    let statuses: [StatusCompoundEntity]
+    let statuses: [StatusEntityCompound]
 
     /// An array of matched hashtags, as strings
     let hashtags: [String]
