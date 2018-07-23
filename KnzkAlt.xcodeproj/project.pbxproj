@@ -23,14 +23,6 @@
 		1A2A54FF20F3621D000098B2 /* ResultsEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2A54EF20F3621D000098B2 /* ResultsEntity.swift */; };
 		1A2A550020F3621D000098B2 /* AttachmentEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2A54F020F3621D000098B2 /* AttachmentEntity.swift */; };
 		1A2A550120F3621D000098B2 /* ApplicationEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2A54F120F3621D000098B2 /* ApplicationEntity.swift */; };
-		1A2A550A20F3622F000098B2 /* AccountStatusesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2A550220F3622F000098B2 /* AccountStatusesService.swift */; };
-		1A2A550B20F3622F000098B2 /* AccountUnfollowService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2A550320F3622F000098B2 /* AccountUnfollowService.swift */; };
-		1A2A550C20F3622F000098B2 /* AccountFollowersService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2A550420F3622F000098B2 /* AccountFollowersService.swift */; };
-		1A2A550D20F3622F000098B2 /* AccountFollowingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2A550520F3622F000098B2 /* AccountFollowingService.swift */; };
-		1A2A550E20F3622F000098B2 /* AccountVerifyCredentialsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2A550620F3622F000098B2 /* AccountVerifyCredentialsService.swift */; };
-		1A2A550F20F3622F000098B2 /* AccountService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2A550720F3622F000098B2 /* AccountService.swift */; };
-		1A2A551020F3622F000098B2 /* AccountUpdateCredentialsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2A550820F3622F000098B2 /* AccountUpdateCredentialsService.swift */; };
-		1A2A551120F3622F000098B2 /* AccountFollowService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2A550920F3622F000098B2 /* AccountFollowService.swift */; };
 		1A5696ED1FB4A84C00BC82DC /* MastodonKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A5696EB1FB4A82A00BC82DC /* MastodonKit.framework */; };
 		1AA89DB320198210008EC484 /* AccountDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA89DA720198210008EC484 /* AccountDetailVC.swift */; };
 		1AA89DB420198210008EC484 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA89DA820198210008EC484 /* LoginVC.swift */; };
@@ -87,7 +79,10 @@
 		C05102F1BDD9E2F20A952567 /* AttachmentEntityMeta.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05109839DED253C18ECCA7E /* AttachmentEntityMeta.swift */; };
 		C05103BA17A222489F4DFA18 /* ApplicationEntity+Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05106715B7764CA72DE9E74 /* ApplicationEntity+Decodable.swift */; };
 		C05103BB3FC53D933721726C /* AttachmentEntityFocus+Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510F54BDD59C8E1190580F /* AttachmentEntityFocus+Decodable.swift */; };
+		C051040B76319CF910C66FB5 /* ServiceHost.swift in Sources */ = {isa = PBXBuildFile; fileRef = C051085D84235279DEC51BEE /* ServiceHost.swift */; };
+		C051051ECB6556BC97D88250 /* AccountsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05108E2990ED7CC29CC1419 /* AccountsService.swift */; };
 		C0510559AFC5A879C211EC84 /* TLParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510A6EDA359DE7A9CB6842 /* TLParams.swift */; };
+		C0510564015DCEFA9EF4C6EE /* ServiceParam.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05100A1A348A45D2C9F0AF9 /* ServiceParam.swift */; };
 		C051058E3168052841958434 /* AttachmentEntityFocus.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05102497936B96DB764F4A9 /* AttachmentEntityFocus.swift */; };
 		C05105E055122DA4BADF4F7C /* AccountPreference+Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05104DF4EB2B810CC2C6397 /* AccountPreference+Decodable.swift */; };
 		C051063C8F94487D951F3992 /* LoadPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = C051044B0362D353B18AA631 /* LoadPosition.swift */; };
@@ -96,6 +91,7 @@
 		C05107119E9C5B1481D91FF0 /* CardEntityOEmbedData+Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C051000E281D2186FE02344B /* CardEntityOEmbedData+Decodable.swift */; };
 		C051072FF9FAE361D97372C6 /* TLParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510A6EDA359DE7A9CB6842 /* TLParams.swift */; };
 		C05107F30E6CB5AFB9FFE3C6 /* NotificationEntityType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510C1AF7923CC7467E762C /* NotificationEntityType.swift */; };
+		C051081304A9A762F4D994A5 /* ServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05107C8A6401AA0071F4ADD /* ServiceError.swift */; };
 		C051081EBD47B11EA403F3CA /* ErrorEntity+Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510FBEDFD42D07EB8EEA9F /* ErrorEntity+Decodable.swift */; };
 		C051090AA4B00DD5B7F7454E /* AppNotificationObserving.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510397D489014CC8992656 /* AppNotificationObserving.swift */; };
 		C05109A58B45BF5792801384 /* PushSubscriptionEntity+Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05100238316A976539E168A /* PushSubscriptionEntity+Decodable.swift */; };
@@ -104,6 +100,8 @@
 		C0510AB95AA4F97CE6C793BC /* ListEntity+Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05103731D41A30C394679AB /* ListEntity+Decodable.swift */; };
 		C0510AB9760FB8BA76DD3A23 /* AppNotificationObserving.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510397D489014CC8992656 /* AppNotificationObserving.swift */; };
 		C0510BAD1599A65D9A486F1B /* LoadPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = C051044B0362D353B18AA631 /* LoadPosition.swift */; };
+		C0510BFE762ACC408E7945C1 /* AccountsService+TargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05108341D958E102EBE28CC /* AccountsService+TargetType.swift */; };
+		C0510C2275F0985BB4B9D9A3 /* AccountsService+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05103A9C4C0A6B49146B28F /* AccountsService+Rx.swift */; };
 		C0510CB1FC122EFD3B7642B8 /* AccountEntity+Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C051016562AE79C7461A7055 /* AccountEntity+Decodable.swift */; };
 		C0510D03AEFD9508F5BBC432 /* PushSubscriptionEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C051056C718DD141C78481FC /* PushSubscriptionEntity.swift */; };
 		C0510D2EE173FCAA4E311212 /* StatusEntity+Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05100B75F5BE26F3DB3043F /* StatusEntity+Decodable.swift */; };
@@ -191,14 +189,6 @@
 		1A2A54EF20F3621D000098B2 /* ResultsEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultsEntity.swift; sourceTree = "<group>"; };
 		1A2A54F020F3621D000098B2 /* AttachmentEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttachmentEntity.swift; sourceTree = "<group>"; };
 		1A2A54F120F3621D000098B2 /* ApplicationEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationEntity.swift; sourceTree = "<group>"; };
-		1A2A550220F3622F000098B2 /* AccountStatusesService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountStatusesService.swift; sourceTree = "<group>"; };
-		1A2A550320F3622F000098B2 /* AccountUnfollowService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountUnfollowService.swift; sourceTree = "<group>"; };
-		1A2A550420F3622F000098B2 /* AccountFollowersService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountFollowersService.swift; sourceTree = "<group>"; };
-		1A2A550520F3622F000098B2 /* AccountFollowingService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountFollowingService.swift; sourceTree = "<group>"; };
-		1A2A550620F3622F000098B2 /* AccountVerifyCredentialsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountVerifyCredentialsService.swift; sourceTree = "<group>"; };
-		1A2A550720F3622F000098B2 /* AccountService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountService.swift; sourceTree = "<group>"; };
-		1A2A550820F3622F000098B2 /* AccountUpdateCredentialsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountUpdateCredentialsService.swift; sourceTree = "<group>"; };
-		1A2A550920F3622F000098B2 /* AccountFollowService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountFollowService.swift; sourceTree = "<group>"; };
 		1A5696EB1FB4A82A00BC82DC /* MastodonKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MastodonKit.framework; path = ../Test/Carthage/Build/iOS/MastodonKit.framework; sourceTree = "<group>"; };
 		1AA89DA720198210008EC484 /* AccountDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountDetailVC.swift; sourceTree = "<group>"; };
 		1AA89DA820198210008EC484 /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
@@ -267,6 +257,7 @@
 		AD72D3F5D8B03445ADA04547 /* Pods_ClientStackTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ClientStackTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C051000E281D2186FE02344B /* CardEntityOEmbedData+Decodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CardEntityOEmbedData+Decodable.swift"; sourceTree = "<group>"; };
 		C05100238316A976539E168A /* PushSubscriptionEntity+Decodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PushSubscriptionEntity+Decodable.swift"; sourceTree = "<group>"; };
+		C05100A1A348A45D2C9F0AF9 /* ServiceParam.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceParam.swift; sourceTree = "<group>"; };
 		C05100B75F5BE26F3DB3043F /* StatusEntity+Decodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "StatusEntity+Decodable.swift"; sourceTree = "<group>"; };
 		C0510122A1F3D51615D1ADC4 /* CardEntityOEmbedData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardEntityOEmbedData.swift; sourceTree = "<group>"; };
 		C051016562AE79C7461A7055 /* AccountEntity+Decodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AccountEntity+Decodable.swift"; sourceTree = "<group>"; };
@@ -276,6 +267,7 @@
 		C05103731D41A30C394679AB /* ListEntity+Decodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ListEntity+Decodable.swift"; sourceTree = "<group>"; };
 		C0510397D489014CC8992656 /* AppNotificationObserving.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppNotificationObserving.swift; sourceTree = "<group>"; };
 		C051039E0D7F5A865F51A7D7 /* ReportEntity+Decodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ReportEntity+Decodable.swift"; sourceTree = "<group>"; };
+		C05103A9C4C0A6B49146B28F /* AccountsService+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AccountsService+Rx.swift"; sourceTree = "<group>"; };
 		C05103CBF1E0999479A21F9B /* NotificationEntity+Decodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NotificationEntity+Decodable.swift"; sourceTree = "<group>"; };
 		C05103CE0C852ECC3CE64075 /* AccountEntityCompound+Decodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AccountEntityCompound+Decodable.swift"; sourceTree = "<group>"; };
 		C051044B0362D353B18AA631 /* LoadPosition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadPosition.swift; sourceTree = "<group>"; };
@@ -286,10 +278,14 @@
 		C0510669F38A65A0D78E06C3 /* ResultsEntity+Decodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ResultsEntity+Decodable.swift"; sourceTree = "<group>"; };
 		C05106715B7764CA72DE9E74 /* ApplicationEntity+Decodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ApplicationEntity+Decodable.swift"; sourceTree = "<group>"; };
 		C05106E7BEA11723DD562DD2 /* CardEntityType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardEntityType.swift; sourceTree = "<group>"; };
+		C05107C8A6401AA0071F4ADD /* ServiceError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceError.swift; sourceTree = "<group>"; };
 		C051081172BF1C339D8206A0 /* AttachmentEntityType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttachmentEntityType.swift; sourceTree = "<group>"; };
+		C05108341D958E102EBE28CC /* AccountsService+TargetType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AccountsService+TargetType.swift"; sourceTree = "<group>"; };
 		C0510858BE8FEB083473478B /* AccountPreference.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountPreference.swift; sourceTree = "<group>"; };
+		C051085D84235279DEC51BEE /* ServiceHost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceHost.swift; sourceTree = "<group>"; };
 		C051086A35CA915CC4AEC50F /* StatusEntityCompound.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusEntityCompound.swift; sourceTree = "<group>"; };
 		C0510871F66922F32BAF1593 /* InstanceEntity+Decodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "InstanceEntity+Decodable.swift"; sourceTree = "<group>"; };
+		C05108E2990ED7CC29CC1419 /* AccountsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountsService.swift; sourceTree = "<group>"; };
 		C0510924D7416D2FB13A62ED /* MentionEntity+Decodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MentionEntity+Decodable.swift"; sourceTree = "<group>"; };
 		C05109839DED253C18ECCA7E /* AttachmentEntityMeta.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttachmentEntityMeta.swift; sourceTree = "<group>"; };
 		C05109F7D4538EADACBD7F9D /* TagHistory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagHistory.swift; sourceTree = "<group>"; };
@@ -438,6 +434,9 @@
 			isa = PBXGroup;
 			children = (
 				1A2A54E120F361CB000098B2 /* Accounts */,
+				C051085D84235279DEC51BEE /* ServiceHost.swift */,
+				C05100A1A348A45D2C9F0AF9 /* ServiceParam.swift */,
+				C05107C8A6401AA0071F4ADD /* ServiceError.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -445,14 +444,9 @@
 		1A2A54E120F361CB000098B2 /* Accounts */ = {
 			isa = PBXGroup;
 			children = (
-				1A2A550420F3622F000098B2 /* AccountFollowersService.swift */,
-				1A2A550520F3622F000098B2 /* AccountFollowingService.swift */,
-				1A2A550920F3622F000098B2 /* AccountFollowService.swift */,
-				1A2A550720F3622F000098B2 /* AccountService.swift */,
-				1A2A550220F3622F000098B2 /* AccountStatusesService.swift */,
-				1A2A550320F3622F000098B2 /* AccountUnfollowService.swift */,
-				1A2A550820F3622F000098B2 /* AccountUpdateCredentialsService.swift */,
-				1A2A550620F3622F000098B2 /* AccountVerifyCredentialsService.swift */,
+				C05108E2990ED7CC29CC1419 /* AccountsService.swift */,
+				C05108341D958E102EBE28CC /* AccountsService+TargetType.swift */,
+				C05103A9C4C0A6B49146B28F /* AccountsService+Rx.swift */,
 			);
 			path = Accounts;
 			sourceTree = "<group>";
@@ -987,15 +981,15 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-ClientStackTests/Pods-ClientStackTests-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/RxSwift-iOS/RxSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/RxBlocking-iOS/RxBlocking.framework",
-				"${BUILT_PRODUCTS_DIR}/RxTest-iOS/RxTest.framework",
-				"${BUILT_PRODUCTS_DIR}/Alamofire-iOS/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/Moya-iOS/Moya.framework",
-				"${BUILT_PRODUCTS_DIR}/Realm-iOS/Realm.framework",
-				"${BUILT_PRODUCTS_DIR}/RealmSwift-iOS/RealmSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/Result-iOS/Result.framework",
-				"${BUILT_PRODUCTS_DIR}/RxCocoa-iOS/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/RxBlocking/RxBlocking.framework",
+				"${BUILT_PRODUCTS_DIR}/RxTest/RxTest.framework",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -1039,13 +1033,13 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-KnzkAlt/Pods-KnzkAlt-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Alamofire-iOS/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/Moya-iOS/Moya.framework",
-				"${BUILT_PRODUCTS_DIR}/Realm-iOS/Realm.framework",
-				"${BUILT_PRODUCTS_DIR}/RealmSwift-iOS/RealmSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/Result-iOS/Result.framework",
-				"${BUILT_PRODUCTS_DIR}/RxCocoa-iOS/RxCocoa.framework",
-				"${BUILT_PRODUCTS_DIR}/RxSwift-iOS/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Deque/Deque.framework",
 				"${BUILT_PRODUCTS_DIR}/Fuzi/Fuzi.framework",
 				"${BUILT_PRODUCTS_DIR}/HydraAsync/Hydra.framework",
@@ -1099,9 +1093,9 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-KnzkAltTests/Pods-KnzkAltTests-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/RxSwift-iOS/RxSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/RxBlocking-iOS/RxBlocking.framework",
-				"${BUILT_PRODUCTS_DIR}/RxTest-iOS/RxTest.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/RxBlocking/RxBlocking.framework",
+				"${BUILT_PRODUCTS_DIR}/RxTest/RxTest.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -1198,10 +1192,7 @@
 			files = (
 				1A2A54FB20F3621D000098B2 /* AccountEntity.swift in Sources */,
 				1A2A54F520F3621D000098B2 /* ListEntity.swift in Sources */,
-				1A2A550C20F3622F000098B2 /* AccountFollowersService.swift in Sources */,
 				1A2A54F820F3621D000098B2 /* CardEntity.swift in Sources */,
-				1A2A551020F3622F000098B2 /* AccountUpdateCredentialsService.swift in Sources */,
-				1A2A550B20F3622F000098B2 /* AccountUnfollowService.swift in Sources */,
 				1A2A550120F3621D000098B2 /* ApplicationEntity.swift in Sources */,
 				1A2A54F720F3621D000098B2 /* EmojiEntity.swift in Sources */,
 				1A2A54F320F3621D000098B2 /* ReportEntity.swift in Sources */,
@@ -1210,16 +1201,11 @@
 				1A2A54FA20F3621D000098B2 /* TagEntity.swift in Sources */,
 				1A2A54FD20F3621D000098B2 /* ContextEntity.swift in Sources */,
 				1A2A550020F3621D000098B2 /* AttachmentEntity.swift in Sources */,
-				1A2A551120F3622F000098B2 /* AccountFollowService.swift in Sources */,
 				1A2A54F920F3621D000098B2 /* StatusEntity.swift in Sources */,
 				1A2A54F620F3621D000098B2 /* ErrorEntity.swift in Sources */,
-				1A2A550D20F3622F000098B2 /* AccountFollowingService.swift in Sources */,
 				1A2A54FF20F3621D000098B2 /* ResultsEntity.swift in Sources */,
 				1A2A54FC20F3621D000098B2 /* InstanceEntity.swift in Sources */,
 				1A2A54FE20F3621D000098B2 /* MentionEntity.swift in Sources */,
-				1A2A550F20F3622F000098B2 /* AccountService.swift in Sources */,
-				1A2A550E20F3622F000098B2 /* AccountVerifyCredentialsService.swift in Sources */,
-				1A2A550A20F3622F000098B2 /* AccountStatusesService.swift in Sources */,
 				C05109F86311D5C217DEFCE1 /* AccountEntityCompound.swift in Sources */,
 				C0510DD78A922B5D28A9A5E3 /* AccountPreference.swift in Sources */,
 				C0510CB1FC122EFD3B7642B8 /* AccountEntity+Decodable.swift in Sources */,
@@ -1254,6 +1240,12 @@
 				C0510D2EE173FCAA4E311212 /* StatusEntity+Decodable.swift in Sources */,
 				C05101FB5AAF6DDD30618BD2 /* StatusEntityCompound+Decodable.swift in Sources */,
 				C0510FB07F22E5D7F956EB69 /* TagHistory.swift in Sources */,
+				C051051ECB6556BC97D88250 /* AccountsService.swift in Sources */,
+				C0510BFE762ACC408E7945C1 /* AccountsService+TargetType.swift in Sources */,
+				C051040B76319CF910C66FB5 /* ServiceHost.swift in Sources */,
+				C0510564015DCEFA9EF4C6EE /* ServiceParam.swift in Sources */,
+				C0510C2275F0985BB4B9D9A3 /* AccountsService+Rx.swift in Sources */,
+				C051081304A9A762F4D994A5 /* ServiceError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
