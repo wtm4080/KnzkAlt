@@ -16,15 +16,23 @@ extension AccountsService {
 }
 
 extension Response {
-    func mapAccount() -> Result<AccountEntityCompound, ServiceError> {
+    func mapEntity<T: Decodable>() -> Result<T, ServiceError> {
         guard statusCode >= 200 && statusCode < 300 else {
             return .failure(.response(response: self))
         }
 
         do {
-            return try .success(self.map(AccountEntityCompound.self))
+            return try .success(self.map(T.self))
         } catch let e {
             return .failure(.parseResponse(e: e))
         }
+    }
+
+    func mapAccount() -> Result<AccountEntityCompound, ServiceError> {
+        return mapEntity()
+    }
+
+    func mapAccounts() -> Result<[AccountEntityCompound], ServiceError> {
+        return mapEntity()
     }
 }

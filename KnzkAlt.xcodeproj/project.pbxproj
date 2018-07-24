@@ -112,6 +112,7 @@
 		C0510DD78A922B5D28A9A5E3 /* AccountPreference.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510858BE8FEB083473478B /* AccountPreference.swift */; };
 		C0510E23E35BCC298C8A4321 /* AttachmentEntityMeta+Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510C0DD2720A75C031F0DC /* AttachmentEntityMeta+Decodable.swift */; };
 		C0510E8A41BBB5D482C3FAE6 /* RelationshipEntity+Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510F5FE154CF1954847DE5 /* RelationshipEntity+Decodable.swift */; };
+		C0510E8C899C5B7A8E9F99F1 /* RangeQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510C0E6BFC682115147F50 /* RangeQuery.swift */; };
 		C0510EAC75DD1B4DCCA81D22 /* EmojiEntity+Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510305B704EBEE881F9549 /* EmojiEntity+Decodable.swift */; };
 		C0510EB5724E95D8924D1103 /* AppNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510B64372D7F837A34D11B /* AppNotification.swift */; };
 		C0510EE31461CC88A8610A54 /* CardEntityType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05106E7BEA11723DD562DD2 /* CardEntityType.swift */; };
@@ -295,6 +296,7 @@
 		C0510A944D7C64EF8C9D247D /* ContextEntity+Decodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ContextEntity+Decodable.swift"; sourceTree = "<group>"; };
 		C0510B64372D7F837A34D11B /* AppNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppNotification.swift; sourceTree = "<group>"; };
 		C0510C0DD2720A75C031F0DC /* AttachmentEntityMeta+Decodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AttachmentEntityMeta+Decodable.swift"; sourceTree = "<group>"; };
+		C0510C0E6BFC682115147F50 /* RangeQuery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RangeQuery.swift; sourceTree = "<group>"; };
 		C0510C0F04D503ADF600C27C /* AttachmentEntity+Decodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AttachmentEntity+Decodable.swift"; sourceTree = "<group>"; };
 		C0510C1AF7923CC7467E762C /* NotificationEntityType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationEntityType.swift; sourceTree = "<group>"; };
 		C0510C744AAA81AA805FF9F7 /* CardEntity+Decodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CardEntity+Decodable.swift"; sourceTree = "<group>"; };
@@ -439,6 +441,7 @@
 				C051085D84235279DEC51BEE /* ServiceHost.swift */,
 				C05100A1A348A45D2C9F0AF9 /* ServiceParam.swift */,
 				C05107C8A6401AA0071F4ADD /* ServiceError.swift */,
+				C0510C0E6BFC682115147F50 /* RangeQuery.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -1250,6 +1253,7 @@
 				C0510C2275F0985BB4B9D9A3 /* AccountsService+Rx.swift in Sources */,
 				C051081304A9A762F4D994A5 /* ServiceError.swift in Sources */,
 				C051039F351C12EA3F2C99C1 /* AccountUpdateForm.swift in Sources */,
+				C0510E8C899C5B7A8E9F99F1 /* RangeQuery.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

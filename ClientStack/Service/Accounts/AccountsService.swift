@@ -17,4 +17,12 @@ enum AccountsService {
     /// Updating the current user
     /// Returns the authenticated user's Account
     case updateCurrentUser(param: ServiceParam, form: AccountUpdateForm)
+
+    /// Getting an account's followers
+    /// Returns an array of Account entities
+    case followers(param: ServiceParam, accountID: String, query: RangeQuery)
+
+    /// Getting who account is following
+    /// Returns an array of Account entities
+    case following(param: ServiceParam, accountID: String, query: RangeQuery)
 }
