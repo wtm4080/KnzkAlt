@@ -6,5 +6,15 @@
 import Foundation
 
 enum AccountsService {
+    /// Fetching an account
+    /// Returns an Account entity
     case account(param: ServiceParam, id: String)
+
+    /// Getting the current user
+    /// Returns the authenticated user's Account entity with an extra attribute
+    case currentUser(param: ServiceParam)
+
+    /// Updating the current user
+    /// Returns the authenticated user's Account
+    case updateCurrentUser(param: ServiceParam, form: AccountUpdateForm)
 }

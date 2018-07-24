@@ -6,7 +6,6 @@
 import Moya
 
 enum ServiceError: Error {
-    case network(e: Error)
     case response(response: Response)
     case parseResponse(e: Error)
 }
