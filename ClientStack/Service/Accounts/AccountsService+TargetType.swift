@@ -18,7 +18,9 @@ extension AccountsService: TargetType {
                     .follow(let param, _, _),
                     .unfollow(let param, _),
                     .block(let param, _),
-                    .unblock(let param, _):
+                    .unblock(let param, _),
+                    .mute(let param, _, _),
+                    .unmute(let param, _):
                 return param.host.url!
         }
     }
@@ -57,6 +59,10 @@ extension AccountsService: TargetType {
                 return pathWithID(id, "block")
             case .unblock(_, let id):
                 return pathWithID(id, "unblock")
+            case .mute(_, let id, _):
+                return pathWithID(id, "mute")
+            case .unmute(_, let id):
+                return pathWithID(id, "unmute")
         }
     }
 
@@ -66,7 +72,7 @@ extension AccountsService: TargetType {
                 return .get
             case .updateCurrentUser:
                 return .patch
-            case .follow, .unfollow, .block, .unblock:
+            case .follow, .unfollow, .block, .unblock, .mute, .unmute:
                 return .post
         }
     }
@@ -78,8 +84,22 @@ extension AccountsService: TargetType {
             return .requestParameters(parameters: params, encoding: URLEncoding.queryString)
         }
 
+        let bodyParamsTask = {
+            (params: [String: Any?]) -> Moya.Task in
+
+            var ps = [String: Any]()
+
+            for (k, v) in params {
+                if let v = v {
+                    ps[k] = v
+                }
+            }
+
+            return .requestParameters(parameters: ps, encoding: URLEncoding.httpBody)
+        }
+
         switch self {
-            case .account, .currentUser, .unfollow, .block, .unblock:
+            case .account, .currentUser, .unfollow, .block, .unblock, .unmute:
                 return .requestPlain
             case .updateCurrentUser(_, let form):
                 return .uploadMultipart(form.toFormData())
@@ -90,13 +110,9 @@ extension AccountsService: TargetType {
             case .statuses(_, _, let query):
                 return urlParamsTask(query.toParameters())
             case .follow(_, _, let isIncludeReblogs):
-                var params = [String: Any]()
-
-                if let iIR = isIncludeReblogs {
-                    params["reblogs"] = iIR
-                }
-
-                return .requestParameters(parameters: params, encoding: URLEncoding.httpBody)
+                return bodyParamsTask(["reblogs": isIncludeReblogs])
+            case .mute(_, _, let isMutingNotifications):
+                return bodyParamsTask(["notifications": isMutingNotifications])
         }
     }
 
@@ -116,11 +132,12 @@ extension AccountsService: TargetType {
                     .statuses(let param, _, _),
                     .unfollow(let param, _),
                     .block(let param, _),
-                    .unblock(let param, _):
+                    .unblock(let param, _),
+                    .unmute(let param, _):
                 return param.headers
             case .updateCurrentUser(let param, _):
                 return combine(param, ["Content-Type": "multipart/form-data"])
-            case .follow(let param, _, _):
+            case .follow(let param, _, _), .mute(let param, _, _):
                 return combine(param, ["Content-Type": "application/x-www-form-urlencoded"])
         }
     }

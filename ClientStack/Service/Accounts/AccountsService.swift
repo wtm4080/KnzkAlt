@@ -45,4 +45,12 @@ enum AccountsService {
     /// Unblocking an account
     /// Returns the target account's Relationship entity
     case unblock(param: ServiceParam, targetAccountID: String)
+
+    /// Muting an account
+    /// Returns the target account's Relationship entity
+    case mute(param: ServiceParam, targetAccountID: String, isMutingNotifications: Bool?)
+
+    /// Unmuting an account
+    /// Returns the target account's Relationship entity
+    case unmute(param: ServiceParam, targetAccountID: String)
 }
