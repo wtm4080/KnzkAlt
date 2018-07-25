@@ -16,7 +16,9 @@ extension AccountsService: TargetType {
                     .following(let param, _, _),
                     .statuses(let param, _, _),
                     .follow(let param, _, _),
-                    .unfollow(let param, _):
+                    .unfollow(let param, _),
+                    .block(let param, _),
+                    .unblock(let param, _):
                 return param.host.url!
         }
     }
@@ -51,6 +53,10 @@ extension AccountsService: TargetType {
                 return pathWithID(id, "follow")
             case .unfollow(_, let id):
                 return pathWithID(id, "unfollow")
+            case .block(_, let id):
+                return pathWithID(id, "block")
+            case .unblock(_, let id):
+                return pathWithID(id, "unblock")
         }
     }
 
@@ -60,7 +66,7 @@ extension AccountsService: TargetType {
                 return .get
             case .updateCurrentUser:
                 return .patch
-            case .follow, .unfollow:
+            case .follow, .unfollow, .block, .unblock:
                 return .post
         }
     }
@@ -73,7 +79,7 @@ extension AccountsService: TargetType {
         }
 
         switch self {
-            case .account, .currentUser, .unfollow:
+            case .account, .currentUser, .unfollow, .block, .unblock:
                 return .requestPlain
             case .updateCurrentUser(_, let form):
                 return .uploadMultipart(form.toFormData())
@@ -108,7 +114,9 @@ extension AccountsService: TargetType {
                     .followers(let param, _, _),
                     .following(let param, _, _),
                     .statuses(let param, _, _),
-                    .unfollow(let param, _):
+                    .unfollow(let param, _),
+                    .block(let param, _),
+                    .unblock(let param, _):
                 return param.headers
             case .updateCurrentUser(let param, _):
                 return combine(param, ["Content-Type": "multipart/form-data"])

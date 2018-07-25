@@ -37,4 +37,12 @@ enum AccountsService {
     /// Unfollowing an account
     /// Returns the target account's Relationship entity
     case unfollow(param: ServiceParam, targetAccountID: String)
+
+    /// Blocking an account
+    /// Returns the target account's Relationship entity
+    case block(param: ServiceParam, targetAccountID: String)
+
+    /// Unblocking an account
+    /// Returns the target account's Relationship entity
+    case unblock(param: ServiceParam, targetAccountID: String)
 }
