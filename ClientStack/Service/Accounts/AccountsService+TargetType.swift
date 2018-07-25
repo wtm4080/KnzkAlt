@@ -20,7 +20,8 @@ extension AccountsService: TargetType {
                     .block(let param, _),
                     .unblock(let param, _),
                     .mute(let param, _, _),
-                    .unmute(let param, _):
+                    .unmute(let param, _),
+                    .relationships(let param, _):
                 return param.host.url!
         }
     }
@@ -63,12 +64,14 @@ extension AccountsService: TargetType {
                 return pathWithID(id, "mute")
             case .unmute(_, let id):
                 return pathWithID(id, "unmute")
+            case .relationships:
+                return basePath + "relationships"
         }
     }
 
     var method: Moya.Method {
         switch self {
-            case .account, .currentUser, .followers, .following, .statuses:
+            case .account, .currentUser, .followers, .following, .statuses, .relationships:
                 return .get
             case .updateCurrentUser:
                 return .patch
@@ -113,6 +116,14 @@ extension AccountsService: TargetType {
                 return bodyParamsTask(["reblogs": isIncludeReblogs])
             case .mute(_, _, let isMutingNotifications):
                 return bodyParamsTask(["notifications": isMutingNotifications])
+            case .relationships(_, let ids):
+                var params = [String: Any]()
+
+                for item in ids.filter({ !$0.isEmpty }).enumerated() {
+                    params["id[\(item.offset)]"] = item.element
+                }
+
+                return urlParamsTask(params)
         }
     }
 
@@ -133,7 +144,8 @@ extension AccountsService: TargetType {
                     .unfollow(let param, _),
                     .block(let param, _),
                     .unblock(let param, _),
-                    .unmute(let param, _):
+                    .unmute(let param, _),
+                    .relationships(let param, _):
                 return param.headers
             case .updateCurrentUser(let param, _):
                 return combine(param, ["Content-Type": "multipart/form-data"])

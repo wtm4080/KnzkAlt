@@ -53,4 +53,8 @@ enum AccountsService {
     /// Unmuting an account
     /// Returns the target account's Relationship entity
     case unmute(param: ServiceParam, targetAccountID: String)
+
+    /// Getting an account's relationships
+    /// Returns an array of Relationship entities of the current user to a list of given accounts
+    case relationships(param: ServiceParam, ids: [String])
 }
