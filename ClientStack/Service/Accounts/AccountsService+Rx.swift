@@ -39,4 +39,8 @@ extension Response {
     func mapStatuses() -> Result<[StatusEntityCompound], ServiceError> {
         return mapEntity()
     }
+
+    func mapRelationship() -> Result<RelationshipEntity, ServiceError> {
+        return mapEntity()
+    }
 }

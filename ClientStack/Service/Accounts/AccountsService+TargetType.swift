@@ -14,7 +14,9 @@ extension AccountsService: TargetType {
                     .updateCurrentUser(let param, _),
                     .followers(let param, _, _),
                     .following(let param, _, _),
-                    .statuses(let param, _, _):
+                    .statuses(let param, _, _),
+                    .follow(let param, _, _),
+                    .unfollow(let param, _):
                 return param.host.url!
         }
     }
@@ -45,6 +47,10 @@ extension AccountsService: TargetType {
                 return pathWithID(id, "following")
             case .statuses(_, let id, _):
                 return pathWithID(id, "statuses")
+            case .follow(_, let id, _):
+                return pathWithID(id, "follow")
+            case .unfollow(_, let id):
+                return pathWithID(id, "unfollow")
         }
     }
 
@@ -54,6 +60,8 @@ extension AccountsService: TargetType {
                 return .get
             case .updateCurrentUser:
                 return .patch
+            case .follow, .unfollow:
+                return .post
         }
     }
 
@@ -65,7 +73,7 @@ extension AccountsService: TargetType {
         }
 
         switch self {
-            case .account, .currentUser:
+            case .account, .currentUser, .unfollow:
                 return .requestPlain
             case .updateCurrentUser(_, let form):
                 return .uploadMultipart(form.toFormData())
@@ -75,23 +83,37 @@ extension AccountsService: TargetType {
                 return urlParamsTask(query.toParameters())
             case .statuses(_, _, let query):
                 return urlParamsTask(query.toParameters())
+            case .follow(_, _, let isIncludeReblogs):
+                var params = [String: Any]()
+
+                if let iIR = isIncludeReblogs {
+                    params["reblogs"] = iIR
+                }
+
+                return .requestParameters(parameters: params, encoding: URLEncoding.httpBody)
         }
     }
 
     var headers: [String: String]? {
+        let combine = {
+            (p: ServiceParam, other: [String: String]) -> [String: String] in
+
+            return p.headers.merging(other, uniquingKeysWith: { k1, k2 in fatalError() })
+        }
+
         switch self {
             case
                     .account(let param, _),
                     .currentUser(let param),
                     .followers(let param, _, _),
                     .following(let param, _, _),
-                    .statuses(let param, _, _):
+                    .statuses(let param, _, _),
+                    .unfollow(let param, _):
                 return param.headers
             case .updateCurrentUser(let param, _):
-                var headers = param.headers
-                headers["Content-Type"] = "multipart/form-data"
-
-                return headers
+                return combine(param, ["Content-Type": "multipart/form-data"])
+            case .follow(let param, _, _):
+                return combine(param, ["Content-Type": "application/x-www-form-urlencoded"])
         }
     }
 

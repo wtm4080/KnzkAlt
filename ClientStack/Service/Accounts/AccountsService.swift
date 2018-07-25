@@ -29,4 +29,12 @@ enum AccountsService {
     /// Getting an account's statuses
     /// Returns an array of Status entities
     case statuses(param: ServiceParam, accountID: String, query: AccountStatusesQuery)
+
+    /// Following an account
+    /// Returns the target account's Relationship entity
+    case follow(param: ServiceParam, targetAccountID: String, isIncludeReblogs: Bool?)
+
+    /// Unfollowing an account
+    /// Returns the target account's Relationship entity
+    case unfollow(param: ServiceParam, targetAccountID: String)
 }
