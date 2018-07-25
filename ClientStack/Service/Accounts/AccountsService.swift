@@ -25,4 +25,8 @@ enum AccountsService {
     /// Getting who account is following
     /// Returns an array of Account entities
     case following(param: ServiceParam, accountID: String, query: RangeQuery)
+
+    /// Getting an account's statuses
+    /// Returns an array of Status entities
+    case statuses(param: ServiceParam, accountID: String, query: AccountStatusesQuery)
 }

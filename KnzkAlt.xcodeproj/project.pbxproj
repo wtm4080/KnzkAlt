@@ -87,6 +87,7 @@
 		C051058E3168052841958434 /* AttachmentEntityFocus.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05102497936B96DB764F4A9 /* AttachmentEntityFocus.swift */; };
 		C05105E055122DA4BADF4F7C /* AccountPreference+Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05104DF4EB2B810CC2C6397 /* AccountPreference+Decodable.swift */; };
 		C051063C8F94487D951F3992 /* LoadPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = C051044B0362D353B18AA631 /* LoadPosition.swift */; };
+		C05106417E0149F9E74CD2E8 /* AccountStatusesQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510325281C2B978C9B13BE /* AccountStatusesQuery.swift */; };
 		C051069F38C3D525E07BC7B1 /* CardEntityOEmbedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510122A1F3D51615D1ADC4 /* CardEntityOEmbedData.swift */; };
 		C05106A4B78EB97153B89723 /* AppNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510B64372D7F837A34D11B /* AppNotification.swift */; };
 		C05107119E9C5B1481D91FF0 /* CardEntityOEmbedData+Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C051000E281D2186FE02344B /* CardEntityOEmbedData+Decodable.swift */; };
@@ -265,6 +266,7 @@
 		C051016562AE79C7461A7055 /* AccountEntity+Decodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AccountEntity+Decodable.swift"; sourceTree = "<group>"; };
 		C05102497936B96DB764F4A9 /* AttachmentEntityFocus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttachmentEntityFocus.swift; sourceTree = "<group>"; };
 		C0510305B704EBEE881F9549 /* EmojiEntity+Decodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EmojiEntity+Decodable.swift"; sourceTree = "<group>"; };
+		C0510325281C2B978C9B13BE /* AccountStatusesQuery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountStatusesQuery.swift; sourceTree = "<group>"; };
 		C05103726960706A059AD998 /* StatusEntityCompound+Decodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "StatusEntityCompound+Decodable.swift"; sourceTree = "<group>"; };
 		C05103731D41A30C394679AB /* ListEntity+Decodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ListEntity+Decodable.swift"; sourceTree = "<group>"; };
 		C0510397D489014CC8992656 /* AppNotificationObserving.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppNotificationObserving.swift; sourceTree = "<group>"; };
@@ -453,6 +455,7 @@
 				C05108341D958E102EBE28CC /* AccountsService+TargetType.swift */,
 				C05103A9C4C0A6B49146B28F /* AccountsService+Rx.swift */,
 				C05108E6886B8E5424E5FBEE /* AccountUpdateForm.swift */,
+				C0510325281C2B978C9B13BE /* AccountStatusesQuery.swift */,
 			);
 			path = Accounts;
 			sourceTree = "<group>";
@@ -1254,6 +1257,7 @@
 				C051081304A9A762F4D994A5 /* ServiceError.swift in Sources */,
 				C051039F351C12EA3F2C99C1 /* AccountUpdateForm.swift in Sources */,
 				C0510E8C899C5B7A8E9F99F1 /* RangeQuery.swift in Sources */,
+				C05106417E0149F9E74CD2E8 /* AccountStatusesQuery.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
