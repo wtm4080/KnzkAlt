@@ -143,12 +143,6 @@ extension AccountsService: TargetType {
     }
 
     var headers: [String: String]? {
-        let combine = {
-            (p: ServiceParam, other: [String: String]) -> [String: String] in
-
-            return p.headers.merging(other, uniquingKeysWith: { k1, k2 in fatalError() })
-        }
-
         switch self {
             case
                     .account(let param, _),
@@ -164,9 +158,13 @@ extension AccountsService: TargetType {
                     .search(let param, _, _, _):
                 return param.headers
             case .updateCurrentUser(let param, _):
-                return combine(param, ["Content-Type": "multipart/form-data"])
+                var hs = param.headers
+
+                return hs.addContentType(contentType: .multipartFormData)
             case .follow(let param, _, _), .mute(let param, _, _):
-                return combine(param, ["Content-Type": "application/x-www-form-urlencoded"])
+                var hs = param.headers
+
+                return hs.addContentType(contentType: .formURLEncoded)
         }
     }
 

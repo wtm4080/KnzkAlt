@@ -7,9 +7,13 @@ import Foundation
 
 struct ServiceParam {
     let host: ServiceHost
-    let accessToken: String
+    let accessToken: String?
 
     var headers: [String: String] {
-        return ["Authorization": "Bearer \(accessToken)"]
+        if let aT = accessToken {
+            return ["Authorization": "Bearer \(aT)"]
+        } else {
+            return [:]
+        }
     }
 }
