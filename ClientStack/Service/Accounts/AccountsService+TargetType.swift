@@ -21,7 +21,8 @@ extension AccountsService: TargetType {
                     .unblock(let param, _),
                     .mute(let param, _, _),
                     .unmute(let param, _),
-                    .relationships(let param, _):
+                    .relationships(let param, _),
+                    .search(let param, _, _, _):
                 return param.host.url!
         }
     }
@@ -66,12 +67,14 @@ extension AccountsService: TargetType {
                 return pathWithID(id, "unmute")
             case .relationships:
                 return basePath + "relationships"
+            case .search:
+                return basePath + "search"
         }
     }
 
     var method: Moya.Method {
         switch self {
-            case .account, .currentUser, .followers, .following, .statuses, .relationships:
+            case .account, .currentUser, .followers, .following, .statuses, .relationships, .search:
                 return .get
             case .updateCurrentUser:
                 return .patch
@@ -81,14 +84,8 @@ extension AccountsService: TargetType {
     }
 
     var task: Moya.Task {
-        let urlParamsTask = {
-            (params: [String: Any]) -> Moya.Task in
-
-            return .requestParameters(parameters: params, encoding: URLEncoding.queryString)
-        }
-
-        let bodyParamsTask = {
-            (params: [String: Any?]) -> Moya.Task in
+        let filterNil = {
+            (params: [String: Any?]) -> [String: Any] in
 
             var ps = [String: Any]()
 
@@ -98,7 +95,19 @@ extension AccountsService: TargetType {
                 }
             }
 
-            return .requestParameters(parameters: ps, encoding: URLEncoding.httpBody)
+            return ps
+        }
+
+        let urlParamsTask = {
+            (params: [String: Any?]) -> Moya.Task in
+
+            return .requestParameters(parameters: filterNil(params), encoding: URLEncoding.queryString)
+        }
+
+        let bodyParamsTask = {
+            (params: [String: Any?]) -> Moya.Task in
+
+            return .requestParameters(parameters: filterNil(params), encoding: URLEncoding.httpBody)
         }
 
         switch self {
@@ -124,6 +133,12 @@ extension AccountsService: TargetType {
                 }
 
                 return urlParamsTask(params)
+            case .search(_, let query, let limit, let isLimitedFollowing):
+                return urlParamsTask([
+                    "q": query,
+                    "limit": limit,
+                    "following": isLimitedFollowing
+                ])
         }
     }
 
@@ -145,7 +160,8 @@ extension AccountsService: TargetType {
                     .block(let param, _),
                     .unblock(let param, _),
                     .unmute(let param, _),
-                    .relationships(let param, _):
+                    .relationships(let param, _),
+                    .search(let param, _, _, _):
                 return param.headers
             case .updateCurrentUser(let param, _):
                 return combine(param, ["Content-Type": "multipart/form-data"])

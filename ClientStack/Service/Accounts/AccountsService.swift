@@ -57,4 +57,9 @@ enum AccountsService {
     /// Getting an account's relationships
     /// Returns an array of Relationship entities of the current user to a list of given accounts
     case relationships(param: ServiceParam, ids: [String])
+
+    /// Searching for accounts
+    /// Will lookup an account remotely if the search term is in the `username@domain` format and not yet in the DB.
+    /// Returns an array of matching Account entities
+    case search(param: ServiceParam, query: String, limit: UInt?, isLimitedFollowing: Bool?)
 }
