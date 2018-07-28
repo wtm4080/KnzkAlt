@@ -55,4 +55,12 @@ extension Response {
 
         return .success(())
     }
+
+    func mapFilters() -> Result<[FilterEntity], ServiceError> {
+        return mapEntity()
+    }
+
+    func mapFilter() -> Result<FilterEntity, ServiceError> {
+        return mapEntity()
+    }
 }
