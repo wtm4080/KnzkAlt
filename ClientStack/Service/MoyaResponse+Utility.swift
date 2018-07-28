@@ -8,8 +8,12 @@ import RxSwift
 import Result
 
 extension Response {
+    private func isSuccessResponse() -> Bool {
+        return statusCode >= 200 && statusCode < 300
+    }
+
     func mapEntity<T: Decodable>() -> Result<T, ServiceError> {
-        guard statusCode >= 200 && statusCode < 300 else {
+        guard isSuccessResponse() else {
             return .failure(.response(response: self))
         }
 
@@ -38,5 +42,17 @@ extension Response {
 
     func mapRelationships() -> Result<[RelationshipEntity], ServiceError> {
         return mapEntity()
+    }
+
+    func mapStrings() -> Result<[String], ServiceError> {
+        return mapEntity()
+    }
+
+    func mapEmpty() -> Result<(), ServiceError> {
+        guard isSuccessResponse() else {
+            return .failure(.response(response: self))
+        }
+
+        return .success(())
     }
 }
