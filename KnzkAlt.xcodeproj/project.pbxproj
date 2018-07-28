@@ -88,6 +88,7 @@
 		C051039F351C12EA3F2C99C1 /* AccountUpdateForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05108E6886B8E5424E5FBEE /* AccountUpdateForm.swift */; };
 		C05103BA17A222489F4DFA18 /* ApplicationEntity+Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05106715B7764CA72DE9E74 /* ApplicationEntity+Decodable.swift */; };
 		C05103BB3FC53D933721726C /* AttachmentEntityFocus+Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510F54BDD59C8E1190580F /* AttachmentEntityFocus+Decodable.swift */; };
+		C05104084898C258B1DA0D7C /* FollowsService+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05101241FF9511F8E4D7E6A /* FollowsService+Rx.swift */; };
 		C051040B76319CF910C66FB5 /* ServiceHost.swift in Sources */ = {isa = PBXBuildFile; fileRef = C051085D84235279DEC51BEE /* ServiceHost.swift */; };
 		C051051ECB6556BC97D88250 /* AccountsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05108E2990ED7CC29CC1419 /* AccountsService.swift */; };
 		C0510559AFC5A879C211EC84 /* TLParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510A6EDA359DE7A9CB6842 /* TLParams.swift */; };
@@ -124,6 +125,7 @@
 		C0510AB9760FB8BA76DD3A23 /* AppNotificationObserving.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510397D489014CC8992656 /* AppNotificationObserving.swift */; };
 		C0510ABBF045D036BE6C0EC9 /* DomainBlocksService+TargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05109D5CF5C1F1425D22737 /* DomainBlocksService+TargetType.swift */; };
 		C0510AD8897DBD9FA36A6EBB /* FiltersService+TargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05104B8D336E01A14D74907 /* FiltersService+TargetType.swift */; };
+		C0510B0C92AF68C1DFF6FAE1 /* FollowsService+TargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C051068669A63CA62A442CE1 /* FollowsService+TargetType.swift */; };
 		C0510BAA9A8E8A2F63B9485A /* FavouritesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510A8802D565C2A9343C1B /* FavouritesService.swift */; };
 		C0510BAD1599A65D9A486F1B /* LoadPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = C051044B0362D353B18AA631 /* LoadPosition.swift */; };
 		C0510BD7167EA655ECF2AD0B /* DomainBlocksService+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510C06010BFA28F88A9CE6 /* DomainBlocksService+Rx.swift */; };
@@ -153,6 +155,7 @@
 		C0510F642A90E17523FD5FB5 /* AttachmentEntity+Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510C0F04D503ADF600C27C /* AttachmentEntity+Decodable.swift */; };
 		C0510F7AD54CB9E88BFA0036 /* MentionEntity+Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510924D7416D2FB13A62ED /* MentionEntity+Decodable.swift */; };
 		C0510FB07F22E5D7F956EB69 /* TagHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05109F7D4538EADACBD7F9D /* TagHistory.swift */; };
+		C0510FD5288C3316DF855CD3 /* FollowsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510D7314A5F743EBBEDFE8 /* FollowsService.swift */; };
 		C0510FD66D0B348C44E5740D /* CardEntity+Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0510C744AAA81AA805FF9F7 /* CardEntity+Decodable.swift */; };
 		D7AB0DAB123C5B091B1BD680 /* Pods_ClientStackTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD72D3F5D8B03445ADA04547 /* Pods_ClientStackTests.framework */; };
 		FA4F0FF186534CCAADF713AC /* Pods_KnzkAltTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6ED6DD55E3BB3F15F0DEEF74 /* Pods_KnzkAltTests.framework */; };
@@ -294,6 +297,7 @@
 		C05100A1A348A45D2C9F0AF9 /* ServiceParam.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceParam.swift; sourceTree = "<group>"; };
 		C05100B75F5BE26F3DB3043F /* StatusEntity+Decodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "StatusEntity+Decodable.swift"; sourceTree = "<group>"; };
 		C0510122A1F3D51615D1ADC4 /* CardEntityOEmbedData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardEntityOEmbedData.swift; sourceTree = "<group>"; };
+		C05101241FF9511F8E4D7E6A /* FollowsService+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FollowsService+Rx.swift"; sourceTree = "<group>"; };
 		C051016562AE79C7461A7055 /* AccountEntity+Decodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AccountEntity+Decodable.swift"; sourceTree = "<group>"; };
 		C05101D4F6E5C54F92AB314A /* BlocksService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlocksService.swift; sourceTree = "<group>"; };
 		C051020B148B229524513B09 /* FollowSuggestionsService+TargetType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FollowSuggestionsService+TargetType.swift"; sourceTree = "<group>"; };
@@ -324,6 +328,7 @@
 		C0510669F38A65A0D78E06C3 /* ResultsEntity+Decodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ResultsEntity+Decodable.swift"; sourceTree = "<group>"; };
 		C051066CC9E6102887AF6271 /* DomainBlocksService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DomainBlocksService.swift; sourceTree = "<group>"; };
 		C05106715B7764CA72DE9E74 /* ApplicationEntity+Decodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ApplicationEntity+Decodable.swift"; sourceTree = "<group>"; };
+		C051068669A63CA62A442CE1 /* FollowsService+TargetType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FollowsService+TargetType.swift"; sourceTree = "<group>"; };
 		C05106C3A09083E46DC25390 /* FollowRequestsService+TargetType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FollowRequestsService+TargetType.swift"; sourceTree = "<group>"; };
 		C05106E7BEA11723DD562DD2 /* CardEntityType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardEntityType.swift; sourceTree = "<group>"; };
 		C0510725DD4A70B21FDA69CD /* AppsService+TargetType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AppsService+TargetType.swift"; sourceTree = "<group>"; };
@@ -358,6 +363,7 @@
 		C0510C1AF7923CC7467E762C /* NotificationEntityType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationEntityType.swift; sourceTree = "<group>"; };
 		C0510C744AAA81AA805FF9F7 /* CardEntity+Decodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CardEntity+Decodable.swift"; sourceTree = "<group>"; };
 		C0510C9199E4DAC4F4E87A60 /* StatusEntityVisibility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusEntityVisibility.swift; sourceTree = "<group>"; };
+		C0510D7314A5F743EBBEDFE8 /* FollowsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowsService.swift; sourceTree = "<group>"; };
 		C0510E758877B4B0FFBD4004 /* FiltersService+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FiltersService+Rx.swift"; sourceTree = "<group>"; };
 		C0510EBD0415EF426FED9FF6 /* FollowSuggestionsService+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FollowSuggestionsService+Rx.swift"; sourceTree = "<group>"; };
 		C0510EED76468D09B2DAF42C /* FilterEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterEntity.swift; sourceTree = "<group>"; };
@@ -517,6 +523,7 @@
 				C0510D3422A331FBA9C8DD63 /* Filters */,
 				C0510BB0F23B4F6798AA9E2C /* FollowRequests */,
 				C0510C631BABB446C715224C /* FollowSuggestions */,
+				C05102521C769DA714D53F96 /* Follows */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -827,6 +834,16 @@
 				28264C095798523FBE0635C2 /* Pods_ClientStackDemoTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C05102521C769DA714D53F96 /* Follows */ = {
+			isa = PBXGroup;
+			children = (
+				C0510D7314A5F743EBBEDFE8 /* FollowsService.swift */,
+				C051068669A63CA62A442CE1 /* FollowsService+TargetType.swift */,
+				C05101241FF9511F8E4D7E6A /* FollowsService+Rx.swift */,
+			);
+			path = Follows;
 			sourceTree = "<group>";
 		};
 		C0510410900D85178CE885C0 /* Filter */ = {
@@ -1446,6 +1463,9 @@
 				C0510D3DEF234A71D7793403 /* FollowSuggestionsService.swift in Sources */,
 				C05109D9404C8478A5A7C8CC /* FollowSuggestionsService+TargetType.swift in Sources */,
 				C0510827D7FC221C45DF2ECB /* FollowSuggestionsService+Rx.swift in Sources */,
+				C0510FD5288C3316DF855CD3 /* FollowsService.swift in Sources */,
+				C0510B0C92AF68C1DFF6FAE1 /* FollowsService+TargetType.swift in Sources */,
+				C05104084898C258B1DA0D7C /* FollowsService+Rx.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
